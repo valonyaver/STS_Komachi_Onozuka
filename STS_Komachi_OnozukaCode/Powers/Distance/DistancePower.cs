@@ -75,7 +75,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Distance
 
         public int? PreviewAmountOverride;
         int EffectiveAmount => PreviewAmountOverride ?? Amount;
-        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
+        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
         {
             // Ignore if normal attack
             if (!props.IsPoweredAttack())

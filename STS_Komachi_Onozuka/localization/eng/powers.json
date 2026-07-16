@@ -3,11 +3,12 @@
   "STS_KOMACHI_ONOZUKA-DISTANCE_POWER.smartDescription": "Distance [blue]{Amount}[/blue].\nModifies damage dealt and taken by {Amount:choose(1|2|3|4):+100%|+50%|+0%|−15%|−30%}.",
   "STS_KOMACHI_ONOZUKA-DISTANCE_POWER.title": "Distance",
   "STS_KOMACHI_ONOZUKA-DISTANCE_POWER.selectionScreenPrompt": "Choose the amount to [gold]Displace[/gold].",
+  "STS_KOMACHI_ONOZUKA-DISTANCE_POWER.tlnote": "Font size is because the tooltip is too big in english. You can fiddle with it or remove it depending on how long it ends up being in yours.",
 
 
   "STS_KOMACHI_ONOZUKA-FLEXIBLE_WORK_SCHEDULE_POWER.description": "Gain [gold]Block[/gold] each time an enemy is [gold]Displaced[/gold].",
   "STS_KOMACHI_ONOZUKA-FLEXIBLE_WORK_SCHEDULE_POWER.smartDescription": "Gain [blue]{Amount}[/blue] [gold]Block[/gold] each time an enemy is [gold]Displaced[/gold].",
-  "STS_KOMACHI_ONOZUKA-FLEXIBLE_WORK_SCHEDULE_POWER.title": "Flexible WorkSchedule",
+  "STS_KOMACHI_ONOZUKA-FLEXIBLE_WORK_SCHEDULE_POWER.title": "Flexible Work Schedule",
 
   "STS_KOMACHI_ONOZUKA-HARDWORKING_SHINIGAMI_POWER.title": "Hardworking Shinigami",
   "STS_KOMACHI_ONOZUKA-HARDWORKING_SHINIGAMI_POWER.description": "At the start of your turn, if you have no [gold]Manipulate Distance[/gold] in [gold]Hand[/gold], add 1 into your [gold]Hand[/gold].",
@@ -43,6 +44,7 @@
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POWER.description": "[font_size=18]Removed at the start of the third turn after being applied. [gold]Detonates[/gold] when removed, dealing attack damage (affected by modifiers) equal to double the [gold]Vengeful Spirits[/gold] from the applying player to the target.",
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POWER.smartDescription": "{Duration:plural:Start of next turn|After [blue]{Duration}[/blue] turns}, this [gold]Detonates[/gold].\nWhen [gold]Detonated[/gold], Player {ApplierName} will attack {OwnerName} for [blue]{VengefulDamage:diff()}[/blue] damage.",
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POWER.title": "Vengeful Spirits",
+  "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POWER.tlnote": "The duration running out only removes it. But this detonates when it is removed in any way, including enemy cleanses if that happens (idk if any sts 2 enemy does that though).",
 
   "STS_KOMACHI_ONOZUKA-GUIDED_SPIRIT_POWER.description": "At the end of your turn, attack the enemy with the lowest HP for damage (affected by modifiers) equal to [gold]Guided Spirits[/gold], then reduce it by 1.",
   "STS_KOMACHI_ONOZUKA-GUIDED_SPIRIT_POWER.smartDescription": "At the end of {OwnerName}'s turn, attack the enemy with the lowest HP ([blue]{targetName}[/blue]) for [blue]{GuidedDamage:diff()}[/blue] damage, then reduce this by 1.",
@@ -57,19 +59,23 @@
   "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER_POWER.description": "The [gold]Spirit[/gold] absorbs all unblocked attack damage.",
   "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER_POWER.smartDescription": "The [gold]Spirit[/gold] absorbs all unblocked attack damage.",
   "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER_POWER.title": "Spirit Barrier",
+  "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER_POWER.tlnote": "Same wording as Osty's Die for you.",
 
   "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.description": "[font_size=18]Whenever [gold]Vengeful Spirits[/gold] are applied, [gold]Lonely Bound Spirit[/gold]'s amount will increase by the same amount.\nCan only be [gold]Detonated[/gold] by a card, dealing attack damage (affected by modifiers) equal to double its amount from the applying player to the target.\nWhen detonated at the same time as [gold]Vengeful Spirits[/gold], effects that count the amount of [gold]Spirits Detonated[/gold] will count both [gold]Detonations[/gold].",
   "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.smartDescription": "Whenever [gold]Vengeful Spirits[/gold] are applied, [gold]Lonely Bound Spirit[/gold]'s amount will increase by the same amount.\nDeals attack damage equal to double its amount.\nWhen [gold]Detonated[/gold], Player {ApplierName} will attack {OwnerName} for [blue]{VengefulDamage}[/blue] damage.",
   "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.title": "Lonely Bound Spirit",
+  "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.tlnote": "This freaking thing. Okay, so what this does. It starts at 1. Whenever Vengeful Spirits are applied, it increases by that amount. Let's say you have 4 VS and 5 LBS on an enemy. You have Grudge of the Dead (gain 1 strength on each detonation) and you play no hard feelings to detonate (and alse 1 strength for every 2 spirits). What will happen is that the player will get 2 strength, since 2 separate detonations happened. But the enemy will lose 4 strength (9/2=4.5 round down to 4), as this will contribute to the total amount. IN addition, every application of it is a different instance. So you could get 3 strength from grudge if you have 2 on the enemy.",
 
 
   "STS_KOMACHI_ONOZUKA-TALKATIVE_FERRYMAN_POWER.description": "",
   "STS_KOMACHI_ONOZUKA-TALKATIVE_FERRYMAN_POWER.smartDescription": "At the start of your turn, gain {Amount} [gold]Guided Spirits[/gold].",
   "STS_KOMACHI_ONOZUKA-TALKATIVE_FERRYMAN_POWER.title": "Talkative Ferryman",
+  "STS_KOMACHI_ONOZUKA-TALKATIVE_FERRYMAN_POWER.tlnote": "Permanent",
 
   "STS_KOMACHI_ONOZUKA-VERY_TALKATIVE_FERRYMAN_POWER.description": "",
   "STS_KOMACHI_ONOZUKA-VERY_TALKATIVE_FERRYMAN_POWER.smartDescription": "Next turn, gain {Amount} [gold]Guided Spirits[/gold].",
   "STS_KOMACHI_ONOZUKA-VERY_TALKATIVE_FERRYMAN_POWER.title": "Very Talkative Ferryman",
+  "STS_KOMACHI_ONOZUKA-VERY_TALKATIVE_FERRYMAN_POWER.tlnote": "Only applies for one turn.",
 
   "STS_KOMACHI_ONOZUKA-FOREVER_CANCELLED_POWER.description": "",
   "STS_KOMACHI_ONOZUKA-FOREVER_CANCELLED_POWER.smartDescription": "Whenever [gold]Spirits[/gold] are [gold]Detonated[/gold], apply [gold]Vengeful Spirits[/gold] equal to [blue]{Amount}%[/blue] the [gold]Detonated[/gold] amount, rounded up, to the same enemy.",
@@ -98,11 +104,13 @@
   "STS_KOMACHI_ONOZUKA-INFERNO_TEMPEST_POWER.smartDescription": "Next turn, choose up to [blue]{Amount}[/blue] [gold]Exhausted[/gold] non-[gold]Basic[/gold] cards to return randomly into your [gold]Hand[/gold], [gold]Draw Pile[/gold], and [gold]Discard Pile[/gold].",
   "STS_KOMACHI_ONOZUKA-INFERNO_TEMPEST_POWER.selectionScreenPrompt": "Choose up to [blue]{Amount}[/blue] [gold]Exhausted[/gold] non-[gold]Basic[/gold] cards to return randomly into your [gold]Hand[/gold], [gold]Draw Pile[/gold], and [gold]Discard Pile[/gold].",
   "STS_KOMACHI_ONOZUKA-INFERNO_TEMPEST_POWER.title": "Inferno Tempest",
+  "STS_KOMACHI_ONOZUKA-INFERNO_TEMPEST_POWER.tlnote": "Originates from souls at the end of the road. This one is the yugioh card of the same name.",
 
 
   "STS_KOMACHI_ONOZUKA-LONESOME_LILY_POWER.description": "",
   "STS_KOMACHI_ONOZUKA-LONESOME_LILY_POWER.smartDescription": "Whenever you play a [gold]Spider Lily[/gold], add [blue]{Amount}[/blue] [gold]Lycoris Radiata{Amount:plural:|s}[/gold] into your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-LONESOME_LILY_POWER.title": "Lonesome Lily",
+  
   "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA_POWER.description": "Increases damage and poison application of your Lycoris Radiata.",
   "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA_POWER.smartDescription": "Your [gold]Lycoris Radiata[/gold] deals [blue]{Amount}[/blue] more damage and applies [green]{PoisonAmount}[/green] more [gold]Poison[/gold].",
   "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA_POWER.title": "Lycoris Radiata",
@@ -139,7 +147,7 @@
 
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_FORM_POWER.description": "",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_FORM_POWER.smartDescription": "Amplifies Distance bonuses.\nClose: (1) Enemies take [blue]+{L1Mult}%[/blue] damage.\n(2) Enemies take [blue]+{L2Mult}%[/blue] damage.\nFar:(4) Enemies deal [blue]{L4Mult}%[/blue] damage.\n(5) Enemies deal [blue]{L5Mult}%[/blue] damage.",
-  "STS_KOMACHI_ONOZUKA-SHINIGAMI_FORM_POWER.title": "Shinigami Form",
+  "STS_KOMACHI_ONOZUKA-SHINIGAMI_FORM_POWER.title": "Shukuchi Form",
 
 
   "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA_POWER.description": "",
@@ -151,8 +159,7 @@
   "STS_KOMACHI_ONOZUKA-EIKI_FREE_RELEASE_POWER.description": "",
   "STS_KOMACHI_ONOZUKA-EIKI_FREE_RELEASE_POWER.smartDescription": "You do not pay the [gold]Release[/gold] cost of cards.",
   "STS_KOMACHI_ONOZUKA-EIKI_FREE_RELEASE_POWER.title": "Lectured Shinigami",
-
-  
+  "STS_KOMACHI_ONOZUKA-EIKI_FREE_RELEASE_POWER.tlnote": "Komachi was lectured by Eiki.",
 
   
   "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION_POWER.description": "",

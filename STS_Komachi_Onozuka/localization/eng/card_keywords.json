@@ -7,6 +7,7 @@
   
   "STS_KOMACHI_ONOZUKA-BARRIER.description": "Summon a Divine Spirit with X HP. If already summoned, raise its HP by X for this combat.",
   "STS_KOMACHI_ONOZUKA-BARRIER.title": "Barrier X",
+  "STS_KOMACHI_ONOZUKA-BARRIER.tlnote": "Exact same wording as Summon for osty.",
 
   "STS_KOMACHI_ONOZUKA-DISPLACE.description": "Change the enemy's [gold]Distance[/gold]. Any instance of changing [gold]Distance[/gold] is [gold]Displacement[/gold].",
   "STS_KOMACHI_ONOZUKA-DISPLACE.title": "Displace",
@@ -16,5 +17,6 @@
   "STS_KOMACHI_ONOZUKA-CLONE.title": "Clone",
 
   "STS_KOMACHI_ONOZUKA-REPLENISH.description": "Whenever this card is drawn, draw 1 card.",
-  "STS_KOMACHI_ONOZUKA-REPLENISH.title": "Replenish"
+  "STS_KOMACHI_ONOZUKA-REPLENISH.title": "Replenish",
+  "STS_KOMACHI_ONOZUKA-REPLENISH.title": "Mechanic taken from Lost Branch of Legend"
 }

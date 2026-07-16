@@ -109,7 +109,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
             if (_isExploding) return;
             _isExploding = true;
             decimal damage = BaseDamage;
-            var damageResults = await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), oldOwner, damage, ValueProp.Move, Applier, null);
+            var damageResults = await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), oldOwner, damage, ValueProp.Move, Applier, null, null);
             var dmgResult = damageResults.FirstOrDefault();
             if (currentDetonationArgs != null)
             {

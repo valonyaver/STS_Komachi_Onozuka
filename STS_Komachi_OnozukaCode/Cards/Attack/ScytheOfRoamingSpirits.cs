@@ -41,7 +41,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             decimal spiritAmount = cardPlay.Target.GetPowerAmount<VengefulSpiritPower>();
 
             var damageResult = await DamageCmd.Attack(base.DynamicVars.CalculatedDamage)
-                                                .FromCard(this)
+                                                .FromCard(this, cardPlay)
                                                 .Targeting(cardPlay.Target)
                                                 .WithHitFx("vfx/vfx_attack_slash")
                                                 .Execute(choiceContext);

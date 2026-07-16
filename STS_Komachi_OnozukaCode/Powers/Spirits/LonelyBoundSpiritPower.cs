@@ -99,7 +99,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
 
             decimal finalDamage = VengefulDamage;
 
-            var damageResults = await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), Owner, finalDamage, ValueProp.Move, Applier, null);
+            var damageResults = await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), Owner, finalDamage, ValueProp.Move, Applier, null, null);
 
             if (currentDetonationArgs != null)
             {

@@ -43,7 +43,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-            AttackCommand attackCommand = await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+            AttackCommand attackCommand = await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target)
                 .WithHitFx("vfx/vfx_attack_slash")
                 .Execute(choiceContext);
             await PowerCmd.Apply<VengefulSpiritPower>(choiceContext, cardPlay.Target, Value1, base.Owner.Creature, this);
@@ -64,7 +64,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
                 }
 
                 float scale = 0.8f;
-                await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(amount).FromCard(this)
+                await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(amount).FromCard(this, cardPlay)
                 .Targeting(cardPlay.Target)
                 .BeforeDamage(delegate
                 {

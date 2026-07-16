@@ -62,7 +62,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Other
             return PoisonAmount.ToString();
         }
 
-        public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
+        public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
         {
             if (!props.IsPoweredAttack())
             {

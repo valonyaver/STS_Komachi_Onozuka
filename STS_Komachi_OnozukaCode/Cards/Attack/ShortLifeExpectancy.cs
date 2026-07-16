@@ -92,7 +92,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             {
                 await ReleaseCmd.Release(choiceContext, Owner.Creature, releaseCost, this);
 
-                await DamageCmd.Attack(GetEnemyHP(this, cardPlay.Target)).FromCard(this).Targeting(cardPlay.Target)
+                await DamageCmd.Attack(GetEnemyHP(this, cardPlay.Target)).FromCard(this, cardPlay).Targeting(cardPlay.Target)
                 .WithHitFx("vfx/vfx_attack_blunt", null, "heavy_attack.mp3")
                 .Execute(choiceContext);
             }

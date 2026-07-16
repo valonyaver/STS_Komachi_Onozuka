@@ -49,7 +49,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
 
             var damageResult = await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
                                                 .WithHitCount(2)
-                                                .FromCard(this)
+                                                .FromCard(this, cardPlay)
                                                 .Targeting(cardPlay.Target)
                                                 .WithHitFx("vfx/vfx_attack_slash")
                                                 .Execute(choiceContext);

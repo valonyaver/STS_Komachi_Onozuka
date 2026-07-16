@@ -44,7 +44,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Basics
             var hitAmount = DistancePower.GetLevel(cardPlay.Target);
             if (IsUpgraded) hitAmount++;
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue).WithHitCount(hitAmount).
-                FromCard(this).Targeting(cardPlay.Target)
+                FromCard(this, cardPlay).Targeting(cardPlay.Target)
                 .WithHitFx("vfx/vfx_attack_slash")
                 .Execute(choiceContext);
         }

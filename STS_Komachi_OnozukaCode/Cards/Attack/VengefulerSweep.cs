@@ -42,7 +42,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
 
             CardModel? chosen = await ReleaseCmd.ChooseRelease(choiceContext, this, Value2);
 
-            await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).TargetingAllOpponents(base.CombatState)
+            await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).TargetingAllOpponents(base.CombatState)
             .WithHitFx("vfx/vfx_attack_blunt", null, "heavy_attack.mp3")
             .Execute(choiceContext);
             IReadOnlyList<Creature> enemies = base.CombatState.HittableEnemies;
@@ -56,7 +56,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             {
                 await ReleaseCmd.Release(choiceContext, Owner.Creature, Value2, this);
 
-                await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).TargetingAllOpponents(base.CombatState)
+                await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).TargetingAllOpponents(base.CombatState)
                 .WithHitFx("vfx/vfx_attack_blunt", null, "heavy_attack.mp3")
                 .Execute(choiceContext);
                 foreach (Creature enemy in CombatState.Enemies)

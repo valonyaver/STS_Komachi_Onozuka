@@ -43,7 +43,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             
             if (CombatState == null) return;
 
-            await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+            await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target)
                 .WithDanmaku(patterns)
             .WithHitFx("vfx/vfx_attack_slash", null)
             .Execute(choiceContext);

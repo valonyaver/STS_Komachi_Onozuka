@@ -54,7 +54,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
                 NRun.Instance?.GlobalUi.AddChildSafely(NSmokyVignetteVfx.Create(color, color));
             }
 
-            await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(num).FromCard(this)
+            await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(num).FromCard(this, cardPlay)
                 .TargetingAllOpponents(base.CombatState)
                 .WithHitFx("vfx/vfx_giant_horizontal_slash")
                 .Execute(choiceContext);

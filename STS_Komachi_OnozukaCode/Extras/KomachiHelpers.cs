@@ -23,7 +23,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extras
             {
                 modified = Hook.ModifyDamage(
                     dealer.Player.RunState, dealer.CombatState, target, dealer,
-                    baseDamage, ValueProp.Move, null, ModifyDamageHookType.All, CardPreviewMode.None, out _);
+                    baseDamage, ValueProp.Move, null,null, ModifyDamageHookType.All, CardPreviewMode.None, out _);
             }
             damageVar.BaseValue = baseDamage;
             damageVar.PreviewValue = modified;

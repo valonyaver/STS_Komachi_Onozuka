@@ -50,7 +50,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-            await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this)
+            await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, cardPlay)
                 .Targeting(cardPlay.Target)
                 .WithHitVfxNode((Creature t) => NScratchVfx.Create(t, goingRight: true))
                 .Execute(choiceContext);

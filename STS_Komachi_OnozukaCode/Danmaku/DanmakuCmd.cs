@@ -118,7 +118,6 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
                             allTargets, onHit, piece.BulletColor, piece.TrailEnabled, trailColor,
                             piece.spawnShards, piece.HitAmount, piece.HitIntervalSeconds, piece.ZeroHitNotDie, resolvedEvents);
                         container.AddChildSafely(bullet); 
-                        container.AddChildSafely(bullet);
                     }
 
                     bool isLastGroup = group == piece.Group - 1;

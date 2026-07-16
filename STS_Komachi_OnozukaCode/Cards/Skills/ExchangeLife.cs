@@ -50,7 +50,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
 
                 if (damageToTarget > 0)
                 {
-                    await CreatureCmd.Damage(choiceContext, cardPlay.Target, damageToTarget, ValueProp.Unblockable, this);
+                    await CreatureCmd.Damage(choiceContext, cardPlay.Target, damageToTarget, ValueProp.Unblockable, this, cardPlay);
                 }
                 // If you play this with higher life, for some reason
                 else if (damageToTarget < 0)
@@ -65,7 +65,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
                 // If you play this with higher life, for some reason
                 else if (healToOwner < 0)
                 {
-                    await CreatureCmd.Damage(choiceContext, Owner.Creature, Math.Abs(healToOwner), ValueProp.Unblockable, this);
+                    await CreatureCmd.Damage(choiceContext, Owner.Creature, Math.Abs(healToOwner), ValueProp.Unblockable, this, cardPlay);
                 }
                 if (DeckVersion != null)
                 {
@@ -80,7 +80,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             await base.AfterCardDrawn(choiceContext, card, fromHandDraw);
             if (card == this)
             {
-                await CreatureCmd.Damage(choiceContext, Owner.Creature, Value1, ValueProp.Unblockable, this);
+                await CreatureCmd.Damage(choiceContext, Owner.Creature, Value1, ValueProp.Unblockable, this, null);
                 await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
             }
         }

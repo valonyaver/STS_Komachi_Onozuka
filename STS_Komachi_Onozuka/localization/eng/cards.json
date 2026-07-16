@@ -12,68 +12,81 @@
   "STS_KOMACHI_ONOZUKA-MANIPULATE_DISTANCE_TOKEN.extraDescription2": "[gold]Displace[/gold] by +{Value1:diff()}.",
   "STS_KOMACHI_ONOZUKA-MANIPULATE_DISTANCE_TOKEN.title": "Manipulate Distance",
   "STS_KOMACHI_ONOZUKA-MANIPULATE_DISTANCE_TOKEN.artist": "Valonad",
+  "STS_KOMACHI_ONOZUKA-MANIPULATE_DISTANCE_TOKEN.tlnote": "Important Token. Used for both decisions and as a playable card.",
+  
 
   "STS_KOMACHI_ONOZUKA-MANIPULATE_NO_DISTANCE_TOKEN.description": "{AltDescription:choose(0|1):[gold]Displace[/gold] by {Value1:diff()}|{ExtraDescription1}|{ExtraDescription2}}.",
   "STS_KOMACHI_ONOZUKA-MANIPULATE_NO_DISTANCE_TOKEN.extraDescription1": "Your life [gold]Displaces[/gold] by -{Value1} DISTANCE.",
   "STS_KOMACHI_ONOZUKA-MANIPULATE_NO_DISTANCE_TOKEN.extraDescription2": "Your life [gold]Displaces[/gold] by +{Value1} DISTANCE.",
   "STS_KOMACHI_ONOZUKA-MANIPULATE_NO_DISTANCE_TOKEN.title": "Manipulate No Distance",
   "STS_KOMACHI_ONOZUKA-MANIPULATE_NO_DISTANCE_TOKEN.artist": "Valonad",
+  "STS_KOMACHI_ONOZUKA-MANIPULATE_NO_DISTANCE_TOKEN.tlnote": "Only used for decisions where you don't displace. Extra descriptions don't matter. Name is a kind of pun on japanese names with 'no' in the middle.",
 
 
   "STS_KOMACHI_ONOZUKA-SPIDER_LILY.description": "Gain {Energy:energyIcons()}\nGain {Value1:diff()} [gold]Strength[/gold] this turn.\nGain {Value2} [gold]Poison[/gold].",
   "STS_KOMACHI_ONOZUKA-SPIDER_LILY.title": "Spider Lily",
   "STS_KOMACHI_ONOZUKA-SPIDER_LILY.artist": "Valonad",
+  "STS_KOMACHI_ONOZUKA-SPIDER_LILY.tlnote": "Important token. Also known as Higanbana. Used in a lot of places.",
 
   
-  "STS_KOMACHI_ONOZUKA-LONESOME_LILY.description": "Whenever you play a [gold]Spider Lily[/gold], add 1 [gold]Lycoris Radiata[/gold] into your [gold]Hand[/gold].\nAdd {Value1:diff()} [gold]Spider Lil{Value1:plural:y|ies}[/gold] into your [gold]Draw Pile[/gold].",
+  "STS_KOMACHI_ONOZUKA-LONESOME_LILY.description": "Add {Value1:diff()} [gold]Spider Lil{Value1:plural:y|ies}[/gold] into your [gold]Draw Pile[/gold].\nWhenever you play a [gold]Spider Lily[/gold], add 1 [gold]Lycoris Radiata[/gold] into your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-LONESOME_LILY.title": "Lonesome Lily",
   "STS_KOMACHI_ONOZUKA-LONESOME_LILY.artist": "MARI",
   
   "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA.description": "Deal {Damage:diff()} damage. Apply {PoisonPower:diff()} [gold]Poison[/gold].\nFor the rest of combat, each of your [gold]Lycoris Radiata[/gold] deals {Value1:diff()} more damage and applies {Value2:diff()} more [gold]Poison[/gold].",
   "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA.title": "Lycoris Radiata",
   "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA.artist": "huashijw",
+  "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA.tlnote": "scientific name for a spider lily. Similar effect to Maul",
   
   "STS_KOMACHI_ONOZUKA-LILY_EMBRACE.description": "Add a [gold]Spider Lily[/gold] to your Hand.\nWhenever you play a [gold]Spider Lily[/gold], gain {Value1:diff()} [gold]Strength[/gold] and apply {Value2:diff()} [gold]Poison[/gold] to ALL enemies.",
   "STS_KOMACHI_ONOZUKA-LILY_EMBRACE.title": "Lily's Embrace",
   "STS_KOMACHI_ONOZUKA-LILY_EMBRACE.artist": "iced_lemon",
+  "STS_KOMACHI_ONOZUKA-LILY_EMBRACE.tlnote": "Lily here is a pun on both Spider Lily and Lily White, as the art has Lily White on it. If untranslateable, could replace lily with something like Spring",
 
   "STS_KOMACHI_ONOZUKA-DETONATE_TOKEN.description": "{PreventsDetonation:plural:|Do not }[gold]Detonate[/gold] the target.{IfUpgraded:show:\nDraw 1 card.|}",
   "STS_KOMACHI_ONOZUKA-DETONATE_TOKEN.title": "Detonate",
   "STS_KOMACHI_ONOZUKA-DETONATE_TOKEN.artist": "Valonad",
+  "STS_KOMACHI_ONOZUKA-DETONATE_TOKEN.tlnote": "Token used for both decisions (for which PreventsDetonation is important) and as a playable card. For now, only generateable by grudging strike.",
 
 
   "STS_KOMACHI_ONOZUKA-RELEASE_TOKEN.description": "{AltDescription:choose(0|1):Do not release.|{ExtraDescription1}|{ExtraDescription2}}",
   "STS_KOMACHI_ONOZUKA-RELEASE_TOKEN.title": "Release",
   "STS_KOMACHI_ONOZUKA-RELEASE_TOKEN.artist": "iromi (a1vlmeta)",
+  "STS_KOMACHI_ONOZUKA-RELEASE_TOKEN.tlnote": "Token used for decisions only. Default text is no release, similar to Manipulate No Distance, other extra descriptions gets filled out by other cards' extra descriptions.",
 
 
   "STS_KOMACHI_ONOZUKA-SHOOT_AND_MOVE.description": "Deal {Damage:diff()} damage.\n[gold]Optional[/gold]: [gold]Displace[/gold] by up to +/-{Value1:diff()}.",
   "STS_KOMACHI_ONOZUKA-SHOOT_AND_MOVE.title": "Shoot And Move",
   "STS_KOMACHI_ONOZUKA-SHOOT_AND_MOVE.artist": "sakimiya@土曜つ28a",
+  "STS_KOMACHI_ONOZUKA-SHOOT_AND_MOVE.tlnote": "Reference to Marisa in Touhou 8.",
 
 
   "STS_KOMACHI_ONOZUKA-MOVE_AND_SHOOT.description": "[gold]Optional[/gold]: [gold]Displace[/gold] by up to +/-{Value1:diff()}.\nDeal {Damage:diff()} damage.",
   "STS_KOMACHI_ONOZUKA-MOVE_AND_SHOOT.title": "Move And Shoot",
   "STS_KOMACHI_ONOZUKA-MOVE_AND_SHOOT.artist": "Note: This is a test card",
+  "STS_KOMACHI_ONOZUKA-MOVE_AND_SHOOT.tlnote": "Like the above but opposite. Will probably be put in the trash heap event.",
 
 
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_FINAL_JUDGEMENT.description": "[gold]Optional[/gold]: [gold]Displace[/gold] to any [gold]Distance[/gold].\nDeal {Damage:diff()} damage.\nDamage reduction of far [gold]Distances[/gold] increases this card's damage by double the amount instead.",
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_FINAL_JUDGEMENT.title": "Death Sign \"Scythe Of Final Judgement\"",
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_FINAL_JUDGEMENT.artist": "clio_desu",
+  "STS_KOMACHI_ONOZUKA-SCYTHE_OF_FINAL_JUDGEMENT.tlnote": "One of her spellcards. Effect means that far distance's -15/-30% damage becomes +30/60% for this card.",
 
   "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.description": "[gold]Optional[/gold]: [gold]Displace[/gold] by up to +{Value1:diff()}.\nGain {Block:diff()} [gold]Block[/gold].\nIf the enemy's [gold]Distance[/gold] is 5, add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.title": "Handy Retreat",
   "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.artist": "でるもち",
+  "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.tlnote": "She's holding an umbrella in the art, which is handy for retreating, I guess.",
 
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.description": "Remove all [gold]Block[/gold] from the target.\n[gold]Displace[/gold] by +{Value1:diff()}.\nGain {Block:diff()} [gold]Block[/gold].\n[gold]Release[/gold] {ReleaseCost:diff()} or {Value3}: Apply {Value2} [gold]Tainted[/gold] for every {ReleaseCost} [gold]Released[/gold].",
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: Apply {Value2} [gold]Tainted[/gold].",
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription2": "[gold]Release[/gold] {Value3:diff()}: Apply {Value3} [gold]Tainted[/gold].",
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.title": "Endless Way",
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.artist": "樫の木",
+  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.tlnote": "Soku Skill. Tainted is the debuff that triangle elite applies to you.",
 
 
 
-  "STS_KOMACHI_ONOZUKA-DISTANCE_TAX.description": "Apply the following to ALL enemies, based on its [gold]Distance[/gold]:\n1-2: {Value1:diff()} [gold]Weak[/gold].\n3: Lose {Value2:diff()} [gold]Strength[/gold] this turn.\n4-5: {Value3:diff()} [gold]Vulnerable[/gold].",
+  "STS_KOMACHI_ONOZUKA-DISTANCE_TAX.description": "Apply the following to ALL enemies, based on their [gold]Distance[/gold]:\n1-2: {Value1:diff()} [gold]Weak[/gold].\n3: Lose {Value2:diff()} [gold]Strength[/gold] this turn.\n4-5: {Value3:diff()} [gold]Vulnerable[/gold].",
   "STS_KOMACHI_ONOZUKA-DISTANCE_TAX.title": "Distance Tax",
   "STS_KOMACHI_ONOZUKA-DISTANCE_TAX.artist": "Clear Echoes",
 
@@ -81,16 +94,19 @@
   "STS_KOMACHI_ONOZUKA-TASTE_OF_DEATH.description": "[gold]Displace[/gold] by {Value1:diff()}.\nDeal {Damage:diff()} damage.",
   "STS_KOMACHI_ONOZUKA-TASTE_OF_DEATH.title": "Taste Of Death",
   "STS_KOMACHI_ONOZUKA-TASTE_OF_DEATH.artist": "mixarumixa",
+  "STS_KOMACHI_ONOZUKA-TASTE_OF_DEATH.tlnote": "Soku Skill",
 
 
   "STS_KOMACHI_ONOZUKA-PUSH_DRAW.description": "[gold]Optional[/gold]: [gold]Displace[/gold] by up to +{Value1:diff()}.\nDraw cards equal to the enemy's [gold]Distance[/gold], then discard 1 card.",
   "STS_KOMACHI_ONOZUKA-PUSH_DRAW.title": "Pushback Draw",
   "STS_KOMACHI_ONOZUKA-PUSH_DRAW.artist": "tokoroten (hmmuk)",
+  "STS_KOMACHI_ONOZUKA-PUSH_DRAW.tlnote": "Draw as in pulling in and drawing cards. Idk it just sounds cool. Prioritize card draw meaning if can't make a similar pun.",
 
 
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_THE_REAPER.description": "Deal {Damage:diff()} damage.\nWhenever an enemy is [gold]Displaced[/gold], return this to your [gold]Hand[/gold] from the [gold]Discard Pile[/gold].",
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_THE_REAPER.title": "Scythe Of The Reaper",
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_THE_REAPER.artist": "shimana (cs-ts-az)",
+  "STS_KOMACHI_ONOZUKA-SCYTHE_OF_THE_REAPER.tlnote": "Soku skill. Notably, one of her combo enablers in that game.",
 
 
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_FINESSE.description": "Deal {Damage:diff()} damage {CalculatedDamage:diff()} time{CalculatedDamage:plural:|s}.\nThis card attacks a number of times equal to the enemy's [gold]Distance[/gold]{IfUpgraded:show: +1|}.",
@@ -106,26 +122,37 @@
   "STS_KOMACHI_ONOZUKA-HARDWORKING_SHINIGAMI.description": "{IfUpgraded:show:Add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].\n|}At the start of your turn, if you have no [gold]Manipulate Distance[/gold] in [gold]Hand[/gold], add 1 into your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-HARDWORKING_SHINIGAMI.title": "Hardworking Shinigami",
   "STS_KOMACHI_ONOZUKA-HARDWORKING_SHINIGAMI.artist": "mirandakeikoku",
+  "STS_KOMACHI_ONOZUKA-HARDWORKING_SHINIGAMI.tlnote": "Effect stacks like this: If you have two, then if you have less than 2, add until you have two. More relevant in the power description.",
 
 
   "STS_KOMACHI_ONOZUKA-PUSH_N_PULL.description": "{IfUpgraded:show:Add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].\n|}At the start of your turn, [gold]Displace[/gold] ALL enemies by -1.\nAt the end of your turn, [gold]Displace[/gold] ALL enemies by +1.",
   "STS_KOMACHI_ONOZUKA-PUSH_N_PULL.title": "Push and Pull",
   "STS_KOMACHI_ONOZUKA-PUSH_N_PULL.artist": "めいじ",
+  "STS_KOMACHI_ONOZUKA-PUSH_N_PULL.tlnote": "'push and pull' is a popular idiom.",
 
 
   "STS_KOMACHI_ONOZUKA-GOD_OF_DEATH.description": "Whenever an enemy dies, if it was a [gold]Minion[/gold], [gold]Barrier[/gold] {Heal:diff()}. Else, heal {Heal:diff()} HP.\nThe next time your HP would be reduced to 0, instead, heal to 50% of your Max HP, gain 1 [gold]Intangible[/gold], then remove this card from your [gold]Deck[/gold]. This effect can only activate once per combat.",
   "STS_KOMACHI_ONOZUKA-GOD_OF_DEATH.title": "God of Death",
   "STS_KOMACHI_ONOZUKA-GOD_OF_DEATH.artist": "hima (mizu ni tsuyoi)",
+  "STS_KOMACHI_ONOZUKA-GOD_OF_DEATH.tlnote": "Literally her species. Meant to be the primal ability of her species. Uses same wording as Fairy in a bottle.",
 
 
 
   "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER.description": "Add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold]. Whenever an enemy is [gold]Displaced[/gold]:\nIf the [gold]Distance[/gold] increased, gain {Value1:diff()} [gold]Dexterity[/gold] this turn.\nIf the [gold]Distance[/gold] decreased, gain {Value1:diff()} [gold]Strength[/gold] this turn.",
   "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER.title": "Flow of the Sanzu River",
   "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER.artist": "a.a.",
+  "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER.tlnote": "Means both 'River Flow' and 'Flow state' like being focused.",
+
+
+  "STS_KOMACHI_ONOZUKA-RIVERSIDE_VIEW.description": "{IfUpgraded:show:Add 1 [gold]Spider Lily[/gold] into your [gold]Hand[/gold].\n|}At the start of your turn, if you have no [gold]Spider Lily[/gold] in [gold]Hand[/gold], add 1 into your [gold]Hand[/gold]. \n[gold]Spider Lilies[/gold] only give you 1 [gold]Poison[/gold].",
+  "STS_KOMACHI_ONOZUKA-RIVERSIDE_VIEW.title": "Riverside View",
+  "STS_KOMACHI_ONOZUKA-RIVERSIDE_VIEW.artist": "蒼穹＠葵衣",
+  "STS_KOMACHI_ONOZUKA-RIVERSIDE_VIEW.tlnote": "Literally her theme song, 'Higan Retour ~ Riverside View'. Effect similar to hardworking shinigami. Spider Lilies usually give you 2 Poison. This overrides that to make it 1 instead.",
 
   "STS_KOMACHI_ONOZUKA-RIVERSIDE_GARDEN.description": "Whenever a [gold]Spider Lily[/gold] is created, [gold]Upgrade[/gold] it.\nAdd 1 [gold]Spider Lily[/gold] each into your [gold]Hand[/gold], [gold]Draw Pile[/gold], and [gold]Discard Pile[/gold].",
   "STS_KOMACHI_ONOZUKA-RIVERSIDE_GARDEN.title": "Riverside Garden",
   "STS_KOMACHI_ONOZUKA-RIVERSIDE_GARDEN.artist": "BigRed",
+  "STS_KOMACHI_ONOZUKA-RIVERSIDE_GARDEN.tlnote": "Same 'Riverside' as Riverside View above.",
 
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_TACTICS.description": "{IfUpgraded:show:Add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].\n|}Whenever you [gold]Displace[/gold] with [gold]Manipulate Distance[/gold]:\nIf the [gold]Distance[/gold] decreased, add a random Attack into your [gold]Hand[/gold].\nIf the [gold]Distance[/gold] increased, add a random Skill into your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_TACTICS.title": "Shinigami Tactics",
@@ -134,26 +161,31 @@
   "STS_KOMACHI_ONOZUKA-LOW_TIER_SHINIGAMI.description": "Deal {Damage:diff()} damage.\nApply {Value1:diff()} [gold]Vulnerable[/gold].",
   "STS_KOMACHI_ONOZUKA-LOW_TIER_SHINIGAMI.title": "Low Tier Shinigami",
   "STS_KOMACHI_ONOZUKA-LOW_TIER_SHINIGAMI.artist": "iced_lemon",
+  "STS_KOMACHI_ONOZUKA-LOW_TIER_SHINIGAMI.tlnote": "Name is meant to be a reference to Low Tier God, the guy behind the 'Kill yourself, NOW' meme with all the lighting behind him and stuff, which explains the extreme effect (99 vuln). If taken literally, it kinda doesn't make sense. But I guess it can be taken that even a low ranked shinigami can do this much.",
 
 
   "STS_KOMACHI_ONOZUKA-WEED_CUTTER.description": "Deal {Damage:diff()} damage.\nDraw 1 card.\nAdd 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-WEED_CUTTER.title": "Weed Cutter",
   "STS_KOMACHI_ONOZUKA-WEED_CUTTER.artist": "makuwauri_uri",
+  "STS_KOMACHI_ONOZUKA-WEED_CUTTER.tlnote": "Scythes are traditionally used as farming tools.",
 
 
   "STS_KOMACHI_ONOZUKA-SCYTHE_PARRY.description": "Gain {Block:diff()} [gold]Block[/gold].\nAdd a [gold]Manipulate Distance[/gold] to the hand.\nBlocked attack damage is reflected to your attacker this turn.",
   "STS_KOMACHI_ONOZUKA-SCYTHE_PARRY.title": "Scythe Parry",
   "STS_KOMACHI_ONOZUKA-SCYTHE_PARRY.artist": "きんたろう",
+  "STS_KOMACHI_ONOZUKA-SCYTHE_PARRY.tlnote": "Same wording as Regent's Reflect card.",
 
 
   "STS_KOMACHI_ONOZUKA-COIN_THROW.description": "Deal {Damage:diff()} damage to ALL enemies.\nLose {Gold:diff()} [gold]Gold[/gold].{IfUpgraded:show:\nAdd a copy of this card into your hand. It gains [gold]Exhaust[/gold] and [gold]Ethereal[/gold].}",
   "STS_KOMACHI_ONOZUKA-COIN_THROW.title": "Coin Throw",
   "STS_KOMACHI_ONOZUKA-COIN_THROW.artist": "Fujy",
+  "STS_KOMACHI_ONOZUKA-COIN_THROW.tlnote": "Copy, not clone (different keyword you'll see later)",
 
 
   "STS_KOMACHI_ONOZUKA-MOVING_DEFEND.description": "Gain {Block:diff()} [gold]Block[/gold].\nFor each enemy whose [gold]Distance[/gold] is {Value1:diff()} or more, add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-MOVING_DEFEND.title": "Moving Defend",
   "STS_KOMACHI_ONOZUKA-MOVING_DEFEND.artist": "でるもち",
+  "STS_KOMACHI_ONOZUKA-MOVING_DEFEND.tlnote": "This is a 'Defend' card, so entrench works on it.",
 
 
   "STS_KOMACHI_ONOZUKA-PROTECTIVE_SANZU_BOAT.description": "[gold]Displace[/gold] by +{Value1}.\nGain {Block:diff()} [gold]Block[/gold].\n[gold]Barrier[/gold] equal to {IfUpgraded:show:double |}the enemy's [gold]Distance[/gold].",
@@ -163,13 +195,15 @@
 
   "STS_KOMACHI_ONOZUKA-WORK_FOCUS.description": "[gold]Exhaust[/gold] 1-{Value1:diff()} cards from your [gold]Hand[/gold]{IfUpgraded:show:, [gold]Draw Pile[/gold], or [gold]Discard Pile[/gold]}.\nFor each card, add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].\nIf an [gold]Upgraded[/gold] card was [gold]Exhausted[/gold] this way, add 1 [gold]Spider Lily[/gold] into your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-WORK_FOCUS.title": "Work Focus",
-  "STS_KOMACHI_ONOZUKA-WORK_FOCUS.artist": "白露/浅葱",
   "STS_KOMACHI_ONOZUKA-WORK_FOCUS.selectionScreenPrompt": "Select cards to [gold]Exhaust[/gold]. If an [gold]Upgraded[/gold] card is [gold]Exhausted[/gold], add 1 [gold]Spider Lily[/gold] into your [gold]Hand[/gold].",
+  "STS_KOMACHI_ONOZUKA-WORK_FOCUS.artist": "白露/浅葱",
+  "STS_KOMACHI_ONOZUKA-WORK_FOCUS.tlnote": "Feel free to make it more poetic. The name is kinda boring in english. Can only add 1 Spider Lily, so the latter part of the effect doesn't care if you exiled 1 or 2 upgraded cards.",
 
 
   "STS_KOMACHI_ONOZUKA-ACCOMPANYING_SPY_SPIRIT.description": "Deal {Damage:diff()} damage.\nWhenever this enemy is [gold]Displaced[/gold], [gold]Barrier[/gold] {Value1:diff()}.",
   "STS_KOMACHI_ONOZUKA-ACCOMPANYING_SPY_SPIRIT.title": "Accompanying Spy Spirit",
   "STS_KOMACHI_ONOZUKA-ACCOMPANYING_SPY_SPIRIT.artist": "Lukesaku",
+  "STS_KOMACHI_ONOZUKA-ACCOMPANYING_SPY_SPIRIT.tlnote": "The Spirit is 'Spying' on the enemy, so it lets you protect yourself better.",
 
 
   "STS_KOMACHI_ONOZUKA-SLICE_OF_HIGAN.description": "Deal {Damage:diff()} damage 2 times.\nWhenever an enemy is [gold]Displaced[/gold], increase this card's damage by {Value1:diff()} for the rest of combat.",
@@ -187,32 +221,39 @@
   "STS_KOMACHI_ONOZUKA-RITUAL_OF_ECSTASY.extraDescription2": "Draw {Value1:diff()} cards.",
   "STS_KOMACHI_ONOZUKA-RITUAL_OF_ECSTASY.title": "Ritual Of Ecstasy",
   "STS_KOMACHI_ONOZUKA-RITUAL_OF_ECSTASY.artist": "Ge DaZuo",
+  "STS_KOMACHI_ONOZUKA-RITUAL_OF_ECSTASY.tlnote": "Soku skill. Invert obviously meaning Distance 1 <-> 5 and Distance 2 <-> 4.",
 
   "STS_KOMACHI_ONOZUKA-EXCHANGE_LIFE.description": "If the enemy's HP is lower than your Max HP, swap your HP with the enemy's, then remove this card from your [gold]Deck[/gold] if your HP increased.\n[gold]When drawn[/gold]: lose {Value1:diff()} HP and gain {Energy:energyIcons()}.",
   "STS_KOMACHI_ONOZUKA-EXCHANGE_LIFE.title": "Exchange Life",
   "STS_KOMACHI_ONOZUKA-EXCHANGE_LIFE.artist": "春酒~",
+  "STS_KOMACHI_ONOZUKA-EXCHANGE_LIFE.tlnote": "Technically not a soku spellcard, but effect is inspired by one. So you can use that or just translate it directly.",
 
   "STS_KOMACHI_ONOZUKA-GRUDGING_STRIKE.description": "Deal {Damage:diff()} damage.\nApply {VengefulSpiritApplication:diff()} [gold]Vengeful Spirits[/gold].\n[gold]Release[/gold] {ReleaseCost:diff()}: Add 1 [gold]Detonate+[/gold] into your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-GRUDGING_STRIKE.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: Add 1 [gold]Detonate+[/gold] into your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-GRUDGING_STRIKE.title": "Grudging Strike",
   "STS_KOMACHI_ONOZUKA-GRUDGING_STRIKE.artist": "北公爵小三",
+  "STS_KOMACHI_ONOZUKA-GRUDGING_STRIKE.tlnote": "Strike Card. I don't even know if Grudging is a real word though.",
 
   "STS_KOMACHI_ONOZUKA-SPIRIT_DEFENSE.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {GuidedApplication:diff()} [gold]Guided Spirits[/gold].",
   "STS_KOMACHI_ONOZUKA-SPIRIT_DEFENSE.title": "Human Spirits Passing By",
   "STS_KOMACHI_ONOZUKA-SPIRIT_DEFENSE.artist": "delant",
+  "STS_KOMACHI_ONOZUKA-SPIRIT_DEFENSE.tlnote": "Soku",
 
   "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.description": "Gain {Block:diff()} [gold]Block[/gold].\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]Optional[/gold]: [gold]Detonate[/gold]. The enemy loses 1 [gold]Strength[/gold] this turn for every {Value2} [gold]Spirits[/gold] [gold]Detonated[/gold].",
   "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.title": "No Hard Feelings",
   "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.artist": "ひでふキタヤン(hidehu kitayan)",
+  "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.artist": "Value2 here is 2, for reference.",
 
   "STS_KOMACHI_ONOZUKA-GRUDGE_OF_THE_DEAD.description": "Whenever [gold]Spirits[/gold] are [gold]Detonated[/gold], gain 1 [gold]Strength[/gold].\nApply {Value1:diff()} [gold]Vengeful Spirit[/gold] to ALL enemies.\n[gold]Optional[/gold]: [gold]Detonate[/gold] ALL enemies.",
   "STS_KOMACHI_ONOZUKA-GRUDGE_OF_THE_DEAD.title": "Grudge Of The Dead",
   "STS_KOMACHI_ONOZUKA-GRUDGE_OF_THE_DEAD.artist": "Chocotti",
+  "STS_KOMACHI_ONOZUKA-GRUDGE_OF_THE_DEAD.tlnote": "Whenever spirits are detonated, not whenever you detonate.",
 
 
   "STS_KOMACHI_ONOZUKA-BOUND_SPIRITS_OF_EARTH.description": "Apply {Value1:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.\nAt the end of your turn, apply {Value2:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies with [gold]Vengeful Spirits[/gold].",
   "STS_KOMACHI_ONOZUKA-BOUND_SPIRITS_OF_EARTH.title": "Bound Spirits Of The Earth",
   "STS_KOMACHI_ONOZUKA-BOUND_SPIRITS_OF_EARTH.artist": "市葉葉市",
+  "STS_KOMACHI_ONOZUKA-BOUND_SPIRITS_OF_EARTH.tlnote": "Soku. The power does nothing on enemies that are clear of spirits.",
 
 
   "STS_KOMACHI_ONOZUKA-GUIDING_SANZU.description": "Gain {Value1:diff()} [gold]Guided Spirits[/gold].",
@@ -222,6 +263,7 @@
   "STS_KOMACHI_ONOZUKA-BOOM_BENEFITS.description": "{AltDescription:choose(0|1):Apply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]Detonate[/gold], then choose:\nGain 1 [gold]Guided Spirit[/gold] for every {Value2} [gold]Spirits[/gold] [gold]Detonated[/gold], or draw 1 card for every {Value3} [gold]Spirits[/gold] [gold]Detonated[/gold].|Gain 1 [gold]Guided Spirits[/gold] for every {Value2} [gold]Spirits[/gold] [gold]Detonated[/gold].|Draw 1 card for every {Value3} [gold]Spirits[/gold] [gold]Detonated[/gold].}",
   "STS_KOMACHI_ONOZUKA-BOOM_BENEFITS.title": "Siren's Bounty",
   "STS_KOMACHI_ONOZUKA-BOOM_BENEFITS.artist": "卯林",
+  "STS_KOMACHI_ONOZUKA-BOOM_BENEFITS.tlnote": "The Siren here is Wakasagihime, since she's in the art. The bounty is the effect. First is the full effect, second and third parts are the decision options.",
 
   "STS_KOMACHI_ONOZUKA-SWEEP.description": "[gold]Displace[/gold] ALL enemies by {Value1:diff()}.\nDeal {Damage:diff()} damage to ALL enemies.\nAdd {Cards:diff()} [gold]Manipulate Distance{Cards:plural:|s}[/gold] into your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-SWEEP.title": "Sweeping Scythe",
@@ -231,52 +273,62 @@
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SWEEP.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: Apply it again.",
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SWEEP.title": "Spirits of the Firm",
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SWEEP.artist": "松岡二",
+  "STS_KOMACHI_ONOZUKA-VENGEFUL_SWEEP.tlnote": "Soku",
 
   "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.description": "Deal {Damage:diff()} damage to ALL enemies.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.\n[gold]Release[/gold] {Value2}: Repeat this card's effects.",
   "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.extraDescription1": "[gold]Release[/gold] {Value2}: Deal {Damage:diff()} damage to ALL enemies.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.",
   "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.title": "Abundant Floating Spirits",
   "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.artist": "ダバデぃ",
+  "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.tlnote": "Sokuer Soku",
 
   "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.description": "Apply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]Release[/gold] {Value2:diff()} or {Value3:diff()}: Gain {Energy:energyIcons()} for every {Value2} [gold]Spirits[/gold] released.",
   "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.extraDescription1": "[gold]Release[/gold] {Value2:diff()}: Gain {Energy:energyIcons()}.",
   "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.extraDescription2": "[gold]Release[/gold] {Value3:diff()}: Gain {Energy:energyIcons()}{Energy:energyIcons()}.",
   "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.title": "Free Trauma?!",
   "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.artist": "hiiroen",
+  "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.tlnote": "The card costs 0 energy. So it's Free. Meant to evoke 'Wow I can apply trauma to my enemies for free? Splendid!'",
 
   "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT.description": "Deal {Damage:diff()} damage.\nApply a [gold]Lonely Bound Spirit[/gold].",
   "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT.title": "Lonely Bound Spirit",
   "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT.artist": "みえはる",
+  "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT.tlnote": "See powers. Also, it's Soku.",
 
 
   "STS_KOMACHI_ONOZUKA-TALKATIVE_FERRYMAN.description": "At the start of your turn, gain {Value1:diff()} [gold]Guided Spirits[/gold].\n[gold]Release[/gold] {Value2:diff()}: At the start of your next turn, gain {Value3:diff()} [gold]Guided Spirits[/gold].",
   "STS_KOMACHI_ONOZUKA-TALKATIVE_FERRYMAN.extraDescription1": "[gold]Release[/gold] {Value2:diff()}: At the start of your next turn, gain {Value3:diff()} [gold]Guided Spirits[/gold].",
   "STS_KOMACHI_ONOZUKA-TALKATIVE_FERRYMAN.title": "Talkative Ferryman",
   "STS_KOMACHI_ONOZUKA-TALKATIVE_FERRYMAN.artist": "tatutaniyuuto",
+  "STS_KOMACHI_ONOZUKA-TALKATIVE_FERRYMAN.tlnote": "Release effect happens for one turn. Main effect happens every turn.",
 
   "STS_KOMACHI_ONOZUKA-FOREVER_CANCELLED.description": "Apply {Value1:diff()} [gold]Vengeful Spirits[/gold].\nWhenever [gold]Spirits[/gold] are [gold]Detonated[/gold], apply [gold]Vengeful Spirits[/gold] equal to 50% the [gold]Detonated[/gold] amount, rounded up, to the same enemy.",
   "STS_KOMACHI_ONOZUKA-FOREVER_CANCELLED.title": "Forever Cancelled",
   "STS_KOMACHI_ONOZUKA-FOREVER_CANCELLED.artist": "Naufal Dreamer",
+  "STS_KOMACHI_ONOZUKA-FOREVER_CANCELLED.tlnote": "Refers to Internet Cancelling. When someone does something problematic and someone cancels them, you know.",
 
 
   "STS_KOMACHI_ONOZUKA-SPIRITUAL_STRIKE.description": "Deal {Damage:diff()} damage.\nApply [gold]Vengeful Spirits[/gold] equal to damage dealt.\nIncrease the duration of the enemy's [gold]Vengeful Spirits[/gold] by 1.",
   "STS_KOMACHI_ONOZUKA-SPIRITUAL_STRIKE.title": "Spiritual Strike",
   "STS_KOMACHI_ONOZUKA-SPIRITUAL_STRIKE.artist": "fuyuno taka",
+  "STS_KOMACHI_ONOZUKA-SPIRITUAL_STRIKE.tlnote": "Strike card. Uses same wording as Necrobinder's Blight Strike",
 
 
   "STS_KOMACHI_ONOZUKA-SPIRIT_CATALYST.description": "Double the enemy's [gold]Vengeful Spirits[/gold].",
   "STS_KOMACHI_ONOZUKA-SPIRIT_CATALYST.title": "Spirit Catalyst",
   "STS_KOMACHI_ONOZUKA-SPIRIT_CATALYST.artist": "hijiwryyyyy",
+  "STS_KOMACHI_ONOZUKA-SPIRIT_CATALYST.tlnote": "Reference to Catalyst from Sts 1, which doubles the enemy's poison.",
 
   "STS_KOMACHI_ONOZUKA-CHAIN_DETONATION.description": "Apply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]Detonate[/gold] the enemy.\nApply [gold]Vengeful Spirits[/gold] equal to the amount [gold]Detonated[/gold].\n[gold]Release[/gold] {Value2:diff()}: [gold]Detonate[/gold] the enemy, again.\n[gold]Release[/gold] {Value3:diff()}: Apply [gold]Vengeful Spirits[/gold] equal to the amount [gold]Detonated[/gold], again.",
   "STS_KOMACHI_ONOZUKA-CHAIN_DETONATION.extraDescription1": "[gold]Release[/gold] {Value2}: [gold]Detonate[/gold], again.",
   "STS_KOMACHI_ONOZUKA-CHAIN_DETONATION.extraDescription2": "[gold]Release[/gold] {Value3}: [gold]Detonate[/gold], then apply [gold]Vengeful Spirits[/gold] equal to the amount [gold]Detonate[/gold], again.",
   "STS_KOMACHI_ONOZUKA-CHAIN_DETONATION.title": "Chain Detonation",
   "STS_KOMACHI_ONOZUKA-CHAIN_DETONATION.artist": "RE_yomawari",
+  "STS_KOMACHI_ONOZUKA-CHAIN_DETONATION.tlnote": "The ', again' here are VERY important. Meant to read as the card writer being annoyed or tired of how many times the effect is repeating.",
 
 
   "STS_KOMACHI_ONOZUKA-RESIDUAL_AETHER.description": "Gain {Energy:energyIcons()}.\n[gold]While in Hand[/gold]: Whenever [gold]Detonation[/gold] happens, increase this card's {energyPrefix:energyIcons(1)} gain by 1.",
   "STS_KOMACHI_ONOZUKA-RESIDUAL_AETHER.title": "Residual Aether",
   "STS_KOMACHI_ONOZUKA-RESIDUAL_AETHER.artist": "chocho (homelessfox)",
+  "STS_KOMACHI_ONOZUKA-RESIDUAL_AETHER.tlnote": "Every time Spirits are detonated, it gives 1 more mana.",
 
 
   "STS_KOMACHI_ONOZUKA-QUICK_NAP.description": "Heal {Heal:diff()} HP.\nNext turn, gain {Energy:energyIcons()}.\nEnd your turn.",
@@ -286,17 +338,20 @@
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_ROAMING_SPIRITS.description": "Deal {CalculatedDamage:diff()} damage. Deals {Value1:diff()} additional damage for each [gold]Vengeful Spirit[/gold] on the enemy.\nIf this kills an enemy, apply its [gold]Vengeful Spirit[/gold] on ALL enemies.",
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_ROAMING_SPIRITS.title": "Scythe of Roaming Spirits",
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_ROAMING_SPIRITS.artist": "yudaoshan",
+  "STS_KOMACHI_ONOZUKA-SCYTHE_OF_ROAMING_SPIRITS.tlnote": "Sokusokusokusoku",
 
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_EXORCISM.description": "Deal {Damage:diff()} damage.\n[gold]Optional[/gold]: [gold]Detonate[/gold]. If {Value1:diff()} or more [gold]Spirits[/gold] were [gold]Detonated[/gold], add 1 [gold]Spider Lily[/gold] into your [gold]Hand[/gold].\n[gold]Release[/gold] {Value2:diff()}: Apply {Value1:diff()} [gold]Vengeful Spirits[/gold] before [gold]Detonation[/gold]. Gain 1 [gold]Artifact[/gold].",
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_EXORCISM.extraDescription1": "[gold]Release[/gold] {Value2:diff()}: Apply {Value1:diff()} [gold]Vengeful Spirits[/gold] before [gold]Detonation[/gold]. Gain 1 [gold]Artifact[/gold].",
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_EXORCISM.title": "Scythe of Exorcism",
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_EXORCISM.artist": "violence kumahina",
+  "STS_KOMACHI_ONOZUKA-SCYTHE_OF_EXORCISM.tlnote": "Can this guy make original card names without relying on soku?",
 
 
   "STS_KOMACHI_ONOZUKA-EYE_OF_THE_STORM.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {Value1:diff()} [gold]Guided Spirits[/gold].\nApply {Value2:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.\n[gold]Release[/gold] {ReleaseCost:diff()}: [gold]Barrier[/gold] {Summon:diff()}.",
-  "STS_KOMACHI_ONOZUKA-EYE_OF_THE_STORM.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: Barrier {Barrier:diff()}.",
+  "STS_KOMACHI_ONOZUKA-EYE_OF_THE_STORM.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: Barrier {Summon:diff()}.",
   "STS_KOMACHI_ONOZUKA-EYE_OF_THE_STORM.title": "Eye of the Storm",
   "STS_KOMACHI_ONOZUKA-EYE_OF_THE_STORM.artist": "cofepig",
+  "STS_KOMACHI_ONOZUKA-EYE_OF_THE_STORM.tlnote": "Eye of the Storm is a common phrase, meaning the middle of a storm is safe.",
 
 
   "STS_KOMACHI_ONOZUKA-DIVINE_PROTECTION.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {Value1:diff()} [gold]Divine Spirits[/gold].\n[gold]Release[/gold] {ReleaseCost:diff()}: Gain {Value1:diff()} more [gold]Divine Spirits[/gold].",
@@ -308,24 +363,28 @@
   "STS_KOMACHI_ONOZUKA-SPIRIT_RETURN.description": "At the start of your turn, add up to 1 card that costs {energyPrefix:energyIcons(1)} or less in your [gold]Exhaust Pile[/gold] into your [gold]Hand[/gold].\nIt gains [gold]Clone[/gold], and is removed from combat when played.",
   "STS_KOMACHI_ONOZUKA-SPIRIT_RETURN.title": "Spirit Return",
   "STS_KOMACHI_ONOZUKA-SPIRIT_RETURN.artist": "Chenwei_21",
+  "STS_KOMACHI_ONOZUKA-SPIRIT_RETURN.tlnote": "See Keywords and card modifiers.",
 
 
   "STS_KOMACHI_ONOZUKA-MINISTRY_WORK.description": "Choose 1 of {Value1:diff()} random cards to add into your [gold]Hand[/gold], then [gold]Exhaust[/gold] the rest.\nGain {Energy:energyIcons()}. Gain {Energy:energyIcons()} at the start of each turn.",
   "STS_KOMACHI_ONOZUKA-MINISTRY_WORK.selectionScreenPrompt": "Choose a card to add to your [gold]Hand[/gold]. The rest are [gold]Exhausted[/gold].",
   "STS_KOMACHI_ONOZUKA-MINISTRY_WORK.title": "Ministry Work",
   "STS_KOMACHI_ONOZUKA-MINISTRY_WORK.artist": "9時",
+  "STS_KOMACHI_ONOZUKA-MINISTRY_WORK.tlnote": "It refunds itself a little then acts like Pyre.",
 
 
   "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Release[/gold] ALL: [gold]Barrier[/gold] equal to the amount of [gold]Spirits[/gold] [gold]Released[/gold].",
   "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER.extraDescription1": "[gold]Release[/gold] ALL: [gold]Barrier[/gold] equal to the amount of [gold]Spirits[/gold] [gold]Released[/gold].",
   "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER.title": "Spirit Protection",
   "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER.artist": "イセ川",
+  "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER.tlnote": "Original name was Spirit Barrier but that name was taken by the Spirit's power. So now it uses protection. Make it same protection as Divine Protection above.",
 
 
   "STS_KOMACHI_ONOZUKA-AFTERLIFE_PASSAGE.description": "[gold]Exhaust[/gold] 1-{Value3:diff()} card(s) from your [gold]Hand[/gold]{IfUpgraded:show: or [gold]Discard Pile[/gold]}.\nFor each card, if it was a [gold]Status[/gold], [gold]Curse[/gold], or [gold]Basic[/gold] card, gain {Value1:diff()} [gold]Guided Spirits[/gold], else, gain {Value2:diff()} [gold]Divine Spirits[/gold].",
   "STS_KOMACHI_ONOZUKA-AFTERLIFE_PASSAGE.selectionScreenPrompt": "[gold]Exhaust[/gold] up to {Value3:diff()} cards.",
   "STS_KOMACHI_ONOZUKA-AFTERLIFE_PASSAGE.title": "Afterlife Passage",
   "STS_KOMACHI_ONOZUKA-AFTERLIFE_PASSAGE.artist": "きつね丸",
+  "STS_KOMACHI_ONOZUKA-AFTERLIFE_PASSAGE.tlnote": "Basics, surprisingly, refer to all your starter cards.",
 
 
   "STS_KOMACHI_ONOZUKA-REAPERS_DUE.description": "For every {Energy:energyIcons()} spent: Gain {Value1:diff()} [gold]Guided Spirits[/gold].\nFor every {Energy2:energyIcons()} spent: Apply {Value2:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.\nFor every {Energy3:energyIcons()} spent: Gain {Value3:diff()} [gold]Divine Spirits[/gold].",
@@ -336,29 +395,34 @@
   "STS_KOMACHI_ONOZUKA-CLOSE_QUARTER_TECHNIQUE.description": "Gain {Block:diff()} [gold]Block[/gold].\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold].\nIf [gold]Distance[/gold] is less than 3, gain {Value3:diff()} [gold]Guided Spirits[/gold], and the enemy loses {Value2:diff()} [gold]Strength[/gold] this turn.",
   "STS_KOMACHI_ONOZUKA-CLOSE_QUARTER_TECHNIQUE.title": "Close Quarter Technique",
   "STS_KOMACHI_ONOZUKA-CLOSE_QUARTER_TECHNIQUE.artist": "ぺろぽねそす",
+  "STS_KOMACHI_ONOZUKA-CLOSE_QUARTER_TECHNIQUE.tlnote": "Effect similar to Sts 1 Watcher's Halt",
 
 
   "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.description": "[gold]Displace[/gold] by up to -{Value1:diff()}.\nApply {Value2:diff()} [gold]Vengeful Spirits[/gold] for every level of [gold]Displacement[/gold].\n[gold]Release[/gold] {ReleaseCost}: Gain 1 [gold]Strength[/gold] this turn for every {Value3:diff()} [gold]Vengeful Spirits[/gold] on the enemy.",
   "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.extraDescription1": "[gold]Release[/gold] {ReleaseCost}: Gain 1 [gold]Strength[/gold] this turn for every {Value3:diff()} [gold]Vengeful Spirits[/gold] on the enemy.",
   "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.title": "Ferriage of the Deep Fog",
   "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.artist": "@evermythic",
+  "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.tlnote": "Another Soku",
 
 
   "STS_KOMACHI_ONOZUKA-SHORT_LIFE_EXPECTANCY.description": "[gold]Release[/gold] {Value1:diff()}: Deal damage equal to 50% of the enemy's HP.{InCombat:\n(Deals {CalculatedDamage:diff()} damage)|}\nIf the target is an [gold]Elite[/gold] or [gold]Boss[/gold], you must [gold]Release[/gold] {Value2:diff()} instead.",
   "STS_KOMACHI_ONOZUKA-SHORT_LIFE_EXPECTANCY.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: Deal damage equal to 50% of the enemy's HP.{InCombat:\n(Deals {CalculatedDamage:diff()} damage)|}",
   "STS_KOMACHI_ONOZUKA-SHORT_LIFE_EXPECTANCY.title": "Short Life Expectancy",
   "STS_KOMACHI_ONOZUKA-SHORT_LIFE_EXPECTANCY.artist": "gibuchoko",
+  "STS_KOMACHI_ONOZUKA-SHORT_LIFE_EXPECTANCY.tlnote": "ANOTHER Soku",
 
 
   "STS_KOMACHI_ONOZUKA-ETHICALLY_SOURCED_BREAK.description": "[gold]Barrier[/gold] {Value1:diff()}.\nHeal {Heal:diff()} HP. Gain {Value2:diff()} [gold]Strength[/gold].\nEnd your turn.\nNext turn, end your turn.\nNext turn after that, gain {Energy:energyIcons()}.",
   "STS_KOMACHI_ONOZUKA-ETHICALLY_SOURCED_BREAK.extraDescription1": "ZZZZzzzzzzzz....",
   "STS_KOMACHI_ONOZUKA-ETHICALLY_SOURCED_BREAK.title": "Ethically Sourced Break",
   "STS_KOMACHI_ONOZUKA-ETHICALLY_SOURCED_BREAK.artist": "Valonad",
+  "STS_KOMACHI_ONOZUKA-ETHICALLY_SOURCED_BREAK.tlnote": "Ethically Sourced is meant to be an excuse Komachi has for sleeping. This skips this turn and the next turn. The Zs are dialogue said when playing the card.",
 
 
   "STS_KOMACHI_ONOZUKA-INFERNO_TEMPEST.description": "[gold]Exhaust[/gold] ALL cards EVERYWHERE. Gain {Value3:diff()} [gold]Divine Spirits[/gold] per [gold]Hand[/gold] card, {Value1:diff()} [gold]Guided Spirit{Value1:plural:|s}[/gold] per [gold]Draw[/gold] card, and apply {Value1:diff()} [gold]Vengeful Spirit{Value1:plural:|s}[/gold] to ALL enemies per [gold]Discard[/gold] card.\nStart of next turn, choose up to {Value2:diff()} non-[gold]Basic[/gold] [gold]Exhausted[/gold] cards to return randomly into the three piles. Then, return all [gold]Basics[/gold] to your [gold]Draw[/gold] pile.",
   "STS_KOMACHI_ONOZUKA-INFERNO_TEMPEST.title": "Souls at the End of The Road",
   "STS_KOMACHI_ONOZUKA-INFERNO_TEMPEST.artist": "東天紅",
+  "STS_KOMACHI_ONOZUKA-INFERNO_TEMPEST.tlnote": "Intentionally big and convoluted card with a big and convoluted name and effect. Sorta a joke card I don't actually know if this card's broken or complete garbage. Its power name is a reference to the yugioh card inferno tempest, which banishes all cards in your deck.",
 
 
 
@@ -371,43 +435,44 @@
   "STS_KOMACHI_ONOZUKA-STRONGEST_SPIRIT.extraDescription1": "[gold]Release[/gold] [blue]{ReleaseCost:diff()}[/blue]: [gold]Exhaust[/gold] your [gold]Hand[/gold]. Attack again for each card [gold]Exhausted[/gold]. If [blue]9[/blue] or more cards were [gold]Exhausted[/gold] this way, gain [blue]{Value2:diff()}[/blue] [gold]Strength[/gold].",
   "STS_KOMACHI_ONOZUKA-STRONGEST_SPIRIT.title": "The Strongest Spirit!",
   "STS_KOMACHI_ONOZUKA-STRONGEST_SPIRIT.artist": "harada (sansei rain)",
+  "STS_KOMACHI_ONOZUKA-STRONGEST_SPIRIT.tlnote": "Spirit as in both ghosts and fighting spirit. The Strongest evokes Cirno, who is in the card art. Also explaining blueing every number in the card. Exhaust effect is same condition as Eidolon.",
 
 
   "STS_KOMACHI_ONOZUKA-EXCHANGE_LIVING_AND_DEAD.description": "[gold]Exhaust[/gold] the top card of your [gold]Draw Pile[/gold]. Add another card of the same type in your [gold]Exhaust Pile[/gold] into your [gold]Hand[/gold]. If there's none, draw {Value1:diff()} cards.",
   "STS_KOMACHI_ONOZUKA-EXCHANGE_LIVING_AND_DEAD.title": "Exchange of the Living and Dead",
-  "STS_KOMACHI_ONOZUKA-EXCHANGE_LIVING_AND_DEAD.artist": "Akyuun",
   "STS_KOMACHI_ONOZUKA-EXCHANGE_LIVING_AND_DEAD.selectionScreenPrompt": "Choose a card to return to your [gold]Hand[/gold].",
+  "STS_KOMACHI_ONOZUKA-EXCHANGE_LIVING_AND_DEAD.artist": "Akyuun",
+  "STS_KOMACHI_ONOZUKA-EXCHANGE_LIVING_AND_DEAD.tlnote": "Not to be confused with Exchange Life. Card type meaning attack, skill, power, etc. Actually forgot is the adding is optional or not. Try to test it. If it's optional, it should say 'you may add another card...'",
 
 
   "STS_KOMACHI_ONOZUKA-GOLD_SARCOPHAGALLEY.description": "[gold]Exhaust[/gold] 1 card from your [gold]Draw Pile[/gold]. At the start of your 2nd turn after this, add that card into your [gold]Hand[/gold] and [gold]Upgrade[/gold] it.",
   "STS_KOMACHI_ONOZUKA-GOLD_SARCOPHAGALLEY.title": "Gold Sarcophagalley",
-  "STS_KOMACHI_ONOZUKA-GOLD_SARCOPHAGALLEY.artist": "Zounose",
   "STS_KOMACHI_ONOZUKA-GOLD_SARCOPHAGALLEY.selectionScreenPrompt": "[gold]Exhaust[/gold] a card. Return it to the hand [gold]Upgraded[/gold] in 2 turns.",
+  "STS_KOMACHI_ONOZUKA-GOLD_SARCOPHAGALLEY.artist": "Zounose",
+  "STS_KOMACHI_ONOZUKA-GOLD_SARCOPHAGALLEY.tlnote": "Reference to the yugioh card 'Gold Sarcophagus'",
 
 
   "STS_KOMACHI_ONOZUKA-TOUR_GUIDE_TO_THE_NETHERWORLD.description": "Draw {Cards:diff()} cards. For each card drawn, activate an effect based on its rarity:\n[gold]Uncommon[/gold]: Gain {Value2:diff()} [gold]Guided Spirits[/gold].\n[gold]Rare[/gold]: Gain {Value3:diff()} [gold]Divine Spirits[/gold].\n[gold]Other[/gold]: Apply {Value1:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.",
   "STS_KOMACHI_ONOZUKA-TOUR_GUIDE_TO_THE_NETHERWORLD.title": "Tour Guide To The NetherWorld",
   "STS_KOMACHI_ONOZUKA-TOUR_GUIDE_TO_THE_NETHERWORLD.artist": "ふんぼ",
+  "STS_KOMACHI_ONOZUKA-TOUR_GUIDE_TO_THE_NETHERWORLD.tlnote": "Reference to the Yugioh card 'Tour Guide from the Underworld'.",
 
 
   "STS_KOMACHI_ONOZUKA-STYGIAN_REEL.description": "Deal {Damage:diff()} damage.\n[gold]Displace[/gold] by -{Value1:diff()}.\nAt the start of this enemy's next turn, [gold]Displace[/gold] by +{Value1:diff()}.",
   "STS_KOMACHI_ONOZUKA-STYGIAN_REEL.title": "Stygian Reel",
   "STS_KOMACHI_ONOZUKA-STYGIAN_REEL.artist": "o11_yori",
+  "STS_KOMACHI_ONOZUKA-STYGIAN_REEL.tlnote": "The river styx of the greek underworld.",
 
 
   "STS_KOMACHI_ONOZUKA-POSSESSED_ARMAMENT.description": "Whenever you deal unblocked attack damage, apply {Value1:diff()} [gold]Vengeful Spirit{Value1:plural:|s}[/gold].",
   "STS_KOMACHI_ONOZUKA-POSSESSED_ARMAMENT.title": "Possessed Armament",
   "STS_KOMACHI_ONOZUKA-POSSESSED_ARMAMENT.artist": "yuuki eishi",
+  "STS_KOMACHI_ONOZUKA-POSSESSED_ARMAMENT.tlnote": "Your weapon gets possessed by Spirits.",
 
 
   "STS_KOMACHI_ONOZUKA-RECURSIVE_SOULS.description": "Whenever a card is [gold]Exhausted[/gold], gain {Value1:diff()} [gold]Guided Spirit{Value1:plural:|s}[/gold].",
   "STS_KOMACHI_ONOZUKA-RECURSIVE_SOULS.title": "Recursive Souls",
   "STS_KOMACHI_ONOZUKA-RECURSIVE_SOULS.artist": "non (nobu)",
-
-
-  "STS_KOMACHI_ONOZUKA-RIVERSIDE_VIEW.description": "{IfUpgraded:show:Add 1 [gold]Spider Lily[/gold] into your [gold]Hand[/gold].\n|}At the start of your turn, if you have no [gold]Spider Lily[/gold] in [gold]Hand[/gold], add 1 into your [gold]Hand[/gold]. \n[gold]Spider Lilies[/gold] only give you 1 [gold]Poison[/gold].",
-  "STS_KOMACHI_ONOZUKA-RIVERSIDE_VIEW.title": "Riverside View",
-  "STS_KOMACHI_ONOZUKA-RIVERSIDE_VIEW.artist": "蒼穹＠葵衣",
 
 
   "STS_KOMACHI_ONOZUKA-STORM_OF_THE_GRIEVING_DEAD.description": "Deal {Damage:diff()} damage X times.\nIf X is 2 or more, add 1 [gold]Spider Lily[/gold] into your [gold]Discard Pile[/gold].",
@@ -418,6 +483,7 @@
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_FORM.description": "{IfUpgraded:show:\nAdd 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].\n|}Close [gold]Distances[/gold] increases damage taken by enemies by a further 100%/50%. Far [gold]Distances[/gold] reduce damage dealt by enemies by a further 15%/30%. The latter is unstackable.",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_FORM.title": "Shukuchi Form",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_FORM.artist": "Xiirus",
+  "STS_KOMACHI_ONOZUKA-SHINIGAMI_FORM.tlnote": "Originally named Shinigami Form but that apparently conflicted with Necrobinder's Reaper Form. Shukuchi was the best alternative word. I don't think it sounds good but it fits thematically. Google it if you don't know what it is.",
 
 
   "STS_KOMACHI_ONOZUKA-PARASITIC_POLLEN.description": "Deal {Damage:diff()} damage {Value1:diff()} times.\n Add 1 [gold]Spider Lily[/gold] into your [gold]Draw Pile[/gold].\nIf you are [gold]Poisoned[/gold], lose {Value2:diff()} [gold]Poison[/gold], then apply double the amount lost.",
@@ -428,42 +494,51 @@
   "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA.description": "Whenever you play a card:\n- If there's a card with the same name in your [gold]Exhaust Pile[/gold], you may add it into your [gold]Hand[/gold].\n- If there's none, create a {Energy:energyIcons()} [gold]Clone[/gold] of it, then [gold]Exhaust[/gold] that [gold]Clone[/gold].\nEach effect can only activate once per turn.",
   "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA.title": "Extinct Fauna of the Sanzu River",
   "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA.artist": "moondisorder",
+  "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA.tlnote": "The Sanzu River is known for having fish that's extinct in the outside world in it. Although the first effect is optional, not using it will still use it up for that turn. The last part is the same wording as yugioh cards' 'You can only use each effect of (card name) once per turn'.",
 
 
   "STS_KOMACHI_ONOZUKA-OASIS.description": "Choose 1 card in your [gold]Discard Pile[/gold] or [gold]Exhaust Pile[/gold].\nAdd a [gold]Clone[/gold] of it into your [gold]Hand[/gold], and [gold]Retain[/gold] it this turn.",
   "STS_KOMACHI_ONOZUKA-OASIS.title": "Oasis of Passing Souls",
-  "STS_KOMACHI_ONOZUKA-OASIS.artist": "kotobuki ryou",
   "STS_KOMACHI_ONOZUKA-OASIS.selectionScreenPrompt": "Choose a card to [gold]Clone[/gold]. It is [gold]Retained[/gold] this turn.",
+  "STS_KOMACHI_ONOZUKA-OASIS.artist": "kotobuki ryou",
+  "STS_KOMACHI_ONOZUKA-OASIS.tlnote": "Reference to the yugioh card 'Oasis of Dragon Souls'.",
 
   "STS_KOMACHI_ONOZUKA-EIKI_FREE_RELEASE.description": "You do not pay the [gold]Release[/gold] costs of cards.",
   "STS_KOMACHI_ONOZUKA-EIKI_FREE_RELEASE.title": "Judgement \"Charge of Virtue\"",
   "STS_KOMACHI_ONOZUKA-EIKI_FREE_RELEASE.artist": "いびつ",
+  "STS_KOMACHI_ONOZUKA-EIKI_FREE_RELEASE.tlnote": "Eiki's charge attack in touhou 9. Technically not a spellcard but I added Judgement sign to it since that's usually what she uses for other spells.",
 
   "STS_KOMACHI_ONOZUKA-TIP_OF_THE_REAPER.description": "Deal {Damage:diff()} damage.\nWhen [gold]Exhausted[/gold]: Add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-TIP_OF_THE_REAPER.title": "Tip Of The Reaper",
   "STS_KOMACHI_ONOZUKA-TIP_OF_THE_REAPER.artist": "ebizome",
+  "STS_KOMACHI_ONOZUKA-TIP_OF_THE_REAPER.tlnote": "Tip as in both edge of a scythe and a bonus 'tip' to workers. If can't do both, pick whichever one you think fits best.",
 
 
   "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.description": "Deal {Damage:diff()} damage.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold].\nWhen [gold]Exhausted[/gold], apply {Value2:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.",
   "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.title": "Ghostrick Shot",
   "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.artist": "怠惰 フミ",
+  "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.tlnote": "Reference to yugioh card of the same name.",
 
   
   "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION.description": "Gain {Value1:diff()} [gold]Guided Spirits[/gold] and {Value2:diff()} [gold]Divine Spirits[/gold].\nWhenever you would [gold]Release[/gold]:\n- Deal damage to ALL enemies equal to the [gold]Guided Spirits[/gold] you would [gold]Release[/gold].\n- [gold]Barrier[/gold] and gain [gold]Block[/gold] equal to the [gold]Divine Spirits[/gold] you would [gold]Release[/gold].",
   "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION.title": "Spirit Invitation",
   "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION.artist": "luke (kyeftss)",
+  "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION.tlnote": "Technically a yugioh card name but it's completely coincidental. The wording should be careful with eiki, in that even though you don't pay release costs with Eiki, you still get this card's effect equal to what you would have paid for the release.",
 
   "STS_KOMACHI_ONOZUKA-QUINTESSENCE.description": "Draw {Cards:diff()} card.\nGain {Energy:energyIcons()}.\nGain {Value1:diff()} [gold]Guided Spirits[/gold].\nGain {Value2:diff()} [gold]Divine Spirits[/gold].",
   "STS_KOMACHI_ONOZUKA-QUINTESSENCE.title": "Quintessence",
   "STS_KOMACHI_ONOZUKA-QUINTESSENCE.artist": "finale inoue",
+  "STS_KOMACHI_ONOZUKA-QUINTESSENCE.artist": "In the Big Bang and Adrenaline genre of cards. It's a 0 cost exhaust do a lot of little stuff.",
 
   
   "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.description": "Gain {Block:diff()} Block.\nNext turn, add a [gold]Spider Lily[/gold] to your Hand. It gains [gold]Ethereal[/gold].",
   "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.title": "Flower Viewing",
   "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.artist": "yuuki tatsuya",
+  "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.tlnote": "The thing that every touhou enjoys doing. And also the title of touhou 9.",
 
   "STS_KOMACHI_ONOZUKA-DOUBLE_HOOKING.description": "Discard 1 card.\nChoose up to 2 cards in your [gold]Exhaust Pile[/gold].\nAdd the 1st into your [gold]Hand[/gold], and the 2nd into your [gold]Discard Pile[/gold]. Reduce their cost to 0{energyPrefix:energyIcons(1)} until played.",
   "STS_KOMACHI_ONOZUKA-DOUBLE_HOOKING.title": "Double Hooking",
+  "STS_KOMACHI_ONOZUKA-DOUBLE_HOOKING.selectionScreenPrompt": "Choose up to 2 cards. The first card is added to your [gold]Hand[/gold], and the second is added to your [gold]Discard Pile[/gold].",
   "STS_KOMACHI_ONOZUKA-DOUBLE_HOOKING.artist": "ニラ玉@",
-  "STS_KOMACHI_ONOZUKA-DOUBLE_HOOKING.selectionScreenPrompt": "Choose up to 2 cards. The first card is added to your [gold]Hand[/gold], and the second is added to your [gold]Discard Pile[/gold]."
+  "STS_KOMACHI_ONOZUKA-DOUBLE_HOOKING.tlnote": "Yugioh card of the same name. Uses same 'until played' wording as rocket punch."
 }

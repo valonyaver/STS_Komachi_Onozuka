@@ -50,7 +50,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             await DistanceCmd.ChooseAndDisplace(choiceContext, cardPlay.Target, this, GetPossibleDisplacements());
 
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                .FromCard(this)
+                .FromCard(this, cardPlay)
                 .Targeting(target)
                 .WithHitFx("vfx/vfx_attack_slash")
                 .Execute(choiceContext);
