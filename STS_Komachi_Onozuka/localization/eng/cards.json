@@ -286,7 +286,7 @@
   "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.extraDescription2": "[gold]Release[/gold] {Value3:diff()}: Gain {Energy:energyIcons()}{Energy:energyIcons()}.",
   "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.title": "Free Trauma?!",
   "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.artist": "hiiroen",
-  "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.tlnote": "The card costs 0 energy. So it's Free. Meant to evoke 'Wow I can apply trauma to my enemies for free? Splendid!'",
+  "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.tlnote": "The card costs 0 energy. So it's Free. Meant to evoke 'Wow I can apply trauma to my enemies for free?! In this economy? Splendid!'",
 
   "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT.description": "Deal {Damage:diff()} damage.\nApply a [gold]Lonely Bound Spirit[/gold].",
   "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT.title": "Lonely Bound Spirit",
@@ -370,7 +370,7 @@
   "STS_KOMACHI_ONOZUKA-MINISTRY_WORK.selectionScreenPrompt": "Choose a card to add to your [gold]Hand[/gold]. The rest are [gold]Exhausted[/gold].",
   "STS_KOMACHI_ONOZUKA-MINISTRY_WORK.title": "Ministry Work",
   "STS_KOMACHI_ONOZUKA-MINISTRY_WORK.artist": "9時",
-  "STS_KOMACHI_ONOZUKA-MINISTRY_WORK.tlnote": "It refunds itself a little then acts like Pyre.",
+  "STS_KOMACHI_ONOZUKA-MINISTRY_WORK.tlnote": "It refunds itself a little then acts like Pyre. Name refers to the Ministry of Right and Wrong, where Komachi works at.",
 
 
   "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Release[/gold] ALL: [gold]Barrier[/gold] equal to the amount of [gold]Spirits[/gold] [gold]Released[/gold].",
@@ -523,7 +523,7 @@
   "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION.description": "Gain {Value1:diff()} [gold]Guided Spirits[/gold] and {Value2:diff()} [gold]Divine Spirits[/gold].\nWhenever you would [gold]Release[/gold]:\n- Deal damage to ALL enemies equal to the [gold]Guided Spirits[/gold] you would [gold]Release[/gold].\n- [gold]Barrier[/gold] and gain [gold]Block[/gold] equal to the [gold]Divine Spirits[/gold] you would [gold]Release[/gold].",
   "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION.title": "Spirit Invitation",
   "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION.artist": "luke (kyeftss)",
-  "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION.tlnote": "Technically a yugioh card name but it's completely coincidental. The wording should be careful with eiki, in that even though you don't pay release costs with Eiki, you still get this card's effect equal to what you would have paid for the release.",
+  "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION.tlnote": "Technically a yugioh card name but it's completely coincidental. The wording should be careful with eiki, in that even though you don't pay release costs with Eiki, you still get this card's effect equal to what you would have paid for the release. The card itself I only made because the art work was too cool and screamed the name 'spirit invitation' to me. Give it a name that fits the art work if possible..",
 
   "STS_KOMACHI_ONOZUKA-QUINTESSENCE.description": "Draw {Cards:diff()} card.\nGain {Energy:energyIcons()}.\nGain {Value1:diff()} [gold]Guided Spirits[/gold].\nGain {Value2:diff()} [gold]Divine Spirits[/gold].",
   "STS_KOMACHI_ONOZUKA-QUINTESSENCE.title": "Quintessence",

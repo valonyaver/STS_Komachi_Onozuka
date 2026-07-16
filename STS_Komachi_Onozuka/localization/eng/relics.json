@@ -14,7 +14,7 @@
   "STS_KOMACHI_ONOZUKA-RED_TITANIC.description": "At the start of combat, add a [gold]Manipulate Distance[/gold] and a [gold]Spider Lily[/gold] to your [gold]Hand[/gold], then add 3 [gold]Spider Lilies[/gold] into your [gold]Discard Pile[/gold]. At the end of combat, heal HP equal to the damage you took from life loss this combat. (Heal {Heal} HP)",
   "STS_KOMACHI_ONOZUKA-RED_TITANIC.flavor": "The chaotic blooming of the [red]Red Spider Lily[/red],\nis the measure of my workload.\nIf you're going to interfere with my work, then I'll show no mercy!",
   "STS_KOMACHI_ONOZUKA-RED_TITANIC.title": "Red Titanic",
-  "STS_KOMACHI_ONOZUKA-RED_TITANIC.tlnote": "Dialogue with Sakuya in touhou 9. Red Titanic as in it's filled with Red Spider Lilies. You can get creative with the name if you want.",
+  "STS_KOMACHI_ONOZUKA-RED_TITANIC.tlnote": "Dialogue with Sakuya in touhou 9. Red Titanic as in it's filled with Red Spider Lilies. You can get creative with the name if you want. Restores life lost from direct life loss, mainly for Spider Lily's poison.",
 
   
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.description": "At the start of each combat, gain [blue]{DexterityPower}[/blue] [gold]Dexterity[/gold]. At the end of your third turn, lose [blue]{DexterityPower}[/blue] [gold]Dexterity[/gold] and apply [blue]{VulnerablePower}[/blue] [gold]Vulnerable[/gold] to ALL enemies.",
