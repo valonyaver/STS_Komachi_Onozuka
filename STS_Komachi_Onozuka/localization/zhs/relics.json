@@ -1,18 +1,18 @@
 ﻿{  
-  "STS_KOMACHI_ONOZUKA-THE_TITANIC.description": "在战斗开始时，将1张[gold]操控距离[/gold]加入你的[gold]手牌[/gold]。在你的第三回合开始时，将1张[gold]彼岸花[/gold]加入你的[gold]手牌[/gold]。",
+  "STS_KOMACHI_ONOZUKA-THE_TITANIC.description": "战斗开始时，将[blue]1[/blue]张[gold]操纵距离[/gold]加入你的[gold]手牌[/gold]。你的第[blue]3[/blue]回合开始时，将[blue]1[/blue]张[gold]彼岸花[/gold]加入你的[gold]手牌[/gold]。",
   "STS_KOMACHI_ONOZUKA-THE_TITANIC.flavor": "彼岸豪华渡轮，跨越彼岸海岸！限时九折优惠！",
   "STS_KOMACHI_ONOZUKA-THE_TITANIC.title": "泰坦尼克号",
 
-  "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.description": "在战斗开始时，将1张[gold]操控距离[/gold]加入你的[gold]手牌[/gold]，并获得{Value1}层[gold]导灵[/gold]。在你的第三回合开始时，将1张[gold]彼岸花[/gold]加入你的[gold]手牌[/gold]。每当一名非爪牙敌人死亡时，获得{Gold}金币。",
+  "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.description": "战斗开始时，将[blue]1[/blue]张[gold]操纵距离[/gold]加入你的[gold]手牌[/gold]，并获得{Value1}层[gold]引灵[/gold]。你的第[blue]3[/blue]回合开始时，将[blue]1[/blue]张[gold]彼岸花[/gold]加入你的[gold]手牌[/gold]。每当一名非爪牙敌人死亡时，获得{Gold}金币。",
   "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.flavor": "知道了，如果说要阻碍我工作的话，就用我的泰坦尼克号运你过去吧。\n以半价服务。",
   "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.title": "商用泰坦尼克号",
 
-  "STS_KOMACHI_ONOZUKA-RED_TITANIC.description": "在战斗开始时，将1张[gold]操控距离[/gold]和1张[gold]彼岸花[/gold]加入你的[gold]手牌[/gold]，然后将3张[gold]彼岸花[/gold]加入你的[gold]弃牌堆[/gold]。在战斗结束时，回复等同于本场战斗中因生命流失而损失的生命值。（回复{Heal}点生命）",
+  "STS_KOMACHI_ONOZUKA-RED_TITANIC.description": "战斗开始时，将[blue]1[/blue]张[gold]操纵距离[/gold]和[blue]1[/blue]张[gold]彼岸花[/gold]加入你的[gold]手牌[/gold]，然后将3张[gold]彼岸花[/gold]加入你的[gold]弃牌堆[/gold]。战斗结束时，回复本场战斗中所有因生命流失而失去的生命。（回复{Heal}点生命）",
   "STS_KOMACHI_ONOZUKA-RED_TITANIC.flavor": "这发疯似的到处绽放的[red]彼岸花[/red]，\n是表现我工作繁忙程度的计数器。\n要是妨碍我工作的话，我绝不轻饶！",
   "STS_KOMACHI_ONOZUKA-RED_TITANIC.title": "彼岸泰坦尼克号",
 
 
-  "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.description": "在每场战斗开始时，获得[blue]{DexterityPower}[/blue]点[gold]敏捷[/gold]。在你的第三回合结束时，失去[blue]{DexterityPower}[/blue]点[gold]敏捷[/gold]，并对所有敌人施加[blue]{VulnerablePower}[/blue]层[gold]易伤[/gold]。",
-  "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.flavor": "据她自述，她拥有能看见他人寿命的死神之眼。",
+  "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.description": "在每场战斗开始时，获得[blue]{DexterityPower}[/blue]点[gold]敏捷[/gold]。在你的第[blue]3[/blue]回合结束时，失去[blue]{DexterityPower}[/blue]点[gold]敏捷[/gold]，并给予所有敌人[blue]{VulnerablePower}[/blue]层[gold]易伤[/gold]。",
+  "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.flavor": "以剩余寿命的一半为代价，你就能获得在看到他人的脸时看到其姓名和剩余寿命的能力。",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.title": "死神之眼"
 }

@@ -1,8 +1,8 @@
 ﻿{
-  "STS_KOMACHI_ONOZUKA-GUIDED_SPIRIT_POTION.description": "获得{GuidedSpiritPower}层[gold]导灵[/gold]。",
+  "STS_KOMACHI_ONOZUKA-GUIDED_SPIRIT_POTION.description": "获得{GuidedSpiritPower}层[gold]引灵[/gold]。",
   "STS_KOMACHI_ONOZUKA-GUIDED_SPIRIT_POTION.title": "灵之瓮",
 
-  "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POTION.description": "施加{VengefulSpiritPower}层[gold]怨灵[/gold]。",
+  "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POTION.description": "给予{VengefulSpiritPower}层[gold]怨灵[/gold]。",
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POTION.title": "怨之瓮",
 
 
@@ -17,6 +17,6 @@
   "STS_KOMACHI_ONOZUKA-LILY_WHITE_POTION.description": "回复你最大生命值的{Heal}%。获得{Energy:energyIcons()}。",
   "STS_KOMACHI_ONOZUKA-LILY_WHITE_POTION.title": "瓶中之春",
 
-  "STS_KOMACHI_ONOZUKA-DISPLACEMENT_POTION.description": "将{Cards}张[gold]操控距离[/gold]加入你的[gold]手牌[/gold]。",
+  "STS_KOMACHI_ONOZUKA-DISPLACEMENT_POTION.description": "将{Cards}张[gold]操纵距离[/gold]加入你的[gold]手牌[/gold]。",
   "STS_KOMACHI_ONOZUKA-DISPLACEMENT_POTION.title": "位移药水"
 }
