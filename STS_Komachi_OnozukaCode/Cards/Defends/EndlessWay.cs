@@ -43,7 +43,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
             CardModel? chosen = await ReleaseCmd.ChooseRelease(choiceContext, this, ReleaseCost, Value3);
 
-            await CreatureCmd.LoseBlock(cardPlay.Target, cardPlay.Target.Block);
+            await CreatureCmd.LoseBlock(choiceContext, cardPlay.Target, cardPlay.Target.Block, Owner.Creature);
 
             // Displacement happens before block for certain powers that care about it.
             await DistanceCmd.Displace(choiceContext, cardPlay.Target, Value1, Owner.Creature, this);

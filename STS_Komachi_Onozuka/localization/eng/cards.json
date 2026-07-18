@@ -481,7 +481,7 @@
 
 
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_FORM.description": "{IfUpgraded:show:\nAdd 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].\n|}Close [gold]Distances[/gold] increases damage taken by enemies by a further 100%/50%. Far [gold]Distances[/gold] reduce damage dealt by enemies by a further 15%/30%. The latter is unstackable.",
-  "STS_KOMACHI_ONOZUKA-SHINIGAMI_FORM.title": "Shukuchi Form",
+  "STS_KOMACHI_ONOZUKA-SHINIGAMI_FORM.title": "Shinigami Form",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_FORM.artist": "Xiirus",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_FORM.tlnote": "Originally named Shinigami Form but that apparently conflicted with Necrobinder's Reaper Form. Shukuchi was the best alternative word. I don't think it sounds good but it fits thematically. Google it if you don't know what it is.",
 
