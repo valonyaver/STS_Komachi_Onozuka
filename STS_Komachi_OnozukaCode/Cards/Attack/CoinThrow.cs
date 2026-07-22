@@ -41,7 +41,6 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if (CombatState == null) return;
-
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).TargetingAllOpponents(base.CombatState)
             .WithDanmaku(patterns)
             .WithHitFx("vfx/vfx_attack_blunt", null, "heavy_attack.mp3")
@@ -56,6 +55,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
                 copy.AddKeyword(CardKeyword.Ethereal);
                 await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Hand, Owner);
             }
+            
         }
 
         protected override void OnUpgrade()
@@ -66,6 +66,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
 
         public override List<DanmakuPiece> patterns =>
             [
+                // Original
                 new DanmakuPiece
                 {
                     SpritePath = "coin.png".BulletImagePath(),
@@ -79,6 +80,37 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
                     LifeSeconds = 3f,
                     BulletColor = StsColors.gold,
                 }
+
+                // For testing
+                //new DanmakuPiece
+                //{
+                //    SpritePath = "bullets/timestopLaser.tscn".ScenePath(),
+                //    IsLaser = true,
+                //    Group = 1,
+                //    GIntervalSeconds = 0.1f,
+                //    WayCount = new GrowthValue {Base = 1},
+                //    GAngle = new GrowthValue(0),
+                //    Scale = 1f,
+                //    LifeSeconds = 3f,
+                //    BulletColor = StsColors.red,
+                //    HitAmount = 5,
+                //    HitIntervalSeconds = 0.2f
+                //},
+                //new DanmakuPiece
+                //{
+                //    SpritePath = "coin.png".BulletImagePath(),
+                //    StartTimeSeconds = 1f,
+                //    Group = 1,
+                //    GIntervalSeconds = 0.1f,
+                //    WayCount = new GrowthValue {Base = 1},
+                //    GAngle = new GrowthValue(0),
+                //    StartSpeed = 14f,
+                //    Scale = 0.5f,
+                //    LifeSeconds = 3f,
+                //    BulletColor = StsColors.gold,
+                //    TrailEnabled = true,
+                //    GatesDamage = true,
+                //}
             ];
     }
 }

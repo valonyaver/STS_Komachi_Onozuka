@@ -14,29 +14,32 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
         public required string SpritePath;
 
         /// <summary>
-        /// How many times bullets are shot.
-        /// </summary>
-        public int Group = 1;
-        /// <summary>
-        /// Interval between each group of bullets
-        /// </summary>
-        public float GIntervalSeconds = 0.1f;
-
-        /// <summary>Bullets per group. Rounded to int at use time.</summary>
-        public GrowthValue WayCount = 1f;
-
-        public GrowthValue GAngle = 0f;   // center angle of the group's spread, degrees
-        public GrowthValue Range = 0f;    // total spread width across WayCount bullets, degrees
-        public GrowthValue Scale = 1f;    // 0 is treated as 1, matching the guide's convention
-
-        /// <summary>
         /// Time until pattern starts
         /// </summary>
         public float StartTimeSeconds = 0f;
         /// <summary>
         /// Lifetime of bullet
         /// </summary>
-        public float LifeSeconds = 5f;   
+        public GrowthValue LifeSeconds = 5f;
+        /// <summary>
+        /// How many times bullets are shot.
+        /// </summary>
+        public int Group = 1;
+        /// <summary>
+        /// Interval between each group of bullets
+        /// </summary>
+        public GrowthValue GIntervalSeconds = 0.1f;
+
+        /// <summary>Bullets per group. Rounded to int at use time.</summary>
+        public GrowthValue WayCount = 1f;
+
+        public GrowthValue GAngle = 0f;   // center angle of the group's spread, degrees
+        public GrowthValue Range = 0f;    // total spread width across WayCount bullets, degrees
+        public GrowthValue Scale = 1f;    // 0 is treated as 1
+
+        public bool IsLaser = false;
+        public float LaserWidthPixels = 80f;
+
 
         /// <summary>
         /// 1 speed unit = 100 px/s. Speed 7.5 crosses the ~750px average gap in ~1s.
@@ -100,6 +103,17 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
         /// If hitamount reaches 0, the bullet will not die.
         /// </summary>
         public bool ZeroHitNotDie = false;
+
+        /// <summary>
+        /// SFX played each time this piece's bullet/laser lands a hit. Null = no sfx.
+        /// </summary>
+        public string? OnHitSfx = null;
+
+        /// <summary>
+        /// If true, the struck creature plays its hit/flinch reaction animation each time
+        /// this piece's bullet or laser connects.
+        /// </summary>
+        public bool OnHitAnimation = false;
         /// <summary>
         /// Events :)
         /// </summary>
@@ -147,7 +161,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
         public float PerWay;
         public Func<int, int, float>? CustomFunc;
 
-        public float Evaluate(int groupId, int wayId)
+        public float Evaluate(int groupId = 0, int wayId = 0)
             => CustomFunc?.Invoke(groupId, wayId) ?? Base + PerGroup * groupId + PerWay * wayId;
 
         public static implicit operator GrowthValue(float constant) => new() { Base = constant };
@@ -188,5 +202,25 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
             if (mode == FastModeType.Instant) return 2f; // Change later if needded
             return 1f;
         }
+    }
+
+    public class DanmakuSlashConfig
+    {
+        public required string SpritePath;
+        public float Scale = 1f;
+        public int BulletCount = 20;
+        public float SweepDurationSeconds = 0.4f;
+        /// <summary>How many consecutively-spawned bullets are alive at once — this is what
+        /// derives lifetime from spawn cadence.</summary>
+        public int VisibleBulletWindow = 10;
+        public int HitAmount = 2;
+        public float HitIntervalFractionOfLifetime = 0.9f;
+        public bool SpawnShards = true;
+        public Color Tint = Colors.White;
+        /// <summary>Optional small drift along the slash direction after spawning — 0 keeps
+        /// bullets stationary, relying purely on sequential spawn position for the sweep
+        /// motion, which is what your description implies. Bump this up only if a static
+        /// point-cloud reads as too flat once you see it in-game.</summary>
+        public float BulletDriftSpeed = 0f;
     }
 }

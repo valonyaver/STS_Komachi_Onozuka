@@ -44,11 +44,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             if (CombatState == null) return;
 
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target)
-                .WithDanmaku(patterns)
             .WithHitFx("vfx/vfx_attack_slash", null)
+            .WithDanmaku(patterns)
             .Execute(choiceContext);
             await CardPileCmd.Draw(choiceContext, Owner);
-
             var mandist = CombatState.CreateCard<ManipulateDistanceToken>(Owner);
             await CardPileCmd.AddGeneratedCardToCombat(mandist, PileType.Hand, Owner);
         }
@@ -76,7 +75,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
                     // 0 degrees is Right. If the leaves "Pass" top-to-bottom, 
                     // you might want them to fly horizontally while the "Wave" moves down.
                     GAngle = new GrowthValue { CustomFunc = (g, w) => GD.Randf() * 360f },
-                    StartSpeed = 5f,
+                    StartSpeed = 8f,
         
                     // This adds a "flutter" so they don't look like rigid bullets
                     //StartAccAngle = new GrowthValue { CustomFunc = (g, w) => (GD.Randf() - 0.5f) * 60f },
@@ -94,7 +93,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
                     RootType = DanmakuRootType.Target, // Spawns on the enemy
                     StartTimeSeconds = 0.300f,
                     Group = 1,
-                    Radius = 50,                     
+                    Radius = 0,                     
                     GAngle = new GrowthValue { CustomFunc = (g, w) => GD.Randf() * 360f },   
                     StartSpeed = 10f,
                     Scale = 0.6f,

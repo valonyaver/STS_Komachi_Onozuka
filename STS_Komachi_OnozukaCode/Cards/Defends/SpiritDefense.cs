@@ -20,7 +20,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         public SpiritDefense() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
         {
             WithBlock(6, 1);
-            WithPower<GuidedSpiritPower>(nameof(GuidedApplication), 3, 2);
+            WithPower<GuidedSpiritPower>(nameof(GuidedApplication), 3, 1);
         }
 
         public int GuidedApplication

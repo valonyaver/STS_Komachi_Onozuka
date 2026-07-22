@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://7rbts04lm6lb"]
+
+[ext_resource type="Shader" uid="uid://cs600nipsweij" path="res://STS_Komachi_Onozuka/scenes/danmaku/darkenOverlay/darken_overlay.gdshader" id="1_253sl"]
+[ext_resource type="Script" uid="uid://di5k6nthbd5ot" path="res://STS_Komachi_OnozukaCode/Danmaku/Nodes/NDanmakuDarkenOverlay.cs" id="1_tpirt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tpirt"]
+shader = ExtResource("1_253sl")
+shader_parameter/origin_screen_pos = Vector2(0, 0)
+shader_parameter/front_radius = 0.0
+shader_parameter/front_softness = 120.0
+shader_parameter/intensity = 1.0
+shader_parameter/darken_color = Color(0, 0, 0, 0.5)
+
+[node name="DarkenOverlay" type="Node2D"]
+script = ExtResource("1_tpirt")
+
+[node name="Rect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_tpirt")
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.5019608)

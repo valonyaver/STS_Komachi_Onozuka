@@ -32,7 +32,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             // Spirits applied
             WithPower<VengefulSpiritPower>(nameof(Value1), 2, 1);
             // Release cost 1
-            WithVar(nameof(Value2), 4, -1);
+            WithVar(nameof(ReleaseCost), 4, -1);
             // Release cost 2
             WithVar(nameof(Value3), 8, -2);
 
@@ -45,17 +45,17 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         {
             if (CombatState == null) return;
 
-            CardModel? chosen = await ReleaseCmd.ChooseRelease(choiceContext, this, Value2, Value3);
+            CardModel? chosen = await ReleaseCmd.ChooseRelease(choiceContext, this, ReleaseCost, Value3);
 
             await PowerCmd.Apply<VengefulSpiritPower>(choiceContext, cardPlay.Target, Value1, base.Owner.Creature, this);
 
 
 
-            if (ReleaseCmd.ChoseRelease(chosen, Value2, Value3, out var cost))
+            if (ReleaseCmd.ChoseRelease(chosen, ReleaseCost, Value3, out var cost))
             {
                 await ReleaseCmd.Release(choiceContext, Owner.Creature, cost, this);
 
-                await PlayerCmd.GainEnergy(cost / Value2, Owner);
+                await PlayerCmd.GainEnergy(cost / ReleaseCost, Owner);
             }
         }
     }

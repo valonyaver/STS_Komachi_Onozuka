@@ -92,5 +92,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions
         {
             return Path.Join(MainFile.ResPath, "images", "charui", path);
         }
+
+        public static string SoundEffectPath(this string path)
+        {
+            return Path.Join(MainFile.ResPath, "sounds", path);
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Godot;
+using Godot;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using System;
 using System.Collections.Generic;
@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Minions
 {
 
-    [GlobalClass]
-    public partial class DivineSpiritNCreatureVisuals : NCreatureVisuals
-    {
+	[GlobalClass]
+	public partial class DivineSpiritNCreatureVisuals : NCreatureVisuals
+	{
 
-    }
+	}
 }

@@ -1,0 +1,6 @@
+7/23
+- All cards with release costs should now glow when you can pay their release cost.
+- Short Life Expectancy now has an animation.
+- Fixed a bug with Siren's bounty not granting additional effects on enemy death.
+- Fixed some localization issues.
+- Accompanying Spy Spirit is now a debuff rather than a buff.

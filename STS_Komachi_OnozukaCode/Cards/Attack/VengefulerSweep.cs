@@ -31,7 +31,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             // Spirits applied
             WithPower<VengefulSpiritPower>(nameof(Value1), 4, 2);
             // Release cost
-            WithVar(nameof(Value2), 8);
+            WithVar(nameof(ReleaseCost), 8);
             WithKeyword(KomachiKeywords.Release);
         }
 
@@ -40,7 +40,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             
             if (CombatState == null) return;
 
-            CardModel? chosen = await ReleaseCmd.ChooseRelease(choiceContext, this, Value2);
+            CardModel? chosen = await ReleaseCmd.ChooseRelease(choiceContext, this, ReleaseCost);
 
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).TargetingAllOpponents(base.CombatState)
             .WithHitFx("vfx/vfx_attack_blunt", null, "heavy_attack.mp3")
@@ -54,7 +54,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
 
             if (ReleaseCmd.ChoseRelease(chosen))
             {
-                await ReleaseCmd.Release(choiceContext, Owner.Creature, Value2, this);
+                await ReleaseCmd.Release(choiceContext, Owner.Creature, ReleaseCost, this);
 
                 await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).TargetingAllOpponents(base.CombatState)
                 .WithHitFx("vfx/vfx_attack_blunt", null, "heavy_attack.mp3")

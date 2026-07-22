@@ -29,7 +29,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         {
             WithDamage(14, 4);
             // Release cost
-            WithVar(nameof(Value2), 4, -1);
+            WithVar(nameof(ReleaseCost), 4, -1);
             WithKeyword(KomachiKeywords.Release);
             WithKeyword(KomachiKeywords.Detonate);
             WithTip(typeof(SpiderLily));
@@ -43,10 +43,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             
             if (CombatState == null) return;
 
-            CardModel? chosen = await ReleaseCmd.ChooseRelease(choiceContext, this, Value2);
+            CardModel? chosen = await ReleaseCmd.ChooseRelease(choiceContext, this, ReleaseCost);
             if (ReleaseCmd.ChoseRelease(chosen))
             {
-                await ReleaseCmd.Release(choiceContext, Owner.Creature, Value2, this);
+                await ReleaseCmd.Release(choiceContext, Owner.Creature, ReleaseCost, this);
 
                 await PowerCmd.Apply<VengefulSpiritPower>(choiceContext, cardPlay.Target, Value1, Owner.Creature, this);
                 await PowerCmd.Apply<ArtifactPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);

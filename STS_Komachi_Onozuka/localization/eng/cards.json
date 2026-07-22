@@ -63,7 +63,7 @@
 
   "STS_KOMACHI_ONOZUKA-MOVE_AND_SHOOT.description": "[gold]Optional[/gold]: [gold]Displace[/gold] by up to +/-{Value1:diff()}.\nDeal {Damage:diff()} damage.",
   "STS_KOMACHI_ONOZUKA-MOVE_AND_SHOOT.title": "Move And Shoot",
-  "STS_KOMACHI_ONOZUKA-MOVE_AND_SHOOT.artist": "Note: This is a test card",
+  "STS_KOMACHI_ONOZUKA-MOVE_AND_SHOOT.artist": "sakimiya@土曜つ28a",
   "STS_KOMACHI_ONOZUKA-MOVE_AND_SHOOT.tlnote": "Like the above but opposite. Will probably be put in the trash heap event.",
 
 
@@ -242,7 +242,7 @@
   "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.description": "Gain {Block:diff()} [gold]Block[/gold].\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]Optional[/gold]: [gold]Detonate[/gold]. The enemy loses 1 [gold]Strength[/gold] this turn for every {Value2} [gold]Spirits[/gold] [gold]Detonated[/gold].",
   "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.title": "No Hard Feelings",
   "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.artist": "ひでふキタヤン(hidehu kitayan)",
-  "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.artist": "Value2 here is 2, for reference.",
+  "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.tlnote": "Value2 here is 2, for reference.",
 
   "STS_KOMACHI_ONOZUKA-GRUDGE_OF_THE_DEAD.description": "Whenever [gold]Spirits[/gold] are [gold]Detonated[/gold], gain 1 [gold]Strength[/gold].\nApply {Value1:diff()} [gold]Vengeful Spirit[/gold] to ALL enemies.\n[gold]Optional[/gold]: [gold]Detonate[/gold] ALL enemies.",
   "STS_KOMACHI_ONOZUKA-GRUDGE_OF_THE_DEAD.title": "Grudge Of The Dead",
@@ -275,14 +275,14 @@
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SWEEP.artist": "松岡二",
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SWEEP.tlnote": "Soku",
 
-  "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.description": "Deal {Damage:diff()} damage to ALL enemies.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.\n[gold]Release[/gold] {Value2}: Repeat this card's effects.",
-  "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.extraDescription1": "[gold]Release[/gold] {Value2}: Deal {Damage:diff()} damage to ALL enemies.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.",
+  "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.description": "Deal {Damage:diff()} damage to ALL enemies.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.\n[gold]Release[/gold] {ReleaseCost}: Repeat this card's effects.",
+  "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.extraDescription1": "[gold]Release[/gold] {ReleaseCost}: Deal {Damage:diff()} damage to ALL enemies.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.",
   "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.title": "Abundant Floating Spirits",
   "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.artist": "ダバデぃ",
   "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.tlnote": "Sokuer Soku",
 
-  "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.description": "Apply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]Release[/gold] {Value2:diff()} or {Value3:diff()}: Gain {Energy:energyIcons()} for every {Value2} [gold]Spirits[/gold] released.",
-  "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.extraDescription1": "[gold]Release[/gold] {Value2:diff()}: Gain {Energy:energyIcons()}.",
+  "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.description": "Apply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]Release[/gold] {ReleaseCost:diff()} or {Value3:diff()}: Gain {Energy:energyIcons()} for every {Value2} [gold]Spirits[/gold] released.",
+  "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: Gain {Energy:energyIcons()}.",
   "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.extraDescription2": "[gold]Release[/gold] {Value3:diff()}: Gain {Energy:energyIcons()}{Energy:energyIcons()}.",
   "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.title": "Free Trauma?!",
   "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.artist": "hiiroen",
@@ -294,8 +294,8 @@
   "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT.tlnote": "See powers. Also, it's Soku.",
 
 
-  "STS_KOMACHI_ONOZUKA-TALKATIVE_FERRYMAN.description": "At the start of your turn, gain {Value1:diff()} [gold]Guided Spirits[/gold].\n[gold]Release[/gold] {Value2:diff()}: At the start of your next turn, gain {Value3:diff()} [gold]Guided Spirits[/gold].",
-  "STS_KOMACHI_ONOZUKA-TALKATIVE_FERRYMAN.extraDescription1": "[gold]Release[/gold] {Value2:diff()}: At the start of your next turn, gain {Value3:diff()} [gold]Guided Spirits[/gold].",
+  "STS_KOMACHI_ONOZUKA-TALKATIVE_FERRYMAN.description": "At the start of your turn, gain {Value1:diff()} [gold]Guided Spirits[/gold].\n[gold]Release[/gold] {ReleaseCost:diff()}: At the start of your next turn, gain {Value3:diff()} [gold]Guided Spirits[/gold].",
+  "STS_KOMACHI_ONOZUKA-TALKATIVE_FERRYMAN.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: At the start of your next turn, gain {Value3:diff()} [gold]Guided Spirits[/gold].",
   "STS_KOMACHI_ONOZUKA-TALKATIVE_FERRYMAN.title": "Talkative Ferryman",
   "STS_KOMACHI_ONOZUKA-TALKATIVE_FERRYMAN.artist": "tatutaniyuuto",
   "STS_KOMACHI_ONOZUKA-TALKATIVE_FERRYMAN.tlnote": "Release effect happens for one turn. Main effect happens every turn.",
@@ -317,8 +317,8 @@
   "STS_KOMACHI_ONOZUKA-SPIRIT_CATALYST.artist": "hijiwryyyyy",
   "STS_KOMACHI_ONOZUKA-SPIRIT_CATALYST.tlnote": "Reference to Catalyst from Sts 1, which doubles the enemy's poison.",
 
-  "STS_KOMACHI_ONOZUKA-CHAIN_DETONATION.description": "Apply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]Detonate[/gold] the enemy.\nApply [gold]Vengeful Spirits[/gold] equal to the amount [gold]Detonated[/gold].\n[gold]Release[/gold] {Value2:diff()}: [gold]Detonate[/gold] the enemy, again.\n[gold]Release[/gold] {Value3:diff()}: Apply [gold]Vengeful Spirits[/gold] equal to the amount [gold]Detonated[/gold], again.",
-  "STS_KOMACHI_ONOZUKA-CHAIN_DETONATION.extraDescription1": "[gold]Release[/gold] {Value2}: [gold]Detonate[/gold], again.",
+  "STS_KOMACHI_ONOZUKA-CHAIN_DETONATION.description": "Apply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]Detonate[/gold] the enemy.\nApply [gold]Vengeful Spirits[/gold] equal to the amount [gold]Detonated[/gold].\n[gold]Release[/gold] {ReleaseCost:diff()}: [gold]Detonate[/gold] the enemy, again.\n[gold]Release[/gold] {Value3:diff()}: Apply [gold]Vengeful Spirits[/gold] equal to the amount [gold]Detonated[/gold], again.",
+  "STS_KOMACHI_ONOZUKA-CHAIN_DETONATION.extraDescription1": "[gold]Release[/gold] {ReleaseCost}: [gold]Detonate[/gold], again.",
   "STS_KOMACHI_ONOZUKA-CHAIN_DETONATION.extraDescription2": "[gold]Release[/gold] {Value3}: [gold]Detonate[/gold], then apply [gold]Vengeful Spirits[/gold] equal to the amount [gold]Detonate[/gold], again.",
   "STS_KOMACHI_ONOZUKA-CHAIN_DETONATION.title": "Chain Detonation",
   "STS_KOMACHI_ONOZUKA-CHAIN_DETONATION.artist": "RE_yomawari",
@@ -340,8 +340,8 @@
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_ROAMING_SPIRITS.artist": "yudaoshan",
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_ROAMING_SPIRITS.tlnote": "Sokusokusokusoku",
 
-  "STS_KOMACHI_ONOZUKA-SCYTHE_OF_EXORCISM.description": "Deal {Damage:diff()} damage.\n[gold]Optional[/gold]: [gold]Detonate[/gold]. If {Value1:diff()} or more [gold]Spirits[/gold] were [gold]Detonated[/gold], add 1 [gold]Spider Lily[/gold] into your [gold]Hand[/gold].\n[gold]Release[/gold] {Value2:diff()}: Apply {Value1:diff()} [gold]Vengeful Spirits[/gold] before [gold]Detonation[/gold]. Gain 1 [gold]Artifact[/gold].",
-  "STS_KOMACHI_ONOZUKA-SCYTHE_OF_EXORCISM.extraDescription1": "[gold]Release[/gold] {Value2:diff()}: Apply {Value1:diff()} [gold]Vengeful Spirits[/gold] before [gold]Detonation[/gold]. Gain 1 [gold]Artifact[/gold].",
+  "STS_KOMACHI_ONOZUKA-SCYTHE_OF_EXORCISM.description": "Deal {Damage:diff()} damage.\n[gold]Optional[/gold]: [gold]Detonate[/gold]. If {Value1:diff()} or more [gold]Spirits[/gold] were [gold]Detonated[/gold], add 1 [gold]Spider Lily[/gold] into your [gold]Hand[/gold].\n[gold]Release[/gold] {ReleaseCost:diff()}: Apply {Value1:diff()} [gold]Vengeful Spirits[/gold] before [gold]Detonation[/gold]. Gain 1 [gold]Artifact[/gold].",
+  "STS_KOMACHI_ONOZUKA-SCYTHE_OF_EXORCISM.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: Apply {Value1:diff()} [gold]Vengeful Spirits[/gold] before [gold]Detonation[/gold]. Gain 1 [gold]Artifact[/gold].",
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_EXORCISM.title": "Scythe of Exorcism",
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_EXORCISM.artist": "violence kumahina",
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_EXORCISM.tlnote": "Can this guy make original card names without relying on soku?",
@@ -406,7 +406,7 @@
 
 
   "STS_KOMACHI_ONOZUKA-SHORT_LIFE_EXPECTANCY.description": "[gold]Release[/gold] {Value1:diff()}: Deal damage equal to 50% of the enemy's HP.{InCombat:\n(Deals {CalculatedDamage:diff()} damage)|}\nIf the target is an [gold]Elite[/gold] or [gold]Boss[/gold], you must [gold]Release[/gold] {Value2:diff()} instead.",
-  "STS_KOMACHI_ONOZUKA-SHORT_LIFE_EXPECTANCY.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: Deal damage equal to 50% of the enemy's HP.{InCombat:\n(Deals {CalculatedDamage:diff()} damage)|}",
+  "STS_KOMACHI_ONOZUKA-SHORT_LIFE_EXPECTANCY.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: Deal damage equal to 50% of the enemy's HP. (Deals {CalculatedDamage:diff()} damage)",
   "STS_KOMACHI_ONOZUKA-SHORT_LIFE_EXPECTANCY.title": "Short Life Expectancy",
   "STS_KOMACHI_ONOZUKA-SHORT_LIFE_EXPECTANCY.artist": "gibuchoko",
   "STS_KOMACHI_ONOZUKA-SHORT_LIFE_EXPECTANCY.tlnote": "ANOTHER Soku",

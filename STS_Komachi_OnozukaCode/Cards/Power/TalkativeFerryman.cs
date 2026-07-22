@@ -30,7 +30,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             // Spirits applied every turn.
             WithVar(nameof(Value1), 2, 1);
             // Release cost
-            WithVar(nameof(Value2), 4);
+            WithVar(nameof(ReleaseCost), 4);
             // Spirits gained from release
             WithPower<GuidedSpiritPower>(nameof(Value3), 6, 2);
 
@@ -44,12 +44,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             await PowerCmd.Apply<TalkativeFerrymanPower>(choiceContext, Owner.Creature,
                 Value1, Owner.Creature, this);
 
-            CardModel? chosen = await ReleaseCmd.ChooseRelease(choiceContext, this, Value2);
+            CardModel? chosen = await ReleaseCmd.ChooseRelease(choiceContext, this, ReleaseCost);
 
 
             if (ReleaseCmd.ChoseRelease(chosen))
             {
-                await ReleaseCmd.Release(choiceContext, Owner.Creature, Value2, this);
+                await ReleaseCmd.Release(choiceContext, Owner.Creature, ReleaseCost, this);
 
                 await PowerCmd.Apply<VeryTalkativeFerrymanPower>(choiceContext, Owner.Creature,
                 Value3, Owner.Creature, this);

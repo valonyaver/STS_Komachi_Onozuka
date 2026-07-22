@@ -27,7 +27,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
 { 
     public class AccompanyingSpySpiritPower : STS_Komachi_OnozukaPower, IOnDistanceChangedListener
     {
-        public override PowerType Type => PowerType.Buff;
+        public override PowerType Type => PowerType.Debuff;
         public override PowerStackType StackType => PowerStackType.Counter;
 
         public override PowerInstanceType InstanceType => PowerInstanceType.InstancedPerApplier;

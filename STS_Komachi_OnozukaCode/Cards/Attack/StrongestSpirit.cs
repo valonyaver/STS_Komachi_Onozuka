@@ -48,6 +48,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
                 .Execute(choiceContext);
             await PowerCmd.Apply<VengefulSpiritPower>(choiceContext, cardPlay.Target, Value1, base.Owner.Creature, this);
 
+            // Don't do release if target is dead.
+            if (cardPlay.Target.IsDead) return;
             var choiceRelease = await ReleaseCmd.ChooseRelease(choiceContext, this, ReleaseCost);
 
             if (ReleaseCmd.ChoseRelease(choiceRelease))

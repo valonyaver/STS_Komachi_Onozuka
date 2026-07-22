@@ -1,4 +1,5 @@
 ﻿using Godot;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Nodes.Combat;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
+namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku.Nodes
 {
     public partial class NDanmakuBullet : Sprite2D
     {
@@ -25,33 +26,38 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
         float _lifetimeSeconds;
         IReadOnlyList<Creature> _targets;
         Action? _onHit;
-        List<DanmakuEvent> _events = new();
-        GpuParticles2D? _trail;
+        List<DanmakuEvent> _events = new(); 
+        Line2D? _trail; 
+        List<(Vector2 Pos, float Time)> _trailPoints = new();
+        // how long a point lives before fading out of the trail
+        const float TrailMaxAge = 0.25f; 
         bool _spawnShards;
 
         int _hitsRemaining;
         bool _zeroHitNotDie;
         float _hitIntervalSeconds;
-        float _lastHitTime = float.NegativeInfinity;
+        float _lastHitTime = float.NegativeInfinity; 
+        string? _onHitSfx;
         bool HitsExhausted => _hitsRemaining <= 0;
 
         public static NDanmakuBullet Create(
         string spritePath, float scale, Vector2 spawnPos, float speed, float angleRad, float acc, float accAngleDeg,
         float lifetimeSeconds, IReadOnlyList<Creature> targets, Action? onHit, Color color, bool trailEnabled, Color trailColor,
-        bool spawnShards, int hitAmount, float hitIntervalSeconds, bool zeroHitNotDie, List<DanmakuEvent> events)
+        bool spawnShards, int hitAmount, float hitIntervalSeconds, bool zeroHitNotDie, string? onHitSfx, List<DanmakuEvent> events)
         {
-            Texture2D texture = ResourceLoader.Load<Texture2D>(spritePath);
-            var bullet = new NDanmakuBullet();
-            bullet.Texture = texture;
-            bullet.Scale = Vector2.One * scale;
-            bullet.GlobalPosition = spawnPos;
-            bullet.Speed = speed;
-            bullet.AngleRad = angleRad;
-            // Add 90 degrees (Mathf.Pi / 2) so that an Up sprite points Right at 0 rads
-            bullet.Rotation = angleRad + (Mathf.Pi / 2.0f);
-            bullet.Acceleration = acc;
-            bullet.AccelerationAngleDeg = accAngleDeg;
-            bullet.Rotation = angleRad;
+            Texture2D texture = DanmakuAssetLoader.LoadBulletSprite(spritePath);
+            var bullet = new NDanmakuBullet
+            {
+                Texture = texture,
+                Scale = Vector2.One * scale,
+                GlobalPosition = spawnPos,
+                Speed = speed,
+                AngleRad = angleRad,
+                // Add 90 degrees (Mathf.Pi / 2) so that an Up sprite points Right at 0 rads
+                Rotation = angleRad + (Mathf.Pi / 2.0f),
+                Acceleration = acc,
+                AccelerationAngleDeg = accAngleDeg
+            };
             bullet._lifetimeSeconds = lifetimeSeconds;
             bullet._targets = targets;
             bullet._onHit = onHit;
@@ -60,8 +66,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
             bullet._hitIntervalSeconds = hitIntervalSeconds;
             bullet._zeroHitNotDie = zeroHitNotDie;
             bullet._events = events;
+            bullet._onHitSfx = onHitSfx;
             bullet.Modulate = color;
-            if (trailEnabled) bullet._trail = CreateTrail(texture, trailColor);
+            if (trailEnabled) bullet._trail = CreateTrail(trailColor, scale);
             return bullet;
         }
 
@@ -84,11 +91,14 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
             AngleRad += Mathf.DegToRad(AccelerationAngleDeg) * dt;
             // Keeps the visuals of the bullet sprites facing up to be consistent
             Rotation = AngleRad + (Mathf.Pi / 2.0f);
-            GlobalPosition += new Vector2(Mathf.Cos(AngleRad), Mathf.Sin(AngleRad)) * Speed * dt;
+            GlobalPosition += new Vector2(Mathf.Cos(AngleRad), Mathf.Sin(AngleRad)) * Speed * dt * DanmakuPiece.PixelsPerSpeedUnit;
+
+            UpdateTrail();
 
             Rect2 screenBounds = GetViewport().GetVisibleRect().Grow(64f);
             if (_elapsed > _lifetimeSeconds || !screenBounds.HasPoint(GlobalPosition))
             {
+                _trail?.QueueFreeSafely();
                 this.QueueFreeSafely();
                 return;
             }
@@ -121,12 +131,16 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
                 _lastHitTime = _elapsed;
                 _hitsRemaining--;
                 _onHit?.Invoke();
+                if (_onHitSfx != null)
+                {
+                    SfxCmd.Play(_onHitSfx);
+                }
 
                 Node? parent = GetParent();
                 if (parent != null)
                 {
                     if (_spawnShards) NDanmakuImpactVfx.SpawnShards(GlobalPosition, parent, Texture, Modulate);
-                    else NDanmakuImpactVfx.Spawn(GlobalPosition, parent, Texture, Modulate);
+                    else NDanmakuImpactVfx.Spawn(GlobalPosition, parent, Texture, Modulate, GlobalRotation);
                 }
 
                 if (HitsExhausted && !_zeroHitNotDie)
@@ -146,30 +160,46 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
             return t.GetCreatureNode()?.VfxSpawnPosition;
         }
 
-        static GpuParticles2D CreateTrail(Texture2D bulletTexture, Color tint)
+        static Line2D CreateTrail(Color tint, float scale)
         {
-            var fade = new Gradient();
-            fade.SetColor(0, new Color(tint, 0.6f));
-            fade.SetColor(1, new Color(tint, 0f));
+            var trail = new Line2D();
+            trail.TopLevel = true; // don't inherit bullet's rotation/position transform
+            trail.Width = 8f * scale; 
+            trail.ZIndex = -1;
 
-            var mat = new ParticleProcessMaterial();
-            mat.Direction = Vector3.Zero;
-            mat.Spread = 0f;
-            mat.Gravity = Vector3.Zero;
-            mat.InitialVelocityMin = 0f;
-            mat.InitialVelocityMax = 0f;
-            mat.ScaleMin = 0.5f;
-            mat.ScaleMax = 0.7f;
-            mat.ColorRamp = new GradientTexture1D { Gradient = fade };
+            var widthCurve = new Curve();
+            widthCurve.AddPoint(new Vector2(0f, 0f));   // tail: zero width
+            widthCurve.AddPoint(new Vector2(1f, 1f));   // head: full width
+            trail.WidthCurve = widthCurve;
 
-            var particles = new GpuParticles2D();
-            particles.Emitting = true;
-            particles.Amount = 20;
-            particles.Lifetime = 0.3;
-            particles.LocalCoords = false;
-            particles.Texture = bulletTexture;
-            particles.ProcessMaterial = mat;
-            return particles;
+            var gradient = new Gradient();
+            gradient.SetColor(0, new Color(tint, 0f));   // tail: transparent
+            gradient.SetColor(1, new Color(tint, 0.8f)); // head: opaque
+            trail.Gradient = gradient;
+
+            trail.Material = new CanvasItemMaterial
+            {
+                BlendMode = CanvasItemMaterial.BlendModeEnum.Add
+            };
+
+            return trail;
+        }
+
+        void UpdateTrail()
+        {
+            if (_trail == null) return;
+
+            _trailPoints.Add((GlobalPosition, _elapsed));
+
+            // cull points older than TrailMaxAge — this is what lets the trail
+            // shrink/retract even if the bullet has stopped moving
+            _trailPoints.RemoveAll(p => _elapsed - p.Time > TrailMaxAge);
+
+            var arr = new Vector2[_trailPoints.Count];
+            for (int i = 0; i < _trailPoints.Count; i++)
+                arr[i] = _trailPoints[i].Pos;
+
+            _trail.Points = arr;
         }
     }
 
@@ -181,7 +211,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
         const float MinShardDistance = 40f;
         const float MaxShardDistance = 70f;
 
-        public static void Spawn(Vector2 position, Node container, Texture2D texture, Color tint)
+        public static void Spawn(Vector2 position, Node container, Texture2D texture, Color tint, float rotation)
         {
             if (TestMode.IsOn) return;
 
@@ -192,6 +222,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
             flash.Modulate = tint;
             flash.GlobalPosition = position;
             flash.Scale = Vector2.One * 0.4f;
+            flash.GlobalRotation = rotation;
             container.AddChildSafely(flash);
 
             Tween tween = flash.CreateTween().SetParallel();

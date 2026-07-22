@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgtmqemp3qm0n"]
+
+[ext_resource type="Shader" uid="uid://dcr4b5lgplame" path="res://STS_Komachi_Onozuka/scenes/danmaku/timestopLaser.gdshader" id="1_6n4f0"]
+[ext_resource type="Script" uid="uid://c5jltpdgrh0k" path="res://STS_Komachi_OnozukaCode/Danmaku/Nodes/NTimestopLaser.cs" id="1_nr4h8"]
+[ext_resource type="Texture2D" uid="uid://b6t6kp3pajtfl" path="res://STS_Komachi_Onozuka/images/charui/KomachiModel.png" id="2_nr4h8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f25qk"]
+shader = ExtResource("1_6n4f0")
+shader_parameter/beam_half_width = 0.0
+shader_parameter/edge_softness = 0.05
+shader_parameter/border_thickness = 0.20000000298023
+shader_parameter/border_color = Color(0.49997437, 0, 0.026517782, 1)
+shader_parameter/streak_speed = 6.72400031939
+shader_parameter/streak_width = 0.03
+shader_parameter/streak_band = 0.1
+shader_parameter/streak_color = Color(1, 0.86, 0.86, 0.6)
+
+[node name="TimestopLaser" type="Node2D"]
+script = ExtResource("1_nr4h8")
+
+[node name="KomachiModel" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(566, 77)
+texture = ExtResource("2_nr4h8")
+
+[node name="Beam" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_f25qk")
+offset_left = -2000.0
+offset_top = -40.0
+offset_right = 2000.0
+offset_bottom = 40.0

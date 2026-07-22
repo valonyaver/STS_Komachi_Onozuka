@@ -1,7 +1,9 @@
 ﻿using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models.Events;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 using MinionLib.Minion;
 using MinionLib.Powers;
 using STS_Komachi_Onozuka.BaseLibAdapters;
@@ -18,6 +20,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Minions
 {
     public sealed class DivineSpiritMinion : CustomMinionModel
     {
+        public override float HpBarSizeReduction => 30f;
         public override int MinInitialHp => 1;
         public override int MaxInitialHp => 1;
         protected override string VisualsPath => "minion/divine_spirit.tscn".ScenePath();

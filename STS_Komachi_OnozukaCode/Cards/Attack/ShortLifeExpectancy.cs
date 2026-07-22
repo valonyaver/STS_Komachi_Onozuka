@@ -1,19 +1,29 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+﻿using Godot;
+using MegaCrit.Sts2.Core.Audio.Debug;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Nodes.Audio;
 using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
+using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku.Nodes;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extras;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits;
 using System;
@@ -75,10 +85,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            
             if (CombatState == null) return;
-
-
             var isElite = IsEliteRoom() && !cardPlay.Target.IsSecondaryEnemy;
             MainFile.LogMessage($"Is the player in an elite room? {isElite}. The current room is {Owner.RunState.CurrentRoom.RoomType}");
             var releaseCost = isElite ? Value2 : Value1;
@@ -91,10 +98,87 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             if (ReleaseCmd.ChoseRelease(chosen))
             {
                 await ReleaseCmd.Release(choiceContext, Owner.Creature, releaseCost, this);
+                float totalPatternTime = TotalSlashTime(flurryCount) + patterns[^1].LifeSeconds.Evaluate();
 
-                await DamageCmd.Attack(GetEnemyHP(this, cardPlay.Target)).FromCard(this, cardPlay).Targeting(cardPlay.Target)
-                .WithHitFx("vfx/vfx_attack_blunt", null, "heavy_attack.mp3")
-                .Execute(choiceContext);
+                SfxCmd.Play("spellcard2.wav".SoundEffectPath());
+                NDanmakuDarkenOverlay? darkenVfx = NDanmakuDarkenOverlay.Create(
+                    totalPatternTime + NDanmakuDarkenOverlay._introDuration, 
+                    originCreature: Owner.Creature,
+                    style: DarkenOverlayStyle.Expand, 
+                    tint: new Color(0.1f, 0, 0, 0.5f)
+                    );
+
+                if (darkenVfx != null)
+                {
+                    NCombatRoom.Instance?.BgContainer.AddChildSafely(darkenVfx); // <-- BgContainer, not CombatVfxContainer
+                }
+
+                await Cmd.Wait(NDanmakuDarkenOverlay._introDuration - NDanmakuDarkenOverlay._introDuration * 0.2f);
+                await DamageCmd.Attack(GetEnemyHP(this, cardPlay.Target))
+                    .WithHitFx("vfx/vfx_big_slash", null, "slash_attack.mp3")
+                    .FromCard(this, cardPlay)
+                    .Targeting(cardPlay.Target)
+                    .WithDanmaku(patterns, 7)
+                    .Execute(choiceContext);
+            }
+        }
+        static float SlashDuration(int group)
+        {
+            const float start = 1.5f;
+            const float floor = 0.1f;
+            const float decay = 0.6f; // lower = faster drop-off; tune to taste
+            return floor + (start - floor) * Mathf.Pow(decay, group);
+        }
+
+        static float TotalSlashTime(int count)
+        {
+            float total = 0f;
+            for (int i = 0; i < count; i++)
+                total += SlashDuration(i);
+            return total;
+        }
+
+        const int flurryCount = 20;
+        public override List<DanmakuPiece> patterns
+        {
+            get
+            {
+                float finalSlashStart = TotalSlashTime(flurryCount);
+
+                return [
+                        // Opening X-slash + random-direction flurry, 10 slashes total
+                        new DanmakuPiece() {
+                            SpritePath = "danmaku/timestopLaser.tscn".ScenePath(),
+                            IsLaser = true,
+                            RootType = DanmakuRootType.Target,
+                            RadiusA = 180f,
+                            Radius = 140f,
+                            LaserWidthPixels = 80f,
+                            Group = flurryCount,
+                            GAngle = new GrowthValue { CustomFunc = (group, way) => group switch {
+                                0 => 225f, // top-left
+                                1 => 315f, // top-right
+                                _ => (float)GD.RandRange(0.0, 360.0),
+                            }},
+                            LifeSeconds = 0.5f,
+                            GIntervalSeconds = new GrowthValue { CustomFunc = (group, way) => SlashDuration(group) },
+                            OnHitSfx = "slash_attack.mp3".SoundEffectPath(),
+                            HitIntervalSeconds = 0.05f
+                        },  
+                        // Finishing slash — the one that actually gates damage
+                        new DanmakuPiece() {
+                            SpritePath = "danmaku/timestopLaser.tscn".ScenePath(),
+                            IsLaser = true,
+                            RootType = DanmakuRootType.Target,
+                            RadiusA = 180f,
+                            Radius = 140f,
+                            LaserWidthPixels = 100f, // a bit bigger, to read as the "final blow"
+                            LifeSeconds = 1f,
+                            StartTimeSeconds = finalSlashStart,
+                            GatesDamage = true,
+                            OnHitSfx = "heavy_attack.mp3".SoundEffectPath()
+                        },
+                ];
             }
         }
     }

@@ -44,8 +44,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         {
             ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target)
-                .WithDanmaku(patterns)
                 .WithHitFx("vfx/vfx_attack_slash")
+                .WithDanmaku(patterns)
                 .Execute(choiceContext);
             await Cmd.CustomScaledWait(0.5f, 0.7f);
             if (CombatState == null) return;
@@ -62,7 +62,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
                     GIntervalSeconds = 0.05f,
                     WayCount = new GrowthValue {Base = 1},
                     GAngle = new GrowthValue(0),
-                    StartSpeed = 12f,
+                    StartSpeed = 14f,
                     Scale = 0.5f,
                     X = 60,
                     LifeSeconds = 3f,

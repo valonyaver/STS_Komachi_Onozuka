@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://vfbuka6rx1x0" path="res://STS_Komachi_OnozukaCode/Minions/DivineSpiritNCreatureVisuals.cs" id="2_se58w"]
 
 [node name="DivineSpirit" type="Node2D"]
+position = Vector2(50, 0)
 script = ExtResource("2_se58w")
 
 [node name="Visuals" type="Sprite2D" parent="."]
@@ -17,10 +18,10 @@ flip_h = true
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
-offset_left = -114.0
-offset_top = -284.0
-offset_right = 99.0
-offset_bottom = 18.0
+offset_left = -77.0
+offset_top = -292.0
+offset_right = 102.0
+offset_bottom = -10.0
 
 [node name="IntentPos" type="Marker2D" parent="."]
 unique_name_in_owner = true

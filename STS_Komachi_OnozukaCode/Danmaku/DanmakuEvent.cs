@@ -1,4 +1,5 @@
 ﻿using Godot;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku.Nodes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,17 +55,17 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
         public static DanmakuEventTemplate ScaleY(GrowthValue amount, GrowthValue start, GrowthValue duration, DanmakuEventMode mode = DanmakuEventMode.Add)
             => Float(amount, start, duration, mode, b => b.Scale.Y, (b, v) => b.Scale = new Vector2(b.Scale.X, v));
 
-        public static DanmakuEventTemplate MoveForward(GrowthValue pixelsPerSecond, GrowthValue start, GrowthValue duration)
-            => Directional(pixelsPerSecond, start, duration, b => b.AngleRad);
+        public static DanmakuEventTemplate MoveForward(GrowthValue distance, GrowthValue start, GrowthValue duration)
+            => Directional(distance, start, duration, b => b.AngleRad);
 
-        public static DanmakuEventTemplate MovePerpendicular(GrowthValue pixelsPerSecond, GrowthValue start, GrowthValue duration)
-            => Directional(pixelsPerSecond, start, duration, b => b.AngleRad + Mathf.Pi / 2f);
+        public static DanmakuEventTemplate MovePerpendicular(GrowthValue distance, GrowthValue start, GrowthValue duration)
+            => Directional(distance, start, duration, b => b.AngleRad + Mathf.Pi / 2f);
 
-        public static DanmakuEventTemplate MoveAccAngleForward(GrowthValue pixelsPerSecond, GrowthValue start, GrowthValue duration)
-            => Directional(pixelsPerSecond, start, duration, b => Mathf.DegToRad(b.AccelerationAngleDeg));
+        public static DanmakuEventTemplate MoveAccAngleForward(GrowthValue distance, GrowthValue start, GrowthValue duration)
+            => Directional(distance, start, duration, b => Mathf.DegToRad(b.AccelerationAngleDeg));
 
-        public static DanmakuEventTemplate MoveAccAnglePerpendicular(GrowthValue pixelsPerSecond, GrowthValue start, GrowthValue duration)
-            => Directional(pixelsPerSecond, start, duration, b => Mathf.DegToRad(b.AccelerationAngleDeg) + Mathf.Pi / 2f);
+        public static DanmakuEventTemplate MoveAccAnglePerpendicular(GrowthValue distance, GrowthValue start, GrowthValue duration)
+            => Directional(distance, start, duration, b => Mathf.DegToRad(b.AccelerationAngleDeg) + Mathf.Pi / 2f);
 
         /// <summary>
         /// Turns the bullet toward its target at `turnSpeedDegPerSec` degrees/second. 
@@ -134,7 +135,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
                     return new DanmakuEvent
                     {
                         Start = start.Evaluate(group, way),
-                        Duration = Mathf.Max(0.0001f, duration.Evaluate(group, way)),
+                        Duration = Mathf.Max(0.05f, duration.Evaluate(group, way)),
                         OnStart = b => startValue = get(b),
                         Apply = (b, elapsed, t, dt) =>
                         {
@@ -152,21 +153,24 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
             };
         }
 
-        static DanmakuEventTemplate Directional(GrowthValue pixelsPerSecond, GrowthValue start, GrowthValue duration, Func<NDanmakuBullet, float> directionRad)
+        static DanmakuEventTemplate Directional(GrowthValue totalDistance, GrowthValue start, GrowthValue duration, Func<NDanmakuBullet, float> directionRad)
         {
             return new DanmakuEventTemplate
             {
                 Resolve = (group, way) =>
                 {
-                    float rate = pixelsPerSecond.Evaluate(group, way);
+                    float distance = totalDistance.Evaluate(group, way);
+                    float lastProgress = 0f;
                     return new DanmakuEvent
                     {
                         Start = start.Evaluate(group, way),
-                        Duration = Mathf.Max(0.0001f, duration.Evaluate(group, way)),
+                        Duration = Mathf.Max(0.05f, duration.Evaluate(group, way)),
                         Apply = (b, elapsed, t, dt) =>
                         {
+                            float deltaProgress = t - lastProgress;
+                            lastProgress = t;
                             float rad = directionRad(b);
-                            b.GlobalPosition += new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)) * rate * dt;
+                            b.GlobalPosition += new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)) * distance * deltaProgress;
                         },
                     };
                 }

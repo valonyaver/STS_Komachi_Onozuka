@@ -24,7 +24,7 @@ using System.Threading.Tasks;
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
 {
       
-    public class BoomBenefits : STS_Komachi_OnozukaCard, IOnDetonatedListener
+    public class BoomBenefits : STS_Komachi_OnozukaCard
     {
         public BoomBenefits() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
         {
@@ -58,39 +58,30 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
                 canSkip: true);
 
 
-            var chosenOption = chosen as BoomBenefits;
-            if (chosenOption != null)
+            int choice = 0;
+            if (chosen is BoomBenefits chosenOption)
             {
                 MainFile.Logger.LogMessage(LogLevel.Info, $"The chosen card had a choice of {chosenOption.AltDescription}. Setting this card's choice to that.", 0);
                 choice = chosenOption.AltDescription;
             }
 
 
-            await DetonateCmd.Target(choiceContext, cardPlay.Target, this);
-        }
-        /// <summary>
-        /// Temporary var to store the choice
-        /// </summary>
-        int choice;
-        public async Task OnDetonated(PlayerChoiceContext choiceContext, DetonationEventArgs args)
-        {
-            if (args.CardSource == this)
+            var detonation = await DetonateCmd.Target(choiceContext, cardPlay.Target, this);
+
+
+            MainFile.Logger.LogMessage(LogLevel.Info, $"The current card has a choice of {choice}", 0);
+            switch (choice)
             {
-                MainFile.Logger.LogMessage(LogLevel.Info, $"The current card has a choice of {choice}", 0);
-                switch(choice)
-                {
-                    case 1:
-                        var gAmount = args.TotalCountedAmount / 2;
-                        MainFile.Logger.LogMessage(LogLevel.Info, $"Amount of Guided spirits is {gAmount}", 0);
-                        await PowerCmd.Apply<GuidedSpiritPower>(choiceContext, Owner.Creature, gAmount, Owner.Creature, this);
-                        break;
-                    case 2:
-                        var dAmount = args.TotalCountedAmount / 3;
-                        MainFile.Logger.LogMessage(LogLevel.Info, $"Amount of draw is {dAmount}", 0);
-                        await CardPileCmd.Draw(choiceContext, dAmount, Owner);
-                        break;
-                }
-                choice = 0;
+                case 1:
+                    var gAmount = detonation.TotalCountedAmount / 2;
+                    MainFile.Logger.LogMessage(LogLevel.Info, $"Amount of Guided spirits is {gAmount}", 0);
+                    await PowerCmd.Apply<GuidedSpiritPower>(choiceContext, Owner.Creature, gAmount, Owner.Creature, this);
+                    break;
+                case 2:
+                    var dAmount = detonation.TotalCountedAmount / 3;
+                    MainFile.Logger.LogMessage(LogLevel.Info, $"Amount of draw is {dAmount}", 0);
+                    await CardPileCmd.Draw(choiceContext, dAmount, Owner);
+                    break;
             }
         }
     }

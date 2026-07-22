@@ -1,5 +1,6 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -8,9 +9,11 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Character;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Distance;
@@ -23,11 +26,11 @@ using System.Threading.Tasks;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
 {
-      
-    public class MoveAndShoot : STS_Komachi_OnozukaCard, ITranscendenceCard
+    [Pool(typeof(EventCardPool))]
+    public class MoveAndShoot : STS_Komachi_OnozukaCard
     {
         public MoveAndShoot()
-        : base(1, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy)
+        : base(1, CardType.Attack, CardRarity.Event, TargetType.AnyEnemy)
         {
             WithDamage(8, 2);
             WithPower<DistancePower>(nameof(Value1), 1, 1);
@@ -36,10 +39,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
 
         public override int[] GetPossibleDisplacements() => IsUpgraded ? new[] { -2, -1, 0, 1, 2 } : new[] { -1, 0, 1 };
 
-        public CardModel GetTranscendenceTransformedCard()
-        {
-            return ModelDb.Card<ScytheOfFinalJudgement>();
-        }
+        //public CardModel GetTranscendenceTransformedCard()
+        //{
+        //    return ModelDb.Card<ScytheOfFinalJudgement>();
+        //}
+
+        public override CardPoolModel VisualCardPool => ModelDb.CardPool<STS_Komachi_OnozukaCardPool>();
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {

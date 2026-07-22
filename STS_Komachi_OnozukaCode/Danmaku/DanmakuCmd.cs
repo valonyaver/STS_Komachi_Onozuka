@@ -2,7 +2,10 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.TestSupport;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku.Nodes;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,7 +50,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
         static async Task RunPiece(DanmakuPiece piece, Creature shooter, IReadOnlyList<Creature> targets, Control container, Action? onHit)
         {
             if (piece.StartTimeSeconds > 0f)
-                await Cmd.CustomScaledWait(piece.StartTimeSeconds, piece.StartTimeSeconds);
+                await Cmd.CustomScaledWait(piece.StartTimeSeconds/2, piece.StartTimeSeconds);
 
             static async Task FireAt(DanmakuPiece piece, Creature shooter, Creature aimTarget, IReadOnlyList<Creature> allTargets, Control container, Action? onHit)
             {
@@ -106,24 +109,42 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
                         float radiusA = piece.RadiusA.Evaluate(group, way);
                         float finalAngleRad = Mathf.DegToRad(preRadiusAngleDeg + radiusA);
 
-                        float speed = piece.StartSpeed.Evaluate(group, way) * DanmakuPiece.PixelsPerSpeedUnit;
-                        float acc = piece.StartAcc.Evaluate(group, way) * DanmakuPiece.PixelsPerSpeedUnit;
+                        float speed = piece.StartSpeed.Evaluate(group, way);
+                        float acc = piece.StartAcc.Evaluate(group, way);
                         float accAngle = piece.StartAccAngle.Evaluate(group, way);
+                        float lifeSeconds = piece.LifeSeconds.Evaluate(group, way);
 
-                        Color trailColor = piece.TrailColor ?? piece.BulletColor;
-                        List<DanmakuEvent> resolvedEvents = piece.Events.Select(e => e.Resolve(group, way)).ToList();
+                        if (piece.IsLaser)
+                        {
+                            NDanmakuLaser laser = DanmakuAssetLoader.InstantiateLaser(piece.SpritePath);
+                            laser.FinalWidthPixels = piece.LaserWidthPixels * scale;
+                            laser.LifetimeSeconds = lifeSeconds;
+                            laser.SetTint(piece.BulletColor);
+                            laser.ConfigureHits(allTargets, onHit, piece.HitAmount, piece.HitIntervalSeconds, piece.ZeroHitNotDie, piece.OnHitSfx);
 
-                        NDanmakuBullet bullet = NDanmakuBullet.Create(
-                            piece.SpritePath, scale, spawnPos, speed, finalAngleRad, acc, accAngle, piece.LifeSeconds,
-                            allTargets, onHit, piece.BulletColor, piece.TrailEnabled, trailColor,
-                            piece.spawnShards, piece.HitAmount, piece.HitIntervalSeconds, piece.ZeroHitNotDie, resolvedEvents);
-                        container.AddChildSafely(bullet); 
+                            container.AddChildSafely(laser);
+                            laser.GlobalPosition = spawnPos;
+                            laser.GlobalRotationDegrees = preRadiusAngleDeg + radiusA;
+                        }
+                        else
+                        {
+                            Color trailColor = piece.TrailColor ?? piece.BulletColor;
+                            List<DanmakuEvent> resolvedEvents = piece.Events.Select(e => e.Resolve(group, way)).ToList();
+
+                            NDanmakuBullet bullet = NDanmakuBullet.Create(
+                                piece.SpritePath, scale, spawnPos, speed, finalAngleRad, acc, accAngle, lifeSeconds,
+                                allTargets, onHit, piece.BulletColor, piece.TrailEnabled, trailColor,
+                                piece.spawnShards, piece.HitAmount, piece.HitIntervalSeconds, piece.ZeroHitNotDie, piece.OnHitSfx, resolvedEvents);
+                            container.AddChildSafely(bullet);
+                        }
                     }
 
                     bool isLastGroup = group == piece.Group - 1;
-                    if (!isLastGroup && piece.GIntervalSeconds > 0f)
+                    if (!isLastGroup)
                     {
-                        await Cmd.CustomScaledWait(piece.GIntervalSeconds / 2f, piece.GIntervalSeconds);
+                        float interval = piece.GIntervalSeconds.Evaluate(group, 0);
+                        if (interval > 0f)
+                            await Cmd.CustomScaledWait(interval / 2f, interval);
                     }
                 }
             }
