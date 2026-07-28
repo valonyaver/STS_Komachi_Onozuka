@@ -82,6 +82,7 @@
     <ItemGroup>
       <Folder Include="Properties\" />
       <Folder Include="STS_Komachi_Onozuka\images\potions\" />
+      <Folder Include="STS_Komachi_Onozuka\scenes\combatmodel\" />
     </ItemGroup>
     
     <Target Name="CheckDependencyPaths">

@@ -110,7 +110,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
 
                 if (darkenVfx != null)
                 {
-                    NCombatRoom.Instance?.BgContainer.AddChildSafely(darkenVfx); // <-- BgContainer, not CombatVfxContainer
+                    NCombatRoom.Instance?.BgContainer.AddChildSafely(darkenVfx); 
                 }
 
                 await Cmd.Wait(NDanmakuDarkenOverlay._introDuration - NDanmakuDarkenOverlay._introDuration * 0.2f);

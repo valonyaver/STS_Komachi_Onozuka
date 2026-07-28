@@ -159,6 +159,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
         public float Base;
         public float PerGroup;
         public float PerWay;
+        // group, way, returns float
         public Func<int, int, float>? CustomFunc;
 
         public float Evaluate(int groupId = 0, int wayId = 0)

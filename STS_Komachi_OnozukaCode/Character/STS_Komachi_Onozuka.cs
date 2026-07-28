@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.Nodes.Combat;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Basics;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Configs;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Relics;
 
@@ -70,7 +71,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Character
         /// <summary>
         /// Combat Model
         /// </summary>
-        public override string CustomVisualPath => "combat_model.tscn".ScenePath();
+        public override string CustomVisualPath => 
+            KomachiConfigs.UseDairiPortrait ? "combat_model_dairi.tscn".ScenePath() 
+            : "combat_model.tscn".ScenePath();
         /// <summary>
         /// Character select Background
         /// </summary>

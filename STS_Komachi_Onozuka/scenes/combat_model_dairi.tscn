@@ -1,17 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj3dv2txevf0k"]
+[gd_scene load_steps=3 format=3 uid="uid://dx1wd6rmk8gg2"]
 
-[ext_resource type="Texture2D" uid="uid://dffs5hrxywtfx" path="res://STS_Komachi_Onozuka/scenes/KomachiModel.png" id="1_jjlt2"]
-[ext_resource type="Script" uid="uid://cgngenyeclvil" path="res://STS_Komachi_OnozukaCode/Character/NCreatureVisualsKomachi.cs" id="1_uhpga"]
+[ext_resource type="Texture2D" uid="uid://m8s0hop1jwco" path="res://STS_Komachi_Onozuka/scenes/KomachiModelDairi.png" id="1_3wbi7"]
+[ext_resource type="Script" uid="uid://cgngenyeclvil" path="res://STS_Komachi_OnozukaCode/Character/NCreatureVisualsKomachi.cs" id="1_83gwr"]
 
 [node name="HumanForm" type="Node2D"]
-script = ExtResource("1_uhpga")
+script = ExtResource("1_83gwr")
 
 [node name="Visuals" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-modulate = Color(0.8901961, 0.8901961, 0.8901961, 1)
-position = Vector2(-17.5, -180)
-scale = Vector2(0.32, 0.32)
-texture = ExtResource("1_jjlt2")
+position = Vector2(0, -160)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_3wbi7")
+flip_h = true
 
 [node name="Bounds" type="Control" parent="."]
 unique_name_in_owner = true

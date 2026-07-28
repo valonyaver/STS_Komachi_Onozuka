@@ -60,7 +60,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
                     Owner,
                     new CardSelectorPrefs(SelectionScreenPrompt, 0, 2))).ToList();
                 toHand = choice[0];
-                toDiscard = choice[1];
+                if (choice.Count > 1)
+                {
+                    toDiscard = choice[1];
+                }
             }
 
             if (toHand != null)

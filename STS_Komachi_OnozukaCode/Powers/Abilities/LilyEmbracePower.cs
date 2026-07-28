@@ -30,7 +30,7 @@ using System.Threading.Tasks;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Other
 {
-    public class LilyEmbracePower : STS_Komachi_OnozukaPower, IHasSecondAmount, IHasEmphasizedSecondAmount
+    public class LilyEmbracePower : STS_Komachi_OnozukaPower, IHasSecondAmount, IHasColoredSecondAmount
     {
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Counter;

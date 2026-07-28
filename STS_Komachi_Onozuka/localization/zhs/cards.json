@@ -240,7 +240,7 @@
   "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.artist": "ダバデぃ",
   
 
-  "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.description": "给予{Value1:diff()}层[gold]怨灵[/gold]。\n[gold]释放[/gold]{ReleaseCost:diff()}或{Value3:diff()}：每释放{Value2}层[gold]怨灵[/gold]，获得{Energy:energyIcons()}。",
+  "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.description": "给予{Value1:diff()}层[gold]怨灵[/gold]。\n[gold]释放[/gold]{ReleaseCost:diff()}或{Value3:diff()}：每释放{ReleaseCost}层[gold]怨灵[/gold]，获得{Energy:energyIcons()}。",
   "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.extraDescription1": "[gold]释放[/gold]{ReleaseCost:diff()}：获得{Energy:energyIcons()}。",
   "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.extraDescription2": "[gold]释放[/gold]{Value3:diff()}：获得{Energy:energyIcons()}{Energy:energyIcons()}。",
   "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.title": "白嫖创伤？！",

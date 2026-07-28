@@ -1,3 +1,4 @@
+using BaseLib.Config;
 using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.addons.mega_text;
@@ -5,6 +6,7 @@ using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Combat;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Configs;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.PowerPatches;
 using System.Reflection;
 
@@ -20,6 +22,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode
 
         public static void Initialize()
         {
+            ModConfigRegistry.Register(ModId, new KomachiConfigs());
             //If you want to use scripts defined in your mod for Godot scenes, uncomment the following line.
             Godot.Bridge.ScriptManagerBridge.LookupScriptsInAssembly(Assembly.GetExecutingAssembly());
 

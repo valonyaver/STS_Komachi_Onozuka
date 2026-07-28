@@ -45,7 +45,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await PowerCmd.Apply<VengefulSpiritPower>(choiceContext, target: cardPlay.Target, Value1, Owner.Creature, this);
-            
+
+
+            if (!(cardPlay.Target.HasPower<VengefulSpiritPower>() || cardPlay.Target.HasPower<LonelyBoundSpiritPower>())) return;
             CardModel guidedSpiritChoice = CombatState.CreateCard<BoomBenefits>(Owner);
             ((BoomBenefits)guidedSpiritChoice).AltDescription = 1;
             CardModel drawChoice = CombatState.CreateCard<BoomBenefits>(Owner);

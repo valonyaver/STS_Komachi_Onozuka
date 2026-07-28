@@ -16,7 +16,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.PowerPatches
     /// Must be used with IHasSecondAmount
     /// Gives it a custom colour and a custom tweening condition.
     /// </summary>
-    public interface IHasEmphasizedSecondAmount
+    public interface IHasColoredSecondAmount
     {
         Color SecondAmountColor { get; }
         bool ShouldEmphasizeSecondAmount { get; }
@@ -31,7 +31,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.PowerPatches
         static void Postfix(NPower __instance)
         {
             if (!__instance.IsNodeReady()) return;
-            if (__instance.Model is not IHasEmphasizedSecondAmount emphasized) return;
+            if (__instance.Model is not IHasColoredSecondAmount emphasized) return;
             if (!__instance.HasNode("Amount2Label")) return;
 
             var label2 = __instance.GetNode<MegaLabel>("Amount2Label");

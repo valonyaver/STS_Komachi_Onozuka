@@ -1,6 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://tsw2ilegxk1h"]
+[gd_scene load_steps=8 format=3 uid="uid://tsw2ilegxk1h"]
 
 [ext_resource type="Texture2D" uid="uid://244hkpaafjd0" path="res://STS_Komachi_Onozuka/scenes/select/komachi_select.png" id="1_vsbbl"]
+[ext_resource type="Texture2D" uid="uid://o7qo7g28fcfs" path="res://STS_Komachi_Onozuka/scenes/select/smoke.tres" id="2_tw1tl"]
+
+[sub_resource type="Gradient" id="Gradient_e05id"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_u2y43"]
+gradient = SubResource("Gradient_e05id")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r05ed"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(400, 100, 1)
+angle_min = 1.0728835e-05
+angle_max = 353.00003
+direction = Vector3(1, -2, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 0.020000096
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = 9.999977
+gravity = Vector3(10, -10, 0)
+radial_accel_min = -2.2351742e-06
+radial_accel_max = 0.99999774
+scale_max = 2.0
+color = Color(1, 1, 1, 0.5019608)
+color_ramp = SubResource("GradientTexture1D_u2y43")
+turbulence_noise_strength = 0.05
+turbulence_noise_speed = Vector3(1, 1, 0)
+turbulence_influence_min = 0.0
+
+[sub_resource type="Gradient" id="Gradient_tw1tl"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e05id"]
+gradient = SubResource("Gradient_tw1tl")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -17,7 +56,41 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="KeineBg" type="Sprite2D" parent="."]
-position = Vector2(1920, 1160)
-scale = Vector2(1.0008334, 1.0008334)
+[node name="KomachiBg" type="Sprite2D" parent="."]
+position = Vector2(1850, 1056)
 texture = ExtResource("1_vsbbl")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(1864, 1646)
+amount = 12
+texture = ExtResource("2_tw1tl")
+lifetime = 15.0
+preprocess = 10.0
+process_material = SubResource("ParticleProcessMaterial_r05ed")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+position = Vector2(944, 1112)
+rotation = 1.5707964
+amount = 12
+texture = ExtResource("2_tw1tl")
+lifetime = 15.0
+preprocess = 10.0
+process_material = SubResource("ParticleProcessMaterial_r05ed")
+
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
+
+[node name="PointLight2D" type="PointLight2D" parent="Node2D"]
+position = Vector2(2752.0002, 1600.0001)
+scale = Vector2(5.15625, 5.15625)
+texture = SubResource("GradientTexture2D_e05id")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Node2D"]
+position = Vector2(2391.0002, 1826)
+scale = Vector2(5.15625, 5.15625)
+texture = SubResource("GradientTexture2D_e05id")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Node2D"]
+position = Vector2(2730.0002, 1392.0001)
+scale = Vector2(5.15625, 5.15625)
+texture = SubResource("GradientTexture2D_e05id")

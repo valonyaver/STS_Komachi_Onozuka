@@ -260,7 +260,7 @@
   "STS_KOMACHI_ONOZUKA-GUIDING_SANZU.title": "Guiding Sanzu",
   "STS_KOMACHI_ONOZUKA-GUIDING_SANZU.artist": "てんてん",
 
-  "STS_KOMACHI_ONOZUKA-BOOM_BENEFITS.description": "{AltDescription:choose(0|1):Apply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]Detonate[/gold], then choose:\nGain 1 [gold]Guided Spirit[/gold] for every {Value2} [gold]Spirits[/gold] [gold]Detonated[/gold], or draw 1 card for every {Value3} [gold]Spirits[/gold] [gold]Detonated[/gold].|Gain 1 [gold]Guided Spirits[/gold] for every {Value2} [gold]Spirits[/gold] [gold]Detonated[/gold].|Draw 1 card for every {Value3} [gold]Spirits[/gold] [gold]Detonated[/gold].}",
+  "STS_KOMACHI_ONOZUKA-BOOM_BENEFITS.description": "{AltDescription:choose(0|1):Apply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]Detonate[/gold], then you may choose:\nGain 1 [gold]Guided Spirit[/gold] for every {Value2} [gold]Spirits[/gold] [gold]Detonated[/gold], or draw 1 card for every {Value3} [gold]Spirits[/gold] [gold]Detonated[/gold].|Gain 1 [gold]Guided Spirits[/gold] for every {Value2} [gold]Spirits[/gold] [gold]Detonated[/gold].|Draw 1 card for every {Value3} [gold]Spirits[/gold] [gold]Detonated[/gold].}",
   "STS_KOMACHI_ONOZUKA-BOOM_BENEFITS.title": "Siren's Bounty",
   "STS_KOMACHI_ONOZUKA-BOOM_BENEFITS.artist": "卯林",
   "STS_KOMACHI_ONOZUKA-BOOM_BENEFITS.tlnote": "The Siren here is Wakasagihime, since she's in the art. The bounty is the effect. First is the full effect, second and third parts are the decision options.",
@@ -281,7 +281,7 @@
   "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.artist": "ダバデぃ",
   "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.tlnote": "Sokuer Soku",
 
-  "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.description": "Apply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]Release[/gold] {ReleaseCost:diff()} or {Value3:diff()}: Gain {Energy:energyIcons()} for every {Value2} [gold]Spirits[/gold] released.",
+  "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.description": "Apply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]Release[/gold] {ReleaseCost:diff()} or {Value3:diff()}: Gain {Energy:energyIcons()} for every {ReleaseCost} [gold]Spirits[/gold] released.",
   "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: Gain {Energy:energyIcons()}.",
   "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.extraDescription2": "[gold]Release[/gold] {Value3:diff()}: Gain {Energy:energyIcons()}{Energy:energyIcons()}.",
   "STS_KOMACHI_ONOZUKA-FREE_TRAUMA.title": "Free Trauma?!",
@@ -431,7 +431,7 @@
   "STS_KOMACHI_ONOZUKA-SPIRITS_PAST_LIFE.artist": "しょーこ",
 
 
-  "STS_KOMACHI_ONOZUKA-STRONGEST_SPIRIT.description": "Deal [blue]{Damage:diff()}[/blue] damage.\nApply [blue]{Value1:diff()}[/blue] [gold]Vengeful Spirits[/gold].\n[gold]Release[/gold] [blue]{ReleaseCost:diff()}[/blue]: [gold]Exhaust[/gold] your [gold]Hand[/gold]. For each card [gold]Exhausted[/gold] this way, deal damage again. If [blue]9[/blue] cards were [gold]Exhausted[/gold] this way, gain [blue]{Value2:diff()}[/blue] [gold]Strength[/gold].",
+  "STS_KOMACHI_ONOZUKA-STRONGEST_SPIRIT.description": "Deal [blue]{Damage:diff()}[/blue] damage.\nApply [blue]{Value1:diff()}[/blue] [gold]Vengeful Spirits[/gold].\n[gold]Release[/gold] [blue]{ReleaseCost:diff()}[/blue]: [gold]Exhaust[/gold] your [gold]Hand[/gold]. For each [gold]Exhausted[/gold], deal damage again. If [blue]9[/blue] cards were [gold]Exhausted[/gold] this way, gain [blue]{Value2:diff()}[/blue] [gold]Strength[/gold].",
   "STS_KOMACHI_ONOZUKA-STRONGEST_SPIRIT.extraDescription1": "[gold]Release[/gold] [blue]{ReleaseCost:diff()}[/blue]: [gold]Exhaust[/gold] your [gold]Hand[/gold]. Attack again for each card [gold]Exhausted[/gold]. If [blue]9[/blue] or more cards were [gold]Exhausted[/gold] this way, gain [blue]{Value2:diff()}[/blue] [gold]Strength[/gold].",
   "STS_KOMACHI_ONOZUKA-STRONGEST_SPIRIT.title": "The Strongest Spirit!",
   "STS_KOMACHI_ONOZUKA-STRONGEST_SPIRIT.artist": "harada (sansei rain)",

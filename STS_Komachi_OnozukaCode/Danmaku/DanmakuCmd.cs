@@ -18,6 +18,15 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
     {
         public const float DefaultTimeoutSeconds = 2f;
 
+        /// <summary>
+        /// Fires a pattern with no hit-gating or waiting — for purely decorative bursts.
+        /// </summary>
+        public static Task Fire(IReadOnlyList<DanmakuPiece> pieces, Creature shooter, IReadOnlyList<Creature> targets, Control container)
+        {
+            if (TestMode.IsOn || targets.Count == 0 || pieces.Count == 0) return Task.CompletedTask;
+            var tasks = pieces.Select(piece => RunPiece(piece, shooter, targets, container, null));
+            return Task.WhenAll(tasks);
+        }
         public static async Task FireAndWaitForHit(IReadOnlyList<DanmakuPiece> pieces, 
             Creature shooter, 
             IReadOnlyList<Creature> targets, 
@@ -164,7 +173,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
 
         static Vector2 ResolveRoot(DanmakuRootType rootType, Creature shooter, Creature target) => rootType switch
         {
-            DanmakuRootType.Shooter => shooter.GetCreatureNode()?.VfxSpawnPosition ?? Vector2.Zero,
+            DanmakuRootType.Shooter => shooter.GetCreatureNode()?.VfxSpawnPosition + new Vector2(20, 0) ?? Vector2.Zero,
             DanmakuRootType.Target => target.GetCreatureNode()?.VfxSpawnPosition ?? Vector2.Zero,
             DanmakuRootType.World => Vector2.Zero,
             _ => Vector2.Zero,

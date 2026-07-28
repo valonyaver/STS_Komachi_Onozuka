@@ -97,7 +97,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
             };
         }
 
-        /// <summary>Weaves the bullet side-to-side. Unlike LBoL's Huali, this respects Duration — oscillation stops once Duration elapses instead of continuing forever.</summary>
+        /// <summary>Weaves the bullet side-to-side. Oscillation stops once Duration elapses instead of continuing forever.</summary>
         public static DanmakuEventTemplate SineMovement(GrowthValue amplitude, GrowthValue frequencyHz, GrowthValue start, GrowthValue duration)
         {
             return new DanmakuEventTemplate
