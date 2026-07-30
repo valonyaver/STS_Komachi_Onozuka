@@ -1,3 +1,12 @@
+7/30
+- Grudge of the dead buffed: Vengeful Spirits Applied increased from 4 (6) to 4 (7)
+- Scythe of Roaming Spirits buffed: Base damage increased from 18 (24) to 18 (26)
+- Parasitic Pollen+ now increases the Poison it removes by 1.
+- Added a few icons to powers.
+
+I keep forgetting to put the changelogs on here since they are on the steam page instead.
+
+
 7/23
 - All cards with release costs should now glow when you can pay their release cost.
 - Short Life Expectancy now has an animation.

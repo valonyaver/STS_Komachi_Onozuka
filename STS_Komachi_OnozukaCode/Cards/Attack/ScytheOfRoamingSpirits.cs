@@ -32,7 +32,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             WithCalculatedDamage(18, 
                 static (card, target) =>
                 (target?.GetPowerAmount<VengefulSpiritPower>() ?? 0) * card.DynamicVars[nameof(Value1)].BaseValue, 
-                upgrade:4);
+                upgrade:6);
         }
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {

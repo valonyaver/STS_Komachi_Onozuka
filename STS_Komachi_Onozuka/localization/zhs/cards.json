@@ -88,6 +88,7 @@
 
   "STS_KOMACHI_ONOZUKA-DISTANCE_TAX.description": "给予所有敌人以下效果，取决于其[gold]距离[/gold]：\n1-2：{Value1:diff()}层[gold]虚弱[/gold]。\n3：本回合失去{Value2:diff()}点[gold]力量[/gold]。\n4-5：{Value3:diff()}层[gold]易伤[/gold]。",
   "STS_KOMACHI_ONOZUKA-DISTANCE_TAX.title": "距离税",
+  "STS_KOMACHI_ONOZUKA-DISTANCE_TAX.extraDescription1": "交出钱来！",
   "STS_KOMACHI_ONOZUKA-DISTANCE_TAX.artist": "Clear Echoes",
   
   "STS_KOMACHI_ONOZUKA-TASTE_OF_DEATH.description": "[gold]位移[/gold]{Value1:diff()}。\n造成{Damage:diff()}点伤害。",

@@ -1,4 +1,5 @@
 ﻿using BaseLib.Abstracts;
+using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -39,6 +40,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         }
         public class DistanceTaxPower : CustomTemporaryPowerModelWrapper<DistanceTax, StrengthPower>
         {
+            public override string CustomPackedIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
+            public override string CustomBigIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigPowerImagePath();
+
             protected override bool InvertInternalPowerAmount => true;
             public override PowerType Type => PowerType.Debuff;
         }
@@ -46,7 +50,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         {
             if (CombatState == null) return;
 
-            foreach(var enemy in CombatState.HittableEnemies)
+            // Says "Pay up!"
+            TalkCmd.Play(RawExtraDescription1, Owner.Creature,
+                MegaCrit.Sts2.Core.Nodes.Vfx.VfxColor.White,
+                MegaCrit.Sts2.Core.Nodes.Vfx.VfxDuration.Short);
+            foreach (var enemy in CombatState.HittableEnemies)
             {
                 switch(DistancePower.GetLevel(enemy))
                 {

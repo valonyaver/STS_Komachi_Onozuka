@@ -27,7 +27,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             WithDamage(4, -1);
             // Attack times
             WithVar(nameof(Value1), 2, 1);
-            WithPower<PoisonPower>(nameof(Value2), 3);
+            WithPower<PoisonPower>(nameof(Value2), 3, 1);
             WithTip(typeof(SpiderLily));
         }
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

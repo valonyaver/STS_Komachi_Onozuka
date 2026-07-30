@@ -28,7 +28,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             : base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
         {
             // Spirits applied
-            WithPower<VengefulSpiritPower>(nameof(Value1), 4, 2);
+            WithPower<VengefulSpiritPower>(nameof(Value1), 4, 3);
             WithPower<StrengthPower>(1);
             WithTip(KomachiKeywords.Detonate);
         }

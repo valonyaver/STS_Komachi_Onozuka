@@ -88,6 +88,7 @@
 
   "STS_KOMACHI_ONOZUKA-DISTANCE_TAX.description": "Apply the following to ALL enemies, based on their [gold]Distance[/gold]:\n1-2: {Value1:diff()} [gold]Weak[/gold].\n3: Lose {Value2:diff()} [gold]Strength[/gold] this turn.\n4-5: {Value3:diff()} [gold]Vulnerable[/gold].",
   "STS_KOMACHI_ONOZUKA-DISTANCE_TAX.title": "Distance Tax",
+  "STS_KOMACHI_ONOZUKA-DISTANCE_TAX.extraDescription1": "Pay up!",
   "STS_KOMACHI_ONOZUKA-DISTANCE_TAX.artist": "Clear Echoes",
 
 

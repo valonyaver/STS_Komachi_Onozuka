@@ -38,6 +38,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
         {
             if (card.Owner.Creature == base.Owner)
             {
+                Flash();
                 await PowerCmd.Apply<GuidedSpiritPower>(choiceContext, Owner, Amount, Owner, null);
             }
         }
