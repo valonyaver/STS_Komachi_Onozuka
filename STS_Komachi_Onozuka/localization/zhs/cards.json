@@ -78,9 +78,9 @@
   "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.title": "规避",
   "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.artist": "でるもち",
 
-  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.description": "移除敌人的所有[gold]格挡[/gold]。\n[gold]位移[/gold]+{Value1:diff()}。\n获得{Block:diff()}点[gold]格挡[/gold]。\n[gold]释放[/gold]{ReleaseCost:diff()} 或 {Value3}：每[gold]释放[/gold]{ReleaseCost}，给予{Value2}层[gold]污染[/gold]。",
-  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription1": "[gold]释放[/gold]{ReleaseCost:diff()}：给予{Value2}层[gold]污染[/gold]。",
-  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription2": "[gold]释放[/gold]{Value3:diff()}：给予{Value3}层[gold]污染[/gold]。",
+  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.description": "移除敌人的所有[gold]格挡[/gold]。\n[gold]位移[/gold]+{Value1:diff()}。\n获得{Block:diff()}点[gold]格挡[/gold]。\n[gold]释放[/gold]{ReleaseCost:diff()} 或 {Value3}：每[gold]释放[/gold]{ReleaseCost}，给予{Value2}层[gold]怨灵[/gold]。",
+  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription1": "[gold]释放[/gold]{ReleaseCost:diff()}：给予{Value2}层[gold]怨灵[/gold]。",
+  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription2": "[gold]释放[/gold]{Value3:diff()}：给予{Value3}层[gold]怨灵[/gold]。",
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.title": "无间之道",
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.artist": "樫の木",
 

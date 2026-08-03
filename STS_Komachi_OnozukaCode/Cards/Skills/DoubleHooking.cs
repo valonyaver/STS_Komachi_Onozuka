@@ -27,6 +27,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
       
     public class DoubleHooking : STS_Komachi_OnozukaCard
     {
+        public override bool CanBeGeneratedInCombat => false;
         public DoubleHooking() : base(2, CardType.Skill, CardRarity.Rare, TargetType.Self)
         {
             WithCostUpgradeBy(-1);

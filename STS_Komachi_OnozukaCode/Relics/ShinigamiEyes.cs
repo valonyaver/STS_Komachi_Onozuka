@@ -43,13 +43,13 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Relics
         
         }
 
-        public override async Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+        public override async Task BeforeSideTurnEndVeryEarly(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
             if (!participants.Contains(Owner.Creature) || Owner.PlayerCombatState.TurnNumber != 3)
                 return;
             await PowerCmd.Apply<DexterityPower>(choiceContext, Owner.Creature, -DynamicVars["DexterityPower"].BaseValue, Owner.Creature, null);
             await PowerCmd.Apply<VulnerablePower>(choiceContext, Owner.Creature.CombatState.HittableEnemies, DynamicVars["VulnerablePower"].BaseValue, Owner.Creature, null);
-            
+
         }
     }
 }

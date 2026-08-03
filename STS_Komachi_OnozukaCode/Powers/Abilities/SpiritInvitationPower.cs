@@ -16,6 +16,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Minions;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits;
 using System;
 using System.Collections.Generic;
@@ -55,7 +56,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
             {
                 await CreatureCmd.GainBlock(Owner, divineTriggerAmount * Amount, ValueProp.Unpowered
                     , null);
-                await OstyCmd.Summon(choiceContext, Owner.Player, divineTriggerAmount * Amount, this);
+
+                await DivineSpiritCmd.Summon(choiceContext, Owner.Player, divineTriggerAmount * Amount, this);
             }
         }
     }

@@ -27,6 +27,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
       
     public class Oasis : STS_Komachi_OnozukaCard
     {
+        public override bool CanBeGeneratedInCombat => false;
         public Oasis() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
         {
             WithKeyword(CardKeyword.Exhaust);

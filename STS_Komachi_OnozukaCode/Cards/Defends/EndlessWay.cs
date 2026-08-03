@@ -32,7 +32,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             WithPower<DistancePower>(nameof(Value1), 2);
             WithKeyword(KomachiKeywords.Displace);
             // Applied tainted per release
-            WithPower<TaintedPower>(nameof(Value2), 3);
+            WithPower<VengefulSpiritPower>(nameof(Value2), 4);
             WithVar(nameof(ReleaseCost), 3);
             // Release cost 2
             WithVar(nameof(Value3), 6);
@@ -54,7 +54,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             {
                 await ReleaseCmd.Release(choiceContext, Owner.Creature, cost, this);
 
-                await PowerCmd.Apply<TaintedPower>(choiceContext, cardPlay.Target, 
+                await PowerCmd.Apply<VengefulSpiritPower>(choiceContext, cardPlay.Target, 
                     Value2 * (cost / ReleaseCost), Owner.Creature, this);
             }
         }

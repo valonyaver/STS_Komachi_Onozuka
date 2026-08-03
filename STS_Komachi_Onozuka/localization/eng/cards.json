@@ -77,9 +77,9 @@
   "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.artist": "でるもち",
   "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.tlnote": "She's holding an umbrella in the art, which is handy for retreating, I guess.",
 
-  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.description": "Remove all [gold]Block[/gold] from the target.\n[gold]Displace[/gold] by +{Value1:diff()}.\nGain {Block:diff()} [gold]Block[/gold].\n[gold]Release[/gold] {ReleaseCost:diff()} or {Value3}: Apply {Value2} [gold]Tainted[/gold] for every {ReleaseCost} [gold]Released[/gold].",
-  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: Apply {Value2} [gold]Tainted[/gold].",
-  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription2": "[gold]Release[/gold] {Value3:diff()}: Apply {Value3} [gold]Tainted[/gold].",
+  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.description": "Remove all [gold]Block[/gold] from the target.\n[gold]Displace[/gold] by +{Value1:diff()}.\nGain {Block:diff()} [gold]Block[/gold].\n[gold]Release[/gold] {ReleaseCost:diff()} or {Value3}: Apply {Value2} [gold]Vengeful Spirits[/gold] for every {ReleaseCost} [gold]Released[/gold].",
+  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: Apply {Value2} [gold]Vengeful Spirits[/gold].",
+  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription2": "[gold]Release[/gold] {Value3:diff()}: Apply {Value3} [gold]Vengeful Spirits[/gold].",
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.title": "Endless Way",
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.artist": "樫の木",
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.tlnote": "Soku Skill. Tainted is the debuff that triangle elite applies to you.",

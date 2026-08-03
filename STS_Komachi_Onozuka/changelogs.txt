@@ -1,3 +1,11 @@
+8/4
+- Endless Way's release effect changed: From "Release 3 or 6: Apply 3 Tainted for each 3 released." -> "Release 3 or 6: Apply 4 Vengeful Spirits for each 3 released."
+- Scythe of Roaming Spirit: Energy reduced from 3 to 2. Damage reduced from 18 (24) to 15 (18)
+- Reduced the first release cost of chain detonation from 4 to 3.
+- Oasis of Passing Souls and Double Hooking can no longer be generated in combat.
+- Fixed a bug with Spirit Invitation summoning Osty instead of a divine spirit.
+- Shinigami Eyes now apply Vulnerable before Guided Spirits attack.
+
 7/30
 - Grudge of the dead buffed: Vengeful Spirits Applied increased from 4 (6) to 4 (7)
 - Scythe of Roaming Spirits buffed: Base damage increased from 18 (24) to 18 (26)

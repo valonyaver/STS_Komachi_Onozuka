@@ -23,16 +23,16 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
     public class ScytheOfRoamingSpirits : STS_Komachi_OnozukaCard
     {
         public ScytheOfRoamingSpirits()
-        : base(3, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+        : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
         {
             // Damage increased with spirits
             WithPower<VengefulSpiritPower>(nameof(Value1), 1, upgrade: 1);
             // WithKeywords(CardKeyword.Exhaust, CardKeyword.Retain);
 
-            WithCalculatedDamage(18, 
+            WithCalculatedDamage(15, 
                 static (card, target) =>
                 (target?.GetPowerAmount<VengefulSpiritPower>() ?? 0) * card.DynamicVars[nameof(Value1)].BaseValue, 
-                upgrade:6);
+                upgrade:3);
         }
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
