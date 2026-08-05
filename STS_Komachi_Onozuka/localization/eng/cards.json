@@ -498,9 +498,9 @@
   "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA.tlnote": "The Sanzu River is known for having fish that's extinct in the outside world in it. Although the first effect is optional, not using it will still use it up for that turn. The last part is the same wording as yugioh cards' 'You can only use each effect of (card name) once per turn'.",
 
 
-  "STS_KOMACHI_ONOZUKA-OASIS.description": "Choose 1 card in your [gold]Discard Pile[/gold] or [gold]Exhaust Pile[/gold].\nAdd a [gold]Clone[/gold] of it into your [gold]Hand[/gold], and [gold]Retain[/gold] it this turn.",
+  "STS_KOMACHI_ONOZUKA-OASIS.description": "Choose 1 card in your [gold]Discard Pile[/gold] or [gold]Exhaust Pile[/gold].\nAdd a [gold]Clone[/gold] of it into your [gold]Hand[/gold], and [gold]Retain[/gold] it this turn. If the original card was a [gold]Power[/gold] or had [gold]Exhaust[/gold], it gains [gold]Clone[/gold].",
   "STS_KOMACHI_ONOZUKA-OASIS.title": "Oasis of Passing Souls",
-  "STS_KOMACHI_ONOZUKA-OASIS.selectionScreenPrompt": "Choose a card to [gold]Clone[/gold]. It is [gold]Retained[/gold] this turn.",
+  "STS_KOMACHI_ONOZUKA-OASIS.selectionScreenPrompt": "Choose a card to [gold]Clone[/gold]. It is [gold]Retained[/gold] this turn. If the original card was a [gold]Power[/gold] or had [gold]Exhaust[/gold], it also gains [gold]Clone[/gold].",
   "STS_KOMACHI_ONOZUKA-OASIS.artist": "kotobuki ryou",
   "STS_KOMACHI_ONOZUKA-OASIS.tlnote": "Reference to the yugioh card 'Oasis of Dragon Souls'.",
 
@@ -532,12 +532,12 @@
   "STS_KOMACHI_ONOZUKA-QUINTESSENCE.artist": "In the Big Bang and Adrenaline genre of cards. It's a 0 cost exhaust do a lot of little stuff.",
 
   
-  "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.description": "Gain {Block:diff()} Block.\nNext turn, add a [gold]Spider Lily[/gold] to your Hand. It gains [gold]Ethereal[/gold].",
+  "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.description": "Gain {Block:diff()} Block.\nNext turn, add a [gold]Spider Lily[/gold] to your Hand. It has [gold]Ethereal[/gold] instead of [gold]Retain[/gold].",
   "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.title": "Flower Viewing",
   "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.artist": "yuuki tatsuya",
   "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.tlnote": "The thing that every touhou enjoys doing. And also the title of touhou 9.",
 
-  "STS_KOMACHI_ONOZUKA-DOUBLE_HOOKING.description": "Discard 1 card.\nChoose up to 2 cards in your [gold]Exhaust Pile[/gold].\nAdd the 1st into your [gold]Hand[/gold], and the 2nd into your [gold]Discard Pile[/gold]. Reduce their cost to 0{energyPrefix:energyIcons(1)} until played.",
+  "STS_KOMACHI_ONOZUKA-DOUBLE_HOOKING.description": "Discard 1 card.\nChoose up to 2 cards in your [gold]Exhaust Pile[/gold], except [gold]Double Hooking[/gold].\nAdd the 1st into your [gold]Hand[/gold], and the 2nd into your [gold]Discard Pile[/gold]. Reduce their cost to 0{energyPrefix:energyIcons(1)} until played.",
   "STS_KOMACHI_ONOZUKA-DOUBLE_HOOKING.title": "Double Hooking",
   "STS_KOMACHI_ONOZUKA-DOUBLE_HOOKING.selectionScreenPrompt": "Choose up to 2 cards. The first card is added to your [gold]Hand[/gold], and the second is added to your [gold]Discard Pile[/gold].",
   "STS_KOMACHI_ONOZUKA-DOUBLE_HOOKING.artist": "ニラ玉@",

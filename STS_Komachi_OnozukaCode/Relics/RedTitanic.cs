@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Rooms;
@@ -65,9 +66,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Relics
 
         public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
-            if (target == Owner.Creature && 
-                props == (ValueProp.Unblockable | ValueProp.Unpowered)
-                && Owner.PlayerCombatState != null) // Same props poison uses
+            if (target == Owner.Creature &&
+                // Same props poison uses
+                (props.HasFlag(ValueProp.Unblockable | ValueProp.Unpowered))
+                && Owner.PlayerCombatState != null) 
             {
                 DynamicVars.Heal.BaseValue += result.UnblockedDamage;
             }

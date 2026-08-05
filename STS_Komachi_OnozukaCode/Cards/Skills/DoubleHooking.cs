@@ -46,7 +46,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
                 await CardCmd.Discard(choiceContext, discard);
             }
 
-            var exhaustpile = Owner.PlayerCombatState.ExhaustPile.Cards;
+            var exhaustpile = Owner.PlayerCombatState.ExhaustPile.Cards.Where(c => c is not DoubleHooking).ToList();
 
             if (exhaustpile.Count <= 0) return;
             CardModel? toHand = null;
@@ -59,7 +59,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
                     choiceContext,
                     Owner.PlayerCombatState.ExhaustPile,
                     Owner,
-                    new CardSelectorPrefs(SelectionScreenPrompt, 0, 2))).ToList();
+                    new CardSelectorPrefs(SelectionScreenPrompt, 0, 2),
+                    c => c is not DoubleHooking)).ToList();
                 toHand = choice[0];
                 if (choice.Count > 1)
                 {

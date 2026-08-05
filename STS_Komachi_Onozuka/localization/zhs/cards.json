@@ -418,7 +418,7 @@
   "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA.title": "三途川的绝迹生物",
   "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA.artist": "moondisorder",
 
-  "STS_KOMACHI_ONOZUKA-OASIS.description": "选择你的[gold]弃牌堆[/gold]或[gold]消耗堆[/gold]中的1张牌。\n将其[gold]克隆[/gold]一张加入你的[gold]手牌[/gold]，并在本回合[gold]保留[/gold]它。",
+  "STS_KOMACHI_ONOZUKA-OASIS.description": "选择你的[gold]弃牌堆[/gold]或[gold]消耗堆[/gold]中的1张牌。\n将其[gold]克隆[/gold]一张加入你的[gold]手牌[/gold]，并在本回合[gold]保留[/gold]它。\n若选中的牌为[gold]能力牌[/gold]或具有[gold]消耗[/gold]，使其获得[gold]克隆[/gold]。",
   "STS_KOMACHI_ONOZUKA-OASIS.title": "亡魂之幻泉",
   "STS_KOMACHI_ONOZUKA-OASIS.selectionScreenPrompt": "选择一张牌进行[gold]克隆[/gold]。它将在本回合被[gold]保留[/gold]。",
   "STS_KOMACHI_ONOZUKA-OASIS.artist": "kotobuki ryou",
@@ -450,7 +450,7 @@
   "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.title": "花映塚",
   "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.artist": "yuuki tatsuya",
   
-  "STS_KOMACHI_ONOZUKA-DOUBLE_HOOKING.description": "丢弃1张牌。\n选择[gold]消耗堆[/gold]中至多2张牌。\n将第1张加入[gold]手牌[/gold]，第2张加入[gold]弃牌堆[/gold]，并使这两张牌打出前耗能为0{energyPrefix:energyIcons(1)}。",
+  "STS_KOMACHI_ONOZUKA-DOUBLE_HOOKING.description": "丢弃1张牌。\n选择[gold]消耗堆[/gold]中至多2张牌，[gold]双重提钩[/gold]除外。\n将第1张加入[gold]手牌[/gold]，第2张加入[gold]弃牌堆[/gold]，并使这两张牌打出前耗能为0{energyPrefix:energyIcons(1)}。",
   "STS_KOMACHI_ONOZUKA-DOUBLE_HOOKING.title": "双重提钩",
   "STS_KOMACHI_ONOZUKA-DOUBLE_HOOKING.selectionScreenPrompt": "选择至多2张牌。将第1张加入你的[gold]手牌[/gold]，第2张加入你的[gold]弃牌堆[/gold]。",
   "STS_KOMACHI_ONOZUKA-DOUBLE_HOOKING.artist": "ニラ玉@"

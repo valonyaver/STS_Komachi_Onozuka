@@ -36,6 +36,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
             Flash();
             var card = CombatState.CreateCard<SpiderLily>(Owner.Player);
             card.AddKeyword(CardKeyword.Ethereal);
+            card.RemoveKeyword(CardKeyword.Retain);
             await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, base.Owner.Player);
             await PowerCmd.Remove(this);
         }

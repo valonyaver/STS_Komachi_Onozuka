@@ -72,6 +72,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             copy.AddKeyword(KomachiKeywords.Clone);
             await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Hand, Owner);
             copy.GiveSingleTurnRetain();
+
+            if (chosenCard.Type == CardType.Power || chosenCard.Keywords.Any(k => k == CardKeyword.Exhaust))
+            {
+                chosenCard.AddKeyword(KomachiKeywords.Clone);
+            }
         }
     }
 }
