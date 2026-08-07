@@ -28,7 +28,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens
         public SpiderLily() : base(0, CardType.Skill, CardRarity.Token, TargetType.Self)
         {
             WithKeywords(CardKeyword.Retain, CardKeyword.Exhaust, KomachiKeywords.Replenish);
-            WithPower<SpiderLilyPower>(nameof(Value1), 1, 2);
+            WithVar(nameof(Value1), 1, 2);
             // Make sure to sync with Riverside View
             WithPower<PoisonPower>(nameof(Value2), 2);
             WithEnergy(1, 1);

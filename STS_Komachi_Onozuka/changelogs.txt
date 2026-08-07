@@ -1,3 +1,8 @@
+8/8
+- Added dialogue with ancients.
+- Shinigami tactics now give replenish to the added cards.
+- Flower Viewing now removes Retain from the added Spider Lily (mainly for card text reasons)
+
 8/4
 - Endless Way's release effect changed: From "Release 3 or 6: Apply 3 Tainted for each 3 released." -> "Release 3 or 6: Apply 4 Vengeful Spirits for each 3 released."
 - Scythe of Roaming Spirit: Energy reduced from 3 to 2. Damage reduced from 18 (24) to 15 (18)

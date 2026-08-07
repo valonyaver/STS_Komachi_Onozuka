@@ -155,7 +155,7 @@
   "STS_KOMACHI_ONOZUKA-RIVERSIDE_GARDEN.artist": "BigRed",
   "STS_KOMACHI_ONOZUKA-RIVERSIDE_GARDEN.tlnote": "Same 'Riverside' as Riverside View above.",
 
-  "STS_KOMACHI_ONOZUKA-SHINIGAMI_TACTICS.description": "{IfUpgraded:show:Add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].\n|}Whenever you [gold]Displace[/gold] with [gold]Manipulate Distance[/gold]:\nIf the [gold]Distance[/gold] decreased, add a random Attack into your [gold]Hand[/gold].\nIf the [gold]Distance[/gold] increased, add a random Skill into your [gold]Hand[/gold].",
+  "STS_KOMACHI_ONOZUKA-SHINIGAMI_TACTICS.description": "{IfUpgraded:show:Add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].\n|}Whenever you [gold]Displace[/gold] with [gold]Manipulate Distance[/gold]:\nIf the [gold]Distance[/gold] decreased, add a random Attack into your [gold]Hand[/gold].\nIf the [gold]Distance[/gold] increased, add a random Skill into your [gold]Hand[/gold].\nThese cards gain [gold]Replenish[/gold].",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_TACTICS.title": "Shinigami Tactics",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_TACTICS.artist": "芋鍋",
 
@@ -224,7 +224,7 @@
   "STS_KOMACHI_ONOZUKA-RITUAL_OF_ECSTASY.artist": "Ge DaZuo",
   "STS_KOMACHI_ONOZUKA-RITUAL_OF_ECSTASY.tlnote": "Soku skill. Invert obviously meaning Distance 1 <-> 5 and Distance 2 <-> 4.",
 
-  "STS_KOMACHI_ONOZUKA-EXCHANGE_LIFE.description": "If the enemy's HP is lower than your Max HP, swap your HP with the enemy's, then remove this card from your [gold]Deck[/gold] if your HP increased.\n[gold]When drawn[/gold]: lose {Value1:diff()} HP and gain {Energy:energyIcons()}.",
+  "STS_KOMACHI_ONOZUKA-EXCHANGE_LIFE.description": "If the enemy's HP is lower than your Max HP, swap your HP with the enemy's, then, if your HP increased, remove this card from your [gold]Deck[/gold].\n[gold]When drawn[/gold]: lose {Value1:diff()} HP and gain {Energy:energyIcons()}.",
   "STS_KOMACHI_ONOZUKA-EXCHANGE_LIFE.title": "Exchange Life",
   "STS_KOMACHI_ONOZUKA-EXCHANGE_LIFE.artist": "春酒~",
   "STS_KOMACHI_ONOZUKA-EXCHANGE_LIFE.tlnote": "Technically not a soku spellcard, but effect is inspired by one. So you can use that or just translate it directly.",

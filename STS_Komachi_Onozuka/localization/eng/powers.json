@@ -32,7 +32,7 @@
   "STS_KOMACHI_ONOZUKA-RIVERSIDE_GARDEN_POWER.title": "Riverside Garden",
 
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_TACTICS_POWER.description": "",
-  "STS_KOMACHI_ONOZUKA-SHINIGAMI_TACTICS_POWER.smartDescription": "Whenever you [gold]Displace[/gold] with [gold]Manipulate Distance[/gold], add {Amount} random card{Amount:plural:|s} into your hand. If the [gold]Distance[/gold] decreased, add {Amount:plural:an Attack|Attacks}.\nIf the [gold]Distance[/gold] increased, add {Amount:plural:a Skill|Skills}.",
+  "STS_KOMACHI_ONOZUKA-SHINIGAMI_TACTICS_POWER.smartDescription": "Whenever you [gold]Displace[/gold] with [gold]Manipulate Distance[/gold], add {Amount} random card{Amount:plural:|s} into your hand. If the [gold]Distance[/gold] decreased, add {Amount:plural:an Attack|Attacks}.\nIf the [gold]Distance[/gold] increased, add {Amount:plural:a Skill|Skills}.\nThese cards gain [gold]Replenish[/gold].",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_TACTICS_POWER.title": "Shinigami Tactics",
 
 
@@ -167,7 +167,7 @@
   "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION_POWER.title": "Spirit Invitation",
   
   "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING_POWER.description": "",
-  "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING_POWER.smartDescription": "At the start of your turn, add a [gold]Spider Lily[/gold] to your [gold]Hand[/gold].",
+  "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING_POWER.smartDescription": "At the start of your turn, add a [gold]Spider Lily[/gold] to your [gold]Hand[/gold]. It has [gold]Ethereal[/gold] instead of [gold]Retain[/gold].",
   "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING_POWER.title": "Flower Viewing",
   
 

@@ -134,7 +134,7 @@
   "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER.title": "舟符「宛若河流般」",
   "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER.artist": "a.a.",
 
-  "STS_KOMACHI_ONOZUKA-SHINIGAMI_TACTICS.description": "{IfUpgraded:show:将1张[gold]操纵距离[/gold]加入你的[gold]手牌[/gold]。\n|}每当你用[gold]操纵距离[/gold]进行[gold]位移[/gold]时：\n若[gold]距离[/gold]减少，将一张随机攻击牌添加到你的[gold]手牌[/gold]。\n若[gold]距离[/gold]增加，将一张随机技能牌添加到你的[gold]手牌[/gold]。",
+  "STS_KOMACHI_ONOZUKA-SHINIGAMI_TACTICS.description": "{IfUpgraded:show:将1张[gold]操纵距离[/gold]加入你的[gold]手牌[/gold]。\n|}每当你用[gold]操纵距离[/gold]进行[gold]位移[/gold]时：\n若[gold]距离[/gold]减少，将一张随机攻击牌添加到你的[gold]手牌[/gold]。\n若[gold]距离[/gold]增加，将一张随机技能牌添加到你的[gold]手牌[/gold]。\n这些牌获得[gold]填充[/gold]。",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_TACTICS.title": "摆渡战术",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_TACTICS.artist": "芋鍋",
 
