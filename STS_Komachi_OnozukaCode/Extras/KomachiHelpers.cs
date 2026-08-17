@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extras
 {
-    internal static class SpiritDamageHelper
+    internal static class KomachiHelpers
     {
         /// <summary>
         /// Finds the damage that would be dealt from a creature to a target creature and updates the given var.

@@ -276,8 +276,8 @@
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SWEEP.artist": "松岡二",
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SWEEP.tlnote": "Soku",
 
-  "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.description": "Deal {Damage:diff()} damage to ALL enemies.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.\n[gold]Release[/gold] {ReleaseCost}: Repeat this card's effects.",
-  "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.extraDescription1": "[gold]Release[/gold] {ReleaseCost}: Deal {Damage:diff()} damage to ALL enemies.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.",
+  "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.description": "Deal {Damage:diff()} damage to ALL enemies.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.\nAdd a [gold]Detonate[/gold] to your [gold]Hand[/gold].\n[gold]Release[/gold] {ReleaseCost}: Repeat this card's effects.",
+  "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.extraDescription1": "[gold]Release[/gold] {ReleaseCost}: Deal {Damage:diff()} damage to ALL enemies.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.\nAdd a [gold]Detonate[/gold] to your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.title": "Abundant Floating Spirits",
   "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.artist": "ダバデぃ",
   "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.tlnote": "Sokuer Soku",
@@ -515,7 +515,7 @@
   "STS_KOMACHI_ONOZUKA-TIP_OF_THE_REAPER.tlnote": "Tip as in both edge of a scythe and a bonus 'tip' to workers. If can't do both, pick whichever one you think fits best.",
 
 
-  "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.description": "Deal {Damage:diff()} damage.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold].\nWhen [gold]Exhausted[/gold], apply {Value2:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.",
+  "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.description": "Deal {Damage:diff()} damage.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold].\nWhen [gold]Exhausted[/gold]: apply {Value2:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.",
   "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.title": "Ghostrick Shot",
   "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.artist": "怠惰 フミ",
   "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.tlnote": "Reference to yugioh card of the same name.",

@@ -33,7 +33,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens
             WithPower<PoisonPower>(nameof(Value2), 2);
             WithEnergy(1, 1);
         }
-
+        protected override bool ShouldGlowRedInternal => Keywords.Contains(CardKeyword.Ethereal);
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);

@@ -25,7 +25,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
     public class SpiritCatalyst : STS_Komachi_OnozukaCard
     {
         public SpiritCatalyst()
-            : base(2, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
+            : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
         {
             // Spirits applied
             WithPower<VengefulSpiritPower>(nameof(Value1), 0);

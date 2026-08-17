@@ -3,6 +3,7 @@ using HarmonyLib;
 using MegaCrit.Sts2.addons.mega_text;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.Previewers;
 using System;
@@ -13,6 +14,28 @@ using System.Threading.Tasks;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.PowerPatches
 {
+
+    public interface IHasThirdAmount
+    {
+        /// <summary>
+        /// What the third amount should show.
+        /// </summary>
+        /// <returns></returns>
+        decimal? GetThirdAmount();
+
+
+        /// <summary>
+        /// Override to have this power's third-amount label raise above the healthbar/
+        /// nameplate area while `hoveredCard` is being targeted at this power's Owner.
+        /// Triggered by card-hover targeting (same as the displacement/vengeful preview system). 
+        /// Default false — only opt in
+        /// for powers where hovering a specific card genuinely changes what GetThirdAmount
+        /// would report.
+        /// </summary>
+        bool ShouldRaiseThirdAmount(CardModel? hoveredCard) => false;
+    }
+
+
     internal static class NPower_ThirdAmount_Patch
     {
         static readonly Dictionary<NPower, Action<CombatState>> _stateHandlers = new();
@@ -22,44 +45,33 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.PowerPatches
         static void Postfix(NPower __instance)
         {
             if (!__instance.IsNodeReady()) return;
-            if (__instance.Model is not IHasAmbientDamagePreview ambient) return;
 
-            decimal? damage = ambient.GetAmbientPreviewDamage();
-
-            if (!__instance.HasNode("Amount3Label"))
+            if (__instance.Model is not IHasThirdAmount ambient)
             {
-                if (damage == null) return;
-                var template = __instance.GetNode<MegaLabel>("%AmountLabel");
-                var label3 = (MegaLabel)template.Duplicate((int)(Node.DuplicateFlags.Signals | Node.DuplicateFlags.Groups | Node.DuplicateFlags.Scripts | Node.DuplicateFlags.UseInstantiation));
-                label3.Name = "Amount3Label";
-                label3.UniqueNameInOwner = false;
-                label3.SetAnchorsPreset(Control.LayoutPreset.TopLeft, keepOffsets: false);
-                __instance.AddChild(label3, false, Node.InternalMode.Disabled);
-                __instance.MoveChild(label3, template.GetIndex(false));
-                label3.AddThemeColorOverride(ThemeConstants.Label.FontColor, StsColors.red);
-            }
-
-            var label = __instance.GetNode<MegaLabel>("Amount3Label");
-            if (damage == null)
-            {
-                label.Visible = false;
+                if (__instance.Model != null)
+                    ThirdAmountFloatingLabelController.Clear(__instance.Model);
                 return;
             }
 
-            label.Visible = true;
-            label.SetTextAutoSize(damage.Value.ToString("0"));
+            decimal? damage = ambient.GetThirdAmount();
+            if (damage == null)
+            {
+                ThirdAmountFloatingLabelController.Clear(__instance.Model);
+                return;
+            }
 
             var amountLabel = __instance.GetNode<MegaLabel>("%AmountLabel");
-            int fontSize = label.GetThemeFontSize(ThemeConstants.Label.FontSize, "Label");
-            label.Position = amountLabel.Position + new Vector2(-(fontSize + 12), -(fontSize));
+            bool shouldRaise = ThirdAmountRaiseController.ShouldRaise(__instance.Model);
+
+            ThirdAmountFloatingLabelController.Refresh(__instance, damage.Value, shouldRaise, amountLabel);
         }
 
         [HarmonyPatch(typeof(NPower), "SubscribeToModelEvents")]
         [HarmonyPostfix]
         static void Subscribe(NPower __instance)
         {
-            if (__instance.Model is not IHasAmbientDamagePreview) return;
-            if (_stateHandlers.ContainsKey(__instance)) return; // guard against double-subscribe
+            if (__instance.Model is not IHasThirdAmount) return;
+            if (_stateHandlers.ContainsKey(__instance)) return;
 
             Action<CombatState> handler = _ => __instance.RefreshAmount();
             CombatManager.Instance.StateTracker.CombatStateChanged += handler;
@@ -74,6 +86,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.PowerPatches
             {
                 CombatManager.Instance.StateTracker.CombatStateChanged -= handler;
                 _stateHandlers.Remove(__instance);
+            }
+
+            if (__instance.Model != null)
+            {
+                ThirdAmountFloatingLabelController.Clear(__instance.Model);
             }
         }
     }

@@ -1,17 +1,20 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Extensions;
+using BaseLib.Hooks;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extras;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.PowerPatches;
@@ -26,7 +29,7 @@ using System.Threading.Tasks;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
 {
-    public class LonelyBoundSpiritPower : STS_Komachi_OnozukaPower, IOnDetonatedEarlyListener, IPreExtraHoverTips, IHasAmbientDamagePreview
+    public class LonelyBoundSpiritPower : STS_Komachi_OnozukaPower, IOnDetonatedEarlyListener, IPreExtraHoverTips, IHasThirdAmount
     {
         public override PowerType Type => PowerType.Debuff;
         public override PowerStackType StackType => PowerStackType.Counter;
@@ -35,6 +38,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
         protected override IEnumerable<DynamicVar> CanonicalVars =>
         [
             new DamageVar("VengefulDamage", 2m, ValueProp.Move)
+            
         ];
 
         public Creature? DamageTarget => Owner; // explodes onto its own owner
@@ -46,7 +50,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
         /// <summary>
         /// Previews what the damage should be against the damage target.
         /// </summary>
-        public decimal ModifiedDamage => SpiritDamageHelper.FindDamageDealt(Applier, DamageTarget, BaseDamage, DynamicVars[nameof(VengefulDamage)]);
+        public decimal ModifiedDamage => KomachiHelpers.FindDamageDealt(Applier, DamageTarget, BaseDamage, DynamicVars[nameof(VengefulDamage)]);
 
         /// <summary>
         /// Same as modified damage, but used to get the localization.
@@ -55,12 +59,27 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
         {
             get
             {
-                SpiritDamageHelper.FindDamageDealt(Applier, DamageTarget, BaseDamage, DynamicVars[nameof(VengefulDamage)]);
+                KomachiHelpers.FindDamageDealt(Applier, DamageTarget, BaseDamage, DynamicVars[nameof(VengefulDamage)]);
                 return DynamicVars[nameof(VengefulDamage)].IntValue;
             }
         }
-        public decimal? GetAmbientPreviewDamage() => ModifiedDamage;
         public void PreExtraHoverTips() => _ = VengefulDamage;
+        /// <summary>
+        /// UI-only. Stacks a hovered card would add, for previewing GetThirdAmount()
+        /// without touching real Amount. 0 = not previewing.
+        /// </summary>
+        public int PendingStacksPreview;
+
+        public decimal? GetThirdAmount()
+        {
+            if (PendingStacksPreview == 0) return ModifiedDamage;
+            decimal hypotheticalBase = (Amount + PendingStacksPreview) * 2m;
+            var scratch = new DamageVar("VengefulDamagePreview", 0m, ValueProp.Move);
+            return KomachiHelpers.FindDamageDealt(Applier, DamageTarget, hypotheticalBase, scratch);
+        }
+        public bool ShouldRaiseThirdAmount(CardModel? hoveredCard)
+        => hoveredCard is STS_Komachi_OnozukaCard k && k.GetVengefulSpiritStacksApplied(Owner) is > 0;
+
 
         public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
         {
@@ -107,5 +126,24 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
             }
         }
 
+        /// <summary>
+        /// Preview on the healthbar
+        /// </summary>
+        public override IEnumerable<HealthBarForecastSegment> GetHealthBarForecastSegments(HealthBarForecastContext context)
+        {
+            decimal dmg = GetThirdAmount()!.Value;
+            if (dmg <= 0m) yield break;
+
+            yield return new HealthBarForecastSegment(
+                Amount: (int)dmg,
+                Color: StsColors.purple,
+                Direction: HealthBarForecastDirection.FromRight,
+                Order: 0,
+                OverlayMaterial: null,
+                OverlaySelfModulate: null,
+                LeftOriginLayout: HealthBarForecastLeftOriginLayout.Chained,
+                LeftExclusiveZGroup: 0,
+                AffectsHpLabel: true);
+        }
     }
 }

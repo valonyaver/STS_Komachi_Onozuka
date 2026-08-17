@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+﻿using BaseLib.Extensions;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -34,7 +35,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         }
 
         public override bool GainsBlock => true;
-
+        public override int? GetVengefulSpiritStacksApplied(Creature target)
+        {
+            return Value1;
+        }
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay, false);

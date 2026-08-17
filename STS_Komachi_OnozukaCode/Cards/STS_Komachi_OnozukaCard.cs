@@ -195,6 +195,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         public virtual decimal? GetDistanceMultiplierOverride(int distanceLevel) => null;
 
         /// <summary>
+        /// Reports the amount of Vengeful Spirits that this card applies, for preview of how much damage they will do.
+        /// </summary>
+        public virtual int? GetVengefulSpiritStacksApplied(Creature target) => null;
+
+        /// <summary>
         /// Danmaku Patterns that this card uses.
         /// </summary>
         public virtual List<DanmakuPiece> patterns => [];

@@ -26,6 +26,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Basics
             WithTip(typeof(DistancePower));
         }
 
+        public override int[]? GetPossibleDisplacements()
+        {
+            return [0];
+        }
         public static decimal GetAttackTimes(CardModel card, Creature? target)
         {
             if (target == null)

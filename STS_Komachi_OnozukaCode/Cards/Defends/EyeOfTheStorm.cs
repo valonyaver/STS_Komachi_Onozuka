@@ -1,5 +1,6 @@
 ﻿using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -32,6 +33,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             // release cost amount
             WithVar(nameof(ReleaseCost), 6);
             WithVar(new SummonVar(6));
+        }
+
+        public override int? GetVengefulSpiritStacksApplied(Creature target)
+        {
+            return Value2;
         }
 
         protected override void OnUpgrade()

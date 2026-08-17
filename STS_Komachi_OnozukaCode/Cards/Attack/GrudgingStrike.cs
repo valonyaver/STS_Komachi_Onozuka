@@ -26,7 +26,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         public GrudgingStrike()
         : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
         {
-            WithDamage(6, 2);
+            WithDamage(8, 2);
             WithPower<VengefulSpiritPower>(nameof(VengefulSpiritApplication), 3, 1);
             WithVar(nameof(ReleaseCost), 3, -1);
             WithTags(CardTag.Strike);
@@ -34,9 +34,6 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
                 HoverTipFactory.FromCard<DetonateToken>(true))
                 );
         }
-        // Does not get errored from constructed card model. But may not be needed due to withtags
-        // public override IEnumerable<CardTag> Tags => new HashSet<CardTag>() { CardTag.Strike};
-
         public int VengefulSpiritApplication
         {
             get => DynamicVars[nameof(VengefulSpiritApplication)].IntValue;
@@ -44,6 +41,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             {
                 DynamicVars[nameof(VengefulSpiritApplication)].BaseValue = value;
             }
+        }
+
+        public override int? GetVengefulSpiritStacksApplied(Creature target)
+        {
+            return VengefulSpiritApplication;
         }
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {

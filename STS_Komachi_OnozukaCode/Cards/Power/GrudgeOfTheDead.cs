@@ -33,6 +33,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             WithTip(KomachiKeywords.Detonate);
         }
 
+        public override int? GetVengefulSpiritStacksApplied(Creature target)
+        {
+            return Value1;
+        }
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await PowerCmd.Apply<GrudgeOfTheDeadPower>(choiceContext, Owner.Creature,

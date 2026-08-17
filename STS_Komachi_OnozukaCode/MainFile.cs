@@ -1,4 +1,5 @@
 using BaseLib.Config;
+using BaseLib.Hooks;
 using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.addons.mega_text;
@@ -8,6 +9,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Configs;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.PowerPatches;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.Previewers;
 using System.Reflection;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode
@@ -52,6 +54,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode
             {
                 MainFile.LogMessage($"[PatchCheck] EXCEPTION: {ex}");
             }
+
+            HealthBarForecastRegistry.Register(ModId, "VengefulSpiritHoverPreview", new VengefulSpiritHoverForecastSource());
         }
 
         public static void LogMessage(string message)

@@ -38,6 +38,15 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             WithTip(typeof(ArtifactPower));
         }
 
+        public override int? GetVengefulSpiritStacksApplied(Creature target)
+        {
+            if (ReleaseCmd.CanReleaseSpirits(Owner.Creature, ReleaseCost))
+            {
+                return Value1;
+            }
+            return 0;
+        }
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             

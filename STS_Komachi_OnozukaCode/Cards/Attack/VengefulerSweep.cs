@@ -27,14 +27,19 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         public VengefulerSweep()
             : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AllEnemies)
         {
-            WithDamage(10, 2);
+            WithDamage(8, 2);
             // Spirits applied
             WithPower<VengefulSpiritPower>(nameof(Value1), 4, 2);
             // Release cost
             WithVar(nameof(ReleaseCost), 8);
             WithKeyword(KomachiKeywords.Release);
+            WithTip(typeof(DetonateToken));
         }
 
+        public override int? GetVengefulSpiritStacksApplied(Creature target)
+        {
+            return Value1;
+        }
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             
@@ -51,6 +56,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
                 await PowerCmd.Apply<VengefulSpiritPower>(choiceContext, enemy, base.DynamicVars[nameof(Value1)].BaseValue, base.Owner.Creature, this);
             }
 
+            var card = CombatState.CreateCard<DetonateToken>(Owner);
+            await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, Owner);
+
 
             if (ReleaseCmd.ChoseRelease(chosen))
             {
@@ -63,6 +71,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
                 {
                     await PowerCmd.Apply<VengefulSpiritPower>(choiceContext, enemy, Value1, Owner.Creature, this);
                 }
+
+                var card2 = CombatState.CreateCard<DetonateToken>(Owner);
+                await CardPileCmd.AddGeneratedCardToCombat(card2, PileType.Hand, Owner);
+
             }
         }
     }

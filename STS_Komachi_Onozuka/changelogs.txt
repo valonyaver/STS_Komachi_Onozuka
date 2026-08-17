@@ -1,3 +1,31 @@
+Possible ideas:
+- Spirit Barrier heals your spirit if you have it.
+- Gold Sarcophagalley adds replenish to the card.
+- Import Ignore nagging with reworked effect: 0 cost skill. Displace by up to -1 (-2). Gain 7 (9) Block for every enemy whose Distance is 2 or less.
+
+8/13 2:
+- Spirit Catalyst cost reduced to 1. Rarity moved to uncommon.
+- Chain Detonation moved to rare.
+- Grudging Strike buffed: Damage increased from 6 (8) to 8 (10).
+
+8/13
+UI:
+- Vengeful Spirits' damage now updates with a preview when targeting an enemy with a vengeful spirit applying card.
+- Shinigami's Finesse: Now shows a preview of its damage across all distances.
+- Fixed a few cards not showing proper tooltips or card previews.
+- Spider Lilies now glow when they have ethereal.
+Card changes:
+Abundant Floating Spirits: Now adds a detonate to the hand. Damage reduced from 10 (12) to 8 (10).
+Sweeping Scythe: Upgrade no longer adds an additional Manipulate distance. Its damage increased from 10 (13) to 10 (14).
+Ferriage of the Deep Fog: 
+- Displacement changed from up to -2 (-3) to -3. (Ie, unupgraded displaces same as upgrade.)
+- Release cost reduced from 4 to 3.
+Bound Spirits of the Dead buffed: Vengeful Spirits it applies changed from 2 (3) to 3 (4).
+Writing:
+- Fixed some formatting inconsistencies.
+- Changed a line with nonopepe.
+
+
 8/8
 - Added dialogue with ancients.
 - Shinigami tactics now give replenish to the added cards.
