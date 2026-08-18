@@ -41,22 +41,24 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         {
             List<CardModel> list = [.. Owner.PlayerCombatState.Hand.Cards.Where(c => c != this)];
 
+            List<CardModel> choice;
             if (IsUpgraded)
             {
                 list.AddRange(Owner.PlayerCombatState.DiscardPile.Cards);
-            }
-
-
-            var choice = (await CardSelectCmd.FromSimpleGrid(
+                choice = [.. (await CardSelectCmd.FromSimpleGrid(
                     choiceContext,
                     list,
                     Owner,
-                    new CardSelectorPrefs(SelectionScreenPrompt, 1, Value3))).ToList();
-            
+                    new CardSelectorPrefs(SelectionScreenPrompt, 1, Value3)))];
+            }
+            else
+            {
+                choice = [.. await CardSelectCmd.FromHand(choiceContext, Owner, new CardSelectorPrefs(SelectionScreenPrompt, 1, Value3), null, this)];
+            }
 
             if (choice.Count > 0)
             {
-                foreach(var card in  choice)
+                foreach (var card in choice)
                 {
                     await CardCmd.Exhaust(choiceContext, card);
                     if (card.Type == CardType.Status || card.Type == CardType.Curse || card.Rarity == CardRarity.Basic)

@@ -1,5 +1,6 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -16,6 +17,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits;
 using System;
 using System.Collections.Generic;
@@ -42,6 +44,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Other
             get => ((StringVar)DynamicVars["CardName"]).StringValue;
             set => ((StringVar)DynamicVars["CardName"]).StringValue = value;
         }
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromKeyword(KomachiKeywords.Replenish)];
 
         private class TrackedCardData
         {
@@ -74,7 +78,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Other
                 CardModel? card = Data.Card;
                 if (card != null)
                 {
-                    CardCmd.Upgrade(card); 
+                    CardCmd.Upgrade(card);
+                    CardCmd.ApplyKeyword(card, KomachiKeywords.Replenish);
                     await CardPileCmd.Add(card, PileType.Hand);
                 }
 

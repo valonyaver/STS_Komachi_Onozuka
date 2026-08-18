@@ -168,18 +168,6 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         }
 
         /// <summary>
-        /// Implements Replenish Logic
-        /// </summary>
-        public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
-        {
-            if (card != this) return;
-            if (card.Keywords.Contains(KomachiKeywords.Replenish))
-            {
-                await CardPileCmd.Draw(choiceContext, Owner);
-            }
-        }
-
-        /// <summary>
         /// Override to report the set of Displacements this card can apply to its target. 
         /// Used for cards that displace before dealing damage.
         /// Default null means this card doesn't displace its target, 

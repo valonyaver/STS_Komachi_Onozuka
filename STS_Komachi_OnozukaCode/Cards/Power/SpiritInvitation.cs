@@ -27,8 +27,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         public SpiritInvitation()
             : base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
         {
-            WithPower<GuidedSpiritPower>(nameof(Value1), 3, 1);
-            WithPower<DivineSpiritPower>(nameof(Value2), 3, 1);
+            WithPower<GuidedSpiritPower>(nameof(Value1), 2, 1);
+            WithPower<DivineSpiritPower>(nameof(Value2), 2, 1);
             WithKeyword(KomachiKeywords.Release);
             WithKeyword(KomachiKeywords.Barrier);
         }

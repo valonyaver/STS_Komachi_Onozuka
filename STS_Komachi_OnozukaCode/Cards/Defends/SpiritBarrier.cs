@@ -23,7 +23,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
     {
         public SpiritBarrier() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
         {
-            WithBlock(9, 3);
+            WithBlock(8, 2);
+            WithHeal(3, 2);
             WithKeyword(KomachiKeywords.Release);
             WithKeyword(KomachiKeywords.Barrier);
 
@@ -37,7 +38,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             CardModel releaseChoice = await ReleaseCmd.ChooseRelease(choiceContext, this, ReleaseCost);
 
             await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay, false);
-
+            var divineSpirit = Owner.PlayerCombatState.GetPet<DivineSpiritMinion>();
+            if (divineSpirit != null)
+            {
+                await CreatureCmd.Heal(divineSpirit, DynamicVars.Heal.BaseValue); 
+            }
 
             int guided = Owner.Creature.GetPower<GuidedSpiritPower>()?.Amount ?? 0;
             int divine = Owner.Creature.GetPower<DivineSpiritPower>()?.Amount ?? 0;

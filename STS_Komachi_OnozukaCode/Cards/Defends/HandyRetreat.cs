@@ -16,6 +16,7 @@ using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,7 +28,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         public HandyRetreat()
         : base(1, CardType.Skill, CardRarity.Basic, TargetType.AnyEnemy)
         {
-            WithBlock(6, 2);
+            WithBlock(7, 2);
             WithPower<DistancePower>(nameof(Value1), 1, 1);
             WithKeyword(KomachiKeywords.Displace);
 
@@ -42,8 +43,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
 
             if (enemyDisplacement < 5)
             {
-                int[] options = IsUpgraded ? new[] { 0, 1, 2 } : new[] { 0, 1 };
-                await DistanceCmd.ChooseAndDisplace(choiceContext, cardPlay.Target, this, options);
+                if (!IsUpgraded)
+                {
+                    await DistanceCmd.Displace(choiceContext, cardPlay.Target, 1, Owner.Creature, this);
+                }
+                else await DistanceCmd.ChooseAndDisplace(choiceContext, cardPlay.Target, this, [1, 2]);
             }
 
             await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
