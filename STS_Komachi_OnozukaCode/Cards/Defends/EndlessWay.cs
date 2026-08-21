@@ -2,6 +2,7 @@
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -31,11 +32,20 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             WithBlock(7, 3);
             WithPower<DistancePower>(nameof(Value1), 2);
             WithKeyword(KomachiKeywords.Displace);
-            // Applied tainted per release
+            // Applied debuff per release
             WithPower<VengefulSpiritPower>(nameof(Value2), 4);
             WithVar(nameof(ReleaseCost), 3);
             // Release cost 2
             WithVar(nameof(Value3), 6);
+        }
+
+        public override int? GetVengefulSpiritStacksApplied(Creature target)
+        {
+            if (ReleaseCmd.CanReleaseSpirits(Owner.Creature, Value2))
+            {
+                return Value2;
+            }
+            return 0;
         }
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

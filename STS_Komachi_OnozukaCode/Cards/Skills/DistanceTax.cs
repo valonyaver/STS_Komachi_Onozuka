@@ -33,7 +33,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             : base(0, CardType.Skill, CardRarity.Common, TargetType.AllEnemies)
         {
             WithPower<WeakPower>(nameof(Value1), 1, 1);
-            WithPower<DistanceTaxPower>(nameof(Value2), 2, 2);
+            WithVar(nameof(Value2), 2, 2);
             WithPower<VulnerablePower>(nameof(Value3), 1, 1);
 
             WithTip(typeof(DistancePower));

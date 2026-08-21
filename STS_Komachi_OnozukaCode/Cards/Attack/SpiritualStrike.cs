@@ -4,11 +4,13 @@ using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extras;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits;
 using System;
 using System.Collections.Generic;
@@ -28,6 +30,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             // Just to get its tooltip lol.
             WithPower<VengefulSpiritPower>(0);
             WithTags(CardTag.Strike);
+        }
+
+        public override int? GetVengefulSpiritStacksApplied(Creature target)
+        {
+            return (int) Hook.ModifyDamage(RunState, CombatState, target, Owner.Creature, 
+                DynamicVars.Damage.BaseValue, DynamicVars.Damage.Props, this, null, ModifyDamageHookType.All, CardPreviewMode.None, out _);
         }
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {

@@ -29,10 +29,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
     public class TipOfTheReaper : STS_Komachi_OnozukaCard
     {
         public TipOfTheReaper()
-            : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+            : base(0, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
         {
-            WithDamage(10, 3);
+            WithDamage(6, 3);
             WithKeyword(CardKeyword.Ethereal);
+            WithTip(typeof(ManipulateDistanceToken));
         }
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

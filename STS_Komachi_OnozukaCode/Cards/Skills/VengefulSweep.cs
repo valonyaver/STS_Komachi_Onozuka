@@ -34,6 +34,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             WithKeyword(KomachiKeywords.Release);
         }
 
+        public override int? GetVengefulSpiritStacksApplied(Creature target)
+        {
+            return Value1;
+        }
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if (CombatState == null) return;

@@ -134,7 +134,7 @@
   "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER.title": "舟符「宛若河流般」",
   "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER.artist": "a.a.",
 
-  "STS_KOMACHI_ONOZUKA-SHINIGAMI_TACTICS.description": "{IfUpgraded:show:将1张[gold]操纵距离[/gold]加入你的[gold]手牌[/gold]。\n|}每当你用[gold]操纵距离[/gold]进行[gold]位移[/gold]时：\n若[gold]距离[/gold]减少，将一张随机攻击牌添加到你的[gold]手牌[/gold]。\n若[gold]距离[/gold]增加，将一张随机技能牌添加到你的[gold]手牌[/gold]。",
+  "STS_KOMACHI_ONOZUKA-SHINIGAMI_TACTICS.description": "{IfUpgraded:show:将1张[gold]操纵距离[/gold]加入你的[gold]手牌[/gold]。\n|}每当你用[gold]操纵距离[/gold]进行[gold]位移[/gold]时：\n若[gold]距离[/gold]减少，将一张随机攻击牌添加到你的[gold]手牌[/gold]。\n若[gold]距离[/gold]增加，将一张随机技能牌添加到你的[gold]手牌[/gold]。\n这些牌获得[gold]填充[/gold]。",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_TACTICS.title": "摆渡战术",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_TACTICS.artist": "芋鍋",
 
@@ -235,8 +235,8 @@
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SWEEP.title": "无惑而生的人灵",
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SWEEP.artist": "松岡二",
   
-  "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.description": "对所有敌人造成{Damage:diff()}点伤害。\n给予所有敌人{Value1:diff()}层[gold]怨灵[/gold]。\n[gold]释放[/gold]{ReleaseCost}：重复这张牌的效果。",
-  "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.extraDescription1": "[gold]释放[/gold]{ReleaseCost}：对所有敌人造成{Damage:diff()}点伤害。\n给予所有敌人{Value1:diff()}层[gold]怨灵[/gold]。",
+  "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.description": "对所有敌人造成{Damage:diff()}点伤害。\n给予所有敌人{Value1:diff()}层[gold]怨灵[/gold]。\n将1张[gold]引爆[/gold]加入你的[gold]手牌[/gold]。\n[gold]释放[/gold]{ReleaseCost}：重复这张牌的效果。",
+  "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.extraDescription1": "[gold]释放[/gold]{ReleaseCost}：对所有敌人造成{Damage:diff()}点伤害。\n给予所有敌人{Value1:diff()}层[gold]怨灵[/gold]。将1张[gold]引爆[/gold]加入你的[gold]手牌[/gold]。",
   "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.title": "灵符「到处都是的浮游灵」",
   "STS_KOMACHI_ONOZUKA-VENGEFULER_SWEEP.artist": "ダバデぃ",
   
@@ -340,8 +340,9 @@
   "STS_KOMACHI_ONOZUKA-CLOSE_QUARTER_TECHNIQUE.title": "近战技",
   "STS_KOMACHI_ONOZUKA-CLOSE_QUARTER_TECHNIQUE.artist": "ぺろぽねそす",
 
-  "STS_KOMACHI_ONOZUKA-IGNORE_NAGGING.description": "[gold]位移[/gold]{IfUpgraded:show:至多|}-{Value1:diff()}.\n每有一个[gold]距离[/gold]不大于2的敌人就获得{Block:diff()}点[gold]格挡[/gold]。",
-  "STS_KOMACHI_ONOZUKA-IGNORE_NAGGING.title": "无视唠叨",
+  
+  "STS_KOMACHI_ONOZUKA-IGNORE_NAGGING.description": "[gold]Displace[/gold] by {IfUpgraded:show:up to|} -{Value1:diff()}.\nGain {Block:diff()} [gold]Block[/gold] for every enemy whose [gold]Distance[/gold] is 2 or less.",
+  "STS_KOMACHI_ONOZUKA-IGNORE_NAGGING.title": "Ignore Nagging",
   "STS_KOMACHI_ONOZUKA-IGNORE_NAGGING.artist": "しなぷう",
 
   "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.description": "[gold]位移[/gold]至多-{Value1:diff()}。\n每[gold]位移[/gold]一级，给予{Value2:diff()}层[gold]怨灵[/gold]。\n[gold]释放[/gold]{ReleaseCost}：敌人身上每有{Value3:diff()}层[gold]怨灵[/gold]，在本回合获得1点[gold]力量[/gold]。",
@@ -450,7 +451,7 @@
   "STS_KOMACHI_ONOZUKA-QUINTESSENCE.title": "至纯精粹",
   "STS_KOMACHI_ONOZUKA-QUINTESSENCE.artist": "finale inoue",
 
-  "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.description": "获得{Block:diff()}点[gold]格挡[/gold]。\n下回合，将1张具有[gold]虚无[/gold]的[gold]彼岸花[/gold]加入你的[gold]手牌[/gold]。",
+  "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.description": "获得{Block:diff()}点[gold]格挡[/gold]。\n下回合，将1张[gold]彼岸花[/gold]加入你的[gold]手牌[/gold]。其具有[gold]虚无[/gold]而非[gold]保留[/gold]。",
   "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.title": "花映塚",
   "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.artist": "yuuki tatsuya",
   

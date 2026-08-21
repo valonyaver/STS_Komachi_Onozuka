@@ -168,18 +168,6 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         }
 
         /// <summary>
-        /// Implements Replenish Logic
-        /// </summary>
-        public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
-        {
-            if (card != this) return;
-            if (card.Keywords.Contains(KomachiKeywords.Replenish))
-            {
-                await CardPileCmd.Draw(choiceContext, Owner);
-            }
-        }
-
-        /// <summary>
         /// Override to report the set of Displacements this card can apply to its target. 
         /// Used for cards that displace before dealing damage.
         /// Default null means this card doesn't displace its target, 
@@ -193,6 +181,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         /// Curently only used for scythe of final judgemento
         /// </summary>
         public virtual decimal? GetDistanceMultiplierOverride(int distanceLevel) => null;
+
+        /// <summary>
+        /// Reports the amount of Vengeful Spirits that this card applies, for preview of how much damage they will do.
+        /// </summary>
+        public virtual int? GetVengefulSpiritStacksApplied(Creature target) => null;
 
         /// <summary>
         /// Danmaku Patterns that this card uses.

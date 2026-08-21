@@ -28,9 +28,14 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
         {
             // Spirits applied immediately
-            WithPower<VengefulSpiritPower>(nameof(Value1), 2, 1);
+            WithPower<VengefulSpiritPower>(nameof(Value1), 3, 1);
             // Spirits applied every turn.
-            WithVar(nameof(Value2), 2, 1);
+            WithVar(nameof(Value2), 3, 1);
+        }
+
+        public override int? GetVengefulSpiritStacksApplied(Creature target)
+        {
+            return Value1;
         }
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

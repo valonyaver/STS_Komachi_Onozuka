@@ -1,3 +1,95 @@
+Possible ideas:
+- Spirit Barrier heals your spirit if you have it.
+- Gold Sarcophagalley adds replenish to the card.
+- Import Ignore nagging with reworked effect: 0 cost skill. Displace by up to -1 (-2). Gain 7 (9) Block for every enemy whose Distance is 2 or less.
+
+8/18:
+- New card: Ignore Nagging
+Common Skill. 0 cost.
+"Displace by (up to) -1 (-2).
+For every enemy whose Distance is 2 or less, gain 7 (9) Block."
+
+- Spirit Invitation Reworked:
+Old:
+Gain 3 (4) Guided Spirits and 3 (4) Divine Spirits.
+Whenever you would Release:
+- Deal damage to ALL enemies equal to the Guided Spirits you would Release.
+- Barrier and gain Block equal to the Divine Spirits you would Release.
+
+New:
+Gain 2 (3) Guided Spirits and 2 (3) Divine Spirits.
+Whenever you would Release:
+- Barrier equal to the amount of Spirits you would Release, then deal damage to ALL enemies equal to your Divine Spirits' current HP.
+
+- Scythe of Exorcism changed:
+Old:
+Deal 14 (18) damage.
+Optional: Detonate, then if 4 or more Spirits were detonated, add a Spider Lily to the hand.
+Release 4: Apply 4 Vengeful Spirits before detonation. Gain 1 Artifact.
+
+New:
+Deal 16 (20) damage.
+Detonate, then if 4 or more Spirits were detonated, add a Spider Lily+ to the hand.
+
+- Handy Retreat changed:
+-- Block increased from 6 (8) to 7 (9)
+-- Can no longer choose to not displace.
+
+- Spirit Protection changed:
+Old:
+Gain 9 (12) Block.
+Release ALL: Barrier equal to the amount released.
+
+New:
+Gain 8 (10) Block.
+Your Divine Spirit heals by 3 (5).
+Release ALL: Barrier equal to the amount released.
+
+- Eye of the Storm changed;
+Old:
+Gain 14 (16) Block.
+Gain 6 (8) Guided Spirits.
+Apply 4 (6) Vengeful Spirits to ALL enemies.
+Release 6: Barrier 6 (8)
+
+New:
+Gain 10 (13) Block.
+Barrier 5 (7)
+Gain 5 (7) Guided Spirits.
+Apply 3 (5) Vengeful Spirits to ALL enemies.
+
+Tip of the Reaper changed:
+cost reduced from 1->0
+Damage reduced from 10 (13)->6(9)
+
+8/13 2:
+- Spirit Catalyst cost reduced to 1. Rarity moved to uncommon.
+- Chain Detonation moved to rare.
+- Grudging Strike buffed: Damage increased from 6 (8) to 8 (10).
+
+8/13
+UI:
+- Vengeful Spirits' damage now updates with a preview when targeting an enemy with a vengeful spirit applying card.
+- Shinigami's Finesse: Now shows a preview of its damage across all distances.
+- Fixed a few cards not showing proper tooltips or card previews.
+- Spider Lilies now glow when they have ethereal.
+Card changes:
+Abundant Floating Spirits: Now adds a detonate to the hand. Damage reduced from 10 (12) to 8 (10).
+Sweeping Scythe: Upgrade no longer adds an additional Manipulate distance. Its damage increased from 10 (13) to 10 (14).
+Ferriage of the Deep Fog: 
+- Displacement changed from up to -2 (-3) to -3. (Ie, unupgraded displaces same as upgrade.)
+- Release cost reduced from 4 to 3.
+Bound Spirits of the Dead buffed: Vengeful Spirits it applies changed from 2 (3) to 3 (4).
+Writing:
+- Fixed some formatting inconsistencies.
+- Changed a line with nonopepe.
+
+
+8/8
+- Added dialogue with ancients.
+- Shinigami tactics now give replenish to the added cards.
+- Flower Viewing now removes Retain from the added Spider Lily (mainly for card text reasons)
+
 8/4
 - Endless Way's release effect changed: From "Release 3 or 6: Apply 3 Tainted for each 3 released." -> "Release 3 or 6: Apply 4 Vengeful Spirits for each 3 released."
 - Scythe of Roaming Spirit: Energy reduced from 3 to 2. Damage reduced from 18 (24) to 15 (18)

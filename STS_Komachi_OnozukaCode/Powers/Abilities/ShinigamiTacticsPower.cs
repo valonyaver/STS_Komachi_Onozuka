@@ -17,6 +17,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits;
 using System;
 using System.Collections.Generic;
@@ -61,6 +62,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
             if (cardsToBeAdded == null || cardsToBeAdded.Count <= 0)
             {
                 return;
+            }
+            foreach(var card in cardsToBeAdded)
+            {
+                card.AddKeyword(KomachiKeywords.Replenish);
             }
             await CardPileCmd.AddGeneratedCardsToCombat(cardsToBeAdded, PileType.Hand, Owner.Player);
         }

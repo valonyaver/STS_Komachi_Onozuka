@@ -25,9 +25,5 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Basics
             await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay, false);
         }
 
-        //protected override void OnUpgrade()
-        //{
-        //    base.DynamicVars.Block.UpgradeValueBy(3m);
-        //}
     }
 }

@@ -47,15 +47,15 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
 
             DistanceChangedEventArgs args = new() { Target = target, Power = power, OldLevel = oldLevel, NewLevel = newLevel, cardSource = cardSource };
 
-
+            // Nothing ever happens
             if (oldLevel == newLevel)
             {
-                return args; // mirrors the old game's `if (levelChange == 0) return;` plus its "only notify if it actually changed" guard
+                return args;
             }
 
             if (power == null)
             {
-                // First application: Amount starts at 0, so Apply just sets it straight to newLevel — no addition happens.
+                // First application: Amount starts at 0, so Apply just sets it straight to newLevel
                 await PowerCmd.Apply<DistancePower>(choiceContext, target, newLevel, applier, cardSource);
             }
             else
@@ -108,41 +108,24 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
                 }
             }
 
-            // If all resolve to no distance change, do nothing.
+            // 1. If all options resolve to no distance change, do nothing.
             if (dedupedOptions.Count == 0 || (dedupedOptions.Count == 1 && dedupedOptions[0] == 0))
             {
                 return null;
             }
 
+            // 2. If exactly one valid displacement option remains, return the token directly without showing UI.
+            if (dedupedOptions.Count == 1)
+            {
+                return CreateDisplacementToken(card, dedupedOptions[0]);
+            }
+
             List<CardModel> list = [];
             foreach (int n in dedupedOptions)
             {
-                CardModel finalToken;
-                if (n == 0)
-                {
-                    ManipulateNoDistanceToken token = card.CombatState.CreateCard<ManipulateNoDistanceToken>(card.Owner);
-                    token.AltDescription = 0;
-                    finalToken = token;
-                }
-                else if (n < 0)
-                {
-                    ManipulateDistanceToken token = card.CombatState.CreateCard<ManipulateDistanceToken>(card.Owner);
-                    token.AltDescription = 1;
-                    token.Value1 = -n;
-                    token.ExtraDescription1 = token.RawExtraDescription1.GetFormattedText();
-                    finalToken = token;
-                }
-                else
-                {
-                    ManipulateDistanceToken token = card.CombatState.CreateCard<ManipulateDistanceToken>(card.Owner);
-                    token.AltDescription = 2;
-                    token.Value1 = n;
-                    token.ExtraDescription2 = token.RawExtraDescription2.GetFormattedText();
-                    finalToken = token;
-                }
-                MainFile.LogMessage($"Generating a mandist with a number of {n}. Its value1 is {finalToken.DynamicVars["Value1"].IntValue}");
-                list.Add(finalToken);
+                list.Add(CreateDisplacementToken(card, n));
             }
+
             if (list.Count > 3)
             {
                 return (await CardSelectCmd.FromSimpleGrid(
@@ -151,6 +134,38 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
                     )).FirstOrDefault();
             }
             return await CardSelectCmd.FromChooseACardScreen(choiceContext, list, card.Owner, false);
+        }
+
+        /// <summary>
+        /// Helper method to build token
+        /// </summary>
+        private static CardModel CreateDisplacementToken(CardModel card, int n)
+        {
+            CardModel finalToken;
+            if (n == 0)
+            {
+                ManipulateNoDistanceToken token = card.CombatState.CreateCard<ManipulateNoDistanceToken>(card.Owner);
+                token.AltDescription = 0;
+                finalToken = token;
+            }
+            else if (n < 0)
+            {
+                ManipulateDistanceToken token = card.CombatState.CreateCard<ManipulateDistanceToken>(card.Owner);
+                token.AltDescription = 1;
+                token.Value1 = -n;
+                token.ExtraDescription1 = token.RawExtraDescription1.GetFormattedText();
+                finalToken = token;
+            }
+            else
+            {
+                ManipulateDistanceToken token = card.CombatState.CreateCard<ManipulateDistanceToken>(card.Owner);
+                token.AltDescription = 2;
+                token.Value1 = n;
+                token.ExtraDescription2 = token.RawExtraDescription2.GetFormattedText();
+                finalToken = token;
+            }
+            MainFile.LogMessage($"Generating a mandist with a number of {n}. Its value1 is {finalToken.DynamicVars["Value1"].IntValue}");
+            return finalToken;
         }
 
         /// <summary>

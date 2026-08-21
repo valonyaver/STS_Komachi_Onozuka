@@ -40,24 +40,20 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
             // Use the Intended amounts, so it works with Eiki's free release
             int guidedTriggerAmount = args.IntendedGuidedReleaseAmount;
             int divineTriggerAmount = args.IntendedDivineReleaseAmount;
+            int total = guidedTriggerAmount + divineTriggerAmount;
 
-            // Attacks all enemies by the guided released * level
-            if (guidedTriggerAmount > 0)
+
+            await DivineSpiritCmd.Summon(choiceContext, Owner.Player, total * Amount, this);
+
+            int? divineSpiritHP = Owner.Player.PlayerCombatState?.GetPet<DivineSpiritMinion>()?.CurrentHp;
+
+            if (divineSpiritHP != null)
             {
-                await CreatureCmd.Damage(choiceContext, 
-                    CombatState.HittableEnemies, 
-                    guidedTriggerAmount * Amount, 
-                    ValueProp.Unpowered, 
+                await CreatureCmd.Damage(choiceContext,
+                    CombatState.HittableEnemies,
+                    divineSpiritHP.Value * Amount,
+                    ValueProp.Unpowered,
                     Owner);
-            }
-
-            // Block and summon by divine release * level
-            if (divineTriggerAmount > 0)
-            {
-                await CreatureCmd.GainBlock(Owner, divineTriggerAmount * Amount, ValueProp.Unpowered
-                    , null);
-
-                await DivineSpiritCmd.Summon(choiceContext, Owner.Player, divineTriggerAmount * Amount, this);
             }
         }
     }

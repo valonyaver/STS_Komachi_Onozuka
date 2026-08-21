@@ -30,11 +30,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         public FerriageDeepFog() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
         {
             // Displace by up to
-            WithVar(nameof(Value1), 2,1);
+            WithVar(nameof(Value1), 3);
             // Spirits per displacement
             WithPower<VengefulSpiritPower>(nameof(Value2), 3, 1);
             // Release cost yah
-            WithVar(nameof(ReleaseCost), 4);
+            WithVar(nameof(ReleaseCost), 3);
             // Strength per vengeful spiits
             WithVar(nameof(Value3), 3);
             WithTip(typeof(DistancePower));

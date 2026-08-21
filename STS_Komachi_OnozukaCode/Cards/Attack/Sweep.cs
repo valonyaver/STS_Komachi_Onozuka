@@ -28,9 +28,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         public Sweep()
             : base(2, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)
         {
-            WithDamage(10, 3);
+            WithDamage(10, 4);
             WithPower<DistancePower>(nameof(Value1), -1);
-            WithCards(1, 1);
+            // Manipulate distances added
+            WithCards(1);
             WithTip(typeof(ManipulateDistanceToken));
         }
 

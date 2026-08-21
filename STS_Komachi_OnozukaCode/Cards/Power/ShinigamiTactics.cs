@@ -32,7 +32,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         {
             WithTip(typeof(ManipulateDistanceToken));
             WithTip(typeof(DistancePower));
+            WithTip(KomachiKeywords.Replenish);
             WithKeyword(KomachiKeywords.Displace);
+
         }
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

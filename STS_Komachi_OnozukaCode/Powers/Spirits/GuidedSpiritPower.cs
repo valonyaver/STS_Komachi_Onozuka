@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
 {
-    public class GuidedSpiritPower : STS_Komachi_OnozukaPower, IPreExtraHoverTips, IHasAmbientDamagePreview
+    public class GuidedSpiritPower : STS_Komachi_OnozukaPower, IPreExtraHoverTips, IHasThirdAmount
     {
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Counter;
@@ -58,8 +58,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
         /// <summary>
         /// Previews what the damage should be against the damage target.
         /// </summary>
-        public decimal ModifiedDamage => SpiritDamageHelper.FindDamageDealt(Owner, DamageTarget, BaseDamage, DynamicVars["GuidedDamage"]);
-        public decimal? GetAmbientPreviewDamage() => DamageTarget == null ? null : ModifiedDamage;
+        public decimal ModifiedDamage => KomachiHelpers.FindDamageDealt(Owner, DamageTarget, BaseDamage, DynamicVars["GuidedDamage"]);
+        public decimal? GetThirdAmount() => DamageTarget == null ? null : ModifiedDamage;
         public void PreExtraHoverTips() => _ = ModifiedDamage;
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips

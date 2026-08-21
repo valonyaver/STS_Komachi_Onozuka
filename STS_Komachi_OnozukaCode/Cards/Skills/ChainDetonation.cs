@@ -26,7 +26,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
     public class ChainDetonation : STS_Komachi_OnozukaCard
     {
         public ChainDetonation()
-            : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
+            : base(2, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
         {
             // Spirits applied
             WithPower<VengefulSpiritPower>(nameof(Value1), 4, 2);
@@ -39,6 +39,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             WithKeyword(KomachiKeywords.Release);
             WithKeyword(KomachiKeywords.Detonate);
 
+        }
+
+        public override int? GetVengefulSpiritStacksApplied(Creature target)
+        {
+            return Value1;
         }
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
