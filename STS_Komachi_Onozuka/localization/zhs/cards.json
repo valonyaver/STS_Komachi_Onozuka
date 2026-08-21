@@ -74,7 +74,7 @@
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_FINAL_JUDGEMENT.artist": "clio_desu",
 
 
-  "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.description": "[gold]可选[/gold]：[gold]位移[/gold]至多+{Value1:diff()}。\n获得{Block:diff()}点[gold]格挡[/gold]。\n若敌人的[gold]距离[/gold]为5，将1张[gold]操纵距离[/gold]加入你的[gold]手牌[/gold]。",
+  "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.description": "[gold]位移[/gold]{IfUpgraded:show:至多|}+{Value1:diff()}。\n获得{Block:diff()}点[gold]格挡[/gold]。\n若敌人的[gold]距离[/gold]为5，将1张[gold]操纵距离[/gold]加入你的[gold]手牌[/gold]。",
   "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.title": "规避",
   "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.artist": "でるもち",
 
@@ -290,12 +290,12 @@
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_ROAMING_SPIRITS.title": "魂符「生魂流离的镰刀」",
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_ROAMING_SPIRITS.artist": "yudaoshan",
   
-  "STS_KOMACHI_ONOZUKA-SCYTHE_OF_EXORCISM.description": "造成{Damage:diff()}点伤害。\n[gold]可选[/gold]：[gold]引爆[/gold]。若[gold]引爆[/gold]了{Value1:diff()}层或以上的[gold]怨灵[/gold]，将1张[gold]彼岸花[/gold]加入你的[gold]手牌[/gold]。\n[gold]释放[/gold]{ReleaseCost:diff()}：在[gold]引爆[/gold]前给予{Value1:diff()}层[gold]怨灵[/gold]。获得1层[gold]人工制品[/gold]。",
-  "STS_KOMACHI_ONOZUKA-SCYTHE_OF_EXORCISM.extraDescription1": "[gold]释放[/gold]{ReleaseCost:diff()}：在[gold]引爆[/gold]前给予{Value1:diff()}层[gold]怨灵[/gold]。获得1层[gold]人工制品[/gold]。",
+  "STS_KOMACHI_ONOZUKA-SCYTHE_OF_EXORCISM.description": "造成{Damage:diff()}点伤害。\n[gold]引爆[/gold]。若至少[gold]引爆[/gold]了{Value1:diff()}层[gold]怨灵[/gold]，将1张[gold]彼岸花[/gold]加入你的[gold]手牌[/gold]。",
+  "STS_KOMACHI_ONOZUKA-SCYTHE_OF_EXORCISM.extraDescription1": "[gold]释放[/gold]{Value2:diff()}：在[gold]引爆[/gold]前给予{Value1:diff()}层[gold]怨灵[/gold]。获得1层[gold]人工制品[/gold]。",
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_EXORCISM.title": "离魂之镰",
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_EXORCISM.artist": "violence kumahina",
 
-  "STS_KOMACHI_ONOZUKA-EYE_OF_THE_STORM.description": "获得{Block:diff()}点[gold]格挡[/gold]。\n获得{Value1:diff()}层[gold]引灵[/gold]。\n给予所有敌人{Value2:diff()}层[gold]怨灵[/gold]。\n[gold]释放[/gold]{ReleaseCost:diff()}：[gold]守护[/gold]{Summon:diff()}。",
+  "STS_KOMACHI_ONOZUKA-EYE_OF_THE_STORM.description": "获得{Block:diff()}点[gold]格挡[/gold]。\n[gold]守护[/gold]{Summon:diff()}。\n获得{Value1:diff()}层[gold]引灵[/gold]。\n给予所有敌人{Value2:diff()}层[gold]怨灵[/gold]。",
   "STS_KOMACHI_ONOZUKA-EYE_OF_THE_STORM.extraDescription1": "[gold]释放[/gold]{ReleaseCost:diff()}：守护{Barrier:diff()}。",
   "STS_KOMACHI_ONOZUKA-EYE_OF_THE_STORM.title": "风暴之眼",
   "STS_KOMACHI_ONOZUKA-EYE_OF_THE_STORM.artist": "cofepig",
@@ -318,7 +318,7 @@
   "STS_KOMACHI_ONOZUKA-MINISTRY_WORK.artist": "9時",
 
   
-  "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER.description": "获得{Block:diff()}点[gold]格挡[/gold]。\n[gold]释放[/gold]全部：[gold]守护[/gold]等于[gold]释放[/gold]的[gold]怨灵[/gold]数量。",
+  "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER.description": "获得{Block:diff()}点[gold]格挡[/gold]。\n你的[gold]神灵护体[/gold]回复{Heal:diff()}点生命。\n[gold]释放[/gold]全部：[gold]守护[/gold]等于[gold]释放[/gold]的[gold]怨灵[/gold]数量。",
   "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER.extraDescription1": "[gold]释放[/gold]全部：[gold]守护[/gold]等于[gold]释放[/gold]的[gold]怨灵[/gold]数量。",
   "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER.title": "灵魂屏障",
   "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER.artist": "イセ川",
@@ -339,6 +339,10 @@
   "STS_KOMACHI_ONOZUKA-CLOSE_QUARTER_TECHNIQUE.description": "获得{Block:diff()}点[gold]格挡[/gold]。\n给予{Value1:diff()}层[gold]怨灵[/gold]。\n若[gold]距离[/gold]小于3，获得{Value3:diff()}层[gold]引灵[/gold]，且敌人在本回合失去{Value2:diff()}点[gold]力量[/gold]。",
   "STS_KOMACHI_ONOZUKA-CLOSE_QUARTER_TECHNIQUE.title": "近战技",
   "STS_KOMACHI_ONOZUKA-CLOSE_QUARTER_TECHNIQUE.artist": "ぺろぽねそす",
+
+  "STS_KOMACHI_ONOZUKA-IGNORE_NAGGING.description": "[gold]位移[/gold]{IfUpgraded:show:至多|}-{Value1:diff()}.\n每有一个[gold]距离[/gold]不大于2的敌人就获得{Block:diff()}点[gold]格挡[/gold]。",
+  "STS_KOMACHI_ONOZUKA-IGNORE_NAGGING.title": "无视唠叨",
+  "STS_KOMACHI_ONOZUKA-IGNORE_NAGGING.artist": "しなぷう",
 
   "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.description": "[gold]位移[/gold]至多-{Value1:diff()}。\n每[gold]位移[/gold]一级，给予{Value2:diff()}层[gold]怨灵[/gold]。\n[gold]释放[/gold]{ReleaseCost}：敌人身上每有{Value3:diff()}层[gold]怨灵[/gold]，在本回合获得1点[gold]力量[/gold]。",
   "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.extraDescription1": "[gold]释放[/gold]{ReleaseCost}：敌人身上每有{Value3:diff()}层[gold]怨灵[/gold]，在本回合获得1点[gold]力量[/gold]。",
@@ -379,9 +383,9 @@
   "STS_KOMACHI_ONOZUKA-EXCHANGE_LIVING_AND_DEAD.artist": "Akyuun",
 
   
-  "STS_KOMACHI_ONOZUKA-GOLD_SARCOPHAGALLEY.description": "[gold]消耗[/gold][gold]抽牌堆[/gold]中的1张牌。在此后的第2个回合开始时，将该牌加入你的[gold]手牌[/gold]并将其[gold]升级[/gold]。",
+  "STS_KOMACHI_ONOZUKA-GOLD_SARCOPHAGALLEY.description": "选择[gold]抽牌堆[/gold]中的1张牌[gold]消耗[/gold]。在此后的第2个回合开始时，将该牌加入你的[gold]手牌[/gold]，将其[gold]升级[/gold]并使其获得[gold]填充[/gold]。",
   "STS_KOMACHI_ONOZUKA-GOLD_SARCOPHAGALLEY.title": "封印的黄金柜",
-  "STS_KOMACHI_ONOZUKA-GOLD_SARCOPHAGALLEY.selectionScreenPrompt": "[gold]消耗[/gold]一张牌。它将在2回合后[gold]升级[/gold]后返回手牌。",
+  "STS_KOMACHI_ONOZUKA-GOLD_SARCOPHAGALLEY.selectionScreenPrompt": "[gold]消耗[/gold]一张牌。它将在2回合后进入手牌，被[gold]升级[/gold]并获得[gold]填充[/gold]。",
   "STS_KOMACHI_ONOZUKA-GOLD_SARCOPHAGALLEY.artist": "Zounose",
 
   
@@ -438,7 +442,7 @@
 
   
 
-  "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION.description": "获得{Value1:diff()}层[gold]引灵[/gold]和{Value2:diff()}层[gold]神灵[/gold]。\n每当你将要[gold]释放[/gold]时：\n对所有敌人造成等于[gold]释放[/gold]的[gold]引灵[/gold]层数的伤害；\n[gold]守护[/gold]等于[gold]释放[/gold]的[gold]神灵[/gold]层数并获得等值的[gold]格挡[/gold]。",
+  "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION.description": "获得{Value1:diff()}层[gold]引灵[/gold]和{Value2:diff()}层[gold]神灵[/gold]。\n每当你将要[gold]释放[/gold]时：[gold]守护[/gold]等于[gold]释放[/gold][gold]灵[/gold]的层数，然后对所有敌人造成等于你当前[gold]神灵护体[/gold]生命值的伤害。",
   "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION.title": "灵魂的引诱",
   "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION.artist": "luke (kyeftss)",
 
