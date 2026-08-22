@@ -1,9 +1,12 @@
 ﻿using MegaCrit.Sts2.Core.CardSelection;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.GameExtenders;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Distance;
 using System;
 using System.Collections.Generic;
@@ -16,6 +19,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
 {
     public class DistanceChangedEventArgs
     {
+        public Creature? Applier;
         public Creature Target;
         public PowerModel? Power;
         public CardModel? cardSource;
@@ -45,7 +49,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
             int oldLevel = power?.Amount ?? DistancePower.DefaultLevel;
             int newLevel = Math.Clamp(oldLevel + levelChange, DistancePower.MinLevel, DistancePower.MaxLevel);
 
-            DistanceChangedEventArgs args = new() { Target = target, Power = power, OldLevel = oldLevel, NewLevel = newLevel, cardSource = cardSource };
+            DistanceChangedEventArgs args = new() { Applier = applier, Target = target, Power = power, OldLevel = oldLevel, NewLevel = newLevel, cardSource = cardSource };
 
             // Nothing ever happens
             if (oldLevel == newLevel)
@@ -63,6 +67,17 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
                 // Already exists: set the absolute value directly instead of adding through PowerCmd.
                 power.Amount = newLevel;
             }
+
+            var combatState = target.CombatState;
+
+            if (combatState != null)
+            {
+                CombatManager.Instance.History.Add(combatState, new DisplacementEntry(
+                    target, oldLevel, newLevel, applier, cardSource,
+                    combatState.RoundNumber, combatState.CurrentSide,
+                    CombatManager.Instance.History, combatState.Players));
+            }
+            else MainFile.LogMessage($"[WARNING] A displacement was not added to history due to {target.CombatId} not having a combat history.");
 
             await KomachiHooks.OnDistanceChanged(choiceContext, args);
             return args;
@@ -134,6 +149,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
                     )).FirstOrDefault();
             }
             return await CardSelectCmd.FromChooseACardScreen(choiceContext, list, card.Owner, false);
+            //return await CustomCardSelectCmd.FromTargetedCreatureScreen(choiceContext, list, card.Owner, target, false);
         }
 
         /// <summary>
@@ -145,12 +161,16 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
             if (n == 0)
             {
                 ManipulateNoDistanceToken token = card.CombatState.CreateCard<ManipulateNoDistanceToken>(card.Owner);
+                token.RemoveKeyword(CardKeyword.Retain);
+                token.RemoveKeyword(CardKeyword.Exhaust);
                 token.AltDescription = 0;
                 finalToken = token;
             }
             else if (n < 0)
             {
                 ManipulateDistanceToken token = card.CombatState.CreateCard<ManipulateDistanceToken>(card.Owner);
+                token.RemoveKeyword(CardKeyword.Retain);
+                token.RemoveKeyword(CardKeyword.Exhaust);
                 token.AltDescription = 1;
                 token.Value1 = -n;
                 token.ExtraDescription1 = token.RawExtraDescription1.GetFormattedText();
@@ -159,6 +179,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
             else
             {
                 ManipulateDistanceToken token = card.CombatState.CreateCard<ManipulateDistanceToken>(card.Owner);
+                token.RemoveKeyword(CardKeyword.Retain);
+                token.RemoveKeyword(CardKeyword.Exhaust);
                 token.AltDescription = 2;
                 token.Value1 = n;
                 token.ExtraDescription2 = token.RawExtraDescription2.GetFormattedText();

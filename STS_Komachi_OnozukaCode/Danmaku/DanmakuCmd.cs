@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.TestSupport;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Configs;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku.Nodes;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
 using System;
@@ -23,7 +24,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
         /// </summary>
         public static Task Fire(IReadOnlyList<DanmakuPiece> pieces, Creature shooter, IReadOnlyList<Creature> targets, Control container)
         {
-            if (TestMode.IsOn || targets.Count == 0 || pieces.Count == 0) return Task.CompletedTask;
+            if (TestMode.IsOn || KomachiConfigs.SkipDanmaku || targets.Count == 0 || pieces.Count == 0) return Task.CompletedTask;
             var tasks = pieces.Select(piece => RunPiece(piece, shooter, targets, container, null));
             return Task.WhenAll(tasks);
         }
@@ -34,7 +35,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
             float timeoutSeconds = DefaultTimeoutSeconds,
             Action? onHitExtra = null)
         {
-            if (TestMode.IsOn || targets.Count == 0 || pieces.Count == 0)
+            if (TestMode.IsOn || KomachiConfigs.SkipDanmaku || targets.Count == 0 || pieces.Count == 0)
             {
                 onHitExtra?.Invoke(); // still fire the fallback so the slash isn't silently lost
                 return;

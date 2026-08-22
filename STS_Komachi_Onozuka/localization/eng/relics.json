@@ -6,16 +6,48 @@
   "STS_KOMACHI_ONOZUKA-THE_TITANIC.tlnote": "Komachi's Ship is called the titanic. The flavor is her dialogue with Reimu in touhou 9.",
 
   
-  "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.description": "At the start of combat, add a [gold]Manipulate Distance[/gold] to your [gold]Hand[/gold] and gain {Value1} [gold]Guided Spirits[/gold]. At the start of your third turn, add a [gold]Spider Lily[/gold] to your [gold]Hand[/gold]. Whenever a non-minion enemy dies, gain {Gold} gold.",
+  "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.description": "At the start of combat, add a [gold]Manipulate Distance[/gold] to your [gold]Hand[/gold]. At the start of your third turn, add a [gold]Spider Lily[/gold] to your [gold]Hand[/gold]. Whenever you [gold]Displace[/gold], gain {GuidedSpiritPower} [gold]Guided Spirit{GuidedSpiritPower:plural:|s}[/gold].",
   "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.flavor": "If you're saying you'll interfere with my work, I'll ferry you over with my Titanic!\n50% off.",
   "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.title": "Commercial Titanic",
-  "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.tlnote": "Commercial because she's doing her job and making bank out of it. Flavor is the same dialogue with Reimu.",
+  "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.tlnote": "Commercial because she's doing her job and making bank out of it. Flavor is the same dialogue with Reimu. Changed from the old effect.",
 
-  "STS_KOMACHI_ONOZUKA-RED_TITANIC.description": "At the start of combat, add a [gold]Manipulate Distance[/gold] and a [gold]Spider Lily[/gold] to your [gold]Hand[/gold], then add 3 [gold]Spider Lilies[/gold] into your [gold]Discard Pile[/gold]. At the end of combat, heal HP equal to the damage you took from life loss this combat. (Heal {Heal} HP)",
+  "STS_KOMACHI_ONOZUKA-RED_TITANIC.description": "At the start of combat, add a [gold]Manipulate Distance[/gold] and a [gold]Spider Lily[/gold] to your [gold]Hand[/gold], then add 3 [gold]Spider Lilies[/gold] into your [gold]Discard Pile[/gold]. At the end of combat, heal HP equal to the damage you took from life loss this combat. (Heal [blue]{Heal}[/blue] HP)",
   "STS_KOMACHI_ONOZUKA-RED_TITANIC.flavor": "The chaotic blooming of the [red]Red Spider Lily[/red],\nis the measure of my workload.\nIf you're going to interfere with my work, then I'll show no mercy!",
   "STS_KOMACHI_ONOZUKA-RED_TITANIC.title": "Red Titanic",
   "STS_KOMACHI_ONOZUKA-RED_TITANIC.tlnote": "Dialogue with Sakuya in touhou 9. Red Titanic as in it's filled with Red Spider Lilies. You can get creative with the name if you want. Restores life lost from direct life loss, mainly for Spider Lily's poison.",
 
+  
+  "STS_KOMACHI_ONOZUKA-SPIRIT_COMPANION.description": "At the start of combat, gain [blue]{GuidedSpiritPower}[/blue] [gold]Guided Spirits[/gold].",
+  "STS_KOMACHI_ONOZUKA-SPIRIT_COMPANION.flavor": "Dead people make for such cute pets.",
+  "STS_KOMACHI_ONOZUKA-SPIRIT_COMPANION.title": "Spirit Companion",
+  
+   "STS_KOMACHI_ONOZUKA-FERRYMANS_OAR.description": "At the start of each combat, [blue]{Cards}[/blue] random card{Cards:plural:|s} in your [gold]Draw Pile[/gold] gain [gold]Replenish[/gold].",
+  "STS_KOMACHI_ONOZUKA-FERRYMANS_OAR.flavor": "None yet.",
+  "STS_KOMACHI_ONOZUKA-FERRYMANS_OAR.title": "Ferryman's Oar",
+  "tlnote": "If you want, you can write the flavor text for this one.",
+
+  "STS_KOMACHI_ONOZUKA-CHARONS_COIN.description": "Upon pickup, gain [blue]{GoldGain}[/blue] gold. Whenever an enemy dies, gain [blue]{GuidedSpiritPower}[/blue] [gold]Guided Spirits[/gold], then if it was not a minion, gain [blue]{Gold}[/blue] [gold]Gold[/gold].",
+  "STS_KOMACHI_ONOZUKA-CHARONS_COIN.flavor": "Getting to the after-life is such a pay to win process.",
+  "STS_KOMACHI_ONOZUKA-CHARONS_COIN.title": "Charon's 4-Mon",
+  "tlnote": "Commercial titanic's old effect brought to this relic. Usually, Charon would have an Obol. But since komachi is japanese, she gets a 4 mon instead. 4 is also the number of death.",
+  
+  "STS_KOMACHI_ONOZUKA-PARRYING_SCYTHE.description": "The first time each combat, before you would be attacked by an enemy whose [gold]Distance[/gold] is 2 or less, gain [gold]Block[/gold] equal to half that attack's damage.",
+  "STS_KOMACHI_ONOZUKA-PARRYING_SCYTHE.flavor": "Parrying's just like a Rhythm game.",
+  "STS_KOMACHI_ONOZUKA-PARRYING_SCYTHE.title": "Parrying Scythe",
+  
+  "STS_KOMACHI_ONOZUKA-DEATH_NOTE.description": "Whenever you [gold]Exhaust[/gold] a card, apply [blue]{VengefulSpiritPower}[/blue] [gold]Vengeful Spirits[/gold] to ALL enemies.",
+  "STS_KOMACHI_ONOZUKA-DEATH_NOTE.flavor": "How to Use It: XLIX\nOnly 6 Death Notes are allowed to exist at a time in the human world. Any additional ones will have no effects.\nAll those store-brand death notes are real, they just don't work.",
+  "STS_KOMACHI_ONOZUKA-DEATH_NOTE.title": "Death Note",
+  "tolnote": "Actual rule from Death note.",
+
+  "STS_KOMACHI_ONOZUKA-POSSESSED_LILY.description": "Whenever you are [gold]Poisoned[/gold], gain [gold]Divine Spirits[/gold] equal to the amount of [gold]Poison[/gold] gained.",
+  "STS_KOMACHI_ONOZUKA-POSSESSED_LILY.flavor": "\"Oh no, I died! Oh well. Living in a flower isn't so bad.\"",
+  "STS_KOMACHI_ONOZUKA-POSSESSED_LILY.title": "Possessed Lily",
+
+  
+  "STS_KOMACHI_ONOZUKA-YAMAS_LECTURE_BOOK.description": "The first time you [gold]Release[/gold] each turn, gain back [gold]Spirits[/gold] equal to half the amount you would have [gold]Released[/gold] (rounded up).",
+  "STS_KOMACHI_ONOZUKA-YAMAS_LECTURE_BOOK.flavor": "The weight of this book classifies it as a blunt weapon.",
+  "STS_KOMACHI_ONOZUKA-YAMAS_LECTURE_BOOK.title": "Yama's Lecture Book",
   
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.description": "At the start of each combat, gain [blue]{DexterityPower}[/blue] [gold]Dexterity[/gold]. At the end of your third turn, lose [blue]{DexterityPower}[/blue] [gold]Dexterity[/gold] and apply [blue]{VulnerablePower}[/blue] [gold]Vulnerable[/gold] to ALL enemies.",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.flavor": "For half your lifespan, you can see the name and date of death of all the people you encounter.",

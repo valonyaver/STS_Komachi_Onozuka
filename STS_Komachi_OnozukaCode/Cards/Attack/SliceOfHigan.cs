@@ -28,7 +28,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         public SliceOfHigan()
         : base(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
         {
-            WithDamage(4);
+            WithDamage(3);
             // Damage increase from displacement
             WithVar(nameof(Value1), 1, 1);
             WithKeyword(KomachiKeywords.Displace);

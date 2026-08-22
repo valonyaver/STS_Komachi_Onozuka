@@ -57,6 +57,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
                 choiceContext, cardPlay.Target, 
                 DynamicVars[nameof(VengefulSpiritApplication)].IntValue, Owner.Creature, this);
 
+            if (CombatState == null) return;
             CardModel? chosen = await ReleaseCmd.ChooseRelease(choiceContext, this, ReleaseCost);
 
             if (ReleaseCmd.ChoseRelease(chosen))

@@ -29,7 +29,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         public ScytheOfExorcism()
             : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
         {
-            WithDamage(16, 4);
+            WithDamage(14, 4);
             WithKeyword(KomachiKeywords.Detonate);
 
             // Spirits needed

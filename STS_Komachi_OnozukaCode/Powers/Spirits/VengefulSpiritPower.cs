@@ -214,10 +214,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
         public override IEnumerable<HealthBarForecastSegment> GetHealthBarForecastSegments(HealthBarForecastContext context)
         {
             decimal dmg = GetThirdAmount()!.Value;
-            if (dmg <= 0m) yield break;
+            var enemyBlock = Owner.Block;
+            var length = dmg - enemyBlock;
+            if (length <= 0m) yield break;
 
             yield return new HealthBarForecastSegment(
-                Amount: (int)dmg,
+                Amount: (int)length,
                 Color: StsColors.purple,
                 Direction: HealthBarForecastDirection.FromRight,
                 Order: 0,

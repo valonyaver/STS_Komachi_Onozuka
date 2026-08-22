@@ -22,11 +22,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Relics
 {
     public class ShinigamiEyes : STS_Komachi_OnozukaRelic
     {
-        public override RelicRarity Rarity => RelicRarity.Common;
+        public override RelicRarity Rarity => RelicRarity.Uncommon;
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new PowerVar<DexterityPower>(1),
-            new PowerVar<VulnerablePower>(2), // 2 because the enemy will lose one upon their turn immediately
+            new PowerVar<VulnerablePower>(3), 
             ];
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
             [
@@ -45,7 +45,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Relics
 
         public override async Task BeforeSideTurnEndVeryEarly(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
-            if (!participants.Contains(Owner.Creature) || Owner.PlayerCombatState.TurnNumber != 3)
+            if (!participants.Contains(Owner.Creature) || Owner.PlayerCombatState?.TurnNumber != 3)
                 return;
             await PowerCmd.Apply<DexterityPower>(choiceContext, Owner.Creature, -DynamicVars["DexterityPower"].BaseValue, Owner.Creature, null);
             await PowerCmd.Apply<VulnerablePower>(choiceContext, Owner.Creature.CombatState.HittableEnemies, DynamicVars["VulnerablePower"].BaseValue, Owner.Creature, null);

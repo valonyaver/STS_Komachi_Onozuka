@@ -6,7 +6,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Character
 {
     public class STS_Komachi_OnozukaCardPool : CustomCardPoolModel
     {
-        public override string Title => STS_Komachi_Onozuka.CharacterId; //This is not a display name.
+        public override string Title => Komachi_Character.CharacterId; //This is not a display name.
 
         public override string BigEnergyIconPath => "charui/big_energy.png".ImagePath();
         public override string TextEnergyIconPath => "charui/text_energy.png".ImagePath();

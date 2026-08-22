@@ -11,5 +11,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Configs
     {
         [ConfigHoverTip]
         public static bool UseDairiPortrait { get; set; } = false;
+        [ConfigHoverTip]
+        public static bool SkipDanmaku { get; set; } = false;
     }
 }

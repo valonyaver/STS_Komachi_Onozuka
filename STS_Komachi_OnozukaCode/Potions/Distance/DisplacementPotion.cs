@@ -14,7 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Potions.Distance
+namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Potions
 {
     public class DisplacementPotion : STS_Komachi_OnozukaPotion
     {

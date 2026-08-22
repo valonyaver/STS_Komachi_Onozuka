@@ -45,12 +45,13 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             if (IsUpgraded)
             {
                 List<CardModel> draw = PileType.Draw.GetPile(Owner).Cards.ToList();
+                // Needs to be resorted so as to not show the actual order of cards
                 draw = (from c in draw
                             orderby c.Rarity, c.Id
                             select c).ToList();
                 
                 list.AddRange(draw);
-                list.AddRange(Owner.PlayerCombatState.DiscardPile.Cards); 
+                // list.AddRange(Owner.PlayerCombatState.DiscardPile.Cards); 
                 choice = (await CardSelectCmd.FromSimpleGrid(
                         choiceContext,
                         list,
@@ -68,8 +69,6 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
                     source: this)).ToList();
 
             }
-
-
 
 
             if (choice.Count > 0)

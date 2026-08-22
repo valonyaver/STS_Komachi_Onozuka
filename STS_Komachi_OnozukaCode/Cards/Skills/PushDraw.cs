@@ -36,16 +36,22 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-            // Displacement happens before block for certain powers that care about it.
-            var enemyDisplacement = DistancePower.GetLevel(cardPlay.Target);
+            //// Displacement happens before block for certain powers that care about it.
+            //var enemyDisplacement = DistancePower.GetLevel(cardPlay.Target);
 
-            if (enemyDisplacement < 5)
+            //if (enemyDisplacement < 5)
+            //{
+            //    int[] options = IsUpgraded ? new[] { 0, 1, 2 } : new[] { 0, 1 };
+            //    await DistanceCmd.ChooseAndDisplace(choiceContext, cardPlay.Target, this, options);
+            //}
+            if (IsUpgraded)
             {
-                int[] options = IsUpgraded ? new[] { 0, 1, 2 } : new[] { 0, 1 };
+                int[] options = [1, 2];
                 await DistanceCmd.ChooseAndDisplace(choiceContext, cardPlay.Target, this, options);
             }
+            else await DistanceCmd.Displace(choiceContext, cardPlay.Target, 1, Owner.Creature, this);
 
-            enemyDisplacement = DistancePower.GetLevel(cardPlay.Target);
+            var enemyDisplacement = DistancePower.GetLevel(cardPlay.Target);
 
 
             await CardPileCmd.Draw(choiceContext, enemyDisplacement, Owner);

@@ -34,14 +34,15 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Relics
                 return;
             if (player.PlayerCombatState?.TurnNumber == 1)
             {
+                Flash();
                 CardModel created = combatState.CreateCard<ManipulateDistanceToken>(Owner);
-                await CardPileCmd.Add(created, PileType.Hand);
+                await CardPileCmd.AddGeneratedCardToCombat(created, PileType.Hand, Owner);
             }
             else if (player.PlayerCombatState?.TurnNumber == 3)
             {
                 Flash();
                 CardModel created = combatState.CreateCard<SpiderLily>(Owner);
-                await CardPileCmd.Add(created, PileType.Hand);
+                await CardPileCmd.AddGeneratedCardToCombat(created, PileType.Hand, Owner);
             }
         }
 

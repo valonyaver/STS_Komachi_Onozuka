@@ -9,7 +9,6 @@ using MegaCrit.Sts2.Core.TestSupport;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
 using System.Threading;
 using System.Threading.Tasks;
-using Godot;
 using System.Threading;
 using System.Threading.Tasks;
 

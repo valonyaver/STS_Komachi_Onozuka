@@ -42,18 +42,22 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         }
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            var list = IsUpgraded ? new[] { -3, -2, -1 } : [-2, -1];
+            int[] list = [-3, -2, -1];
             var displacement = await DistanceCmd.ChooseAndDisplace(choiceContext, cardPlay.Target, this, list);
             
             await PowerCmd.Apply<VengefulSpiritPower>(choiceContext, target: cardPlay.Target, displacement.ChangeAbs * Value2, Owner.Creature, this);
+
+            
+            var vengefulCount = cardPlay.Target?.GetPower<VengefulSpiritPower>()?.Amount;
+
+            if (vengefulCount == null || vengefulCount.Value < 3) return;
 
             var releaseChoice = await ReleaseCmd.ChooseRelease(choiceContext, this, ReleaseCost);
             if (ReleaseCmd.ChoseRelease(releaseChoice))
             {
                 await ReleaseCmd.Release(choiceContext, Owner.Creature, ReleaseCost, this);
 
-                var vengefulCount = cardPlay.Target.GetPower<VengefulSpiritPower>().Amount;
-                var Fp = vengefulCount / Value3;
+                var Fp = vengefulCount.Value / Value3;
                 await PowerCmd.Apply<DeepFogPower>(choiceContext, target: Owner.Creature, Fp, Owner.Creature, this);
                 
             }

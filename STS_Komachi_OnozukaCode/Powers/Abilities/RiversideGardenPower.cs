@@ -35,6 +35,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
             if (creator == Owner.Player && card is SpiderLily)
             {
                 CardCmd.Upgrade(card);
+                await Task.CompletedTask;
             }
         }
     }

@@ -20,6 +20,7 @@ using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Configs;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku.Nodes;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
@@ -101,19 +102,24 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
                 float totalPatternTime = TotalSlashTime(flurryCount) + patterns[^1].LifeSeconds.Evaluate();
 
                 SfxCmd.Play("spellcard2.wav".SoundEffectPath());
-                NDanmakuDarkenOverlay? darkenVfx = NDanmakuDarkenOverlay.Create(
-                    totalPatternTime + NDanmakuDarkenOverlay._introDuration, 
-                    originCreature: Owner.Creature,
-                    style: DarkenOverlayStyle.Expand, 
-                    tint: new Color(0.1f, 0, 0, 0.5f)
-                    );
-
-                if (darkenVfx != null)
+                if (!KomachiConfigs.SkipDanmaku)
                 {
-                    NCombatRoom.Instance?.BgContainer.AddChildSafely(darkenVfx); 
-                }
+                    NDanmakuDarkenOverlay? darkenVfx = NDanmakuDarkenOverlay.Create(
+                        totalPatternTime + NDanmakuDarkenOverlay._introDuration,
+                        originCreature: Owner.Creature,
+                        style: DarkenOverlayStyle.Expand,
+                        tint: new Color(0.1f, 0, 0, 0.5f)
+                        );
 
-                await Cmd.Wait(NDanmakuDarkenOverlay._introDuration - NDanmakuDarkenOverlay._introDuration * 0.2f);
+
+                    if (darkenVfx != null)
+                    {
+                        NCombatRoom.Instance?.BgContainer.AddChildSafely(darkenVfx);
+                    }
+
+
+                    await Cmd.Wait(NDanmakuDarkenOverlay._introDuration - NDanmakuDarkenOverlay._introDuration * 0.2f);
+                }
                 await DamageCmd.Attack(GetEnemyHP(this, cardPlay.Target))
                     .WithHitFx("vfx/vfx_big_slash", null, "slash_attack.mp3")
                     .FromCard(this, cardPlay)

@@ -37,7 +37,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             WithVar(nameof(Value1), 2);
             WithKeyword(CardKeyword.Innate, UpgradeType.Add);
             WithKeyword(CardKeyword.Exhaust);
-            WithKeyword(KomachiKeywords.Replenish);
+            WithTip(KomachiKeywords.Replenish);
         }
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

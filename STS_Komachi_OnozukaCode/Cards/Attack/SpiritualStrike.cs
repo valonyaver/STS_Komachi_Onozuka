@@ -26,7 +26,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         public SpiritualStrike()
         : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
         {
-            WithDamage(6, 2);
+            WithDamage(5, 2);
             // Just to get its tooltip lol.
             WithPower<VengefulSpiritPower>(0);
             WithTags(CardTag.Strike);

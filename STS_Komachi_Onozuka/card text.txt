@@ -1,0 +1,318 @@
+Coin Throw, 1 cost, Common: Deal 10 damage to ALL enemies.
+Lose 5 [gold]Gold[/gold].
+
+Scythe of Exorcism, 2 cost, Uncommon: Deal 16 damage.
+[gold]Detonate[/gold], then if 4 or more [gold]Spirits[/gold] were [gold]Detonated[/gold] this way, add 1 [gold]Spider Lily+[/gold] into your [gold]Hand[/gold].
+
+Short Life Expectancy, 3 cost, Rare: [gold]Release[/gold] 10: Deal damage equal to 50% of the enemy's HP.
+If the target is an [gold]Elite[/gold] or [gold]Boss[/gold], you must [gold]Release[/gold] 20 instead.
+[gold]Exhaust[/gold].
+
+Storm Of The Grieving Dead, X cost, Uncommon: Deal 6 damage X times.
+If X is 2 or more, add 1 [gold]Spider Lily[/gold] into your [gold]Discard Pile[/gold].
+
+Sweeping Scythe, 2 cost, Common: [gold]Displace[/gold] ALL enemies by -1.
+Deal 10 damage to ALL enemies.
+Add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].
+
+Tip Of The Reaper, 0 cost, Common: [gold]Ethereal[/gold].
+Deal 6 damage.
+When [gold]Exhausted[/gold]: Add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].
+
+Abundant Floating Spirits, 2 cost, Uncommon: Deal 8 damage to ALL enemies.
+Apply 4 [gold]Vengeful Spirits[/gold] to ALL enemies.
+Add a [gold]Detonate[/gold] to your [gold]Hand[/gold].
+[gold]Release[/gold] 8: Repeat this card's effects.
+
+Weed Cutter, 1 cost, Common: Deal 9 damage.
+Draw 1 card.
+Add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].
+[gold]Exhaust[/gold].
+
+Close Quarter Technique, 1 cost, Uncommon: Gain 5 [gold]Block[/gold].
+Apply 4 [gold]Vengeful Spirits[/gold].
+If [gold]Distance[/gold] is less than 3, gain 4 [gold]Guided Spirits[/gold], and the enemy loses 5 [gold]Strength[/gold] this turn.
+
+Divine Protection, 1 cost, Uncommon: Gain 8 [gold]Block[/gold].
+Gain 4 [gold]Divine Spirits[/gold].
+[gold]Release[/gold] 4: Gain 4 more [gold]Divine Spirits[/gold].
+[gold]Exhaust[/gold].
+
+Eye of the Storm, 3 cost, Uncommon: Gain 10 [gold]Block[/gold].
+[gold]Barrier[/gold] 5.
+Gain 5 [gold]Guided Spirits[/gold].
+Apply 3 [gold]Vengeful Spirits[/gold] to ALL enemies.
+
+Flower Viewing, 1 cost, Common: Gain 7 Block.
+Next turn, add a [gold]Spider Lily[/gold] to your Hand. It has [gold]Ethereal[/gold] instead of [gold]Retain[/gold].
+
+No Hard Feelings, 1 cost, Common: Gain 4 [gold]Block[/gold].
+Apply 2 [gold]Vengeful Spirits[/gold].
+[gold]Optional[/gold]: [gold]Detonate[/gold]. The enemy loses 1 [gold]Strength[/gold] this turn for every 2 [gold]Spirits[/gold] [gold]Detonated[/gold].
+
+Scythe Parry, 1 cost, Common: Gain 8 [gold]Block[/gold].
+Add a [gold]Manipulate Distance[/gold] to the hand.
+Blocked attack damage is reflected to your attacker this turn.
+[gold]Exhaust[/gold].
+
+Spirit Protection, 1 cost, Uncommon: Gain 8 [gold]Block[/gold].
+Your [gold]Divine Spirit[/gold] heals by 3.
+[gold]Release[/gold] ALL: [gold]Barrier[/gold] equal to the amount of [gold]Spirits[/gold] [gold]Released[/gold].
+
+Human Spirits Passing By, 1 cost, Common: Gain 6 [gold]Block[/gold].
+Gain 3 [gold]Guided Spirits[/gold].
+
+Bound Spirits Of The Earth, 1 cost, Uncommon: Apply 3 [gold]Vengeful Spirits[/gold] to ALL enemies.
+At the end of your turn, apply 3 [gold]Vengeful Spirits[/gold] to ALL enemies with [gold]Vengeful Spirits[/gold].
+
+Judgement "Charge of Virtue", 3 cost, Ancient: You do not pay the [gold]Release[/gold] costs of cards.
+
+Extinct Fauna of the Sanzu River, 3 cost, Rare: Whenever you play a card:
+- If there's a card with the same name in your [gold]Exhaust Pile[/gold], you may add it into your [gold]Hand[/gold].
+- If there's none, create a [img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img] [gold]Clone[/gold] of it, then [gold]Exhaust[/gold] that [gold]Clone[/gold].
+Each effect can only activate once per turn.
+
+Flexible Work Schedule, 1 cost, Uncommon: Whenever an enemy is [gold]Displaced[/gold], gain 2 [gold]Block[/gold].
+
+Flow of the Sanzu River, 1 cost, Uncommon: Add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold]. Whenever an enemy is [gold]Displaced[/gold]:
+If the [gold]Distance[/gold] increased, gain 1 [gold]Dexterity[/gold] this turn.
+If the [gold]Distance[/gold] decreased, gain 1 [gold]Strength[/gold] this turn.
+
+Forever Cancelled, 2 cost, Rare: Apply 4 [gold]Vengeful Spirits[/gold].
+Whenever [gold]Spirits[/gold] are [gold]Detonated[/gold], apply [gold]Vengeful Spirits[/gold] equal to 50% the [gold]Detonated[/gold] amount, rounded up, to the same enemy.
+
+God of Death, 3 cost, Rare: Whenever an enemy dies, if it was a [gold]Minion[/gold], [gold]Barrier[/gold] 9. Else, heal 9 HP.
+The next time your HP would be reduced to 0, instead, heal to 50% of your Max HP, gain 1 [gold]Intangible[/gold], then remove this card from your [gold]Deck[/gold]. This effect can only activate once per combat.
+
+Grudge Of The Dead, 2 cost, Uncommon: Whenever [gold]Spirits[/gold] are [gold]Detonated[/gold], gain 1 [gold]Strength[/gold].
+Apply 4 [gold]Vengeful Spirit[/gold] to ALL enemies.
+[gold]Optional[/gold]: [gold]Detonate[/gold] ALL enemies.
+
+Hardworking Shinigami, 1 cost, Uncommon: At the start of your turn, if you have no [gold]Manipulate Distance[/gold] in [gold]Hand[/gold], add 1 into your [gold]Hand[/gold].
+
+Souls at the End of The Road, 3 cost, Rare: [gold]Exhaust[/gold] ALL cards EVERYWHERE. Gain 2 [gold]Divine Spirits[/gold] per [gold]Hand[/gold] card, 1 [gold]Guided Spirit[/gold] per [gold]Draw[/gold] card, and apply 1 [gold]Vengeful Spirit[/gold] to ALL enemies per [gold]Discard[/gold] card.
+Start of next turn, choose up to 4 non-[gold]Basic[/gold] [gold]Exhausted[/gold] cards to return randomly into the three piles. Then, return all [gold]Basics[/gold] to your [gold]Draw[/gold] pile.
+
+Lily's Embrace, 2 cost, Uncommon: Add a [gold]Spider Lily[/gold] to your Hand.
+Whenever you play a [gold]Spider Lily[/gold], gain 1 [gold]Strength[/gold] and apply 3 [gold]Poison[/gold] to ALL enemies.
+
+Lonesome Lily, 1 cost, Rare: Add 1 [gold]Spider Lily[/gold] into your [gold]Draw Pile[/gold].
+Whenever you play a [gold]Spider Lily[/gold], add 1 [gold]Lycoris Radiata[/gold] into your [gold]Hand[/gold].
+
+Ministry Work, 3 cost, Rare: Choose 1 of 3 random cards to add into your [gold]Hand[/gold], then [gold]Exhaust[/gold] the rest.
+Gain [img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img]. Gain [img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img] at the start of each turn.
+
+Possessed Armament, 1 cost, Uncommon: Whenever you deal unblocked attack damage, apply 1 [gold]Vengeful Spirit[/gold].
+
+Push and Pull, 2 cost, Uncommon: At the start of your turn, [gold]Displace[/gold] ALL enemies by -1.
+At the end of your turn, [gold]Displace[/gold] ALL enemies by +1.
+
+Recursive Souls, 1 cost, Uncommon: Whenever a card is [gold]Exhausted[/gold], gain 1 [gold]Guided Spirit[/gold].
+
+Riverside Garden, 3 cost, Rare: Whenever a [gold]Spider Lily[/gold] is created, [gold]Upgrade[/gold] it.
+Add 1 [gold]Spider Lily[/gold] each into your [gold]Hand[/gold], [gold]Draw Pile[/gold], and [gold]Discard Pile[/gold].
+
+Riverside View, 2 cost, Rare: At the start of your turn, if you have no [gold]Spider Lily[/gold] in [gold]Hand[/gold], add 1 into your [gold]Hand[/gold]. 
+[gold]Spider Lilies[/gold] only give you 1 [gold]Poison[/gold].
+
+Shinigami Form, 3 cost, Rare: Close [gold]Distances[/gold] increases damage taken by enemies by a further 100%/50%. Far [gold]Distances[/gold] reduce damage dealt by enemies by a further 15%/30%. The latter is unstackable.
+
+Shinigami Tactics, 2 cost, Rare: Whenever you [gold]Displace[/gold] with [gold]Manipulate Distance[/gold]:
+If the [gold]Distance[/gold] decreased, add a random Attack into your [gold]Hand[/gold].
+If the [gold]Distance[/gold] increased, add a random Skill into your [gold]Hand[/gold].
+These cards gain [gold]Replenish[/gold].
+
+Spirit Invitation, 1 cost, Rare: Gain 2 [gold]Guided Spirits[/gold] and 2 [gold]Divine Spirits[/gold].
+Whenever you would [gold]Release[/gold]: [gold]Barrier[/gold] 1 for every [gold]Spirit[/gold] you would [gold]Release[/gold], then deal damage to ALL enemies equal to your [gold]Divine Spirit's[/gold] current HP.
+
+Spirit Return, 2 cost, Rare: At the start of your turn, add up to 1 card that costs [img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img] or less in your [gold]Exhaust Pile[/gold] into your [gold]Hand[/gold].
+It gains [gold]Clone[/gold], and is removed from combat when played.
+
+Talkative Ferryman, 1 cost, Uncommon: At the start of your turn, gain 2 [gold]Guided Spirits[/gold].
+[gold]Release[/gold] 4: At the start of your next turn, gain 6 [gold]Guided Spirits[/gold].
+
+Afterlife Passage, 1 cost, Uncommon: [gold]Exhaust[/gold] 1-2 card(s) from your [gold]Hand[/gold].
+For each card, if it was a [gold]Status[/gold], [gold]Curse[/gold], or [gold]Basic[/gold] card, gain 4 [gold]Guided Spirits[/gold], else, gain 4 [gold]Divine Spirits[/gold].
+[gold]Exhaust[/gold].
+
+Siren's Bounty, 1 cost, Uncommon: Apply 2 [gold]Vengeful Spirits[/gold].
+[gold]Detonate[/gold], then you may choose:
+Gain 1 [gold]Guided Spirit[/gold] for every 2 [gold]Spirits[/gold] [gold]Detonated[/gold], or draw 1 card for every 3 [gold]Spirits[/gold] [gold]Detonated[/gold].
+
+Chain Detonation, 2 cost, Rare: Apply 4 [gold]Vengeful Spirits[/gold].
+[gold]Detonate[/gold] the enemy.
+Apply [gold]Vengeful Spirits[/gold] equal to the amount [gold]Detonated[/gold].
+[gold]Release[/gold] 3: [gold]Detonate[/gold] the enemy, again.
+[gold]Release[/gold] 8: Apply [gold]Vengeful Spirits[/gold] equal to the amount [gold]Detonated[/gold], again.
+
+Distance Tax, 0 cost, Common: Apply the following to ALL enemies, based on their [gold]Distance[/gold]:
+1-2: 1 [gold]Weak[/gold].
+3: Lose 2 [gold]Strength[/gold] this turn.
+4-5: 1 [gold]Vulnerable[/gold].
+
+Double Hooking, 2 cost, Rare: Discard 1 card.
+Choose up to 2 cards in your [gold]Exhaust Pile[/gold], except [gold]Double Hooking[/gold].
+Add the 1st into your [gold]Hand[/gold], and the 2nd into your [gold]Discard Pile[/gold]. Reduce their cost to 0[img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img] until played.
+[gold]Exhaust[/gold].
+
+Ethically Sourced Break, 2 cost, Rare: [gold]Barrier[/gold] 25.
+Heal 5 HP. Gain 2 [gold]Strength[/gold].
+End your turn.
+Next turn, end your turn.
+Next turn after that, gain [img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img][img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img].
+[gold]Exhaust[/gold].
+
+Ferriage of the Deep Fog, 1 cost, Uncommon: [gold]Displace[/gold] by up to -3.
+Apply 3 [gold]Vengeful Spirits[/gold] for every level of [gold]Displacement[/gold].
+[gold]Release[/gold] 3: Gain 1 [gold]Strength[/gold] this turn for every 3 [gold]Vengeful Spirits[/gold] on the enemy.
+
+Free Trauma?!, 0 cost, Common: Apply 2 [gold]Vengeful Spirits[/gold].
+[gold]Release[/gold] 4 or 8: Gain [img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img] for every 4 [gold]Spirits[/gold] released.
+
+Guiding Sanzu, 1 cost, Common: Gain 5 [gold]Guided Spirits[/gold].
+
+Ignore Nagging, 0 cost, Common: [gold]Displace[/gold] by -1.
+Gain 7 [gold]Block[/gold] for every enemy whose [gold]Distance[/gold] is 2 or less.
+
+Oasis of Passing Souls, 1 cost, Uncommon: Choose 1 card in your [gold]Discard Pile[/gold] or [gold]Exhaust Pile[/gold].
+Add a [gold]Clone[/gold] of it into your [gold]Hand[/gold], and [gold]Retain[/gold] it this turn. If the original card was a [gold]Power[/gold] or had [gold]Exhaust[/gold], it gains [gold]Clone[/gold].
+[gold]Exhaust[/gold].
+
+Quick Nap, 1 cost, Common: Heal 6 HP.
+Next turn, gain [img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img].
+End your turn.
+[gold]Exhaust[/gold].
+
+Quintessence, 0 cost, Rare: Draw 1 card.
+Gain [img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img].
+Gain 2 [gold]Guided Spirits[/gold].
+Gain 2 [gold]Divine Spirits[/gold].
+[gold]Exhaust[/gold].
+
+Reaper's Due, X cost, Rare: For every [img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img] spent: Gain 4 [gold]Guided Spirits[/gold].
+For every [img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img][img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img] spent: Apply 4 [gold]Vengeful Spirits[/gold] to ALL enemies.
+For every [img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img][img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img][img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img] spent: Gain 8 [gold]Divine Spirits[/gold].
+
+Residual Aether, 1 cost, Uncommon: [gold]Retain[/gold].
+Gain [img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img].
+[gold]While in Hand[/gold]: Whenever [gold]Detonation[/gold] happens, increase this card's [img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img] gain by 1.
+[gold]Exhaust[/gold].
+
+Spirit Catalyst, 1 cost, Uncommon: Double the enemy's [gold]Vengeful Spirits[/gold].
+[gold]Exhaust[/gold].
+
+Spirits of a Past Life, 1 cost, Uncommon: Gain 4 [gold]Guided Spirits[/gold].
+Draw 1 card.
+
+Spirits of the Firm, 1 cost, Common: Apply 5 [gold]Vengeful Spirits[/gold] to ALL enemies.
+[gold]Release[/gold] 4: Apply it again.
+
+Work Focus, 1 cost, Uncommon: [gold]Exhaust[/gold] 1-2 cards from your [gold]Hand[/gold].
+For each card, add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].
+If an [gold]Upgraded[/gold] card was [gold]Exhausted[/gold] this way, add 1 [gold]Spider Lily[/gold] into your [gold]Hand[/gold].
+[gold]Exhaust[/gold].
+
+Scythe Of The Reaper, 0 cost, Rare: Deal 4 damage.
+Whenever an enemy is [gold]Displaced[/gold], return this to your [gold]Hand[/gold] from the [gold]Discard Pile[/gold].
+
+Shinigami's Finesse, 2 cost, Common: Deal 6 damage 0 times.
+This card attacks a number of times equal to the enemy's [gold]Distance[/gold].
+
+Defend, 1 cost, Basic: Gain 5 [gold]Block[/gold].
+
+Strike, 1 cost, Basic: Deal 6 damage.
+
+Moving Defend, 2 cost, Uncommon: Gain 10 [gold]Block[/gold].
+For each enemy whose [gold]Distance[/gold] is 4 or more, add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].
+
+Accompanying Spy Spirit, 2 cost, Uncommon: Deal 13 damage.
+Whenever this enemy is [gold]Displaced[/gold], [gold]Barrier[/gold] 1.
+[gold]Exhaust[/gold].
+
+Ghostrick Shot, 1 cost, Common: [gold]Ethereal[/gold].
+Deal 2 damage.
+Apply 6 [gold]Vengeful Spirits[/gold].
+When [gold]Exhausted[/gold]: apply 2 [gold]Vengeful Spirits[/gold] to ALL enemies.
+
+Grudging Strike, 1 cost, Common: Deal 8 damage.
+Apply 3 [gold]Vengeful Spirits[/gold].
+[gold]Release[/gold] 3: Add 1 [gold]Detonate+[/gold] into your [gold]Hand[/gold].
+
+Lonely Bound Spirit, 1 cost, Uncommon: Deal 8 damage.
+Apply a [gold]Lonely Bound Spirit[/gold].
+
+Low Tier Shinigami, 2 cost, Rare: Deal 15 damage.
+Apply 99 [gold]Vulnerable[/gold].
+[gold]Exhaust[/gold].
+
+Parasitic Pollen, 1 cost, Uncommon: Deal 4 damage 2 times.
+ Add 1 [gold]Spider Lily[/gold] into your [gold]Draw Pile[/gold].
+If you are [gold]Poisoned[/gold], lose 3 [gold]Poison[/gold], then apply double the amount lost.
+
+Death Sign "Scythe Of Final Judgement", 1 cost, Ancient: [gold]Optional[/gold]: [gold]Displace[/gold] to any [gold]Distance[/gold].
+Deal 15 damage.
+Damage reduction of far [gold]Distances[/gold] increases this card's damage by double the amount instead.
+
+Scythe of Roaming Spirits, 2 cost, Rare: Deal 15 damage. Deals 1 additional damage for each [gold]Vengeful Spirit[/gold] on the enemy.
+If this kills an enemy, apply its [gold]Vengeful Spirit[/gold] on ALL enemies.
+
+Shoot And Move, 1 cost, Basic: Deal 8 damage.
+[gold]Optional[/gold]: [gold]Displace[/gold] by up to +/-1.
+
+Slice Of Higan, 1 cost, Rare: Deal 4 damage 2 times.
+Whenever an enemy is [gold]Displaced[/gold], increase this card's damage by 1 for the rest of combat.
+
+Spiritual Strike, 1 cost, Common: Deal 5 damage.
+Apply [gold]Vengeful Spirits[/gold] equal to damage dealt.
+Increase the duration of the enemy's [gold]Vengeful Spirits[/gold] by 1.
+
+The Strongest Spirit!, 2 cost, Rare: Deal [blue]9[/blue] damage.
+Apply [blue]9[/blue] [gold]Vengeful Spirits[/gold].
+[gold]Release[/gold] [blue]9[/blue]: [gold]Exhaust[/gold] your [gold]Hand[/gold]. For each [gold]Exhausted[/gold], deal damage again. If [blue]9[/blue] cards were [gold]Exhausted[/gold] this way, gain [blue]9[/blue] [gold]Strength[/gold].
+
+Stygian Reel, 2 cost, Uncommon: Deal 12 damage.
+[gold]Displace[/gold] by -1.
+At the start of this enemy's next turn, [gold]Displace[/gold] by +1.
+
+Taste Of Death, 2 cost, Uncommon: [gold]Displace[/gold] by -5.
+Deal 12 damage.
+
+Endless Way, 1 cost, Common: Remove all [gold]Block[/gold] from the target.
+[gold]Displace[/gold] by +2.
+Gain 7 [gold]Block[/gold].
+[gold]Release[/gold] 3 or 6: Apply 4 [gold]Vengeful Spirits[/gold] for every 3 [gold]Released[/gold].
+
+Handy Retreat, 1 cost, Basic: [gold]Displace[/gold] by +1.
+Gain 7 [gold]Block[/gold].
+If the enemy's [gold]Distance[/gold] is 5, add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].
+
+Protective Sanzu Boat, 2 cost, Uncommon: [gold]Displace[/gold] by +1.
+Gain 7 [gold]Block[/gold].
+[gold]Barrier[/gold] equal to the enemy's [gold]Distance[/gold].
+
+Equalize Distance, 1 cost, Uncommon: [gold]Displace[/gold] until [gold]Distance[/gold] is 3.
+Draw 2 cards for each level [gold]Displaced[/gold].
+If [gold]Distance[/gold] is already 3, draw 3 and discard 1 card instead.
+
+Exchange Life, 3 cost, Rare: If the enemy's HP is lower than your Max HP, swap your HP with the enemy's, then, if your HP increased, remove this card from your [gold]Deck[/gold].
+[gold]When drawn[/gold]: lose 2 HP and gain [img]res://STS_Komachi_Onozuka\images\charui/text_energy.png[/img].
+
+Exchange of the Living and Dead, 1 cost, Uncommon: [gold]Exhaust[/gold] the top card of your [gold]Draw Pile[/gold]. Add another card of the same type in your [gold]Exhaust Pile[/gold] into your [gold]Hand[/gold]. If there's none, draw 2 cards.
+[gold]Exhaust[/gold].
+
+Gold Sarcophagalley, 0 cost, Uncommon: [gold]Choose[/gold] a card in your [gold]Draw Pile[/gold]. [gold]Exhaust[/gold] it.
+At the start of your 2nd turn after this, it enters your [gold]Hand[/gold], [gold]Upgraded[/gold], and gains [gold]Replenish[/gold].
+[gold]Exhaust[/gold].
+
+Pushback Draw, 1 cost, Common: [gold]Displace[/gold] by +1.
+Draw cards equal to the enemy's [gold]Distance[/gold], then discard 1 card.
+
+Ritual Of Ecstasy, 1 cost, Uncommon: Invert the enemy's [gold]Distance[/gold].
+If it increased, gain 6 [gold]Block[/gold].
+If it decreased, draw 2 cards.
+If [gold]Distance[/gold] is 3, you may choose instead.
+
+Tour Guide To The NetherWorld, 1 cost, Uncommon: Draw 2 cards. For each card drawn, activate an effect based on its rarity:
+[gold]Uncommon[/gold]: Gain 2 [gold]Guided Spirits[/gold].
+[gold]Rare[/gold]: Gain 2 [gold]Divine Spirits[/gold].
+[gold]Other[/gold]: Apply 2 [gold]Vengeful Spirits[/gold] to ALL enemies.

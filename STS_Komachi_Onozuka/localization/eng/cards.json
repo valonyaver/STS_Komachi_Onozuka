@@ -8,8 +8,8 @@
 
 
   "STS_KOMACHI_ONOZUKA-MANIPULATE_DISTANCE_TOKEN.description": "{AltDescription:choose(0|1):[gold]Displace[/gold] by {IfUpgraded:show:up to }+/-{Value1:diff()}|{ExtraDescription1}|{ExtraDescription2}}.",
-  "STS_KOMACHI_ONOZUKA-MANIPULATE_DISTANCE_TOKEN.extraDescription1": "[gold]Displace[/gold] by -{Value1:diff()}.",
-  "STS_KOMACHI_ONOZUKA-MANIPULATE_DISTANCE_TOKEN.extraDescription2": "[gold]Displace[/gold] by +{Value1:diff()}.",
+  "STS_KOMACHI_ONOZUKA-MANIPULATE_DISTANCE_TOKEN.extraDescription1": "[gold]Displace[/gold] by -{Value1:diff()}",
+  "STS_KOMACHI_ONOZUKA-MANIPULATE_DISTANCE_TOKEN.extraDescription2": "[gold]Displace[/gold] by +{Value1:diff()}",
   "STS_KOMACHI_ONOZUKA-MANIPULATE_DISTANCE_TOKEN.title": "Manipulate Distance",
   "STS_KOMACHI_ONOZUKA-MANIPULATE_DISTANCE_TOKEN.artist": "Valonad",
   "STS_KOMACHI_ONOZUKA-MANIPULATE_DISTANCE_TOKEN.tlnote": "Important Token. Used for both decisions and as a playable card.",
@@ -72,7 +72,7 @@
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_FINAL_JUDGEMENT.artist": "clio_desu",
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_FINAL_JUDGEMENT.tlnote": "One of her spellcards. Effect means that far distance's -15/-30% damage becomes +30/60% for this card.",
 
-  "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.description": "[gold]Displace[/gold] by {IfUpgraded:show:up to|} +{Value1:diff()}.\nGain {Block:diff()} [gold]Block[/gold].\nIf the enemy's [gold]Distance[/gold] is 5, add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].",
+  "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.description": "[gold]Displace[/gold] by {IfUpgraded:show:up to |}+{Value1:diff()}.\nGain {Block:diff()} [gold]Block[/gold].\nIf the enemy's [gold]Distance[/gold] is 5, add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.title": "Handy Retreat",
   "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.artist": "でるもち",
   "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.tlnote": "She's holding an umbrella in the art, which is handy for retreating, I guess.",
@@ -98,7 +98,7 @@
   "STS_KOMACHI_ONOZUKA-TASTE_OF_DEATH.tlnote": "Soku Skill",
 
 
-  "STS_KOMACHI_ONOZUKA-PUSH_DRAW.description": "[gold]Optional[/gold]: [gold]Displace[/gold] by up to +{Value1:diff()}.\nDraw cards equal to the enemy's [gold]Distance[/gold], then discard 1 card.",
+  "STS_KOMACHI_ONOZUKA-PUSH_DRAW.description": "[gold]Displace[/gold] by {IfUpgraded:show:up to |}+{Value1:diff()}.\nDraw cards equal to the enemy's [gold]Distance[/gold], then discard 1 card.",
   "STS_KOMACHI_ONOZUKA-PUSH_DRAW.title": "Pushback Draw",
   "STS_KOMACHI_ONOZUKA-PUSH_DRAW.artist": "tokoroten (hmmuk)",
   "STS_KOMACHI_ONOZUKA-PUSH_DRAW.tlnote": "Draw as in pulling in and drawing cards. Idk it just sounds cool. Prioritize card draw meaning if can't make a similar pun.",
@@ -139,7 +139,7 @@
 
 
 
-  "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER.description": "Add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold]. Whenever an enemy is [gold]Displaced[/gold]:\nIf the [gold]Distance[/gold] increased, gain {Value1:diff()} [gold]Dexterity[/gold] this turn.\nIf the [gold]Distance[/gold] decreased, gain {Value1:diff()} [gold]Strength[/gold] this turn.",
+  "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER.description": "Add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].\nWhenever an enemy is [gold]Displaced[/gold]:\nIf the [gold]Distance[/gold] increased, gain {Value1:diff()} [gold]Dexterity[/gold] this turn.\nIf the [gold]Distance[/gold] decreased, gain {Value1:diff()} [gold]Strength[/gold] this turn.",
   "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER.title": "Flow of the Sanzu River",
   "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER.artist": "a.a.",
   "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER.tlnote": "Means both 'River Flow' and 'Flow state' like being focused.",
@@ -194,7 +194,7 @@
   "STS_KOMACHI_ONOZUKA-PROTECTIVE_SANZU_BOAT.artist": "aloin gkun",
 
 
-  "STS_KOMACHI_ONOZUKA-WORK_FOCUS.description": "[gold]Exhaust[/gold] 1-{Value1:diff()} cards from your [gold]Hand[/gold]{IfUpgraded:show:, [gold]Draw Pile[/gold], or [gold]Discard Pile[/gold]}.\nFor each card, add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].\nIf an [gold]Upgraded[/gold] card was [gold]Exhausted[/gold] this way, add 1 [gold]Spider Lily[/gold] into your [gold]Hand[/gold].",
+  "STS_KOMACHI_ONOZUKA-WORK_FOCUS.description": "[gold]Exhaust[/gold] 1-{Value1:diff()} cards from your [gold]Hand[/gold]{IfUpgraded:show: or [gold]Draw Pile[/gold]}.\nFor each card, add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].\nIf an [gold]Upgraded[/gold] card was [gold]Exhausted[/gold] this way, add 1 [gold]Spider Lily[/gold] into your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-WORK_FOCUS.title": "Work Focus",
   "STS_KOMACHI_ONOZUKA-WORK_FOCUS.selectionScreenPrompt": "Select cards to [gold]Exhaust[/gold]. If an [gold]Upgraded[/gold] card is [gold]Exhausted[/gold], add 1 [gold]Spider Lily[/gold] into your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-WORK_FOCUS.artist": "白露/浅葱",
@@ -251,10 +251,10 @@
   "STS_KOMACHI_ONOZUKA-GRUDGE_OF_THE_DEAD.tlnote": "Whenever spirits are detonated, not whenever you detonate.",
 
 
-  "STS_KOMACHI_ONOZUKA-BOUND_SPIRITS_OF_EARTH.description": "Apply {Value1:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.\nAt the end of your turn, apply {Value2:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies with [gold]Vengeful Spirits[/gold].",
+  "STS_KOMACHI_ONOZUKA-BOUND_SPIRITS_OF_EARTH.description": "Apply {Value1:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.\nChange the duration of [gold]Vengeful Spirits[/gold] on ALL enemies to 1.",
   "STS_KOMACHI_ONOZUKA-BOUND_SPIRITS_OF_EARTH.title": "Bound Spirits Of The Earth",
   "STS_KOMACHI_ONOZUKA-BOUND_SPIRITS_OF_EARTH.artist": "市葉葉市",
-  "STS_KOMACHI_ONOZUKA-BOUND_SPIRITS_OF_EARTH.tlnote": "Soku. The power does nothing on enemies that are clear of spirits.",
+  "STS_KOMACHI_ONOZUKA-BOUND_SPIRITS_OF_EARTH.tlnote": "Soku. Changed to a skill.",
 
 
   "STS_KOMACHI_ONOZUKA-GUIDING_SANZU.description": "Gain {Value1:diff()} [gold]Guided Spirits[/gold].",
@@ -401,6 +401,22 @@
   "STS_KOMACHI_ONOZUKA-IGNORE_NAGGING.description": "[gold]Displace[/gold] by {IfUpgraded:show:up to |}-{Value1:diff()}.\nGain {Block:diff()} [gold]Block[/gold] for every enemy whose [gold]Distance[/gold] is 2 or less.",
   "STS_KOMACHI_ONOZUKA-IGNORE_NAGGING.title": "Ignore Nagging",
   "STS_KOMACHI_ONOZUKA-IGNORE_NAGGING.artist": "しなぷう",
+  
+  "STS_KOMACHI_ONOZUKA-SIDESTEP_STRIKE.description": "Deal {Damage:diff()} damage.\nAdd [gold]Manipulate Distance[/gold] to your [gold]Hand[/gold].",
+  "STS_KOMACHI_ONOZUKA-SIDESTEP_STRIKE.title": "Sidestep Strike",
+  "STS_KOMACHI_ONOZUKA-SIDESTEP_STRIKE.artist": "None",
+  "STS_KOMACHI_ONOZUKA-SIDESTEP_STRIKE.tlnote": "strike card.",
+  
+  "STS_KOMACHI_ONOZUKA-WIND_OF_PASSING_AWAY.description": "Deal {Damage:diff()} damage to ALL enemies {Value1:diff()} times.\nCosts 1 less {energyPrefix:energyIcons(1)} this turn for every level of [gold]Displacement[/gold] that has occurred this turn.",
+  "STS_KOMACHI_ONOZUKA-WIND_OF_PASSING_AWAY.title": "Wind of Passing Away",
+  "STS_KOMACHI_ONOZUKA-WIND_OF_PASSING_AWAY.artist": "幻凌星羽",
+  "STS_KOMACHI_ONOZUKA-WIND_OF_PASSING_AWAY.tlnote": "Name is a soku skill. Same wording as stomp.",
+
+  
+  "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.description": "Deal {Damage:diff()} damage.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]When Exhausted[/gold]: This card gains [gold]Replay[/gold] 1. Next turn, if still [gold]Exhausted[/gold], return it to the [gold]Draw Pile[/gold].",
+  "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.extradescription1": "Deal {Damage:diff()} damage.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]When Exhausted[/gold]: All [gold]Piling Deathwork[/gold] gain [gold]Replay[/gold] 1. Next turn, if still [gold]Exhausted[/gold], return it to the [gold]Draw Pile[/gold].",
+  "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.title": "Piling Deathwork",
+  "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.artist": "None",
 
   "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.description": "[gold]Displace[/gold] by up to -{Value1:diff()}.\nApply {Value2:diff()} [gold]Vengeful Spirits[/gold] for every level of [gold]Displacement[/gold].\n[gold]Release[/gold] {ReleaseCost}: Gain 1 [gold]Strength[/gold] this turn for every {Value3:diff()} [gold]Vengeful Spirits[/gold] on the enemy.",
   "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.extraDescription1": "[gold]Release[/gold] {ReleaseCost}: Gain 1 [gold]Strength[/gold] this turn for every {Value3:diff()} [gold]Vengeful Spirits[/gold] on the enemy.",

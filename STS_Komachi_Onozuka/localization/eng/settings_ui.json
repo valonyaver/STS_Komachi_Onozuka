@@ -2,5 +2,9 @@
   "STS_KOMACHI_ONOZUKA.mod_title": "The Ferryman (Komachi)",
   "STS_KOMACHI_ONOZUKA-USE_DAIRI_PORTRAIT.title": "Use Dairi portrait",
   "STS_KOMACHI_ONOZUKA-USE_DAIRI_PORTRAIT.hover.title": "Use Dairi portrait in combat",
-  "STS_KOMACHI_ONOZUKA-USE_DAIRI_PORTRAIT.hover.desc": "Replaces the normal combat model with Dairi's Komachi art, if you prefer that."
+  "STS_KOMACHI_ONOZUKA-USE_DAIRI_PORTRAIT.hover.desc": "Replaces the normal combat model with Dairi's Komachi art, if you prefer that.",
+
+  "STS_KOMACHI_ONOZUKA-SKIP_DANMAKU.title": "Skip Attack/Danmaku animations.",
+  "STS_KOMACHI_ONOZUKA-SKIP_DANMAKU.hover.title": "Skip Attack/Danmaku animations.",
+  "STS_KOMACHI_ONOZUKA-SKIP_DANMAKU.hover.desc": "Some attacks have bullet-based animations to them when played. This options skips all that."
 }

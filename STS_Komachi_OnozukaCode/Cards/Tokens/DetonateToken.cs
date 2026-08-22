@@ -66,6 +66,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens
                 new List<CardModel> { defuseOption, detonateOption },
                 player,
                 canSkip: false);
+            //CardModel? chosen = await CustomCardSelectCmd.FromTargetedCreatureScreen(
+            //    choiceContext,
+            //    [defuseOption, detonateOption],
+            //    player,
+            //    target,
+            //    canSkip: false);
 
             return chosen;
         }
