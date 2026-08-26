@@ -13,6 +13,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
         public float Start;
         public float Duration;
         public bool HasStarted;
+        public bool HasFinished;
         public Action<NDanmakuBullet>? OnStart;
         /// <summary>(bullet, elapsedSinceEventStart, normalizedProgress 0..1, dt)</summary>
         public required Action<NDanmakuBullet, float, float, float> Apply;
@@ -81,7 +82,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
                     return new DanmakuEvent
                     {
                         Start = start.Evaluate(group, way),
-                        Duration = Mathf.Max(0.0001f, duration.Evaluate(group, way)),
+                        Duration = Mathf.Max(0.05f, duration.Evaluate(group, way)),
                         Apply = (b, elapsed, t, dt) =>
                         {
                             Vector2? targetPos = b.GetHomingTargetPosition();
@@ -135,7 +136,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
                     return new DanmakuEvent
                     {
                         Start = start.Evaluate(group, way),
-                        Duration = Mathf.Max(0.05f, duration.Evaluate(group, way)),
+                        Duration = Mathf.Max(0.03f, duration.Evaluate(group, way)),
                         OnStart = b => startValue = get(b),
                         Apply = (b, elapsed, t, dt) =>
                         {

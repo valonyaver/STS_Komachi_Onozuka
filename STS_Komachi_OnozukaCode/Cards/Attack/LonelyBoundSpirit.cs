@@ -5,15 +5,16 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
-using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits;
 using STS_Komachi_Onozuka;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
-using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
 {
@@ -39,10 +40,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
                 Value1, Owner.Creature, this);
         }
 
-        //protected override void OnUpgrade()
-        //{
-        //    base.DynamicVars.Damage.UpgradeValueBy(2);
-        //    DynamicVars[nameof(VengefulSpiritApplication)].UpgradeValueBy(1);
-        //}
+
+        public override List<DanmakuPiece> patterns => [
+
+            ];
     }
 }

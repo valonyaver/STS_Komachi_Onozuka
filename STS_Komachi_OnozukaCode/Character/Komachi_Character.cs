@@ -1,4 +1,5 @@
 ﻿using BaseLib.Abstracts;
+using BaseLib.Patches.UI;
 using BaseLib.Utils.NodeFactories;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
@@ -19,7 +20,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Character
     public class Komachi_Character : PlaceholderCharacterModel
     {
         public const string CharacterId = "STS_Komachi_Onozuka";
-
+        public override string PlaceholderID => "necrobinder";
         public static readonly Color Color = new(255, 0, 0);
 
         public override Color NameColor => Color;
@@ -85,6 +86,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Character
 
         public override string CustomRestSiteAnimPath => "rest/rest_site_komachi.tscn".ScenePath();
         public override string CustomEnergyCounterPath => "energy/energy_counter_komachi.tscn".ScenePath();
+        
+        public override RelicIconData? CustomYummyCookie => new RelicIconData(
+            "KomachiCookie.png".BigRelicImagePath(),
+            "KomachiCookie.png".RelicImagePath(),
+            "KomachiCookie_outline.png".RelicImagePath()
+            );
 
         //public override NCreatureVisuals CreateCustomVisuals()
         //{

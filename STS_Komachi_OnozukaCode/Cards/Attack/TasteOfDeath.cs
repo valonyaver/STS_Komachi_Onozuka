@@ -10,6 +10,7 @@ using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Distance;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits;
@@ -61,5 +62,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
                 .WithHitFx("vfx/vfx_attack_slash")
                 .Execute(choiceContext);
         }
+
+        public override List<DanmakuPiece> patterns => [
+
+            ];
     }
 }

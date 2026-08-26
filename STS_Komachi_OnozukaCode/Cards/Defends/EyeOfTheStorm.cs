@@ -31,7 +31,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             WithPower<GuidedSpiritPower>(nameof(Value1), 5, 2);
             WithPower<VengefulSpiritPower>(nameof(Value2), 3, 2);
             // release cost amount
-            WithVar(nameof(ReleaseCost), 6);
+            //WithVar(nameof(ReleaseCost), 6);
         }
         protected override void OnUpgrade()
         {

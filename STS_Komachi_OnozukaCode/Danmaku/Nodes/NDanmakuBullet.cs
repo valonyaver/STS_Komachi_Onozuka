@@ -39,11 +39,21 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku.Nodes
         float _lastHitTime = float.NegativeInfinity; 
         string? _onHitSfx;
         bool HitsExhausted => _hitsRemaining <= 0;
+        // Spawning Fields
+        bool _entering;
+        float _enteringElapsed;
+        Vector2 _entryTargetScale;
+        const float EntryGrowDurationSeconds = 0.2f;
+        // Dying fields
+        bool _dying;
+        float _dyingElapsed;
+        Vector2 _deathScale;
+        static float ExitFadeDurationSeconds => 0.2f;
 
         public static NDanmakuBullet Create(
         string spritePath, float scale, Vector2 spawnPos, float speed, float angleRad, float acc, float accAngleDeg,
         float lifetimeSeconds, IReadOnlyList<Creature> targets, Action? onHit, Color color, bool trailEnabled, Color trailColor,
-        bool spawnShards, int hitAmount, float hitIntervalSeconds, bool zeroHitNotDie, string? onHitSfx, List<DanmakuEvent> events)
+        bool spawnShards, int hitAmount, float hitIntervalSeconds, bool intervalGatesFirstHit, bool zeroHitNotDie, string? onHitSfx, List<DanmakuEvent> events, bool expandOnSpawn = false)
         {
             Texture2D texture = DanmakuAssetLoader.LoadBulletSprite(spritePath);
             var bullet = new NDanmakuBullet
@@ -64,11 +74,18 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku.Nodes
             bullet._spawnShards = spawnShards;
             bullet._hitsRemaining = Math.Max(1, hitAmount);
             bullet._hitIntervalSeconds = hitIntervalSeconds;
+            bullet._lastHitTime = intervalGatesFirstHit ? 0f : float.NegativeInfinity;
             bullet._zeroHitNotDie = zeroHitNotDie;
             bullet._events = events;
             bullet._onHitSfx = onHitSfx;
             bullet.Modulate = color;
             if (trailEnabled) bullet._trail = CreateTrail(trailColor, scale);
+            if (expandOnSpawn)
+            {
+                bullet._entering = true;
+                bullet._entryTargetScale = bullet.Scale;
+                bullet.Scale = Vector2.Zero;
+            }
             return bullet;
         }
 
@@ -83,6 +100,17 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku.Nodes
         public override void _Process(double delta)
         {
             float dt = (float)delta * DanmakuTime.GetContinuousTimeScale();
+
+            if (_dying)
+            {
+                _dyingElapsed += dt;
+                float fadeT = Mathf.Clamp(_dyingElapsed / ExitFadeDurationSeconds, 0f, 1f);
+                // Skips events including scaling
+                Scale = _deathScale * (1f - fadeT); 
+                if (fadeT >= 1f) this.QueueFreeSafely();
+                return;
+            }
+
             _elapsed += dt;
 
             UpdateEvents(dt);
@@ -95,11 +123,18 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku.Nodes
 
             UpdateTrail();
 
+            if (_entering)
+            {
+                _enteringElapsed += dt;
+                float growT = Mathf.Clamp(_enteringElapsed / EntryGrowDurationSeconds, 0f, 1f);
+                Scale = _entryTargetScale * growT; // overrides any ScaleUniform/ScaleX/etc. event this frame
+                if (growT >= 1f) _entering = false;
+            }
+
             Rect2 screenBounds = GetViewport().GetVisibleRect().Grow(64f);
             if (_elapsed > _lifetimeSeconds || !screenBounds.HasPoint(GlobalPosition))
             {
-                _trail?.QueueFreeSafely();
-                this.QueueFreeSafely();
+                BeginExit();
                 return;
             }
 
@@ -110,12 +145,16 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku.Nodes
         {
             foreach (DanmakuEvent ev in _events)
             {
-                bool active = _elapsed >= ev.Start && _elapsed <= ev.Start + ev.Duration;
-                if (!active) continue;
+                if (ev.HasFinished) continue;
+                if (_elapsed < ev.Start) continue;
                 if (!ev.HasStarted) { ev.OnStart?.Invoke(this); ev.HasStarted = true; }
+
                 float elapsedSinceStart = _elapsed - ev.Start;
                 float t = Mathf.Clamp(elapsedSinceStart / ev.Duration, 0f, 1f);
                 ev.Apply(this, elapsedSinceStart, t, dt);
+
+                if (elapsedSinceStart >= ev.Duration)
+                    ev.HasFinished = true;
             }
         }
 
@@ -145,11 +184,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku.Nodes
 
                 if (HitsExhausted && !_zeroHitNotDie)
                 {
-                    this.QueueFreeSafely();
+                    BeginExit();
                 }
-                // Exhausted + ZeroHitNotDie: CheckHits simply won't be called again (guarded by
-                // HitsExhausted in _Process) — bullet keeps flying inertly to natural despawn.
-                return; // one counted hit per frame is enough
+                return;
             }
         }
 
@@ -191,8 +228,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku.Nodes
 
             _trailPoints.Add((GlobalPosition, _elapsed));
 
-            // cull points older than TrailMaxAge — this is what lets the trail
-            // shrink/retract even if the bullet has stopped moving
+            // cull points older than TrailMaxAge,
+            // letting the trail shrink/retract even if the bullet has stopped moving
             _trailPoints.RemoveAll(p => _elapsed - p.Time > TrailMaxAge);
 
             var arr = new Vector2[_trailPoints.Count];
@@ -200,6 +237,20 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku.Nodes
                 arr[i] = _trailPoints[i].Pos;
 
             _trail.Points = arr;
+        }
+
+        void BeginExit()
+        {
+            if (!_spawnShards)
+            {
+                _trail?.QueueFreeSafely();
+                _dying = true;
+                _dyingElapsed = 0f;
+                _deathScale = Scale;
+                return;
+            }
+            _trail?.QueueFreeSafely();
+            this.QueueFreeSafely();
         }
     }
 
@@ -267,9 +318,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku.Nodes
                 root.AddChildSafely(shard);
 
                 Vector2 dir = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-                float distance = (float)GD.RandRange(MinShardDistance, MaxShardDistance); // was 20-40, now 40-70 — enough to clear the flash itself
+                float distance = (float)GD.RandRange(MinShardDistance, MaxShardDistance);
                 Vector2 endPos = dir * distance;
-                float endRotation = (float)GD.RandRange(-Mathf.Pi, Mathf.Pi); // was never set before, so shards never visibly spun
+                float endRotation = (float)GD.RandRange(-Mathf.Pi, Mathf.Pi);
 
                 Tween shardTween = shard.CreateTween().SetParallel();
                 shardTween.TweenProperty(shard, "position", endPos, shardDuration)
@@ -279,8 +330,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku.Nodes
                 shardTween.TweenProperty(shard, "modulate:a", 0f, shardDuration).SetEase(Tween.EaseType.In);
             }
 
-            // Independent of every tween above on purpose — this is the actual fix.
-            // Cleanup no longer depends on how many tweeners any loop happens to queue.
+
             float totalDuration = Mathf.Max(flashDuration, shardDuration);
             SceneTreeTimer timer = root.GetTree().CreateTimer(totalDuration);
             timer.Connect(SceneTreeTimer.SignalName.Timeout, Callable.From(() =>

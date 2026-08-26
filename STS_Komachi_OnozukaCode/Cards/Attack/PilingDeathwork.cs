@@ -16,6 +16,7 @@ using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Distance;
@@ -49,6 +50,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
 
             await PowerCmd.Apply<VengefulSpiritPower>(choiceContext, cardPlay.Target, Value1, Owner.Creature, this);
         }
+
+        public override List<DanmakuPiece> patterns => [
+
+            ];
 
         public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)
         {

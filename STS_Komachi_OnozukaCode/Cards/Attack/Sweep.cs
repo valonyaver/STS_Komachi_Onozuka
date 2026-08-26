@@ -49,7 +49,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             }
 
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).TargetingAllOpponents(base.CombatState)
-            .WithHitFx("vfx/vfx_attack_blunt", null, "heavy_attack.mp3")
+            .WithHitFx("vfx/vfx_giant_horizontal_slash")
             .Execute(choiceContext);
             
             for(int i = 0; i < DynamicVars.Cards.BaseValue; i++)

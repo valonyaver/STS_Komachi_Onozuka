@@ -11,6 +11,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits;
@@ -77,5 +78,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
 
             }
         }
+
+        public override List<DanmakuPiece> patterns => [
+
+            ];
     }
 }

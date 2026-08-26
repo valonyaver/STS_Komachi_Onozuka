@@ -144,7 +144,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
                             NDanmakuBullet bullet = NDanmakuBullet.Create(
                                 piece.SpritePath, scale, spawnPos, speed, finalAngleRad, acc, accAngle, lifeSeconds,
                                 allTargets, onHit, piece.BulletColor, piece.TrailEnabled, trailColor,
-                                piece.spawnShards, piece.HitAmount, piece.HitIntervalSeconds, piece.ZeroHitNotDie, piece.OnHitSfx, resolvedEvents);
+                                piece.spawnShards, piece.HitAmount, piece.HitIntervalSeconds, piece.HitIntervalGatesFirstHit, piece.ZeroHitNotDie, piece.OnHitSfx, resolvedEvents, piece.ExpandOnSpawn);
                             container.AddChildSafely(bullet);
                         }
                     }

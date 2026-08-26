@@ -2,6 +2,7 @@
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         public SidestepStrike()
             : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
         {
-            WithDamage(6, 3);
+            WithDamage(8);
             WithTags(CardTag.Strike);
             WithTip(typeof(ManipulateDistanceToken));
         }
@@ -27,9 +28,18 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_slash", null)
             .Execute(choiceContext);
-            var mandist = CombatState.CreateCard<ManipulateDistanceToken>(Owner);
-            await CardPileCmd.AddGeneratedCardToCombat(mandist, PileType.Hand, Owner);
+
+            bool hasTokenInHand = Owner.PlayerCombatState?.Hand.Cards.OfType<ManipulateDistanceToken>().Any() ?? false;
+
+            if (IsUpgraded || !hasTokenInHand)
+            {
+                var mandist = CombatState.CreateCard<ManipulateDistanceToken>(Owner);
+                await CardPileCmd.AddGeneratedCardToCombat(mandist, PileType.Hand, Owner);
+            }
         }
 
+        public override List<DanmakuPiece> patterns => [
+
+            ];
     }
 }

@@ -3,13 +3,45 @@
   "STS_KOMACHI_ONOZUKA-THE_TITANIC.flavor": "彼岸豪华渡轮，跨越彼岸海岸！限时九折优惠！",
   "STS_KOMACHI_ONOZUKA-THE_TITANIC.title": "泰坦尼克号",
 
-  "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.description": "战斗开始时，将[blue]1[/blue]张[gold]操纵距离[/gold]加入你的[gold]手牌[/gold]，并获得{Value1}层[gold]引灵[/gold]。你的第[blue]3[/blue]回合开始时，将[blue]1[/blue]张[gold]彼岸花[/gold]加入你的[gold]手牌[/gold]。每当一名非爪牙敌人死亡时，获得{Gold}金币。",
+  "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.description": "战斗开始时，将1张[gold]操纵距离[/gold]加入你的[gold]手牌[/gold]。你的第3回合开始时，将1张[gold]彼岸花[/gold]加入你的[gold]手牌[/gold]。每当你[gold]位移[/gold]时，获得{GuidedSpiritPower}层[gold]导灵[/gold]。",
   "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.flavor": "知道了，如果说要阻碍我工作的话，就用我的泰坦尼克号运你过去吧。\n以半价服务。",
   "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.title": "商用泰坦尼克号",
 
   "STS_KOMACHI_ONOZUKA-RED_TITANIC.description": "战斗开始时，将[blue]1[/blue]张[gold]操纵距离[/gold]和[blue]1[/blue]张[gold]彼岸花[/gold]加入你的[gold]手牌[/gold]，然后将3张[gold]彼岸花[/gold]加入你的[gold]弃牌堆[/gold]。战斗结束时，回复本场战斗中所有因生命流失而失去的生命。（回复{Heal}点生命）",
   "STS_KOMACHI_ONOZUKA-RED_TITANIC.flavor": "这发疯似的到处绽放的[red]彼岸花[/red]，\n是表现我工作繁忙程度的计数器。\n要是妨碍我工作的话，我绝不轻饶！",
   "STS_KOMACHI_ONOZUKA-RED_TITANIC.title": "彼岸泰坦尼克号",
+
+  "STS_KOMACHI_ONOZUKA-SPIRIT_COMPANION.description": "战斗开始时，获得[blue]{GuidedSpiritPower}[/blue]层[gold]导灵[/gold]。",
+  "STS_KOMACHI_ONOZUKA-SPIRIT_COMPANION.flavor": "死人的灵魂当宠物还挺可爱的。",
+  "STS_KOMACHI_ONOZUKA-SPIRIT_COMPANION.title": "灵伴",
+  
+  "STS_KOMACHI_ONOZUKA-FERRYMANS_OAR.description": "每场战斗开始时，你的[gold]抽牌堆[/gold]中随机[blue]{Cards}[/blue]张牌获得[gold]填充[/gold]。",
+  "STS_KOMACHI_ONOZUKA-FERRYMANS_OAR.flavor": "None yet.",
+  "STS_KOMACHI_ONOZUKA-FERRYMANS_OAR.title": "摆渡人之桨",
+  "tlnote": "If you want, you can write the flavor text for this one.",
+
+  "STS_KOMACHI_ONOZUKA-CHARONS_COIN.description": "拾起时，获得[blue]{GoldGain}[/blue]金币。每当一名敌人死亡时，获得[blue]{GuidedSpiritPower}[/blue]层[gold]导灵[/gold]；若非爪牙，则额外获得[blue]{Gold}[/blue]金币。",
+  "STS_KOMACHI_ONOZUKA-CHARONS_COIN.flavor": "去往彼岸的过程，还真是个氪金游戏啊。",
+  "STS_KOMACHI_ONOZUKA-CHARONS_COIN.title": "卡戎的四文钱",
+  "tlnote": "Commercial titanic's old effect brought to this relic. Usually, Charon would have an Obol. But since komachi is japanese, she gets a 4 mon instead. 4 is also the number of death.",
+  
+  "STS_KOMACHI_ONOZUKA-PARRYING_SCYTHE.description": "每场战斗第一次被[gold]距离[/gold]为2或以下的敌人攻击前，获得相当于该攻击伤害一半的[gold]格挡[/gold]。",
+  "STS_KOMACHI_ONOZUKA-PARRYING_SCYTHE.flavor": "格挡就像节奏游戏一样。",
+  "STS_KOMACHI_ONOZUKA-PARRYING_SCYTHE.title": "格挡镰刀",
+  
+  "STS_KOMACHI_ONOZUKA-DEATH_NOTE.description": "每当你[gold]消耗[/gold]一张牌时，对所有敌人施加[blue]{VengefulSpiritPower}[/blue]层[gold]怨灵[/gold]。",
+  "STS_KOMACHI_ONOZUKA-DEATH_NOTE.flavor": "使用方法：XLIX\n人类世界中同时只能存在6本死亡笔记。额外的笔记将不会有效果。\n那些杂牌死亡笔记都是真的，只是没用而已。",
+  "STS_KOMACHI_ONOZUKA-DEATH_NOTE.title": "死亡笔记",
+  "tolnote": "Actual rule from Death note.",
+
+  "STS_KOMACHI_ONOZUKA-POSSESSED_LILY.description": "每当你被施加[gold]中毒[/gold]时，获得等同于所获[gold]中毒[/gold]层数的[gold]神灵[/gold]。",
+  "STS_KOMACHI_ONOZUKA-POSSESSED_LILY.flavor": "\"哎呀，我死了！算了。住在花里也挺不错的。\"",
+  "STS_KOMACHI_ONOZUKA-POSSESSED_LILY.title": "附身百合",
+
+  
+  "STS_KOMACHI_ONOZUKA-YAMAS_LECTURE_BOOK.description": "每回合首次[gold]释放[/gold]时，返还相当于[gold]释放[/gold]量一半（向上取整）的[gold]灵体[/gold]。",
+  "STS_KOMACHI_ONOZUKA-YAMAS_LECTURE_BOOK.flavor": "这本书的重量足以被归类为钝器。.",
+  "STS_KOMACHI_ONOZUKA-YAMAS_LECTURE_BOOK.title": "阎王的讲课本",
 
 
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.description": "在每场战斗开始时，获得[blue]{DexterityPower}[/blue]点[gold]敏捷[/gold]。在你的第[blue]3[/blue]回合结束时，失去[blue]{DexterityPower}[/blue]点[gold]敏捷[/gold]，并给予所有敌人[blue]{VulnerablePower}[/blue]层[gold]易伤[/gold]。",

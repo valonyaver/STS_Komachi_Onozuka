@@ -26,9 +26,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
     {
         public override bool CanBeGeneratedInCombat => false;
         public QuickNap()
-            : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
+            : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
         {
-            WithHeal(6, 2);
+            WithHeal(5, 2);
 
             WithEnergy(1, 1);
             WithKeyword(CardKeyword.Exhaust);

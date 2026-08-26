@@ -13,6 +13,7 @@ using MegaCrit.Sts2.Core.Nodes.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits;
@@ -66,7 +67,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
                 CardCmd.Upgrade(lily);
                 await CardPileCmd.AddGeneratedCardToCombat(lily, PileType.Hand, Owner);
             }
-
         }
+
+        public override List<DanmakuPiece> patterns => [
+
+            ];
     }
 }

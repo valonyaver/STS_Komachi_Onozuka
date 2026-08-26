@@ -21,7 +21,7 @@
   "STS_KOMACHI_ONOZUKA-SPIRIT_COMPANION.flavor": "Dead people make for such cute pets.",
   "STS_KOMACHI_ONOZUKA-SPIRIT_COMPANION.title": "Spirit Companion",
   
-   "STS_KOMACHI_ONOZUKA-FERRYMANS_OAR.description": "At the start of each combat, [blue]{Cards}[/blue] random card{Cards:plural:|s} in your [gold]Draw Pile[/gold] gain [gold]Replenish[/gold].",
+  "STS_KOMACHI_ONOZUKA-FERRYMANS_OAR.description": "At the start of each combat, [blue]{Cards}[/blue] random card{Cards:plural:|s} in your [gold]Draw Pile[/gold] gain{Cards:plural:s|} [gold]Replenish[/gold].",
   "STS_KOMACHI_ONOZUKA-FERRYMANS_OAR.flavor": "None yet.",
   "STS_KOMACHI_ONOZUKA-FERRYMANS_OAR.title": "Ferryman's Oar",
   "tlnote": "If you want, you can write the flavor text for this one.",

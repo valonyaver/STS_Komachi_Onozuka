@@ -79,7 +79,7 @@
 
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.description": "Remove all [gold]Block[/gold] from the target.\n[gold]Displace[/gold] by +{Value1:diff()}.\nGain {Block:diff()} [gold]Block[/gold].\n[gold]Release[/gold] {ReleaseCost:diff()} or {Value3}: Apply {Value2} [gold]Vengeful Spirits[/gold] for every {ReleaseCost} [gold]Released[/gold].",
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: Apply {Value2} [gold]Vengeful Spirits[/gold].",
-  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription2": "[gold]Release[/gold] {Value3:diff()}: Apply {Value3} [gold]Vengeful Spirits[/gold].",
+  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription2": "[gold]Release[/gold] {Value3:diff()}: Apply {Value2Twice} [gold]Vengeful Spirits[/gold].",
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.title": "Endless Way",
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.artist": "樫の木",
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.tlnote": "Soku Skill. Tainted is the debuff that triangle elite applies to you.",
@@ -402,9 +402,9 @@
   "STS_KOMACHI_ONOZUKA-IGNORE_NAGGING.title": "Ignore Nagging",
   "STS_KOMACHI_ONOZUKA-IGNORE_NAGGING.artist": "しなぷう",
   
-  "STS_KOMACHI_ONOZUKA-SIDESTEP_STRIKE.description": "Deal {Damage:diff()} damage.\nAdd [gold]Manipulate Distance[/gold] to your [gold]Hand[/gold].",
+  "STS_KOMACHI_ONOZUKA-SIDESTEP_STRIKE.description": "Deal {Damage:diff()} damage.\n{IfUpgraded:show:Add|If you have no [gold]Manipulate Distance[/gold] in your [gold]Hand[/gold], add} [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-SIDESTEP_STRIKE.title": "Sidestep Strike",
-  "STS_KOMACHI_ONOZUKA-SIDESTEP_STRIKE.artist": "None",
+  "STS_KOMACHI_ONOZUKA-SIDESTEP_STRIKE.artist": "@mmmmatimmmmati",
   "STS_KOMACHI_ONOZUKA-SIDESTEP_STRIKE.tlnote": "strike card.",
   
   "STS_KOMACHI_ONOZUKA-WIND_OF_PASSING_AWAY.description": "Deal {Damage:diff()} damage to ALL enemies {Value1:diff()} times.\nCosts 1 less {energyPrefix:energyIcons(1)} this turn for every level of [gold]Displacement[/gold] that has occurred this turn.",
@@ -416,7 +416,7 @@
   "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.description": "Deal {Damage:diff()} damage.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]When Exhausted[/gold]: This card gains [gold]Replay[/gold] 1. Next turn, if still [gold]Exhausted[/gold], return it to the [gold]Draw Pile[/gold].",
   "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.extradescription1": "Deal {Damage:diff()} damage.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]When Exhausted[/gold]: All [gold]Piling Deathwork[/gold] gain [gold]Replay[/gold] 1. Next turn, if still [gold]Exhausted[/gold], return it to the [gold]Draw Pile[/gold].",
   "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.title": "Piling Deathwork",
-  "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.artist": "None",
+  "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.artist": "neruzou",
 
   "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.description": "[gold]Displace[/gold] by up to -{Value1:diff()}.\nApply {Value2:diff()} [gold]Vengeful Spirits[/gold] for every level of [gold]Displacement[/gold].\n[gold]Release[/gold] {ReleaseCost}: Gain 1 [gold]Strength[/gold] this turn for every {Value3:diff()} [gold]Vengeful Spirits[/gold] on the enemy.",
   "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.extraDescription1": "[gold]Release[/gold] {ReleaseCost}: Gain 1 [gold]Strength[/gold] this turn for every {Value3:diff()} [gold]Vengeful Spirits[/gold] on the enemy.",

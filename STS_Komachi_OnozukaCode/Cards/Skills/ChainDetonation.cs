@@ -50,19 +50,23 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         {
             if (CombatState == null) return;
 
-            // Make the choice at the start of the effect.
-            CardModel? chosen = await ReleaseCmd.ChooseRelease(choiceContext, this, ReleaseCost, Value3);
-
+            
             // Apply the first batch.
             await PowerCmd.Apply<VengefulSpiritPower>(choiceContext, cardPlay.Target, Value1, Owner.Creature, this);
 
             // Detonate it.
             DetonationEventArgs? boom1 = await DetonateCmd.Target(choiceContext, cardPlay.Target, this);
+
+            if (cardPlay.Target.IsDead) return;
             // If detonation successful, apply again.
             if (DetonateCmd.IsDetonationSuccessful(boom1))
             {
                 await PowerCmd.Apply<VengefulSpiritPower>(choiceContext, cardPlay.Target, boom1.TotalCountedAmount, Owner.Creature, this);
             }
+
+            if (cardPlay.Target.IsDead) return;
+            CardModel? chosen = await ReleaseCmd.ChooseRelease(choiceContext, this, ReleaseCost, Value3);
+
 
             if (ReleaseCmd.ChoseRelease(chosen, ReleaseCost, Value3, out var cost))
             {

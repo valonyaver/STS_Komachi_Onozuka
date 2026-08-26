@@ -37,7 +37,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extras
             {
                 builder.TmpHitSfx = null;
             }
-            return builder.BeforeDamage(async () =>
+            builder._beforeDamage += async () =>
             {
                 Creature? shooter = builder.Attacker;
                 IReadOnlyList<Creature> targets = builder.GetPossibleTargets();
@@ -99,7 +99,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extras
                             VfxCmd.PlayOnCreatureCenters(targets, deferredHitVfx);
                         }
                     });
-            });
+            };
+            return builder;
         }
     }
 }

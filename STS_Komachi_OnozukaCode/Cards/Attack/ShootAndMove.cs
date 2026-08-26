@@ -11,6 +11,7 @@ using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Configs;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extras;
@@ -47,7 +48,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
                 .WithHitFx("vfx/vfx_attack_slash")
                 .WithDanmaku(patterns)
                 .Execute(choiceContext);
-            await Cmd.CustomScaledWait(0.5f, 0.7f);
+            if (!KomachiConfigs.SkipDanmaku)
+            {
+                await Cmd.CustomScaledWait(0.5f, 0.7f);
+            }
             if (CombatState == null) return;
             
             int[] options = IsUpgraded ? new[] { -2, -1, 0, 1, 2 } : new[] { -1, 0, 1 };

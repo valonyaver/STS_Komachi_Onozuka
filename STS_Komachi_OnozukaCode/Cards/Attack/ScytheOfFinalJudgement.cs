@@ -11,6 +11,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Distance;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits;
@@ -22,9 +23,6 @@ using System.Threading.Tasks;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
 {
-      /// <summary>
-      /// NOT FINISHED YET
-      /// </summary>
     public class ScytheOfFinalJudgement : STS_Komachi_OnozukaCard
     {
         public ScytheOfFinalJudgement()
@@ -55,5 +53,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
                 .WithHitFx("vfx/vfx_attack_slash")
                 .Execute(choiceContext);
         }
+
+        public override List<DanmakuPiece> patterns => [
+
+            ];
     }
 }

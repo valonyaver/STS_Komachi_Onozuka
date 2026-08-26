@@ -85,7 +85,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
                     BulletColor = Colors.LightGoldenrod,
                     GatesDamage = false,
                     spawnShards = true,
-                    HitAmount = 2
+                    HitAmount = 2,
+                    ExpandOnSpawn = true
                 },
             // Delays the damage gating until the end
             new DanmakuPiece {

@@ -22,6 +22,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
         /// </summary>
         public GrowthValue LifeSeconds = 5f;
         /// <summary>
+        /// If true, the bullet grows from Scale 0 up to its normal Scale over a short
+        /// window after spawning, instead of appearing at full size instantly. 
+        /// Bypasses whatever Scale-affecting events run during that window.
+        /// </summary>
+        public bool ExpandOnSpawn = false;
+        /// <summary>
         /// How many times bullets are shot.
         /// </summary>
         public int Group = 1;
@@ -99,6 +105,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
         /// Interval allowed between each hit.
         /// </summary>
         public float HitIntervalSeconds = 0.1f;
+        /// <summary>
+        /// If true, HitIntervalSeconds also delays the bullet's very first hit.
+        /// </summary>
+        public bool HitIntervalGatesFirstHit = false;
         /// <summary>
         /// If hitamount reaches 0, the bullet will not die.
         /// </summary>
@@ -184,6 +194,27 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku
             Base = _base;
             PerGroup = perGroup;
             PerWay = perWay;
+        }
+
+        public static GrowthValue RandomGrowthValue(float _base, double randomRange)
+        {
+            return new GrowthValue()
+            {
+                Base = _base,
+                CustomFunc = (g, w) => (float)GD.RandRange(-randomRange, randomRange)
+            };
+        }
+
+        /// <summary>
+        /// Inclusive
+        /// </summary>
+        public static GrowthValue RandomGrowthValue(float _base, double minRange, double maxRange)
+        {
+            return new GrowthValue()
+            {
+                Base = _base,
+                CustomFunc = (g, w) => (float)GD.RandRange(minRange, maxRange)
+            };
         }
     }
 
