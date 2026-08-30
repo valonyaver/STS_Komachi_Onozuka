@@ -126,17 +126,14 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
         }
 
         /// <summary>
-        /// Builds and shows the choice screen: don't release, release at cost1, and
-        /// (if affordable) release at cost2. Always returns the chosen token — never
-        /// null — since "don't release" is its own explicit option (canSkip: false).
-        /// Returns null only if the player can't even afford cost1, meaning the card
-        /// shouldn't have offered a release at all.
+        /// Builds and shows the choice screen: don't release, release at cost1, and (if affordable) release at cost2.
+        /// Returns null only if the player can't even afford cost1, meaning the card shouldn't have offered a release at all.
         /// </summary>
         public static async Task<CardModel?> ChooseRelease(PlayerChoiceContext choiceContext, CardModel card, int cost1, int cost2 = 0)
         {
             Creature player = card.Owner.Creature;
 
-            if (!CanReleaseSpirits(player, cost1))
+            if (card.CombatState == null || !CanReleaseSpirits(player, cost1))
             {
                 return null;
             }
@@ -148,7 +145,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
             releaseCost1.AltDescription = 1;
             releaseCost1.ExtraDescription1 = ((STS_Komachi_OnozukaCard)card).RawExtraDescription1.GetFormattedText();
 
-            List<CardModel> options = new List<CardModel> { releaseNone, releaseCost1 };
+            List<CardModel> options = [releaseNone, releaseCost1];
 
             if (cost2 > 0 && CanReleaseSpirits(player, cost2))
             {

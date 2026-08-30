@@ -54,24 +54,36 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens
             base.OnUpgrade();
         }
 
-        public static async Task<CardModel?> GetDetonateOption(PlayerChoiceContext choiceContext, ICombatState combatState, Player player, Creature target)
+        public static async Task<CardModel?> GetDetonateOption(
+        PlayerChoiceContext choiceContext,
+        ICombatState combatState,
+        Player player,
+        Creature target,
+        CardModel? sourceCard = null)
         {
             if (!target.HasPower<VengefulSpiritPower>()) return null;
-            CardModel defuseOption = combatState.CreateCard<DetonateToken>(player);
-            ((DetonateToken)defuseOption).PreventsDetonation = true;
-            CardModel detonateOption = combatState.CreateCard<DetonateToken>(player);
+
+            DetonateToken defuseOption = combatState.CreateCard<DetonateToken>(player);
+            defuseOption.PreventsDetonation = true;
+            defuseOption.RemoveKeyword(CardKeyword.Exhaust);
+            defuseOption.RemoveKeyword(CardKeyword.Retain);
+
+
+            DetonateToken detonateOption = combatState.CreateCard<DetonateToken>(player);
+            detonateOption.RemoveKeyword(CardKeyword.Exhaust);
+            detonateOption.RemoveKeyword(CardKeyword.Retain);
+            if (sourceCard is STS_Komachi_OnozukaCard komachiCard)
+            {
+                detonateOption.AltDescription = 1;
+                var extraText = komachiCard.RawExtraDescription1.GetFormattedText();
+                detonateOption.ExtraDescription1 = extraText;
+            }
 
             CardModel? chosen = await CardSelectCmd.FromChooseACardScreen(
                 choiceContext,
                 new List<CardModel> { defuseOption, detonateOption },
                 player,
                 canSkip: false);
-            //CardModel? chosen = await CustomCardSelectCmd.FromTargetedCreatureScreen(
-            //    choiceContext,
-            //    [defuseOption, detonateOption],
-            //    player,
-            //    target,
-            //    canSkip: false);
 
             return chosen;
         }

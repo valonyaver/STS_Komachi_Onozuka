@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+﻿using MegaCrit.Sts2.Core.Audio.Debug;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Factories;
@@ -33,12 +34,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
     public class GhostrickShot : STS_Komachi_OnozukaCard
     {
         public GhostrickShot()
-            : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+            : base(1, CardType.Skill, CardRarity.Common, TargetType.AnyEnemy)
         {
             // Honestly just a triangle anti tech
             WithDamage(2);
             // Single target apply
-            WithPower<VengefulSpiritPower>(nameof(Value1), 6, 2);
+            WithPower<VengefulSpiritPower>(nameof(Value1), 8, 2);
             // On exhaust aoe apply
             WithPower<VengefulSpiritPower>(nameof(Value2), 2, 1);
 
@@ -53,11 +54,20 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if (CombatState == null) return;
-
-            await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target)
-            .WithHitFx("vfx/vfx_attack_blunt", null, "heavy_attack.mp3")
-            .WithDanmaku(patterns)
-            .Execute(choiceContext);
+            var container = cardPlay.Target.GetVfxContainer();
+            if (container != null)
+            {
+                await DanmakuCmd.FireAndWaitForHit(
+                        patterns,
+                        Owner.Creature,
+                        [cardPlay.Target],
+                        cardPlay.Target.GetVfxContainer(),
+                        timeoutSeconds: 2);
+            }
+            //await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target)
+            //.WithHitFx("vfx/vfx_attack_blunt", null, "heavy_attack.mp3")
+            //.WithDanmaku(patterns)
+            //.Execute(choiceContext);
 
             await PowerCmd.Apply<VengefulSpiritPower>(
                 choiceContext, cardPlay.Target,

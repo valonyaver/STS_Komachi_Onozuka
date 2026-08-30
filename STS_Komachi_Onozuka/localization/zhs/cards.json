@@ -49,7 +49,7 @@
   "STS_KOMACHI_ONOZUKA-STORM_OF_THE_GRIEVING_DEAD.title": "伤魂风暴",
   "STS_KOMACHI_ONOZUKA-STORM_OF_THE_GRIEVING_DEAD.artist": "Akyuun",
   
-  "STS_KOMACHI_ONOZUKA-DETONATE_TOKEN.description": "{PreventsDetonation:plural:|不}[gold]引爆[/gold]目标。{IfUpgraded:show:\n抽1张牌。|}",
+  "STS_KOMACHI_ONOZUKA-DETONATE_TOKEN.description": "{AltDescription:choose(0):{PreventsDetonation:plural:|不}[gold]引爆[/gold]目标。{IfUpgraded:show:\n抽1张牌。|}|{ExtraDescription1}}",
   "STS_KOMACHI_ONOZUKA-DETONATE_TOKEN.title": "引爆",
   "STS_KOMACHI_ONOZUKA-DETONATE_TOKEN.artist": "Valonad",
 
@@ -78,9 +78,9 @@
   "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.title": "规避",
   "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.artist": "でるもち",
 
-  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.description": "移除敌人的所有[gold]格挡[/gold]。\n[gold]位移[/gold]+{Value1:diff()}。\n获得{Block:diff()}点[gold]格挡[/gold]。\n[gold]释放[/gold]{ReleaseCost:diff()} 或 {Value3}：每[gold]释放[/gold]{ReleaseCost}，给予{Value2}层[gold]怨灵[/gold]。",
-  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription1": "[gold]释放[/gold]{ReleaseCost:diff()}：给予{Value2}层[gold]怨灵[/gold]。",
-  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription2": "[gold]释放[/gold]{Value3:diff()}：给予{Value2Twice}层[gold]怨灵[/gold]。",
+  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.description": "移除敌人的所有[gold]格挡[/gold]。\n[gold]位移[/gold]+{Value1:diff()}。\n获得{Block:diff()}点[gold]格挡[/gold]。\n[gold]释放[/gold]{ReleaseCost:diff()} 或 {ReleaseCost2:diff()}：每[gold]释放[/gold]{ReleaseCost:diff()}，给予{Value2:diff()}层[gold]怨灵[/gold]。",
+  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription1": "[gold]释放[/gold]{ReleaseCost:diff()}：给予{Value2:diff()}层[gold]怨灵[/gold]。",
+  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription2": "[gold]释放[/gold]{ReleaseCost2:diff()}：给予{Value3:diff()}层[gold]怨灵[/gold]。",
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.title": "无间之道",
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.artist": "樫の木",
 
@@ -203,8 +203,9 @@
   "STS_KOMACHI_ONOZUKA-SPIRIT_DEFENSE.description": "获得{Block:diff()}点[gold]格挡[/gold]。\n获得{GuidedApplication:diff()}层[gold]引灵[/gold]。",
   "STS_KOMACHI_ONOZUKA-SPIRIT_DEFENSE.title": "偶然路过的人灵",
   "STS_KOMACHI_ONOZUKA-SPIRIT_DEFENSE.artist": "delant",
-  
-  "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.description": "获得{Block:diff()}点[gold]格挡[/gold]。\n给予{Value1:diff()}层[gold]怨灵[/gold]。\n[gold]可选[/gold]：[gold]引爆[/gold]。每[gold]引爆[/gold]{Value2}层[gold]怨灵[/gold]，敌人在本回合失去1点[gold]力量[/gold]。",
+
+  "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.description": "获得{Block:diff()}点[gold]格挡[/gold]。\n给予{Value1:diff()}层[gold]怨灵[/gold]。\n[gold]可选[/gold]：[gold]引爆[/gold]。每[gold]引爆[/gold]{Value2}层[gold]怨灵[/gold]，敌人在本回合失去1点[gold]力量[/gold]。{InCombat:（{Value3:diff()}）|}",
+  "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.extraDescription1": "[gold]引爆[/gold]。\n敌人本回合失去{Value3:diff()}点[gold]力量[/gold]。",
   "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.title": "不计前嫌",
   "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.artist": "ひでふキタヤン(hidehu kitayan)",
   
@@ -221,7 +222,7 @@
   "STS_KOMACHI_ONOZUKA-GUIDING_SANZU.title": "三途川的指引",
   "STS_KOMACHI_ONOZUKA-GUIDING_SANZU.artist": "てんてん",
   
-  "STS_KOMACHI_ONOZUKA-BOOM_BENEFITS.description": "{AltDescription:choose(0|1):给予{Value1:diff()}层[gold]怨灵[/gold]。\n[gold]引爆[/gold]，然后选择：\n每[gold]引爆[/gold]{Value2}层[gold]怨灵[/gold]，获得1层[gold]引灵[/gold]；或每[gold]引爆[/gold]{Value3}层[gold]怨灵[/gold]，抽1张牌。|每[gold]引爆[/gold]{Value2}层[gold]怨灵[/gold]，获得1层[gold]引灵[/gold]。|每[gold]引爆[/gold]{Value3}层[gold]怨灵[/gold]，抽1张牌。}",
+  "STS_KOMACHI_ONOZUKA-BOOM_BENEFITS.description": "{AltDescription:choose(0|1):给予{Value1:diff()}层[gold]怨灵[/gold]。\n[gold]引爆[/gold]，然后选择：\n每[gold]引爆[/gold]{Value2}层[gold]怨灵[/gold]，获得1层[gold]引灵[/gold]；或每[gold]引爆[/gold]{Value3}层[gold]怨灵[/gold]，抽1张牌。|获得{Value4}层[gold]引灵[/gold]。|抽{Value4}张牌。}",
   "STS_KOMACHI_ONOZUKA-BOOM_BENEFITS.title": "人鱼的馈赠",
   "STS_KOMACHI_ONOZUKA-BOOM_BENEFITS.artist": "卯林",
 
@@ -449,7 +450,7 @@
   "STS_KOMACHI_ONOZUKA-TIP_OF_THE_REAPER.artist": "ebizome",
 
 
-  "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.description": "造成{Damage:diff()}点伤害。\n给予{Value1:diff()}层[gold]怨灵[/gold]。\n[gold]消耗时[/gold]：给予所有敌人{Value2:diff()}层[gold]怨灵[/gold]。",
+  "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.description": "给予{Value1:diff()}层[gold]怨灵[/gold]。\n[gold]消耗时[/gold]：给予所有敌人{Value2:diff()}层[gold]怨灵[/gold]。",
   "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.title": "鬼计弹射",
   "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.artist": "怠惰 フミ",
 

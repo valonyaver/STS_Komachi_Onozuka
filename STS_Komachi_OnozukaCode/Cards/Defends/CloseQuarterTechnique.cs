@@ -32,7 +32,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             WithBlock(5, 2);
             WithPower<VengefulSpiritPower>(nameof(Value1), 4, 1);
             // Strength down 
-            WithVar(nameof(Value2), 5, 2);
+            WithVar(nameof(Value2), 3, 2);
             WithPower<GuidedSpiritPower>(nameof(Value3), 4, 1);
             WithTip(typeof(DistancePower));
         }

@@ -1,6 +1,7 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using BaseLib.Hooks;
+using BaseLib.Patches.Localization;
 using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Combat;
@@ -228,6 +229,18 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
                 LeftOriginLayout: HealthBarForecastLeftOriginLayout.Chained,
                 LeftExclusiveZGroup: 0,
                 AffectsHpLabel: true);
+        }
+
+        public static decimal GetTotalVengefulSpiritAmount(Creature creature, int addition = 0)
+        {
+            var vs = creature.GetPowerAmount<VengefulSpiritPower>() + addition;
+            int lbsTotal = 0;
+            foreach(var lbs in creature.Powers.Where(p => p is LonelyBoundSpiritPower))
+            {
+                lbsTotal += lbs.Amount + addition;
+            }
+
+            return vs + lbsTotal;
         }
     }
 }

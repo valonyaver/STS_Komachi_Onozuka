@@ -1,6 +1,7 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using BaseLib.Hooks;
+using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -34,6 +35,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
         public override PowerType Type => PowerType.Debuff;
         public override PowerStackType StackType => PowerStackType.Counter;
         public override PowerInstanceType InstanceType => PowerInstanceType.Instanced;
+        public override Color AmountLabelColor => StsColors.purple;
 
         protected override IEnumerable<DynamicVar> CanonicalVars =>
         [
@@ -132,10 +134,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
         public override IEnumerable<HealthBarForecastSegment> GetHealthBarForecastSegments(HealthBarForecastContext context)
         {
             decimal dmg = GetThirdAmount()!.Value;
+            var enemyBlock = Owner.Block;
+            var length = dmg - enemyBlock;
             if (dmg <= 0m) yield break;
 
             yield return new HealthBarForecastSegment(
-                Amount: (int)dmg,
+                Amount: (int)length,
                 Color: StsColors.purple,
                 Direction: HealthBarForecastDirection.FromRight,
                 Order: 0,

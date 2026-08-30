@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Combat;
+﻿using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -31,7 +32,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         public RiversideGarden()
             : base(3, CardType.Power, CardRarity.Rare, TargetType.Self)
         {
-            WithTip(typeof(SpiderLily));
+            WithTip(new TooltipSource((c) =>
+                HoverTipFactory.FromCard<SpiderLily>(true))
+                );
             WithKeyword(CardKeyword.Innate, UpgradeType.Add);
         }
 

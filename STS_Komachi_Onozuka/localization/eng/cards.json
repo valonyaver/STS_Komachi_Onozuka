@@ -43,10 +43,10 @@
   "STS_KOMACHI_ONOZUKA-LILY_EMBRACE.artist": "iced_lemon",
   "STS_KOMACHI_ONOZUKA-LILY_EMBRACE.tlnote": "Lily here is a pun on both Spider Lily and Lily White, as the art has Lily White on it. If untranslateable, could replace lily with something like Spring",
 
-  "STS_KOMACHI_ONOZUKA-DETONATE_TOKEN.description": "{PreventsDetonation:plural:|Do not }[gold]Detonate[/gold] the target.{IfUpgraded:show:\nDraw 1 card.|}",
+  "STS_KOMACHI_ONOZUKA-DETONATE_TOKEN.description": "{AltDescription:choose(0):{PreventsDetonation:plural:|Do not }[gold]Detonate[/gold] the target.{IfUpgraded:show:\nDraw 1 card.|}|{ExtraDescription1}}",
   "STS_KOMACHI_ONOZUKA-DETONATE_TOKEN.title": "Detonate",
   "STS_KOMACHI_ONOZUKA-DETONATE_TOKEN.artist": "Valonad",
-  "STS_KOMACHI_ONOZUKA-DETONATE_TOKEN.tlnote": "Token used for both decisions (for which PreventsDetonation is important) and as a playable card. For now, only generateable by grudging strike.",
+  "STS_KOMACHI_ONOZUKA-DETONATE_TOKEN.tlnote": "Token used for both decisions (for which PreventsDetonation is important) and as a playable card.",
 
 
   "STS_KOMACHI_ONOZUKA-RELEASE_TOKEN.description": "{AltDescription:choose(0|1):Do not release.|{ExtraDescription1}|{ExtraDescription2}}",
@@ -77,13 +77,12 @@
   "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.artist": "でるもち",
   "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.tlnote": "She's holding an umbrella in the art, which is handy for retreating, I guess.",
 
-  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.description": "Remove all [gold]Block[/gold] from the target.\n[gold]Displace[/gold] by +{Value1:diff()}.\nGain {Block:diff()} [gold]Block[/gold].\n[gold]Release[/gold] {ReleaseCost:diff()} or {Value3}: Apply {Value2} [gold]Vengeful Spirits[/gold] for every {ReleaseCost} [gold]Released[/gold].",
-  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: Apply {Value2} [gold]Vengeful Spirits[/gold].",
-  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription2": "[gold]Release[/gold] {Value3:diff()}: Apply {Value2Twice} [gold]Vengeful Spirits[/gold].",
+  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.description": "Remove all [gold]Block[/gold] from the target.\n[gold]Displace[/gold] by +{Value1:diff()}.\nGain {Block:diff()} [gold]Block[/gold].\n[gold]Release[/gold] {ReleaseCost:diff()} or {ReleaseCost2:diff()}: Apply {Value2:diff()} [gold]Vengeful Spirits[/gold] for every {ReleaseCost:diff()} [gold]Released[/gold].",
+  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: Apply {Value2:diff()} [gold]Vengeful Spirits[/gold].",
+  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.extraDescription2": "[gold]Release[/gold] {ReleaseCost2:diff()}: Apply {Value3:diff()} [gold]Vengeful Spirits[/gold].",
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.title": "Endless Way",
   "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.artist": "樫の木",
-  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.tlnote": "Soku Skill. Tainted is the debuff that triangle elite applies to you.",
-
+  "STS_KOMACHI_ONOZUKA-ENDLESS_WAY.tlnote": "Soku Skill.",
 
 
   "STS_KOMACHI_ONOZUKA-DISTANCE_TAX.description": "Apply the following to ALL enemies, based on their [gold]Distance[/gold]:\n1-2: {Value1:diff()} [gold]Weak[/gold].\n3: Lose {Value2:diff()} [gold]Strength[/gold] this turn.\n4-5: {Value3:diff()} [gold]Vulnerable[/gold].",
@@ -240,8 +239,9 @@
   "STS_KOMACHI_ONOZUKA-SPIRIT_DEFENSE.artist": "delant",
   "STS_KOMACHI_ONOZUKA-SPIRIT_DEFENSE.tlnote": "Soku",
 
-  "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.description": "Gain {Block:diff()} [gold]Block[/gold].\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]Optional[/gold]: [gold]Detonate[/gold]. The enemy loses 1 [gold]Strength[/gold] this turn for every {Value2} [gold]Spirits[/gold] [gold]Detonated[/gold].",
+  "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.description": "Gain {Block:diff()} [gold]Block[/gold].\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]Optional[/gold]: [gold]Detonate[/gold]. The enemy loses 1 [gold]Strength[/gold] this turn for every {Value2} [gold]Spirits[/gold] [gold]Detonated[/gold]. {InCombat:({Value3:diff()})|}",
   "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.title": "No Hard Feelings",
+  "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.extraDescription1": "[gold]Detonate[/gold].\nThe enemy loses {Value3:diff()} [gold]Strength[/gold] this turn.",
   "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.artist": "ひでふキタヤン(hidehu kitayan)",
   "STS_KOMACHI_ONOZUKA-NO_HARD_FEELINGS.tlnote": "Value2 here is 2, for reference.",
 
@@ -261,7 +261,7 @@
   "STS_KOMACHI_ONOZUKA-GUIDING_SANZU.title": "Guiding Sanzu",
   "STS_KOMACHI_ONOZUKA-GUIDING_SANZU.artist": "てんてん",
 
-  "STS_KOMACHI_ONOZUKA-BOOM_BENEFITS.description": "{AltDescription:choose(0|1):Apply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]Detonate[/gold], then you may choose:\nGain 1 [gold]Guided Spirit[/gold] for every {Value2} [gold]Spirits[/gold] [gold]Detonated[/gold], or draw 1 card for every {Value3} [gold]Spirits[/gold] [gold]Detonated[/gold].|Gain 1 [gold]Guided Spirits[/gold] for every {Value2} [gold]Spirits[/gold] [gold]Detonated[/gold].|Draw 1 card for every {Value3} [gold]Spirits[/gold] [gold]Detonated[/gold].}",
+  "STS_KOMACHI_ONOZUKA-BOOM_BENEFITS.description": "{AltDescription:choose(0|1):Apply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]Detonate[/gold], then you may choose:\nGain 1 [gold]Guided Spirit[/gold] for every {Value2} [gold]Spirits[/gold] [gold]Detonated[/gold], or draw 1 card for every {Value3} [gold]Spirits[/gold] [gold]Detonated[/gold].|Gain {Value4} [gold]Guided Spirit{Value4:plural:|s}[/gold].|Draw {Value4} card{Value4:plural:|s}.}",
   "STS_KOMACHI_ONOZUKA-BOOM_BENEFITS.title": "Siren's Bounty",
   "STS_KOMACHI_ONOZUKA-BOOM_BENEFITS.artist": "卯林",
   "STS_KOMACHI_ONOZUKA-BOOM_BENEFITS.tlnote": "The Siren here is Wakasagihime, since she's in the art. The bounty is the effect. First is the full effect, second and third parts are the decision options.",
@@ -534,7 +534,7 @@
   "STS_KOMACHI_ONOZUKA-TIP_OF_THE_REAPER.tlnote": "Tip as in both edge of a scythe and a bonus 'tip' to workers. If can't do both, pick whichever one you think fits best.",
 
 
-  "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.description": "Deal {Damage:diff()} damage.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold].\nWhen [gold]Exhausted[/gold]: apply {Value2:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.",
+  "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.description": "Apply {Value1:diff()} [gold]Vengeful Spirits[/gold].\nWhen [gold]Exhausted[/gold]: apply {Value2:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.",
   "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.title": "Ghostrick Shot",
   "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.artist": "怠惰 フミ",
   "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.tlnote": "Reference to yugioh card of the same name.",

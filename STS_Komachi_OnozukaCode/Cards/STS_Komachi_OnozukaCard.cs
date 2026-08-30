@@ -69,6 +69,15 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             }
         }
 
+        public int Value4
+        {
+            get => DynamicVars[nameof(Value4)].IntValue;
+            set
+            {
+                DynamicVars[nameof(Value4)].BaseValue = value;
+            }
+        }
+
         /// <summary>
         /// Should've probably made this sooner.
         /// </summary>
@@ -78,6 +87,15 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             set
             {
                 DynamicVars[nameof(ReleaseCost)].BaseValue = value;
+            }
+        }
+
+        public int ReleaseCost2
+        {
+            get => DynamicVars[nameof(ReleaseCost2)].IntValue;
+            set
+            {
+                DynamicVars[nameof(ReleaseCost2)].BaseValue = value;
             }
         }
 

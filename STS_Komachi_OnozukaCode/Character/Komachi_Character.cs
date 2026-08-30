@@ -33,7 +33,6 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Character
             ModelDb.Card<StrikeKomachi>(),
             ModelDb.Card<StrikeKomachi>(),
             ModelDb.Card<StrikeKomachi>(),
-            ModelDb.Card<StrikeKomachi>(),
             ModelDb.Card<DefendKomachi>(),
             ModelDb.Card<DefendKomachi>(),
             ModelDb.Card<DefendKomachi>(),

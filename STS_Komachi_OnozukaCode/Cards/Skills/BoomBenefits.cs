@@ -39,7 +39,32 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             // 3, draw
             WithVar(nameof(Value3), 3);
 
+
+            // Preview Value
+            WithVar(nameof(Value4), 0);
         }
+
+        public static decimal PredictedTotalSpirits(CardModel card, Creature? creature)
+        {
+            if (creature == null) return 0;
+            if (card is not BoomBenefits bb) return 0;
+            return VengefulSpiritPower.GetTotalVengefulSpiritAmount(creature);
+        }
+
+        public static decimal PredictedGuidedGain(CardModel card, Creature? creature)
+        {
+            if (card is not BoomBenefits bb) return 0;
+            if (bb.Value2 == 0) return 0;
+            return Math.Round(PredictedTotalSpirits(card, creature) / bb.Value2, MidpointRounding.ToZero);
+        }
+
+        public static decimal PredictedDrawAmount(CardModel card, Creature? creature)
+        {
+            if (card is not BoomBenefits bb) return 0;
+            if (bb.Value3 == 0) return 0;
+            return Math.Round(PredictedTotalSpirits(card, creature) / bb.Value3, MidpointRounding.ToZero);
+        }
+
 
         public override int? GetVengefulSpiritStacksApplied(Creature target)
         {
@@ -52,10 +77,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
 
 
             if (!(cardPlay.Target.HasPower<VengefulSpiritPower>() || cardPlay.Target.HasPower<LonelyBoundSpiritPower>())) return;
-            CardModel guidedSpiritChoice = CombatState.CreateCard<BoomBenefits>(Owner);
-            ((BoomBenefits)guidedSpiritChoice).AltDescription = 1;
-            CardModel drawChoice = CombatState.CreateCard<BoomBenefits>(Owner);
-            ((BoomBenefits)drawChoice).AltDescription = 2;
+            BoomBenefits guidedSpiritChoice = CombatState.CreateCard<BoomBenefits>(Owner);
+            guidedSpiritChoice.AltDescription = 1;
+            guidedSpiritChoice.Value4 = (int) PredictedGuidedGain(this, cardPlay.Target);
+            BoomBenefits drawChoice = CombatState.CreateCard<BoomBenefits>(Owner);
+            drawChoice.AltDescription = 2;
+            drawChoice.Value4 = (int)PredictedDrawAmount(this, cardPlay.Target);
 
             CardModel? chosen = await CardSelectCmd.FromChooseACardScreen(
                 choiceContext,
@@ -79,12 +106,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             switch (choice)
             {
                 case 1:
-                    var gAmount = detonation.TotalCountedAmount / 2;
+                    var gAmount = Math.Round(detonation.TotalCountedAmount / Value2, MidpointRounding.ToZero);
                     MainFile.Logger.LogMessage(LogLevel.Info, $"Amount of Guided spirits is {gAmount}", 0);
                     await PowerCmd.Apply<GuidedSpiritPower>(choiceContext, Owner.Creature, gAmount, Owner.Creature, this);
                     break;
                 case 2:
-                    var dAmount = detonation.TotalCountedAmount / 3;
+                    var dAmount = Math.Round(detonation.TotalCountedAmount / Value3, MidpointRounding.ToZero);
                     MainFile.Logger.LogMessage(LogLevel.Info, $"Amount of draw is {dAmount}", 0);
                     await CardPileCmd.Draw(choiceContext, dAmount, Owner);
                     break;

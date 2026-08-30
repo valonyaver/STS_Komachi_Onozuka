@@ -32,6 +32,20 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             // Strength down per value spirits
             WithVar(new IntVar(nameof(Value2), 2));
             WithKeyword(KomachiKeywords.Detonate);
+
+            WithCalculatedVar(nameof(Value3), 0, StrengthDebuff);
+        }
+
+        public static decimal StrengthDebuff(CardModel card, Creature? creature)
+        {
+            if (creature == null) return 0;
+            if (card is not NoHardFeelings nhf) return 0;
+            var addition = nhf.GetVengefulSpiritStacksApplied(creature).Value;
+            if (creature.HasPower<ArtifactPower>()) addition = 0;
+            var vs = VengefulSpiritPower.GetTotalVengefulSpiritAmount(creature, addition);
+            if (vs == 0) return addition/nhf.Value2;
+            return (vs) / nhf.Value2;
+            
         }
 
         public override bool GainsBlock => true;
@@ -45,14 +59,14 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             await PowerCmd.Apply<VengefulSpiritPower>(choiceContext, target: cardPlay.Target, Value1, Owner.Creature, this);
 
 
-            CardModel? chosen = await DetonateToken.GetDetonateOption(choiceContext, CombatState, Owner, cardPlay.Target);
+            CardModel? chosen = await DetonateToken.GetDetonateOption(choiceContext, CombatState, Owner, cardPlay.Target, this);
 
             var chosenOption = chosen as DetonateToken;
             if (chosenOption != null && !chosenOption.PreventsDetonation)
             {
                 var args = await DetonateCmd.Target(choiceContext, cardPlay.Target, this);
 
-                var tempDebuffAmount = Math.Round(args.TotalCountedAmount / 2);
+                var tempDebuffAmount = Math.Round(args.TotalCountedAmount / 2, MidpointRounding.ToZero);
                 await PowerCmd.Apply<NoHardFeelingsPower>(choiceContext, args.Target, tempDebuffAmount, Owner.Creature, this);
 
             }

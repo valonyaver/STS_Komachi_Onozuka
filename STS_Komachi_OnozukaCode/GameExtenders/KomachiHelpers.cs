@@ -16,7 +16,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extras
         /// <summary>
         /// Finds the damage that would be dealt from a creature to a target creature and updates the given var.
         /// </summary>
-        public static decimal FindDamageDealt(Creature? dealer, Creature? target, decimal baseDamage, DynamicVar damageVar)
+        public static decimal FindDamageDealt(Creature? dealer, Creature? target, decimal baseDamage, DynamicVar? damageVar = null)
         {
             decimal modified = baseDamage;
             if (target != null && dealer?.CombatState != null && dealer.Player?.RunState != null)
@@ -25,8 +25,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extras
                     dealer.Player.RunState, dealer.CombatState, target, dealer,
                     baseDamage, ValueProp.Move, null,null, ModifyDamageHookType.All, CardPreviewMode.None, out _);
             }
-            damageVar.BaseValue = baseDamage;
-            damageVar.PreviewValue = modified;
+            if (damageVar != null)
+            {
+                damageVar.BaseValue = baseDamage;
+                damageVar.PreviewValue = modified;
+            }
             return modified;
         }
     }

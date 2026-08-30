@@ -22,7 +22,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         public LowTierShinigami()
         : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
         {
-            WithDamage(15, 5);
+            WithDamage(18);
             WithPower<VulnerablePower>(nameof(Value1), 99);
             WithKeyword(CardKeyword.Exhaust);
             WithKeyword(CardKeyword.Innate, UpgradeType.Add);

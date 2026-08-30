@@ -33,34 +33,33 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.Previewers
             int? stacks = komachiCard.GetVengefulSpiritStacksApplied(creature);
             if (stacks is null or <= 0) return;
 
+            if ((creature.GetPower<ArtifactPower>()?.Amount ?? 0) > 0)
+            {
+                return; // Artifact would eat this; touch nothing, show nothing.
+            }
+
             Creature applier = card.Model.Owner.Creature;
             var existing = FindOwnedInstance(creature, applier);
 
-            // Found an existing instance
             if (existing != null)
             {
                 existing.PendingStacksPreview = stacks.Value;
                 foreach (var lonely in creature.Powers.OfType<LonelyBoundSpiritPower>())
                     lonely.PendingStacksPreview = stacks.Value;
-                PreviewTarget = creature; // remembered so we know what to clear
+                PreviewTarget = creature;
                 CombatManager.Instance.StateTracker.NotifyCombatStateChanged("OnPreviewTargetChanged");
                 return;
             }
 
-            // No instance for this applier — still bump any existing Lonely Bound Spirits,
-            // since those don't require a live VengefulSpiritPower to exist.
             foreach (var lonely in creature.Powers.OfType<LonelyBoundSpiritPower>())
                 lonely.PendingStacksPreview = stacks.Value;
 
-            // Skip the synthetic segment if Artifact would likely eat this application outright.
-            if ((creature.GetPower<ArtifactPower>()?.Amount ?? 0) > 0) { PreviewTarget = creature; return; }
-
-            var scratch = new DamageVar("VengefulDamagePreview", 0m, ValueProp.Move);
-            decimal total = KomachiHelpers.FindDamageDealt(applier, creature, stacks.Value * 2m, scratch);
+            decimal total = KomachiHelpers.FindDamageDealt(applier, creature, stacks.Value * 2m);
             if (total <= 0) return;
 
             PreviewTarget = creature;
             PreviewNewInstanceDamage = total;
+            CombatManager.Instance.StateTracker.NotifyCombatStateChanged("OnPreviewTargetChanged");
         }
 
         public static void ClearPreview()
