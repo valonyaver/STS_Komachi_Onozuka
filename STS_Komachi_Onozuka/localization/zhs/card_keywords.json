@@ -15,6 +15,8 @@
   "STS_KOMACHI_ONOZUKA-CLONE.description": "以[gold]克隆[/gold]关键词生成的牌无法被[gold]克隆[/gold]。请勿与复制混淆。",
   "STS_KOMACHI_ONOZUKA-CLONE.title": "克隆",
 
+  "STS_KOMACHI_ONOZUKA-UNCLONABLE.description": "此牌无法被[gold]克隆[/gold]。",
+  "STS_KOMACHI_ONOZUKA-UNCLONABLE.title": "不可克隆",
 
   "STS_KOMACHI_ONOZUKA-REPLENISH.description": "抽到时，抽一张牌。",
   "STS_KOMACHI_ONOZUKA-REPLENISH.title": "填充"

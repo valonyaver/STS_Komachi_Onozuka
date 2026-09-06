@@ -54,16 +54,16 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if (CombatState == null) return;
-            var container = cardPlay.Target.GetVfxContainer();
-            if (container != null)
-            {
-                await DanmakuCmd.FireAndWaitForHit(
-                        patterns,
-                        Owner.Creature,
-                        [cardPlay.Target],
-                        cardPlay.Target.GetVfxContainer(),
-                        timeoutSeconds: 2);
-            }
+            //var container = cardPlay.Target.GetVfxContainer();
+            //if (container != null)
+            //{
+            //    await DanmakuCmd.FireAndWaitForHit(
+            //            patterns,
+            //            Owner.Creature,
+            //            [cardPlay.Target],
+            //            cardPlay.Target.GetVfxContainer(),
+            //            timeoutSeconds: 2);
+            //}
             //await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target)
             //.WithHitFx("vfx/vfx_attack_blunt", null, "heavy_attack.mp3")
             //.WithDanmaku(patterns)
@@ -87,57 +87,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
 
         public override List<DanmakuPiece> patterns => 
             [
-            new DanmakuPiece
-                {
-                    SpritePath = "circle_halo.png".BulletImagePath(),
-                    StartTimeSeconds = 0.1f,
-                    Group = 1,
-                    GIntervalSeconds = 0.05f,
-                    WayCount = new GrowthValue {Base = 1},
-                    GAngle = new GrowthValue(0),
-                    StartSpeed = 1f,
-                    StartAcc = 14,
-                    Scale = 1f,
-                    X = 60,
-                    LifeSeconds = 3f,
-                    BulletColor = StsColors.purple,
-                    GatesDamage = true,
-                    spawnShards = true
-                },
-            new DanmakuPiece
-                {
-                    SpritePath = "pellet.png".BulletImagePath(),
-                    Group = 1,
-                    GIntervalSeconds = 0.05f,
-                    WayCount = new GrowthValue {Base = 1},
-                    GAngle = new GrowthValue(40),
-                    StartSpeed = 3f,
-                    StartAcc = 6,
-                    Scale = 1f,
-                    X = 0,
-                    Radius = 200,
-                    RadiusA = -50,
-                    LifeSeconds = 3f,
-                    BulletColor = StsColors.pink,
-                    TrailEnabled = true
-                },
-            new DanmakuPiece
-                {
-                    SpritePath = "pellet.png".BulletImagePath(),
-                    Group = 1,
-                    GIntervalSeconds = 0.05f,
-                    WayCount = new GrowthValue {Base = 1},
-                    GAngle = new GrowthValue(-40),
-                    StartSpeed = 3f,
-                    StartAcc = 6,
-                    Scale = 1f,
-                    X = 0,
-                    Radius = 200,
-                    RadiusA = 50,
-                    LifeSeconds = 3f,
-                    BulletColor = StsColors.pink,
-                    TrailEnabled = true
-                },
+            
             ];
     }
 }

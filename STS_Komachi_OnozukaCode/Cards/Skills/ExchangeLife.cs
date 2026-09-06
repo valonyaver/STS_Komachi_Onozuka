@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
@@ -31,9 +32,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         public ExchangeLife()
         : base(3, CardType.Power, CardRarity.Rare, TargetType.AnyEnemy)
         {
-            WithEnergy(1,1);
+
+            WithEnergy(2,1);
             // Self damage.
             WithVar(nameof(Value1), 2);
+
+            WithKeyword(KomachiKeywords.Unclonable);
         }
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -70,6 +74,15 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
                 if (DeckVersion != null)
                 {
                     await CardPileCmd.RemoveFromDeck(this.DeckVersion);
+                }
+                else
+                {
+                    var exchange = Owner.Deck.Cards.OfType<ExchangeLife>();
+
+                    //if (exchange.Any() && exchange.FirstOrDefault() != null)
+                    //{
+                    //    await CardPileCmd.RemoveFromDeck(exchange.FirstOrDefault());
+                    //}
                 }
                 
             }

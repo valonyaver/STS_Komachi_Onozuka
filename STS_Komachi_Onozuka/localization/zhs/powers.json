@@ -61,7 +61,7 @@
   "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER_POWER.title": "神灵护体",
   
   "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.description": "[font_size=18]每当[gold]怨灵[/gold]被给予时，[gold]寂寞之人的紧缚灵[/gold]的层数将增加相同的量。\n只能被卡牌[gold]引爆[/gold]，[gold]引爆[/gold]时对目标造成等于给予者双倍层数的攻击伤害（受加成影响）。\n当它与[gold]怨灵[/gold]同时[gold]引爆[/gold]时，统计被[gold]引爆[/gold]的[gold]怨灵[/gold]数量的效果会将两次[gold]引爆[/gold]都计入其中。",
-  "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.smartDescription": "每当[gold]怨灵[/gold]被给予时，[gold]寂寞之人的紧缚灵[/gold]的层数将增加相同的量。\n造成等于其双倍层数的攻击伤害。\n[gold]引爆[/gold]时，玩家{ApplierName}将对{OwnerName}造成[blue]{VengefulDamage}[/blue]点伤害。",
+  "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.smartDescription": "每当[gold]怨灵[/gold]被给予时，[gold]寂寞之人的紧缚灵[/gold]的层数将增加相同的量。\n造成等于其双倍层数的攻击伤害。\n[gold]引爆[/gold]时，玩家{ApplierName}将对{OwnerName}造成[blue]{VengefulDamage:diff()}[/blue]点伤害。",
   "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.title": "寂寞之人的紧缚灵",
 
   

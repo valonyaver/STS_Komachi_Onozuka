@@ -1,4 +1,48 @@
+9/6:
+v0.2.2
+# New card
+Soulbound Strike:
+1 cost Common Attack
+Deal 10 (13) damage.
+Add a Detonate into your Hand.
+
+# Card Changes
+1. Flowerviewing: 
+Block increased from 7 (10) to 8 (11)
+
+2. No hard Feelings:
+Rarity changed from common to uncommon
+
+3. Piling Death Work:
+Damage reduced from 5 (7) to 5 (6).
+On Exile effect changed from: "When Exiled: This card gains Replay 1" to "When Exiled: All Piling Deathwork gain Replay 1"
+
+4. Taste of Death:
+Damage increased from 12 (15) to 13 (16).
+
+5. Extinct Fauna:
+Clones created are now 0 cost.
+
+6. Exchange Life:
+Energy gained from drawing increased from E (EE) to EE (EEE)
+Is now Unclonable
+
+7. God of Death:
+Is now unclonable
+
+8. Ghostrick Shot:
+Art changed.
+Old art taken by Soulbound Strike
+
+9. Flow of the Sanzu River:
+Wording changed.
+
+# Bug Fixes
+Fixed description of Lonely Bound Spirit not updating damage with modifiers.
+
+
 8/30:
+v0.2.1
 # Character Change
 Starter deck now has 1 less strike. Making it 10 cards total.
 

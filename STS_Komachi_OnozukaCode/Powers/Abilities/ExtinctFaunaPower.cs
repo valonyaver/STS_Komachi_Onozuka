@@ -33,7 +33,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new IntVar(nameof(Value1), 0), // copy effect
             new IntVar(nameof(Value2), 0), // retrieval effect
-            new EnergyVar(1)
+            new EnergyVar(0)
             ];
 
         CardModel source;
@@ -71,7 +71,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
                 && Value1 > 0)
             {
                 // copies dont get copied
-                if (played.Keywords.Contains(KomachiKeywords.Clone)) return;
+                if (played.Keywords.Contains(KomachiKeywords.Clone) && played.Keywords.Contains(KomachiKeywords.Unclonable)) return;
                 CardModel copy = played.CreateClone();
 
                 copy.AddKeyword(KomachiKeywords.Clone);

@@ -199,6 +199,10 @@
   "STS_KOMACHI_ONOZUKA-GRUDGING_STRIKE.extraDescription1": "[gold]释放[/gold]{ReleaseCost:diff()}：将1张[gold]引爆+[/gold]加入你的[gold]手牌[/gold]。",
   "STS_KOMACHI_ONOZUKA-GRUDGING_STRIKE.title": "含怨打击",
   "STS_KOMACHI_ONOZUKA-GRUDGING_STRIKE.artist": "北公爵小三",
+
+  "STS_KOMACHI_ONOZUKA-SOULBOUND_STRIKE.description": "造成{Damage:diff()}点伤害。\n将1张[gold]引爆[/gold]加入你的[gold]手牌[/gold]。",
+  "STS_KOMACHI_ONOZUKA-SOULBOUND_STRIKE.title": "魂缚打击",
+  "STS_KOMACHI_ONOZUKA-SOULBOUND_STRIKE.artist": "怠惰 フミ",
   
   "STS_KOMACHI_ONOZUKA-SPIRIT_DEFENSE.description": "获得{Block:diff()}点[gold]格挡[/gold]。\n获得{GuidedApplication:diff()}层[gold]引灵[/gold]。",
   "STS_KOMACHI_ONOZUKA-SPIRIT_DEFENSE.title": "偶然路过的人灵",
@@ -353,7 +357,7 @@
   "STS_KOMACHI_ONOZUKA-WIND_OF_PASSING_AWAY.title": "送行之风",
   "STS_KOMACHI_ONOZUKA-WIND_OF_PASSING_AWAY.artist": "幻凌星羽",
 
-  "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.description": "造成{Damage:diff()}点伤害。\n施加{Value1:diff()}层[gold]怨灵[/gold]。\n[gold]消耗时[/gold]：此牌获得1层[gold]回响[/gold]。下回合，若此牌仍在[gold]消耗牌堆[/gold]中，将其移回[gold]抽牌堆[/gold]。",
+  "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.description": "造成{Damage:diff()}点伤害。\n施加{Value1:diff()}层[gold]怨灵[/gold]。\n[gold]消耗时[/gold]：所有[gold]积尸气[/gold]获得1层[gold]回响[/gold]。下回合，若此牌仍在[gold]消耗牌堆[/gold]中，将其移回[gold]抽牌堆[/gold]。",
   "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.extradescription1": "造成{Damage:diff()}点伤害。\n施加{Value1:diff()}层[gold]怨灵[/gold]。\n[gold]消耗时[/gold]：所有[gold]积尸气[/gold]获得1层[gold]回响[/gold]。下回合，若此牌仍在[gold]消耗牌堆[/gold]中，将其移回[gold]抽牌堆[/gold]。",
   "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.title": "积尸气",
   "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.artist": "neruzou",
@@ -452,7 +456,7 @@
 
   "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.description": "给予{Value1:diff()}层[gold]怨灵[/gold]。\n[gold]消耗时[/gold]：给予所有敌人{Value2:diff()}层[gold]怨灵[/gold]。",
   "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.title": "鬼计弹射",
-  "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.artist": "怠惰 フミ",
+  "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.artist": "三月アクア",
 
   
 

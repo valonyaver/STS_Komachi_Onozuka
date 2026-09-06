@@ -33,7 +33,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             : base(3, CardType.Power, CardRarity.Rare, TargetType.Self)
         {
             WithCostUpgradeBy(-1);
-            WithEnergy(1);
+            WithEnergy(0);
             WithTip(KomachiKeywords.Clone);
         }
 

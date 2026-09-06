@@ -42,6 +42,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             WithVar(new StringVar(nameof(ExtraDescription1), "Extra Description 1"));
             WithVar(new StringVar(nameof(ExtraDescription2), "Extra Description 2"));
         }
+
         public int Value1
         {
             get => DynamicVars[nameof(Value1)].IntValue;

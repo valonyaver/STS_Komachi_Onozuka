@@ -34,7 +34,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         public PilingDeathwork()
             : base(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
         {
-            WithDamage(5, 2);
+            WithDamage(5, 1);
             WithPower<VengefulSpiritPower>(nameof(Value1), 5, 1);
             WithKeyword(CardKeyword.Exhaust);
             WithTip(StaticHoverTip.ReplayStatic);
@@ -59,7 +59,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         {
             if (card == this)
             {
-                card.BaseReplayCount++;
+                var piles = Owner.PlayerCombatState.AllCards.Where((c) => c is PilingDeathwork);
+                foreach(var pile in piles)
+                {
+                    pile.BaseReplayCount++;
+                }
             }
         }
 

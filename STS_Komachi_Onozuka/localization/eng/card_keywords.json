@@ -16,6 +16,10 @@
   "STS_KOMACHI_ONOZUKA-CLONE.description": "Cards created with the [gold]Clone[/gold] keyword cannot be [gold]Cloned[/gold]. Do not confuse with copy.",
   "STS_KOMACHI_ONOZUKA-CLONE.title": "Clone",
 
+  
+  "STS_KOMACHI_ONOZUKA-UNCLONABLE.description": "This card cannot be [gold]Cloned[/gold].",
+  "STS_KOMACHI_ONOZUKA-UNCLONABLE.title": "Unclonable",
+
   "STS_KOMACHI_ONOZUKA-REPLENISH.description": "Whenever this card is drawn, draw 1 card.",
   "STS_KOMACHI_ONOZUKA-REPLENISH.title": "Replenish",
   "STS_KOMACHI_ONOZUKA-REPLENISH.tlnote": "Mechanic taken from Lost Branch of Legend"

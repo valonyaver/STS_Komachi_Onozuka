@@ -28,7 +28,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         public FlowerViewing()
             : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
         {
-            WithBlock(7, 3);
+            WithBlock(8, 3);
             WithTip(typeof(SpiderLily));
             WithTip(CardKeyword.Ethereal);
         }

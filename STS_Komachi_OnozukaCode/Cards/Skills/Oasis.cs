@@ -40,9 +40,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         {
 
             var exhaustpile = Owner.PlayerCombatState.ExhaustPile.Cards.
-                Where(c=>!c.Keywords.Contains(KomachiKeywords.Clone)).ToList();
+                Where(c=>!c.Keywords.Contains(KomachiKeywords.Clone) && !c.Keywords.Contains(KomachiKeywords.Unclonable)).ToList();
             var discardPile = Owner.PlayerCombatState.DiscardPile.Cards.
-                Where(c => !c.Keywords.Contains(KomachiKeywords.Clone)).ToList();
+                Where(c => !c.Keywords.Contains(KomachiKeywords.Clone) && !c.Keywords.Contains(KomachiKeywords.Unclonable)).ToList();
 
             if (exhaustpile.Count <= 0 && discardPile.Count <= 0) return;
 

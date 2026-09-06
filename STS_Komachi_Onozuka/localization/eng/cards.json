@@ -138,7 +138,7 @@
 
 
 
-  "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER.description": "Add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].\nWhenever an enemy is [gold]Displaced[/gold]:\nIf the [gold]Distance[/gold] increased, gain {Value1:diff()} [gold]Dexterity[/gold] this turn.\nIf the [gold]Distance[/gold] decreased, gain {Value1:diff()} [gold]Strength[/gold] this turn.",
+  "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER.description": "Add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].\nWhenever an enemy is [gold]Displaced[/gold], if the [gold]Distance[/gold] was:\n[gold]Increased[/gold]: gain {Value1:diff()} [gold]Dexterity[/gold] this turn.\n[gold]Decreased[/gold]: gain {Value1:diff()} [gold]Strength[/gold] this turn.",
   "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER.title": "Flow of the Sanzu River",
   "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER.artist": "a.a.",
   "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER.tlnote": "Means both 'River Flow' and 'Flow state' like being focused.",
@@ -233,6 +233,12 @@
   "STS_KOMACHI_ONOZUKA-GRUDGING_STRIKE.title": "Grudging Strike",
   "STS_KOMACHI_ONOZUKA-GRUDGING_STRIKE.artist": "北公爵小三",
   "STS_KOMACHI_ONOZUKA-GRUDGING_STRIKE.tlnote": "Strike Card. I don't even know if Grudging is a real word though.",
+
+  
+  "STS_KOMACHI_ONOZUKA-SOULBOUND_STRIKE.description": "Deal {Damage:diff()} damage.\nAdd [gold]Detonate[/gold] into your [gold]Hand[/gold].",
+  "STS_KOMACHI_ONOZUKA-SOULBOUND_STRIKE.title": "Soulbound Strike",
+  "STS_KOMACHI_ONOZUKA-SOULBOUND_STRIKE.artist": "怠惰 フミ",
+
 
   "STS_KOMACHI_ONOZUKA-SPIRIT_DEFENSE.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {GuidedApplication:diff()} [gold]Guided Spirits[/gold].",
   "STS_KOMACHI_ONOZUKA-SPIRIT_DEFENSE.title": "Human Spirits Passing By",
@@ -413,7 +419,7 @@
   "STS_KOMACHI_ONOZUKA-WIND_OF_PASSING_AWAY.tlnote": "Name is a soku skill. Same wording as stomp.",
 
   
-  "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.description": "Deal {Damage:diff()} damage.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]When Exhausted[/gold]: This card gains [gold]Replay[/gold] 1. Next turn, if still [gold]Exhausted[/gold], return it to the [gold]Draw Pile[/gold].",
+  "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.description": "Deal {Damage:diff()} damage.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]When Exhausted[/gold]: All [gold]Piling Deathwork[/gold] gain [gold]Replay[/gold] 1. Next turn, if still [gold]Exhausted[/gold], return it to the [gold]Draw Pile[/gold].",
   "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.extradescription1": "Deal {Damage:diff()} damage.\nApply {Value1:diff()} [gold]Vengeful Spirits[/gold].\n[gold]When Exhausted[/gold]: All [gold]Piling Deathwork[/gold] gain [gold]Replay[/gold] 1. Next turn, if still [gold]Exhausted[/gold], return it to the [gold]Draw Pile[/gold].",
   "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.title": "Piling Deathwork",
   "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.artist": "neruzou",
@@ -536,7 +542,7 @@
 
   "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.description": "Apply {Value1:diff()} [gold]Vengeful Spirits[/gold].\nWhen [gold]Exhausted[/gold]: apply {Value2:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.",
   "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.title": "Ghostrick Shot",
-  "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.artist": "怠惰 フミ",
+  "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.artist": "三月アクア",
   "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.tlnote": "Reference to yugioh card of the same name.",
 
   
