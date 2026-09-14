@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Nodes.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
@@ -94,6 +95,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
 
                 if (chosen != null)
                 {
+                    if (chosen.GetModifier<RemoveFromCombatCardModifier>() == null) CardModifier.AddModifier<RemoveFromCombatCardModifier>(chosen);
                     await CardPileCmd.Add(chosen, PileType.Hand);
                 }
                 Value2--;

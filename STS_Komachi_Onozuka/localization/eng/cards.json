@@ -517,7 +517,7 @@
   "STS_KOMACHI_ONOZUKA-PARASITIC_POLLEN.artist": "iced_lemon",
 
 
-  "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA.description": "Whenever you play a card:\n- If there's a card with the same name in your [gold]Exhaust Pile[/gold], you may add it into your [gold]Hand[/gold].\n- If there's none, create a {Energy:energyIcons()} [gold]Clone[/gold] of it, then [gold]Exhaust[/gold] that [gold]Clone[/gold].\nEach effect can only activate once per turn.",
+  "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA.description": "Whenever you play a card:\n- If there's a card with the same name in your [gold]Exhaust Pile[/gold], you may add it into your [gold]Hand[/gold]. Remove it from combat when played.\n- If there's none, create a {Energy:energyIcons()} [gold]Clone[/gold] of it, then [gold]Exhaust[/gold] that [gold]Clone[/gold].\nEach effect can only activate once per turn.",
   "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA.title": "Extinct Fauna of the Sanzu River",
   "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA.artist": "moondisorder",
   "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA.tlnote": "The Sanzu River is known for having fish that's extinct in the outside world in it. Although the first effect is optional, not using it will still use it up for that turn. The last part is the same wording as yugioh cards' 'You can only use each effect of (card name) once per turn'.",

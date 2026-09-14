@@ -140,7 +140,7 @@
 
   
   "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA_POWER.description": "",
-  "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA_POWER.smartDescription": "每当你打出一张牌时：\n若你的[gold]消耗堆[/gold]中有同名的牌，你可以将其加入你的[gold]手牌[/gold]。（剩余[gold]{Value2}[/gold]次）\n若没有，生成并[gold]消耗[/gold]一张其耗能为{Energy:energyIcons()}的[gold]克隆[/gold]。（剩余[gold]{Value1}[/gold]次）",
+  "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA_POWER.smartDescription": "每当你打出一张牌时：\n若你的[gold]消耗堆[/gold]中有同名的牌，你可以将其加入你的[gold]手牌[/gold]。它在打出后从战斗中移除。（剩余[gold]{Value2}[/gold]次）\n若没有，生成一张其耗能为{Energy:energyIcons()}的[gold]克隆[/gold]，然后[gold]消耗[/gold]该[gold]克隆[/gold]。（剩余[gold]{Value1}[/gold]次）",
   "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA_POWER.title": "三途川的绝迹生物",
   "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA_POWER.selectionScreenPrompt": "将一张牌加入你的[gold]手牌[/gold]。",
 

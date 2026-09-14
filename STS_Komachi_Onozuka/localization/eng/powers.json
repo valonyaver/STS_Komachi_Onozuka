@@ -150,7 +150,7 @@
 
 
   "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA_POWER.description": "",
-  "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA_POWER.smartDescription": "Whenever you play a card:\nIf there's a card with the same name in your [gold]Exhaust Pile[/gold], you may add it into your [gold]Hand[/gold]. ([gold]{Value2}[/gold] uses left.)\nIf there's none, create a {Energy:energyIcons()} [gold]Clone[/gold] of it, then [gold]Exhaust[/gold] that [gold]Clone[/gold]. ([gold]{Value1}[/gold] uses left.)",
+  "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA_POWER.smartDescription": "Whenever you play a card:\nIf there's a card with the same name in your [gold]Exhaust Pile[/gold], you may add it into your [gold]Hand[/gold]. It is removed from combat when played ([gold]{Value2}[/gold] uses left.)\nIf there's none, create a {Energy:energyIcons()} [gold]Clone[/gold] of it, then [gold]Exhaust[/gold] that [gold]Clone[/gold]. ([gold]{Value1}[/gold] uses left.)",
   "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA_POWER.title": "Extinct Fauna of the Sanzu River",
   "STS_KOMACHI_ONOZUKA-EXTINCT_FAUNA_POWER.selectionScreenPrompt": "Add a card to your [gold]Hand[/gold].",
 
