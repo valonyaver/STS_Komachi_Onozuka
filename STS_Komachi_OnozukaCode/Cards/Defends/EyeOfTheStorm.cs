@@ -22,14 +22,14 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
       
     public class EyeOfTheStorm : STS_Komachi_OnozukaCard
     {
-        public EyeOfTheStorm() : base(3, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+        public EyeOfTheStorm() : base(3, CardType.Skill, CardRarity.Uncommon, TargetType.AllEnemies)
         {
             WithBlock(10, 3);
             WithVar(new SummonVar(5));
             WithKeyword(KomachiKeywords.Barrier);
             // Also the release cost
             WithPower<GuidedSpiritPower>(nameof(Value1), 5, 2);
-            WithPower<VengefulSpiritPower>(nameof(Value2), 3, 2);
+            WithPower<VengefulSpiritPower>(nameof(Value2), 6, 4);
             // release cost amount
             //WithVar(nameof(ReleaseCost), 6);
         }

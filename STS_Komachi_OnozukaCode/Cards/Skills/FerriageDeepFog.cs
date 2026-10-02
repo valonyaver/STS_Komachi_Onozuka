@@ -32,11 +32,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             // Displace by up to
             WithVar(nameof(Value1), 3);
             // Spirits per displacement
-            WithPower<VengefulSpiritPower>(nameof(Value2), 3, 1);
+            WithPower<VengefulSpiritPower>(nameof(Value2), 6, 2);
             // Release cost yah
             WithVar(nameof(ReleaseCost), 3);
             // Strength per vengeful spiits
-            WithVar(nameof(Value3), 3);
+            WithVar(nameof(Value3), 10);
             WithTip(typeof(DistancePower));
             WithKeywords(KomachiKeywords.Displace, KomachiKeywords.Release);
         }
@@ -58,8 +58,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
                 await ReleaseCmd.Release(choiceContext, Owner.Creature, ReleaseCost, this);
 
                 var Fp = vengefulCount.Value / Value3;
-                await PowerCmd.Apply<DeepFogPower>(choiceContext, target: Owner.Creature, Fp, Owner.Creature, this);
-                
+                await PowerCmd.Apply<StrengthPower>(choiceContext, target: Owner.Creature, Fp, Owner.Creature, this);
             }
         }
 

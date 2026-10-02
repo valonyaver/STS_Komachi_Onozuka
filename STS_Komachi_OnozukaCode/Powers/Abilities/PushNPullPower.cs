@@ -10,7 +10,9 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
 using System.Collections.Generic;
@@ -26,23 +28,26 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Counter;
 
-        public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
+        public override async Task AfterSideTurnStartLate(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
         {
-            if (!participants.Contains(Owner)) return;
-            foreach(var enemy in combatState.HittableEnemies)
+            if (participants.Contains(Owner))
             {
-                await DistanceCmd.Displace(new ThrowingPlayerChoiceContext(), enemy, -Amount, Owner, null);
+                foreach (var enemy in combatState.HittableEnemies)
+                {
+                    await DistanceCmd.Displace(new ThrowingPlayerChoiceContext(), enemy, -Amount, Owner, null);
+                    await PowerCmd.Apply<DisplaceNextTurnPower>(new ThrowingPlayerChoiceContext(), enemy, Amount, Owner, null);
+                }
             }
         }
 
-        public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
-        {
-            if (!participants.Contains(Owner)) return;
-            if (CombatState == null) return;
-            foreach (var enemy in CombatState.HittableEnemies)
-            {
-                await DistanceCmd.Displace(new ThrowingPlayerChoiceContext(), enemy, Amount, Owner, null);
-            }
-        }
+        //public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+        //{
+        //    if (!participants.Contains(Owner)) return;
+        //    if (CombatState == null) return;
+        //    foreach (var enemy in CombatState.HittableEnemies)
+        //    {
+        //        await DistanceCmd.Displace(new ThrowingPlayerChoiceContext(), enemy, Amount, Owner, null);
+        //    }
+        //}
     }
 }

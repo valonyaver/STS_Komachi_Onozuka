@@ -29,7 +29,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             : base(2, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
         {
             // Spirits applied
-            WithPower<VengefulSpiritPower>(nameof(Value1), 4, 2);
+            WithPower<VengefulSpiritPower>(nameof(Value1), 6, 4);
             // Release cost 1
             WithVar(nameof(ReleaseCost), 3, -1);
             // Release cost 2

@@ -49,7 +49,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
                 .WithDanmaku(patterns)
                 .WithHitFx("vfx/vfx_attack_slash")
                 .Execute(choiceContext);
-            await PowerCmd.Apply<VengefulSpiritPower>(choiceContext, cardPlay.Target, attackCommand.Results.SelectMany((List<DamageResult> r) => r).Sum((DamageResult r) => r.TotalDamage), base.Owner.Creature, this);
+
+            var spiritstoApply = attackCommand.Results.SelectMany((List<DamageResult> r) => r).Sum((DamageResult r) => r.TotalDamage) * 2;
+
+            await PowerCmd.Apply<VengefulSpiritPower>(choiceContext, cardPlay.Target, spiritstoApply, base.Owner.Creature, this);
+
             var spirits = cardPlay.Target.GetPower<VengefulSpiritPower>();
             if (spirits != null)
             {

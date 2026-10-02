@@ -28,9 +28,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         public VengefulerSweep()
             : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AllEnemies)
         {
-            WithDamage(8, 2);
+            WithDamage(8, 3);
             // Spirits applied
-            WithPower<VengefulSpiritPower>(nameof(Value1), 4, 2);
+            WithPower<VengefulSpiritPower>(nameof(Value1), 8, 3);
             // Release cost
             WithVar(nameof(ReleaseCost), 8);
             WithKeyword(KomachiKeywords.Release);
@@ -43,7 +43,6 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         }
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            
             if (CombatState == null) return;
 
             CardModel? chosen = await ReleaseCmd.ChooseRelease(choiceContext, this, ReleaseCost);

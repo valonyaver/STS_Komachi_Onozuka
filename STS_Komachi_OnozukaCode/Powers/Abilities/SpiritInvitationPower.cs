@@ -30,7 +30,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
     public class SpiritInvitationPower : STS_Komachi_OnozukaPower, IOnReleasedListener
     {
         public override PowerType Type => PowerType.Buff;
-        public override PowerStackType StackType => PowerStackType.Single;
+        public override PowerStackType StackType => PowerStackType.Counter;
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromKeyword(KomachiKeywords.Release)];
         public override Color AmountLabelColor => StsColors.blue;
         public async Task OnReleased(PlayerChoiceContext choiceContext, ReleaseArgs args)

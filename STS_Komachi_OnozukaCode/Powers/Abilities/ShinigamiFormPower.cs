@@ -45,25 +45,26 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
 
         // desiredFinal = 1 + bonus * (1 + stacks), where bonus = baseMultiplier - 1
         // Works for both close (bonus positive) and far (bonus negative, stacks fixed at 1).
-        private static decimal GetAmplifiedAdditive(int level, int stacks)
+        internal static decimal GetAmplifiedAdditive(int level, int stacks)
         {
             decimal baseMultiplier = DistancePower.GetDamageMultiplier(level);
             decimal bonus = baseMultiplier - 1m;
             return 1m + bonus * (1 + stacks);
         }
 
+        /// <summary>
+        /// Turns the number into a percentage
+        /// </summary>
         private static int ToSignedPct(decimal multiplier) => (int)((multiplier - 1m) * 100m);
 
         private void RefreshDisplayVars()
         {
             int s = Amount;
-            DynamicVars["L1Pct"].BaseValue = ToSignedPct(GetAmplifiedAdditive(1, s));
-            DynamicVars["L2Pct"].BaseValue = ToSignedPct(GetAmplifiedAdditive(2, s));
-            if (s == 1)
-            {
-                DynamicVars["L4Pct"].BaseValue = ToSignedPct(L4Final);
-                DynamicVars["L5Pct"].BaseValue = ToSignedPct(L5Final);
-            }
+            DynamicVars["L1Mult"].BaseValue = ToSignedPct(GetAmplifiedAdditive(1, s));
+            DynamicVars["L2Mult"].BaseValue = ToSignedPct(GetAmplifiedAdditive(2, s));
+            DynamicVars["L4Mult"].BaseValue = ToSignedPct(L4Final);
+            DynamicVars["L5Mult"].BaseValue = ToSignedPct(L5Final);
+
             InvokeDisplayAmountChanged();
         }
 

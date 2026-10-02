@@ -72,11 +72,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
                 && Value1 > 0)
             {
                 // copies dont get copied
-                if (played.Keywords.Contains(KomachiKeywords.Clone) && played.Keywords.Contains(KomachiKeywords.Unclonable)) return;
+                if (played.Keywords.Contains(KomachiKeywords.Clone) || played.Keywords.Contains(KomachiKeywords.Unclonable)) return;
                 CardModel copy = played.CreateClone();
 
                 copy.AddKeyword(KomachiKeywords.Clone);
-                copy.EnergyCost.SetThisCombat((int)DynamicVars.Energy.BaseValue, true);
+                copy.EnergyCost.SetThisCombat(DynamicVars.Energy.IntValue, true);
 
                 await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Exhaust, Owner.Player);
                 await CardCmd.Exhaust(choiceContext, copy);

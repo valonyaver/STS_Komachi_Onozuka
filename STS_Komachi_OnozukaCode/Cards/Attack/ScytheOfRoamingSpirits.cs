@@ -30,7 +30,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             WithPower<VengefulSpiritPower>(nameof(Value1), 1, upgrade: 1);
             // WithKeywords(CardKeyword.Exhaust, CardKeyword.Retain);
 
-            WithCalculatedDamage(15, 
+            WithCalculatedDamage(14, 
                 static (card, target) =>
                 (target?.GetPowerAmount<VengefulSpiritPower>() ?? 0) * card.DynamicVars[nameof(Value1)].BaseValue, 
                 upgrade:3);

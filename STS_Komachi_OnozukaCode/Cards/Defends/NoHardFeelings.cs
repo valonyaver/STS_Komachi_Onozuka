@@ -28,9 +28,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         public NoHardFeelings() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
         {
             WithBlock(4, 3);
-            WithPower<VengefulSpiritPower>(nameof(Value1), 2);
+            WithPower<VengefulSpiritPower>(nameof(Value1), 4);
             // Strength down per value spirits
-            WithVar(new IntVar(nameof(Value2), 2));
+            WithVar(new IntVar(nameof(Value2), 4));
             WithKeyword(KomachiKeywords.Detonate);
 
             WithCalculatedVar(nameof(Value3), 0, StrengthDebuff);
@@ -73,7 +73,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             {
                 var args = await DetonateCmd.Target(choiceContext, cardPlay.Target, this);
                 if (args == null) return;
-                var tempDebuffAmount = Math.Round(args.TotalCountedAmount / 2, MidpointRounding.ToZero);
+                var tempDebuffAmount = Math.Round(args.TotalCountedAmount / Value2, MidpointRounding.ToZero);
                 await PowerCmd.Apply<NoHardFeelingsPower>(choiceContext, args.Target, tempDebuffAmount, Owner.Creature, this);
 
             }

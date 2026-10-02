@@ -48,12 +48,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens
         {
             if (count == 0)
             {
-                return Array.Empty<CardModel>();
+                return [];
             }
 
             if (CombatManager.Instance.IsOverOrEnding)
             {
-                return Array.Empty<CardModel>();
+                return [];
             }
 
             List<CardModel> mandists = new List<CardModel>();

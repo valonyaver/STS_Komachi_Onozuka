@@ -36,6 +36,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Relics
             new HealVar(0)
             ];
 
+        public override bool ShowCounter => true;
+        public override int DisplayAmount => DynamicVars.Heal.IntValue;
         public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
         {
             if (player != Owner)
@@ -43,6 +45,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Relics
             if (player.PlayerCombatState?.TurnNumber == 1)
             {
                 DynamicVars.Heal.BaseValue = 0;
+                InvokeDisplayAmountChanged();
                 List<CardModel> list1 = [];
                 CardModel mandist = combatState.CreateCard<ManipulateDistanceToken>(Owner);
                 list1.Add(mandist);
@@ -72,6 +75,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Relics
                 && Owner.PlayerCombatState != null) 
             {
                 DynamicVars.Heal.BaseValue += result.UnblockedDamage;
+                InvokeDisplayAmountChanged();
             }
         }
 
@@ -82,6 +86,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Relics
                 Flash();
                 await CreatureCmd.Heal(base.Owner.Creature, base.DynamicVars.Heal.BaseValue);
                 DynamicVars.Heal.BaseValue = 0;
+                InvokeDisplayAmountChanged();
             }
         }
     }

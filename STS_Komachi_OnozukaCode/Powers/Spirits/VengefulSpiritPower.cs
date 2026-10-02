@@ -51,7 +51,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
         /// <summary>
         /// The base un-modified explosion damage (Amount * 2).
         /// </summary>
-        public decimal BaseDamage => Amount * 2m;
+        public decimal BaseDamage => Amount;
         /// <summary>
         /// Previews what the damage should be against the damage target.
         /// </summary>
@@ -100,9 +100,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
         public decimal? GetThirdAmount()
         {
             if (PendingStacksPreview == 0) return ModifiedDamage; // unchanged original behavior
-            decimal hypotheticalBase = (Amount + PendingStacksPreview) * 2m;
+            decimal hypotheticalBase = (Amount + PendingStacksPreview);
             var scratch = new DamageVar("VengefulDamagePreview", 0m, ValueProp.Move);
-            return KomachiHelpers.FindDamageDealt(Applier, DamageTarget, hypotheticalBase, scratch);
+            var damage = KomachiHelpers.FindDamageDealt(Applier, DamageTarget, hypotheticalBase, scratch);
+            return Math.Max(damage, 0);
         }
         public bool ShouldRaiseThirdAmount(CardModel? hoveredCard)
         => hoveredCard is STS_Komachi_OnozukaCard k && k.GetVengefulSpiritStacksApplied(Owner) is > 0;

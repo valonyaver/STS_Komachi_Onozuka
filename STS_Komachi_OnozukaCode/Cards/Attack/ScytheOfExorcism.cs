@@ -34,7 +34,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             WithKeyword(KomachiKeywords.Detonate);
 
             // Spirits needed
-            WithPower<VengefulSpiritPower>(nameof(Value1), 4);
+            WithPower<VengefulSpiritPower>(nameof(Value1), 6);
             WithTip(new TooltipSource((c) =>
                 HoverTipFactory.FromCard<SpiderLily>(true)));
 
@@ -61,7 +61,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
                 .Execute(choiceContext); 
             
             var detonate = await DetonateCmd.Target(choiceContext, cardPlay.Target, this);
-            if (detonate?.TotalCountedAmount >= Value1)
+            if (detonate?.TotalCountedAmount >= Value1 && CombatState != null)
             {
                 CardModel lily = CombatState.CreateCard<SpiderLily>(Owner);
                 CardCmd.Upgrade(lily);

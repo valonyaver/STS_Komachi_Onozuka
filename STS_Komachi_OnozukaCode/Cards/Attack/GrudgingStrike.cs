@@ -31,13 +31,14 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         public GrudgingStrike()
         : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
         {
-            WithDamage(8, 2);
-            WithPower<VengefulSpiritPower>(nameof(VengefulSpiritApplication), 3, 1);
+            WithDamage(7, 2);
+            WithPower<VengefulSpiritPower>(nameof(VengefulSpiritApplication), 5, 2);
             WithVar(nameof(ReleaseCost), 3, -1);
             WithTags(CardTag.Strike);
             WithTip( new TooltipSource( (c)=>
                 HoverTipFactory.FromCard<DetonateToken>(true))
                 );
+            WithKeyword(KomachiKeywords.Release);
         }
         public int VengefulSpiritApplication
         {

@@ -36,7 +36,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Relics
 
         public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
         {
-            if (power is PoisonPower && power.Owner == Owner.Creature)
+            if (power is PoisonPower && power.Owner == Owner.Creature && amount > 0)
             {
                 Flash();
                 await PowerCmd.Apply<DivineSpiritPower>(choiceContext, Owner.Creature, amount, Owner.Creature, null);

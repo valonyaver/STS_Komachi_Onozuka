@@ -27,7 +27,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Potions
         public override TargetType TargetType => TargetType.AnyEnemy;
 
         public override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<VengefulSpiritPower>()];
-        protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<VengefulSpiritPower>(10)];
+        protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<VengefulSpiritPower>(20)];
         protected override async Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
         {
             AssertValidForTargetedPotion(target);

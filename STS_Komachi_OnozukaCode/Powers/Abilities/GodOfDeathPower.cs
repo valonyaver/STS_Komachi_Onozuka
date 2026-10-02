@@ -78,9 +78,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
 
         public override async Task AfterPreventingDeath(Creature creature)
         {
+            HasRevived = true;
+            InvokeDisplayAmountChanged();
             await CreatureCmd.Heal(creature, Math.Max((decimal)creature.MaxHp * Value1/100m, 1m));
             await PowerCmd.Apply<IntangiblePower>(new ThrowingPlayerChoiceContext(), creature, 1, Owner, null);
-            if (Owner.Player.Deck.Cards.Contains(applyingCard))
+            if (applyingCard != null && Owner.Player.Deck.Cards.Contains(applyingCard))
             {
                 await CardPileCmd.RemoveFromDeck(applyingCard, false);
             }

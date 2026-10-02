@@ -34,9 +34,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
         {
             WithDamage(9);
-            WithPower<VengefulSpiritPower>(nameof(Value1), 9);
+            WithPower<GuidedSpiritPower>(nameof(Value1), 9);
             WithPower<StrengthPower>(nameof(Value2), 9);
-            WithTip(typeof(DexterityPower));
             WithKeyword(CardKeyword.Retain, UpgradeType.Add);
             WithVar(nameof(ReleaseCost), 9);
             WithKeyword(KomachiKeywords.Release);
@@ -52,16 +51,15 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             AttackCommand attackCommand = await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target)
                 .WithHitFx("vfx/vfx_attack_slash")
                 .Execute(choiceContext);
-            await PowerCmd.Apply<VengefulSpiritPower>(choiceContext, cardPlay.Target, Value1, base.Owner.Creature, this);
+            await PowerCmd.Apply<GuidedSpiritPower>(choiceContext, Owner.Creature, Value1, base.Owner.Creature, this);
 
             // Don't do release if target is dead.
-            if (cardPlay.Target.IsDead) return;
+            if (cardPlay.Target.IsDead || Owner.PlayerCombatState == null) return;
             var choiceRelease = await ReleaseCmd.ChooseRelease(choiceContext, this, ReleaseCost);
 
             if (ReleaseCmd.ChoseRelease(choiceRelease))
             {
                 await ReleaseCmd.Release(choiceContext, Owner.Creature, ReleaseCost, this);
-
                 var handPile = Owner.PlayerCombatState.Hand.Cards.ToList();
                 int amount = 0;
                 foreach(var card in handPile)
@@ -75,19 +73,20 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
                 await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(amount).FromCard(this, cardPlay)
                 .Targeting(cardPlay.Target)
                 .BeforeDamage(delegate
-                {
-                NGroundFireVfx nGroundFireVfx = NGroundFireVfx.Create(cardPlay.Target);
-                if (nGroundFireVfx == null)
-                {
-                    return Task.CompletedTask;
-                }
+                    {
+                        NGroundFireVfx nGroundFireVfx = NGroundFireVfx.Create(cardPlay.Target);
+                        if (nGroundFireVfx == null)
+                        {
+                            return Task.CompletedTask;
+                        }
 
-                SfxCmd.Play("event:/sfx/characters/attack_fire");
-                nGroundFireVfx.Scale = Vector2.One * scale;
-                NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(nGroundFireVfx);
-                scale += 0.1f;
-                return Task.CompletedTask;
-                })
+                        SfxCmd.Play("event:/sfx/characters/attack_fire");
+                        nGroundFireVfx.Scale = Vector2.One * scale;
+                        NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(nGroundFireVfx);
+                        scale += 0.1f;
+                        return Task.CompletedTask;
+                    }
+                )
                 .Execute(choiceContext);
                 MainFile.LogMessage($"Amount of exiled cards is {amount}");
                 if (amount >= 9)

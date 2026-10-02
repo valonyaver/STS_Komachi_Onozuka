@@ -41,7 +41,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Relics
             if (room is not CombatRoom)
                 return;
             Flash();
-            List<CardModel> cards = PileType.Draw.GetPile(base.Owner).Cards.Where((CardModel c) => c.IsUpgradable).ToList().StableShuffle(base.Owner.RunState.Rng.CombatCardSelection)
+            List<CardModel> cards = PileType.Draw.GetPile(base.Owner).Cards.ToList().StableShuffle(base.Owner.RunState.Rng.CombatCardSelection)
                 .Take(base.DynamicVars.Cards.IntValue)
                 .ToList();
             foreach(var card in cards)

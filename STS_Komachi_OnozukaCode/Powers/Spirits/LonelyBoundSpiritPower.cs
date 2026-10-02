@@ -47,7 +47,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
         /// <summary>
         /// The base explosion damage (Amount * 2).
         /// </summary>
-        public decimal BaseDamage => Amount * 2m;
+        public decimal BaseDamage => Amount;
 
         /// <summary>
         /// Previews what the damage should be against the damage target.
@@ -75,21 +75,23 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
         public decimal? GetThirdAmount()
         {
             if (PendingStacksPreview == 0) return ModifiedDamage;
-            decimal hypotheticalBase = (Amount + PendingStacksPreview) * 2m;
+            decimal hypotheticalBase = (Amount + PendingStacksPreview);
             var scratch = new DamageVar("VengefulDamagePreview", 0m, ValueProp.Move);
-            return KomachiHelpers.FindDamageDealt(Applier, DamageTarget, hypotheticalBase, scratch);
+            var damage = KomachiHelpers.FindDamageDealt(Applier, DamageTarget, hypotheticalBase, scratch);
+            return Math.Max(damage, 0);
         }
         public bool ShouldRaiseThirdAmount(CardModel? hoveredCard)
         => hoveredCard is STS_Komachi_OnozukaCard k && k.GetVengefulSpiritStacksApplied(Owner) is > 0;
 
 
-        public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+        public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
         {
             if (power is not VengefulSpiritPower || power.Owner != Owner)
             {
-                return;
+                return Task.CompletedTask;
             }
             Amount += (int)(amount);
+            return Task.CompletedTask;
         }
 
         public async Task OnDetonatedEarly(PlayerChoiceContext choiceContext, DetonationEventArgs args)
@@ -136,7 +138,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
             decimal dmg = GetThirdAmount()!.Value;
             var enemyBlock = Owner.Block;
             var length = dmg - enemyBlock;
-            if (dmg <= 0m) yield break;
+            if (length <= 0m) yield break;
 
             yield return new HealthBarForecastSegment(
                 Amount: (int)length,

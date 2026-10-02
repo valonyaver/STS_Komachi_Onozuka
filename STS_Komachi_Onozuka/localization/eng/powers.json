@@ -6,8 +6,8 @@
   "STS_KOMACHI_ONOZUKA-DISTANCE_POWER.tlnote": "Font size is because the tooltip is too big in english. You can fiddle with it or remove it depending on how long it ends up being in yours.",
 
 
-  "STS_KOMACHI_ONOZUKA-FLEXIBLE_WORK_SCHEDULE_POWER.description": "Gain [gold]Block[/gold] each time an enemy is [gold]Displaced[/gold].",
-  "STS_KOMACHI_ONOZUKA-FLEXIBLE_WORK_SCHEDULE_POWER.smartDescription": "Gain [blue]{Amount}[/blue] [gold]Block[/gold] each time an enemy is [gold]Displaced[/gold].",
+  "STS_KOMACHI_ONOZUKA-FLEXIBLE_WORK_SCHEDULE_POWER.description": "Each time an enemy is [gold]Displaced[/gold], gain [gold]Block[/gold] for every level of [gold]Distance[/gold] changed.",
+  "STS_KOMACHI_ONOZUKA-FLEXIBLE_WORK_SCHEDULE_POWER.smartDescription": "Each time an enemy is [gold]Displaced[/gold], gain [blue]{Amount}[/blue] [gold]Block[/gold] for every level of [gold]Distance[/gold] changed.",
   "STS_KOMACHI_ONOZUKA-FLEXIBLE_WORK_SCHEDULE_POWER.title": "Flexible Work Schedule",
 
   "STS_KOMACHI_ONOZUKA-HARDWORKING_SHINIGAMI_POWER.title": "Hardworking Shinigami",
@@ -15,7 +15,7 @@
   "STS_KOMACHI_ONOZUKA-HARDWORKING_SHINIGAMI_POWER.smartDescription": "At the start of your turn, if there {Amount:plural:is no|are less than [blue]{Amount}[/blue]} [gold]Manipulate Distances[/gold] in [gold]Hand[/gold], add {Amount:plural:a [gold]Manipulate Distance[/gold]|[gold]Manipulate Distances[/gold]} into your [gold]Hand[/gold]{Amount:plural:.| until there are [blue]{Amount}[/blue].}",
 
   "STS_KOMACHI_ONOZUKA-PUSH_N_PULL_POWER.description": "",
-  "STS_KOMACHI_ONOZUKA-PUSH_N_PULL_POWER.smartDescription": "At the start of {OwnerName}'s turn, [gold]Displace[/gold] all enemies by [blue]-{Amount}[/blue].\nAt the end of {OwnerName}'s turn, [gold]Displace[/gold] all enemies by [blue]+{Amount}[/blue].",
+  "STS_KOMACHI_ONOZUKA-PUSH_N_PULL_POWER.smartDescription": "At the start of {OwnerName}'s turn, [gold]Displace[/gold] all enemies by [blue]-{Amount}[/blue].\nAt the start of each of those enemies' turns, [gold]Displace[/gold] them by [blue]+{Amount}[/blue].",
   "STS_KOMACHI_ONOZUKA-PUSH_N_PULL_POWER.title": "Push and Pull",
 
   "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER_POWER.description": "",
@@ -37,16 +37,16 @@
 
 
   "STS_KOMACHI_ONOZUKA-ACCOMPANYING_SPY_SPIRIT_POWER.description": "",
-  "STS_KOMACHI_ONOZUKA-ACCOMPANYING_SPY_SPIRIT_POWER.smartDescription": "Whenever {OwnerName} is [gold]Displaced[/gold], Player {ApplierName} [gold]Barriers[/gold] [blue]{Amount}[/blue].",
+  "STS_KOMACHI_ONOZUKA-ACCOMPANYING_SPY_SPIRIT_POWER.smartDescription": "Whenever {OwnerName} is [gold]Displaced[/gold], {IsMultiplayer:Player {ApplierName} [gold]Barriers[/gold]|[gold]Barrier[/gold]} [blue]{Amount}[/blue].",
   "STS_KOMACHI_ONOZUKA-ACCOMPANYING_SPY_SPIRIT_POWER.title": "Accompanying Spy Spirit",
 
 
-  "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POWER.description": "[font_size=19]Removed at the start of the third turn after being applied. [gold]Detonates[/gold] when removed, dealing attack damage (affected by modifiers) equal to double the [gold]Vengeful Spirits[/gold] from the applying player to the target.",
-  "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POWER.smartDescription": "{Duration:plural:Start of next turn|After [blue]{Duration}[/blue] turns}, this [gold]Detonates[/gold].\nWhen [gold]Detonated[/gold], Player {ApplierName} will attack {OwnerName} for [blue]{VengefulDamage:diff()}[/blue] damage.",
+  "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POWER.description": "Removed at the start of the third turn after being applied. [gold]Detonates[/gold] when removed, dealing attack damage (affected by modifiers) from the applying player to the target.",
+  "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POWER.smartDescription": "{Duration:plural:Start of next turn|After [blue]{Duration}[/blue] turns}, this [gold]Detonates[/gold].\nWhen [gold]Detonated[/gold], {IsMultiplayer:Player {ApplierName} will attack|attack} [blue]{OwnerName}[/blue] for [blue]{VengefulDamage:diff()}[/blue] damage.",
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POWER.title": "Vengeful Spirits",
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POWER.tlnote": "The duration running out only removes it. But this detonates when it is removed in any way, including enemy cleanses if that happens (idk if any sts 2 enemy does that though).",
 
-  "STS_KOMACHI_ONOZUKA-GUIDED_SPIRIT_POWER.description": "At the end of your turn, attack the enemy with the lowest HP for damage (affected by modifiers) equal to [gold]Guided Spirits[/gold], then reduce it by 1.",
+  "STS_KOMACHI_ONOZUKA-GUIDED_SPIRIT_POWER.description": "At the end of your turn, attack the enemy with the lowest HP for damage (affected by modifiers), then reduce [gold]Guided Spirits[/gold] by 1.",
   "STS_KOMACHI_ONOZUKA-GUIDED_SPIRIT_POWER.smartDescription": "At the end of {OwnerName}'s turn, attack the enemy with the lowest HP ([blue]{targetName}[/blue]) for [blue]{GuidedDamage:diff()}[/blue] damage, then reduce this by 1.",
   "STS_KOMACHI_ONOZUKA-GUIDED_SPIRIT_POWER.title": "Guided Spirits",
 
@@ -60,8 +60,8 @@
   "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER_POWER.title": "Spirit Barrier",
   "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER_POWER.tlnote": "Same wording as Osty's Die for you.",
 
-  "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.description": "Whenever [gold]Vengeful Spirits[/gold] are applied, [gold]Lonely Bound Spirit[/gold]'s amount will increase by the same amount.\nCan only be [gold]Detonated[/gold] by a card, dealing attack damage (affected by modifiers) equal to double its amount from the applying player to the target.\nWhen detonated at the same time as [gold]Vengeful Spirits[/gold], effects that count the amount of [gold]Spirits Detonated[/gold] will count both [gold]Detonations[/gold].",
-  "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.smartDescription": "Whenever [gold]Vengeful Spirits[/gold] are applied, [gold]Lonely Bound Spirit[/gold]'s amount will increase by the same amount.\nDeals attack damage equal to double its amount.\nWhen [gold]Detonated[/gold], Player {ApplierName} will attack {OwnerName} for [blue]{VengefulDamage:diff()}[/blue] damage.",
+  "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.description": "Whenever [gold]Vengeful Spirits[/gold] are applied, [gold]Lonely Bound Spirit[/gold]'s damage will increase by the same amount.\nCan only be [gold]Detonated[/gold] by a card, dealing attack damage (affected by modifiers) from the applying player to the target.\nWhen detonated at the same time as [gold]Vengeful Spirits[/gold], effects that count the amount of [gold]Spirits Detonated[/gold] will count both [gold]Detonations[/gold].",
+  "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.smartDescription": "Whenever [gold]Vengeful Spirits[/gold] are applied, [gold]Lonely Bound Spirit[/gold]'s damage will increase by the same amount.\nDeals attack damage equal to double its amount.\nWhen [gold]Detonated[/gold], Player {ApplierName} will attack {OwnerName} for [blue]{VengefulDamage:diff()}[/blue] damage.",
   "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.title": "Lonely Bound Spirit",
   "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.tlnote": "This freaking thing. Okay, so what this does. It starts at 1. Whenever Vengeful Spirits are applied, it increases by that amount. Let's say you have 4 VS and 5 LBS on an enemy. You have Grudge of the Dead (gain 1 strength on each detonation) and you play no hard feelings to detonate (and alse 1 strength for every 2 spirits). What will happen is that the player will get 2 strength, since 2 separate detonations happened. But the enemy will lose 4 strength (9/2=4.5 round down to 4), as this will contribute to the total amount. IN addition, every application of it is a different instance. So you could get 3 strength from grudge if you have 2 on the enemy.",
 
@@ -100,7 +100,7 @@
 
 
   "STS_KOMACHI_ONOZUKA-INFERNO_TEMPEST_POWER.description": "",
-  "STS_KOMACHI_ONOZUKA-INFERNO_TEMPEST_POWER.smartDescription": "Next turn, choose up to [blue]{Amount}[/blue] [gold]Exhausted[/gold] non-[gold]Basic[/gold] cards to return randomly into your [gold]Hand[/gold], [gold]Draw Pile[/gold], and [gold]Discard Pile[/gold].",
+  "STS_KOMACHI_ONOZUKA-INFERNO_TEMPEST_POWER.smartDescription": "Next turn, choose up to [blue]{Amount}[/blue] [gold]Exhausted[/gold] non-[gold]Basic[/gold] cards to return randomly into your [gold]Hand[/gold], [gold]Draw Pile[/gold], and [gold]Discard Pile[/gold]. Then, return all [gold]Exhausted[/gold] [gold]Basic[/gold] cards into your [gold]Draw Pile[/gold].",
   "STS_KOMACHI_ONOZUKA-INFERNO_TEMPEST_POWER.selectionScreenPrompt": "Choose up to [blue]{Amount}[/blue] [gold]Exhausted[/gold] non-[gold]Basic[/gold] cards to return randomly into your [gold]Hand[/gold], [gold]Draw Pile[/gold], and [gold]Discard Pile[/gold].",
   "STS_KOMACHI_ONOZUKA-INFERNO_TEMPEST_POWER.title": "Inferno Tempest",
   "STS_KOMACHI_ONOZUKA-INFERNO_TEMPEST_POWER.tlnote": "Originates from souls at the end of the road. This one is the yugioh card of the same name.",

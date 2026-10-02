@@ -20,8 +20,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Basics
         {
             WithTip(typeof(DistancePower));
             WithTags(CardTag.Defend);
-            WithBlock(10, 3);
+            WithBlock(11, 3);
             WithVar(nameof(Value1), 4, -1);
+            WithTip(typeof(ManipulateDistanceToken));
         }
         public override bool GainsBlock => true;
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

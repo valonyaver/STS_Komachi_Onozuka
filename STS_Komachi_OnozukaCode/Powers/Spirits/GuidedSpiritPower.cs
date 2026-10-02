@@ -59,7 +59,14 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
         /// Previews what the damage should be against the damage target.
         /// </summary>
         public decimal ModifiedDamage => KomachiHelpers.FindDamageDealt(Owner, DamageTarget, BaseDamage, DynamicVars["GuidedDamage"]);
-        public decimal? GetThirdAmount() => DamageTarget == null ? null : ModifiedDamage;
+        public decimal? GetThirdAmount()
+        {
+            if (DamageTarget == null)
+                return null;
+
+            // Truncate to whole integer and clamp at 0
+            return (int)Math.Max(ModifiedDamage, 0m);
+        }
         public void PreExtraHoverTips() => _ = ModifiedDamage;
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips

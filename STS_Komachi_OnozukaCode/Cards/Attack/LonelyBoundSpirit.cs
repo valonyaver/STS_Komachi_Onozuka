@@ -25,8 +25,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
         {
             WithDamage(8, 3);
-            WithPower<VengefulSpiritPower>(3, 1);
             WithPower<LonelyBoundSpiritPower>(nameof(Value1), 1);
+            WithTip(typeof(VengefulSpiritPower));
             WithKeyword(KomachiKeywords.Detonate);
         }
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

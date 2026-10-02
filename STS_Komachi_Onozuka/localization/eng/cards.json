@@ -55,13 +55,13 @@
   "STS_KOMACHI_ONOZUKA-RELEASE_TOKEN.tlnote": "Token used for decisions only. Default text is no release, similar to Manipulate No Distance, other extra descriptions gets filled out by other cards' extra descriptions.",
 
 
-  "STS_KOMACHI_ONOZUKA-SHOOT_AND_MOVE.description": "Deal {Damage:diff()} damage.\n[gold]Optional[/gold]: [gold]Displace[/gold] by up to +/-{Value1:diff()}.",
+  "STS_KOMACHI_ONOZUKA-SHOOT_AND_MOVE.description": "Deal {Damage:diff()} damage.\n[gold]Optional[/gold]: [gold]Displace[/gold] by {IfUpgraded:show:up to }+/-{Value1:diff()}.",
   "STS_KOMACHI_ONOZUKA-SHOOT_AND_MOVE.title": "Shoot And Move",
   "STS_KOMACHI_ONOZUKA-SHOOT_AND_MOVE.artist": "sakimiya@土曜つ28a",
   "STS_KOMACHI_ONOZUKA-SHOOT_AND_MOVE.tlnote": "Reference to Marisa in Touhou 8.",
 
 
-  "STS_KOMACHI_ONOZUKA-MOVE_AND_SHOOT.description": "[gold]Optional[/gold]: [gold]Displace[/gold] by up to +/-{Value1:diff()}.\nDeal {Damage:diff()} damage.",
+  "STS_KOMACHI_ONOZUKA-MOVE_AND_SHOOT.description": "[gold]Optional[/gold]: [gold]Displace[/gold] by {IfUpgraded:show:up to }+/-{Value1:diff()}.\nDeal {Damage:diff()} damage.",
   "STS_KOMACHI_ONOZUKA-MOVE_AND_SHOOT.title": "Move And Shoot",
   "STS_KOMACHI_ONOZUKA-MOVE_AND_SHOOT.artist": "sakimiya@土曜つ28a",
   "STS_KOMACHI_ONOZUKA-MOVE_AND_SHOOT.tlnote": "Like the above but opposite. Will probably be put in the trash heap event.",
@@ -97,7 +97,7 @@
   "STS_KOMACHI_ONOZUKA-TASTE_OF_DEATH.tlnote": "Soku Skill",
 
 
-  "STS_KOMACHI_ONOZUKA-PUSH_DRAW.description": "[gold]Displace[/gold] by {IfUpgraded:show:up to |}+{Value1:diff()}.\nDraw cards equal to the enemy's [gold]Distance[/gold], then discard 1 card.",
+  "STS_KOMACHI_ONOZUKA-PUSH_DRAW.description": "[gold]Displace[/gold] by {IfUpgraded:show:up to |}+{Value1:diff()}.\nDraw cards equal to the enemy's [gold]Distance[/gold]\nDiscard 1 card.",
   "STS_KOMACHI_ONOZUKA-PUSH_DRAW.title": "Pushback Draw",
   "STS_KOMACHI_ONOZUKA-PUSH_DRAW.artist": "tokoroten (hmmuk)",
   "STS_KOMACHI_ONOZUKA-PUSH_DRAW.tlnote": "Draw as in pulling in and drawing cards. Idk it just sounds cool. Prioritize card draw meaning if can't make a similar pun.",
@@ -114,7 +114,7 @@
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_FINESSE.artist": "綾川あら/あらざん",
 
 
-  "STS_KOMACHI_ONOZUKA-FLEXIBLE_WORK_SCHEDULE.description": "Whenever an enemy is [gold]Displaced[/gold], gain {Value1:diff()} [gold]Block[/gold].",
+  "STS_KOMACHI_ONOZUKA-FLEXIBLE_WORK_SCHEDULE.description": "Whenever an enemy is [gold]Displaced[/gold], gain {Value1:diff()} [gold]Block[/gold] for every level of [gold]Distance[/gold] changed.",
   "STS_KOMACHI_ONOZUKA-FLEXIBLE_WORK_SCHEDULE.title": "Flexible Work Schedule",
   "STS_KOMACHI_ONOZUKA-FLEXIBLE_WORK_SCHEDULE.artist": "からあげ太郎",
 
@@ -125,7 +125,7 @@
   "STS_KOMACHI_ONOZUKA-HARDWORKING_SHINIGAMI.tlnote": "Effect stacks like this: If you have two, then if you have less than 2, add until you have two. More relevant in the power description.",
 
 
-  "STS_KOMACHI_ONOZUKA-PUSH_N_PULL.description": "{IfUpgraded:show:Add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].\n|}At the start of your turn, [gold]Displace[/gold] ALL enemies by -1.\nAt the end of your turn, [gold]Displace[/gold] ALL enemies by +1.",
+  "STS_KOMACHI_ONOZUKA-PUSH_N_PULL.description": "{IfUpgraded:show:Add 1 [gold]Manipulate Distance[/gold] into your [gold]Hand[/gold].\n|}At the start of your turn, [gold]Displace[/gold] ALL enemies by -1.\nAt the start of each of those enemies' turns, [gold]Displace[/gold] them by +1.",
   "STS_KOMACHI_ONOZUKA-PUSH_N_PULL.title": "Push and Pull",
   "STS_KOMACHI_ONOZUKA-PUSH_N_PULL.artist": "めいじ",
   "STS_KOMACHI_ONOZUKA-PUSH_N_PULL.tlnote": "'push and pull' is a popular idiom.",
@@ -211,7 +211,7 @@
   "STS_KOMACHI_ONOZUKA-SLICE_OF_HIGAN.artist": "綾瀬はづき",
 
 
-  "STS_KOMACHI_ONOZUKA-EQUALIZE_DISTANCE.description": "[gold]Displace[/gold] until [gold]Distance[/gold] is 3.\nDraw {Value1:diff()} card{Value1:plural:|s} for each level [gold]Displaced[/gold].\nIf [gold]Distance[/gold] is already 3, draw {Value2} and discard 1 card instead.",
+  "STS_KOMACHI_ONOZUKA-EQUALIZE_DISTANCE.description": "[gold]Displace[/gold] until [gold]Distance[/gold] is 3.\nDraw {Value1:diff()} card{Value1:plural:|s} for each level [gold]Displaced[/gold].\nIf [gold]Distance[/gold] is already 3, add a [gold]Manipulate Distance[/gold] to the [gold]Hand[/gold] instead.",
   "STS_KOMACHI_ONOZUKA-EQUALIZE_DISTANCE.title": "Equalize Distance",
   "STS_KOMACHI_ONOZUKA-EQUALIZE_DISTANCE.artist": "しなぷう",
 
@@ -219,11 +219,11 @@
   "STS_KOMACHI_ONOZUKA-RITUAL_OF_ECSTASY.description": "{AltDescription:choose(0|1):Invert the enemy's [gold]Distance[/gold].\nIf it increased, gain {Block:diff()} [gold]Block[/gold].\nIf it decreased, draw {Value1:diff()} cards.\nIf [gold]Distance[/gold] is 3, you may choose instead.|{ExtraDescription1}|{ExtraDescription2}}",
   "STS_KOMACHI_ONOZUKA-RITUAL_OF_ECSTASY.extraDescription1": "Gain {Block:diff()} [gold]Block[/gold].",
   "STS_KOMACHI_ONOZUKA-RITUAL_OF_ECSTASY.extraDescription2": "Draw {Value1:diff()} cards.",
-  "STS_KOMACHI_ONOZUKA-RITUAL_OF_ECSTASY.title": "Ritual Of Ecstasy",
+  "STS_KOMACHI_ONOZUKA-RITUAL_OF_ECSTASY.title": "Ritual of Ecstasy",
   "STS_KOMACHI_ONOZUKA-RITUAL_OF_ECSTASY.artist": "Ge DaZuo",
   "STS_KOMACHI_ONOZUKA-RITUAL_OF_ECSTASY.tlnote": "Soku skill. Invert obviously meaning Distance 1 <-> 5 and Distance 2 <-> 4.",
 
-  "STS_KOMACHI_ONOZUKA-EXCHANGE_LIFE.description": "If the enemy's HP is lower than your Max HP, swap your HP with the enemy's, then, if your HP increased, remove this card from your [gold]Deck[/gold].\n[gold]When drawn[/gold]: lose {Value1:diff()} HP and gain {Energy:energyIcons()}.",
+  "STS_KOMACHI_ONOZUKA-EXCHANGE_LIFE.description": "If the enemy's HP is equal to or lower than your Max HP, swap your HP with the enemy's, then, if your HP increased, remove this card from your [gold]Deck[/gold].\n[gold]When drawn[/gold]: lose {Value1:diff()} HP and gain {Energy:energyIcons()}.",
   "STS_KOMACHI_ONOZUKA-EXCHANGE_LIFE.title": "Exchange Life",
   "STS_KOMACHI_ONOZUKA-EXCHANGE_LIFE.artist": "春酒~",
   "STS_KOMACHI_ONOZUKA-EXCHANGE_LIFE.tlnote": "Technically not a soku spellcard, but effect is inspired by one. So you can use that or just translate it directly.",
@@ -276,8 +276,8 @@
   "STS_KOMACHI_ONOZUKA-SWEEP.title": "Sweeping Scythe",
   "STS_KOMACHI_ONOZUKA-SWEEP.artist": "Clear Echoes",
 
-  "STS_KOMACHI_ONOZUKA-VENGEFUL_SWEEP.description": "Apply {Value1:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.\n[gold]Release[/gold] {ReleaseCost:diff()}: Apply it again.",
-  "STS_KOMACHI_ONOZUKA-VENGEFUL_SWEEP.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: Apply it again.",
+  "STS_KOMACHI_ONOZUKA-VENGEFUL_SWEEP.description": "Apply {Value1:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.\n[gold]Release[/gold] {ReleaseCost:diff()}: Repeat this card's effects.",
+  "STS_KOMACHI_ONOZUKA-VENGEFUL_SWEEP.extraDescription1": "[gold]Release[/gold] {ReleaseCost:diff()}: Repeat this card's effect.",
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SWEEP.title": "Spirits of the Firm",
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SWEEP.artist": "松岡二",
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SWEEP.tlnote": "Soku",
@@ -313,7 +313,7 @@
   "STS_KOMACHI_ONOZUKA-FOREVER_CANCELLED.tlnote": "Refers to Internet Cancelling. When someone does something problematic and someone cancels them, you know.",
 
 
-  "STS_KOMACHI_ONOZUKA-SPIRITUAL_STRIKE.description": "Deal {Damage:diff()} damage.\nApply [gold]Vengeful Spirits[/gold] equal to damage dealt.\nIncrease the duration of the enemy's [gold]Vengeful Spirits[/gold] by 1.",
+  "STS_KOMACHI_ONOZUKA-SPIRITUAL_STRIKE.description": "Deal {Damage:diff()} damage.\nApply [gold]Vengeful Spirits[/gold] equal to double damage dealt.\nIncrease the duration of the enemy's [gold]Vengeful Spirits[/gold] by 1.",
   "STS_KOMACHI_ONOZUKA-SPIRITUAL_STRIKE.title": "Spiritual Strike",
   "STS_KOMACHI_ONOZUKA-SPIRITUAL_STRIKE.artist": "fuyuno taka",
   "STS_KOMACHI_ONOZUKA-SPIRITUAL_STRIKE.tlnote": "Strike card. Uses same wording as Necrobinder's Blight Strike",
@@ -424,8 +424,8 @@
   "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.title": "Piling Deathwork",
   "STS_KOMACHI_ONOZUKA-PILING_DEATHWORK.artist": "neruzou",
 
-  "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.description": "[gold]Displace[/gold] by up to -{Value1:diff()}.\nApply {Value2:diff()} [gold]Vengeful Spirits[/gold] for every level of [gold]Displacement[/gold].\n[gold]Release[/gold] {ReleaseCost}: Gain 1 [gold]Strength[/gold] this turn for every {Value3:diff()} [gold]Vengeful Spirits[/gold] on the enemy.",
-  "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.extraDescription1": "[gold]Release[/gold] {ReleaseCost}: Gain 1 [gold]Strength[/gold] this turn for every {Value3:diff()} [gold]Vengeful Spirits[/gold] on the enemy.",
+  "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.description": "[gold]Displace[/gold] by up to -{Value1:diff()}.\nApply {Value2:diff()} [gold]Vengeful Spirits[/gold] for every level of [gold]Displacement[/gold].\n[gold]Release[/gold] {ReleaseCost}: Gain 1 [gold]Strength[/gold] for every {Value3:diff()} [gold]Vengeful Spirits[/gold] on the enemy.",
+  "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.extraDescription1": "[gold]Release[/gold] {ReleaseCost}: Gain 1 [gold]Strength[/gold] for every {Value3:diff()} [gold]Vengeful Spirits[/gold] on the enemy.",
   "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.title": "Ferriage of the Deep Fog",
   "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.artist": "@evermythic",
   "STS_KOMACHI_ONOZUKA-FERRIAGE_DEEP_FOG.tlnote": "Another Soku",
@@ -457,7 +457,7 @@
   "STS_KOMACHI_ONOZUKA-SPIRITS_PAST_LIFE.artist": "しょーこ",
 
 
-  "STS_KOMACHI_ONOZUKA-STRONGEST_SPIRIT.description": "Deal [blue]{Damage:diff()}[/blue] damage.\nApply [blue]{Value1:diff()}[/blue] [gold]Vengeful Spirits[/gold].\n[gold]Release[/gold] [blue]{ReleaseCost:diff()}[/blue]: [gold]Exhaust[/gold] your [gold]Hand[/gold]. For each [gold]Exhausted[/gold], deal damage again. If [blue]9[/blue] cards were [gold]Exhausted[/gold] this way, gain [blue]{Value2:diff()}[/blue] [gold]Strength[/gold].",
+  "STS_KOMACHI_ONOZUKA-STRONGEST_SPIRIT.description": "Deal [blue]{Damage:diff()}[/blue] damage.\nGain [blue]{Value1:diff()}[/blue] [gold]Guided Spirits[/gold].\n[gold]Release[/gold] [blue]{ReleaseCost:diff()}[/blue]: [gold]Exhaust[/gold] your [gold]Hand[/gold]. For each [gold]Exhausted[/gold], deal damage again. If [blue]9[/blue] cards were [gold]Exhausted[/gold] this way, gain [blue]{Value2:diff()}[/blue] [gold]Strength[/gold].",
   "STS_KOMACHI_ONOZUKA-STRONGEST_SPIRIT.extraDescription1": "[gold]Release[/gold] [blue]{ReleaseCost:diff()}[/blue]: [gold]Exhaust[/gold] your [gold]Hand[/gold]. Attack again for each card [gold]Exhausted[/gold]. If [blue]9[/blue] or more cards were [gold]Exhausted[/gold] this way, gain [blue]{Value2:diff()}[/blue] [gold]Strength[/gold].",
   "STS_KOMACHI_ONOZUKA-STRONGEST_SPIRIT.title": "The Strongest Spirit!",
   "STS_KOMACHI_ONOZUKA-STRONGEST_SPIRIT.artist": "harada (sansei rain)",
@@ -512,7 +512,7 @@
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_FORM.tlnote": "Originally named Shinigami Form but that apparently conflicted with Necrobinder's Reaper Form. Shukuchi was the best alternative word. I don't think it sounds good but it fits thematically. Google it if you don't know what it is.",
 
 
-  "STS_KOMACHI_ONOZUKA-PARASITIC_POLLEN.description": "Deal {Damage:diff()} damage {Value1:diff()} times.\n Add 1 [gold]Spider Lily[/gold] into your [gold]Draw Pile[/gold].\nIf you are [gold]Poisoned[/gold], lose {Value2:diff()} [gold]Poison[/gold], then apply double the amount lost.",
+  "STS_KOMACHI_ONOZUKA-PARASITIC_POLLEN.description": "Deal {Damage:diff()} damage {Value1:diff()} times.\n Add 1 [gold]Spider Lily[/gold] into your [gold]Draw Pile[/gold].\nLose {Value2:diff()} [gold]Poison[/gold], then apply double the amount lost.",
   "STS_KOMACHI_ONOZUKA-PARASITIC_POLLEN.title": "Parasitic Pollen",
   "STS_KOMACHI_ONOZUKA-PARASITIC_POLLEN.artist": "iced_lemon",
 
@@ -557,7 +557,7 @@
   "STS_KOMACHI_ONOZUKA-QUINTESSENCE.artist": "In the Big Bang and Adrenaline genre of cards. It's a 0 cost exhaust do a lot of little stuff.",
 
   
-  "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.description": "Gain {Block:diff()} Block.\nNext turn, add a [gold]Spider Lily[/gold] to your Hand. It has [gold]Ethereal[/gold] instead of [gold]Retain[/gold].",
+  "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.description": "Gain {Block:diff()} [gold]Block[/gold].\nNext turn, add a [gold]Spider Lily[/gold] to your Hand. It has [gold]Ethereal[/gold] instead of [gold]Retain[/gold].",
   "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.title": "Flower Viewing",
   "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.artist": "yuuki tatsuya",
   "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING.tlnote": "The thing that every touhou enjoys doing. And also the title of touhou 9.",

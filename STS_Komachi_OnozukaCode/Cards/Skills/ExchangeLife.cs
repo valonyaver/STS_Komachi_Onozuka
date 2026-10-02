@@ -43,48 +43,31 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+
+            // Only allow exchange if the target's HP is less or equal than player's Max HP
             if (cardPlay.Target.CurrentHp <= Owner.Creature.MaxHp)
             {
-                int targetOriginalHp = cardPlay.Target.CurrentHp;
-                int ownerOriginalHp = Owner.Creature.CurrentHp;
+                int delta = cardPlay.Target.CurrentHp - Owner.Creature.CurrentHp;
 
-                // Calculate absolute changes needed to achieve the switch
-                int damageToTarget = targetOriginalHp - ownerOriginalHp;
-                int healToOwner = targetOriginalHp - ownerOriginalHp;
+                // Player gains HP, Target loses HP
+                if (delta > 0)
+                {
+                    await CreatureCmd.Damage(choiceContext, cardPlay.Target, delta, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this, cardPlay);
+                    await CreatureCmd.Heal(Owner.Creature, delta);
 
-                if (damageToTarget > 0)
-                {
-                    await CreatureCmd.Damage(choiceContext, cardPlay.Target, damageToTarget, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this, cardPlay);
+                    // Only permanently remove the card from the deck on a successful, beneficial swap
+                    if (DeckVersion != null)
+                    {
+                        await CardPileCmd.RemoveFromDeck(DeckVersion);
+                    }
                 }
-                // If you play this with higher life, for some reason
-                else if (damageToTarget < 0)
+                // Player has higher HP (Player takes damage, Target heals)
+                else if (delta < 0)
                 {
-                    await CreatureCmd.Heal(cardPlay.Target, Math.Abs(damageToTarget));
+                    await CreatureCmd.Heal(cardPlay.Target, -delta);
+                    await CreatureCmd.Damage(choiceContext, Owner.Creature, -delta, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this, cardPlay);
+                    // The card is NOT removed from your deck here
                 }
-
-                if (healToOwner > 0)
-                {
-                    await CreatureCmd.Heal(Owner.Creature, healToOwner);
-                }
-                // If you play this with higher life, for some reason
-                else if (healToOwner < 0)
-                {
-                    await CreatureCmd.Damage(choiceContext, Owner.Creature, Math.Abs(healToOwner), ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this, cardPlay);
-                }
-                if (DeckVersion != null)
-                {
-                    await CardPileCmd.RemoveFromDeck(this.DeckVersion);
-                }
-                else
-                {
-                    var exchange = Owner.Deck.Cards.OfType<ExchangeLife>();
-
-                    //if (exchange.Any() && exchange.FirstOrDefault() != null)
-                    //{
-                    //    await CardPileCmd.RemoveFromDeck(exchange.FirstOrDefault());
-                    //}
-                }
-                
             }
         }
 

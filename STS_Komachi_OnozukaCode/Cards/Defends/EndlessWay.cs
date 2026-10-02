@@ -33,12 +33,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             WithPower<DistancePower>(nameof(Value1), 2);
             WithKeyword(KomachiKeywords.Displace);
             // Applied debuff per release
-            WithPower<VengefulSpiritPower>(nameof(Value2), 4, 1);
+            WithPower<VengefulSpiritPower>(nameof(Value2), 8, 2);
+            // Applied debuff #2. Make sure to sync up with Value2
+            WithVar(nameof(Value3), 16, 4);
             WithVar(nameof(ReleaseCost), 3);
             // Release cost 2
             WithVar(nameof(ReleaseCost2), 6);
-            // Make sure to sync up with Value2
-            WithVar(nameof(Value3), 8, 2);
         }
 
         public override int? GetVengefulSpiritStacksApplied(Creature target)
@@ -53,7 +53,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-            CardModel? chosen = await ReleaseCmd.ChooseRelease(choiceContext, this, ReleaseCost, Value3);
+            CardModel? chosen = await ReleaseCmd.ChooseRelease(choiceContext, this, ReleaseCost, ReleaseCost2);
 
             await CreatureCmd.LoseBlock(choiceContext, cardPlay.Target, cardPlay.Target.Block, Owner.Creature);
 
@@ -62,7 +62,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
 
             await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
 
-            if (ReleaseCmd.ChoseRelease(chosen, ReleaseCost, Value3, out var cost))
+            if (ReleaseCmd.ChoseRelease(chosen, ReleaseCost, ReleaseCost2, out var cost))
             {
                 await ReleaseCmd.Release(choiceContext, Owner.Creature, cost, this);
 

@@ -30,7 +30,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             MainFile.LogMessage("Logging the constructor for Free trauma");
 
             // Spirits applied
-            WithPower<VengefulSpiritPower>(nameof(Value1), 2, 1);
+            WithPower<VengefulSpiritPower>(nameof(Value1), 4, 2);
             // Release cost 1
             WithVar(nameof(ReleaseCost), 4, -1);
             // Release cost 2

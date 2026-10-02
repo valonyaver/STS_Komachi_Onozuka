@@ -30,7 +30,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         {
             // Draw amount
             WithCards(2, 1);
-            WithPower<VengefulSpiritPower>(nameof(Value1), 2);
+            WithPower<VengefulSpiritPower>(nameof(Value1), 3);
             WithPower<GuidedSpiritPower>(nameof(Value2), 2);
             WithPower<DivineSpiritPower>(nameof(Value3), 2);
             WithKeyword(KomachiKeywords.Barrier);

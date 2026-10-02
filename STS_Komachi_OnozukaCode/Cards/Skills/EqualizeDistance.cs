@@ -36,7 +36,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             WithVar(nameof(Value1), 2);
             // Draw on 3 distance
             WithVar(nameof(Value2), 3);
-
+            WithTip(typeof(ManipulateDistanceToken));
         }
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -64,11 +64,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             // If 3, discard 1 after drawing
             if (deltaChange == 0)
             {
-                CardModel cardModel = (await CardSelectCmd.FromHandForDiscard(choiceContext, base.Owner, new CardSelectorPrefs(CardSelectorPrefs.DiscardSelectionPrompt, 1), null, this)).FirstOrDefault();
-                if (cardModel != null)
-                {
-                    await CardCmd.Discard(choiceContext, cardModel);
-                }
+                //CardModel cardModel = (await CardSelectCmd.FromHandForDiscard(choiceContext, base.Owner, new CardSelectorPrefs(CardSelectorPrefs.DiscardSelectionPrompt, 1), null, this)).FirstOrDefault();
+                //if (cardModel != null)
+                //{
+                //    await CardCmd.Discard(choiceContext, cardModel);
+                //}
+                await ManipulateDistanceToken.CreateInHand(Owner, CombatState);
             }
         }
     }

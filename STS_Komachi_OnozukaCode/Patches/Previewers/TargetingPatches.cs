@@ -38,8 +38,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.Previewers
         [HarmonyPostfix]
         static void Postfix(NCardPlay __instance)
         {
-            if (__instance.CardNode != null)
-                DisplacementPreviewController.OnMultiTargetPreviewRequested(__instance.CardNode);
+            if (__instance.CardNode == null) return;
+            DisplacementPreviewController.OnMultiTargetPreviewRequested(__instance.CardNode);
+            VengefulSpiritHoverPreview.OnMultiTargetPreviewRequested(__instance.CardNode);
+            ThirdAmountRaiseController.OnMultiTargetPreviewRequested(__instance.CardNode);
         }
     }
     #endregion
@@ -55,6 +57,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.Previewers
         {
             if (__instance.CardNode != null)
                 DisplacementPreviewController.ClearMulti(__instance.CardNode);
+            VengefulSpiritHoverPreview.ClearPreview();
+            ThirdAmountRaiseController.Clear();
         }
     }
     [HarmonyPatch(typeof(NCard), nameof(NCard.OnReturnedFromPool))]

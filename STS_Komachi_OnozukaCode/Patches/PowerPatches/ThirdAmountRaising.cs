@@ -1,6 +1,7 @@
 ﻿using Godot;
 using MegaCrit.Sts2.addons.mega_text;
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
@@ -25,19 +26,41 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.PowerPatches
             _raisedModels.Clear();
 
             if (creature != null && card.Model != null)
+                changed |= RaiseFor(card.Model, creature);
+
+            if (changed)
+                CombatManager.Instance.StateTracker.NotifyCombatStateChanged("ThirdAmountRaise");
+        }
+
+        public static void OnMultiTargetPreviewRequested(NCard card)
+        {
+            bool changed = _raisedModels.Count > 0;
+            _raisedModels.Clear();
+
+            CardModel? model = card.Model;
+            if (model?.CombatState != null
+                && (model.TargetType == TargetType.AllEnemies || model.TargetType == TargetType.RandomEnemy))
             {
-                foreach (PowerModel power in creature.Powers)
-                {
-                    if (power is IHasThirdAmount hasThird && hasThird.ShouldRaiseThirdAmount(card.Model))
-                    {
-                        _raisedModels.Add(power);
-                        changed = true;
-                    }
-                }
+                foreach (Creature enemy in model.CombatState.HittableEnemies)
+                    changed |= RaiseFor(model, enemy);
             }
 
             if (changed)
                 CombatManager.Instance.StateTracker.NotifyCombatStateChanged("ThirdAmountRaise");
+        }
+
+        static bool RaiseFor(CardModel model, Creature creature)
+        {
+            bool any = false;
+            foreach (PowerModel power in creature.Powers)
+            {
+                if (power is IHasThirdAmount hasThird && hasThird.ShouldRaiseThirdAmount(model))
+                {
+                    _raisedModels.Add(power);
+                    any = true;
+                }
+            }
+            return any;
         }
 
         public static void Clear()

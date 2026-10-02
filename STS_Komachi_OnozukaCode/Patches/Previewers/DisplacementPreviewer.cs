@@ -21,8 +21,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches
 {
     public static class DisplacementPreviewController
     {
-        static readonly Dictionary<NCard, NDisplacementPreviewCluster> _activeSingleClusters = new();
-        static readonly Dictionary<NCard, List<NDisplacementPreviewCluster>> _activeMultiClusters = new();
+        static readonly Dictionary<NCard, NDisplacementPreviewCluster> _activeSingleClusters = [];
+        static readonly Dictionary<NCard, List<NDisplacementPreviewCluster>> _activeMultiClusters = [];
 
         public static void OnPreviewTargetChanged(NCard card, Creature? creature)
         {
@@ -37,7 +37,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches
             if (creatureNode == null) return;
 
             var cluster = NDisplacementPreviewCluster.Create(preview.Value.DamageByLevel, preview.Value.ReachableLevels, preview.Value.CurrentLevel);
-            NCombatRoom.Instance.CombatVfxContainer.AddChildSafely(cluster);
+            NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(cluster);
             cluster.GlobalPosition = ComputeCardPosition(creatureNode, cluster);
             _activeSingleClusters[card] = cluster;
         }
@@ -68,7 +68,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches
                 if (creatureNode == null) continue;
 
                 var cluster = NDisplacementPreviewCluster.Create(preview.Value.DamageByLevel, preview.Value.ReachableLevels, preview.Value.CurrentLevel);
-                NCombatRoom.Instance.CombatVfxContainer.AddChildSafely(cluster);
+                NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(cluster);
                 cluster.GlobalPosition = ComputeCardPosition(creatureNode, cluster);
                 clusters.Add(cluster);
             }
@@ -140,7 +140,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches
                 {
                     Text = dmg.ToString("0"),
                     HorizontalAlignment = HorizontalAlignment.Center,
-                    Modulate = !reachable ? Colors.Gray : (isCurrent ? StsColors.green : Colors.Yellow)
+                    Modulate = !reachable ? Colors.Gray : (isCurrent ? Colors.White : Colors.Yellow)
                 });
                 chip.AddChild(vbox);
                 cluster.AddChild(chip);

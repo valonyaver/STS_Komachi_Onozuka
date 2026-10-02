@@ -50,10 +50,17 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Relics
 
         public override async Task BeforeDamageReceived(PlayerChoiceContext choiceContext, Creature target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
-            if (!UsedThisCombat && dealer.GetDistanceLevel() < 3 && amount > 0 && target == Owner.Creature)
+            // Ensure the relic is ready, the dealer exists, it's an enemy attack, and distance < 3
+            if (!UsedThisCombat
+                && dealer != null
+                && dealer.Side == CombatSide.Enemy
+                && props.IsPoweredAttack()
+                && amount > 0
+                && target == Owner.Creature
+                && DistancePower.GetLevel(dealer) < 3)
             {
                 Flash();
-                await CreatureCmd.GainBlock(Owner.Creature, amount / 2, ValueProp.Unpowered, null);
+                await CreatureCmd.GainBlock(Owner.Creature, amount / 2m, ValueProp.Unpowered, null);
                 UsedThisCombat = true;
             }
         }

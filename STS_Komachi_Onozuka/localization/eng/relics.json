@@ -11,7 +11,7 @@
   "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.title": "Commercial Titanic",
   "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.tlnote": "Commercial because she's doing her job and making bank out of it. Flavor is the same dialogue with Reimu. Changed from the old effect.",
 
-  "STS_KOMACHI_ONOZUKA-RED_TITANIC.description": "At the start of combat, add a [gold]Manipulate Distance[/gold] and a [gold]Spider Lily[/gold] to your [gold]Hand[/gold], then add 3 [gold]Spider Lilies[/gold] into your [gold]Discard Pile[/gold]. At the end of combat, heal HP equal to the damage you took from life loss this combat. (Heal [blue]{Heal}[/blue] HP)",
+  "STS_KOMACHI_ONOZUKA-RED_TITANIC.description": "At the start of combat, add a [gold]Manipulate Distance[/gold] and a [gold]Spider Lily[/gold] to your [gold]Hand[/gold], then add 3 [gold]Spider Lilies[/gold] into your [gold]Discard Pile[/gold]. At the end of combat, heal HP equal to the damage you took from life loss this combat. {InCombat:(Heal [blue]{Heal}[/blue] HP)}",
   "STS_KOMACHI_ONOZUKA-RED_TITANIC.flavor": "The chaotic blooming of the [red]Red Spider Lily[/red],\nis the measure of my workload.\nIf you're going to interfere with my work, then I'll show no mercy!",
   "STS_KOMACHI_ONOZUKA-RED_TITANIC.title": "Red Titanic",
   "STS_KOMACHI_ONOZUKA-RED_TITANIC.tlnote": "Dialogue with Sakuya in touhou 9. Red Titanic as in it's filled with Red Spider Lilies. You can get creative with the name if you want. Restores life lost from direct life loss, mainly for Spider Lily's poison.",
@@ -22,7 +22,7 @@
   "STS_KOMACHI_ONOZUKA-SPIRIT_COMPANION.title": "Spirit Companion",
   
   "STS_KOMACHI_ONOZUKA-FERRYMANS_OAR.description": "At the start of each combat, [blue]{Cards}[/blue] random card{Cards:plural:|s} in your [gold]Draw Pile[/gold] gain{Cards:plural:s|} [gold]Replenish[/gold].",
-  "STS_KOMACHI_ONOZUKA-FERRYMANS_OAR.flavor": "None yet.",
+  "STS_KOMACHI_ONOZUKA-FERRYMANS_OAR.flavor": "You can't cross the Sanzu River without this.",
   "STS_KOMACHI_ONOZUKA-FERRYMANS_OAR.title": "Ferryman's Oar",
   "tlnote": "If you want, you can write the flavor text for this one.",
 
@@ -40,7 +40,7 @@
   "STS_KOMACHI_ONOZUKA-DEATH_NOTE.title": "Death Note",
   "tolnote": "Actual rule from Death note.",
 
-  "STS_KOMACHI_ONOZUKA-POSSESSED_LILY.description": "Whenever you are [gold]Poisoned[/gold], gain [gold]Divine Spirits[/gold] equal to the amount of [gold]Poison[/gold] gained.",
+  "STS_KOMACHI_ONOZUKA-POSSESSED_LILY.description": "Whenever you are [gold]Poisoned[/gold], gain an equal amount of [gold]Divine Spirits[/gold].",
   "STS_KOMACHI_ONOZUKA-POSSESSED_LILY.flavor": "\"Oh no, I died! Oh well. Living in a flower isn't so bad.\"",
   "STS_KOMACHI_ONOZUKA-POSSESSED_LILY.title": "Possessed Lily",
 

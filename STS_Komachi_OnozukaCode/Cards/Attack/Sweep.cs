@@ -28,7 +28,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         public Sweep()
             : base(2, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)
         {
-            WithDamage(10, 4);
+            WithDamage(12, 4);
             WithPower<DistancePower>(nameof(Value1), -1);
             // Manipulate distances added
             WithCards(1);
@@ -39,13 +39,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            
             if (CombatState == null) return;
 
             IReadOnlyList<Creature> enemies = base.CombatState.HittableEnemies;
             foreach (Creature enemy in enemies)
             {
-                DistanceCmd.Displace(choiceContext, enemy, Value1, Owner.Creature, this);
+                await DistanceCmd.Displace(choiceContext, enemy, Value1, Owner.Creature, this);
             }
 
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).TargetingAllOpponents(base.CombatState)

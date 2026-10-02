@@ -13,6 +13,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
 {
     public static class KomachiHooks
     {
+        
+
         private static async Task Dispatch<T>(PlayerChoiceContext choiceContext, ICombatState? combatState, Func<T, Task> invoke) where T : class
         {
             if (combatState == null)
@@ -20,12 +22,18 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
                 return;
             }
 
-            foreach (T item in combatState.IterateHookListeners().OfType<T>())
+            foreach (T item in combatState.IterateHookListeners().OfType<T>().ToArray())
             {
                 AbstractModel? model = item as AbstractModel;
                 choiceContext.PushModel(model);
-                await invoke(item);
-                choiceContext.PopModel(model);
+                try
+                {
+                    await invoke(item);
+                }
+                finally
+                {
+                    choiceContext.PopModel(model);
+                }
             }
         }
 
@@ -51,14 +59,21 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
                 (IOnDetonatingListener m) => m.OnDetonating(choiceContext, args));
         }
 
-        public static Task OnDetonatedEarly(PlayerChoiceContext choiceContext, DetonationEventArgs args)
-        => Dispatch(choiceContext, args.Target.CombatState, 
-            (IOnDetonatedEarlyListener m) => m.OnDetonatedEarly(choiceContext, args));
+        // Helper to get CombatState from Target, or fallback to Dealer if Target died
+        private static ICombatState? ResolveCombatState(DetonationEventArgs args)
+        {
+            return args.Target?.CombatState ?? args.Dealer?.CombatState;
+        }
 
+        public static Task OnDetonatedEarly(PlayerChoiceContext choiceContext, DetonationEventArgs args)
+        {
+            return Dispatch(choiceContext, ResolveCombatState(args),
+                (IOnDetonatedEarlyListener m) => m.OnDetonatedEarly(choiceContext, args));
+        }
 
         public static Task OnDetonated(PlayerChoiceContext choiceContext, DetonationEventArgs args)
         {
-            return Dispatch(choiceContext, args.Target.CombatState,
+            return Dispatch(choiceContext, ResolveCombatState(args),
                 (IOnDetonatedListener m) => m.OnDetonated(choiceContext, args));
         }
     }

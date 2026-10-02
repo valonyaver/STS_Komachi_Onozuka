@@ -6,5 +6,14 @@
 
   "STS_KOMACHI_ONOZUKA-SKIP_DANMAKU.title": "Skip Attack/Danmaku animations.",
   "STS_KOMACHI_ONOZUKA-SKIP_DANMAKU.hover.title": "Skip Attack/Danmaku animations.",
-  "STS_KOMACHI_ONOZUKA-SKIP_DANMAKU.hover.desc": "Some attacks have bullet-based animations to them when played. This options skips all that."
+  "STS_KOMACHI_ONOZUKA-SKIP_DANMAKU.hover.desc": "Some attacks have bullet-based animations to them when played. This options skips all that.",
+
+  "STS_KOMACHI_ONOZUKA_PREVIEW_SETTINGS.title": "Damage Preview Settings",
+  "STS_KOMACHI_ONOZUKA-SHOW_NO_DISTANCE_ENEMY_DAMAGE_PREVIEW.title": "Preview Enemy Distance Damage Early",
+  "STS_KOMACHI_ONOZUKA-SHOW_NO_DISTANCE_ENEMY_DAMAGE_PREVIEW.hover.title": "Preview Enemy Distance Damage Early",
+  "STS_KOMACHI_ONOZUKA-SHOW_NO_DISTANCE_ENEMY_DAMAGE_PREVIEW.hover.desc": "Displays hypothetical damage across all [gold]Distance[/gold] levels above enemies before [gold]Distance[/gold] has been applied to them.\nWhen disabled, previews only appear once an enemy has [gold]Distance[/gold].\nRecommended to turn on once you have played the character once.",
+
+  "STS_KOMACHI_ONOZUKA-SHOW_NO_DISTANCE_CARD_DAMAGE_PREVIEW.title": "Preview Card Distance Damage Early",
+  "STS_KOMACHI_ONOZUKA-SHOW_NO_DISTANCE_CARD_DAMAGE_PREVIEW.hover.title": "Preview Card Distance Damage Early",
+  "STS_KOMACHI_ONOZUKA-SHOW_NO_DISTANCE_CARD_DAMAGE_PREVIEW.hover.desc": "Displays how much damage your cards will deal across different [gold]Distances[/gold] when targeting an enemy that doesn't have [gold]Distance[/gold] yet.\nWhen disabled, previews only appear once the target has [gold]Distance[/gold].\nRecommended to turn on once you have played the character once."
 }

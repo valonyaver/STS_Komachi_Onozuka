@@ -1,3 +1,197 @@
+v0.3:
+# Vengeful Spirits reworked
+Vengeful Spirits now deal damage equal to their own amount instead of double the amount, making it much easier to calculate damage numbers.
+All values on cards and effects have been adjusted accordingly.
+
+# Cards changed from Vengeful Spirit Rework
+1. Spiritual Strike:
+Old: Apply Vengeful Spirits equal to damage dealt.
+New: Apply Vengeful Spirits equal to double damage dealt.
+
+2. The Strongest Spirit:
+Old: Deal 9 Damage. Apply 9 Vengeful Spirits.
+New: Deal 9 Damage. Gain 9 Guided Spirits.
+
+3. Lonely Bound Spirit:
+Now deals damage equal to its amount, same as Vengeful Spirits.
+
+4. Ghostrick Shot:
+Vengeful Spirits applied on play changed from 8 (10) -> 14 (18).
+Vengeful Spirits applied from being exhausted changed from 2 (3) -> 4 (6).
+
+5. Grudging Strike:
+Damage reduced from 8 (10) -> 7 (9).
+Vengeful Spirits applied changed from 3 (4) -> 5 (7).
+
+6. Scythe of Exorcism:
+Vengeful Spirits needed to apply its additional effect changed from 4 -> 6.
+
+7. Scythe of Roaming Spirits:
+Damage reduced from 15 -> 14
+
+8. Spirits of the Firm:
+Vengeful Spirits applied changed from 5 (7) -> 10 (14)
+
+9. Abundant Floating Spirits
+Damage increased from 8 (10) -> 8 (11)
+Vengeful Spirits applied changed from 4 (6) -> 8 (11)
+
+10. Close Quarter Technique:
+Vengeful Spirits applied increased from 4 (1) -> 7 (9)
+
+11. Endless Way:
+Vengeful Spirits applied changed from 4 (5) per release -> 8 (10) per release.
+Fixced the second release cost needed being calculated wrong.
+
+12. Eye of the Storm:
+Vengeful Spirits Applied changed from 3 (5) -> 6 (10).
+
+13. No Hard Feelings:
+Vengeful Spirits applied changed from 2 -> 4
+Vengeful Spirits needed per strength down changed from 2 -> 4
+
+14. Forever Cancelled:
+Vengeful Spirits Applied changed from 4 (7) -> 8 (14)
+
+15. Grudge of the Dead:
+Vengeful Spirits Applied changed from 4 (7) -> 8 (14)
+
+16. Possessed Armament:
+Vengeful Spirits Applied changed from 1 (2) -> 3 (5)
+
+17. Siren's Bounty:
+Vengeful Spirits applied changed from 2 (4) -> 4 (7)
+Requirements for Guided Spirits changed from 2 -> 4
+Requirements for Draw changed from 3 -> 6
+
+18. Bound Spirits of the Earth:
+Vengeful Spirits applied changed from 9 (12) -> 18 (24)
+
+19. Chain Detonation:
+Vengeful Spirits Applied changed from 4 (6) -> 6 (10)
+
+20. Ferriage of the Deep Fog:
+Vengeful Spirits applied per displacement changed from 3 (4) -> 6 (8)
+Changed Release effect:
+Old:
+Release 3: Gain 1 Strength this turn for every 3 Vengeful Spirits on that enemy
+New:
+Release 3: Gain 1 Strength for every 10 Vengeful Spirits on that enemy.
+
+21. Free Trauma?!:
+Vengeful Spirits applied changed from 2 (3) -> 4 (6)
+
+22. Reaper's Due:
+Vengeful Spirits applied per 2 energy spent changed from 4 (5) -> 8 (10).
+
+23. Tour Guide to the netherworld:
+Vengeful Spirits applied per other card drawn changed from 2 -> 3
+
+24. Pot of Grudges:
+not a card but who cares
+Vengeful Spirits applied increased from 10 -> 20
+
+25. Death note:
+Vengeful Spirits applied increased from 2 -> 4
+
+# Other Card changes
+1. Push and Pull:
+Old:
+At the start of your turn, Displace ALL enemies by -1. At the end of your turn, Displace ALL enemies by +1.
+New:
+At the start of your turn, Displace ALL enemies by -1. At the start of each of those enemies' turns, ]Displace them by +1
+
+2. Equalize Distance
+Old: If Distance is already 3, draw 3 and discard 1 card instead.
+New: If Distance is already 3, add a Manipulate Distance to your Hand instead.
+
+3. Sweep:
+Damage increased from 10 (14) to 12 (16).
+Fixed bug where it did not add a manipulate distance.
+
+4. Taste of Death: Damage increased from 13 (16) to 13 (17)
+
+5. Moving Defend:
+Block increased from 10 (13) -> 11 (14)
+
+6. Pot of Spirits:
+not a card but who cares
+Guided Spirits gained increased from 6 -> 8.
+
+# bug fixes
+1. Short Life Expectancy:
+Now glows properly when there are minions in an elite or boss fight and you have enough spirits to activate it.
+
+2. Double Hooking:
+Fixed bug when selecting 0 cards
+
+4. Exchange Life:
+Fixed a calculation issue
+
+5. Fixed bug that caused on detonation effect to not trigger when the target of the detonation died.
+
+6. Fixed a bug where the displacement potion did not add manipulate distances.
+
+7. Fixed a bug where the bottled lily did not add spider lilies to the hand
+
+8. Extinct Fauna:
+Fixed a bug where it did not stop unclonable cards from not being cloned properly.
+
+9. God of Death:
+Fixed a bug where it let you have infinite revives (it's lore accurate but game balance forces me to change it sadly :/)
+
+10. Shinigami Form:
+Power tooltip now properly updates the percentage changes when stacked
+
+11. Spirit Invitation:
+Now stacks
+
+12. Ferryman's Oar:
+Fixed a bug where it would not put replenish on unupgradeable cards
+
+13. Parrying Scythe:
+Now only triggers on attacks
+
+# Other changes
+1. Art now appears above the card when inspecting it instead of as a tooltip
+
+2. Energy Icon now pulses. Pretty!
+
+3. Damage previews on distances now appear for every card. They also appear when hovering over the vengeful spirit or guided spirit icons
+
+4. Vengeful Spirit previews now work on aoe cards
+
+5. You can now inspect cards in certain selection screens such as Gold Sarcophagalley's
+
+6. Red Titanic now has a counter to show the heal amount.
+
+7. Added configuration to let damage previews of distances show even on enemies that dont have the distance power yet
+
+# Writing
+1. Move and Shoot:
+No longer says "up to" when unupgraded
+
+2. Flexible Work Schedule:
+now specifies that the block scales from the total level of the displacements (It always worked that way but the description was wrong)
+
+3. Short Life Expectancy:
+Old: If the enemy's HP is lower than your Max HP, swap your HP with the enemy's...
+New: If the enemy's HP is equal to or lower than your Max HP, swap your HP with the enemy's...
+
+4. Spirits of the Firm:
+Old: 
+Release 4: Apply it [Vengeful Spirits] again.
+New:
+Release 4: Repeat this card's effect.
+
+5. Parasitic Pollen:
+No longer specifies "If you are Poisoned", due to redundancy.
+
+6. Ferryman's Oar:
+Now has Flavor Text
+
+7. Other more minor descriptions refined.
+
 9/6:
 v0.2.2
 # New card

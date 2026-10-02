@@ -29,15 +29,15 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         public BoomBenefits() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
         {
             // Apply Spirits
-            WithPower<VengefulSpiritPower>(nameof(Value1), 2, 2);
+            WithPower<VengefulSpiritPower>(nameof(Value1), 4, 3);
             // Detonate
             WithKeyword(KomachiKeywords.Detonate);
             // For every X spirits detonated, 
 
             // 2, get guided
-            WithPower<GuidedSpiritPower>(nameof(Value2), 2);
+            WithPower<GuidedSpiritPower>(nameof(Value2), 4);
             // 3, draw
-            WithVar(nameof(Value3), 3);
+            WithVar(nameof(Value3), 6);
 
 
             // Preview Value
@@ -94,7 +94,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             int choice = 0;
             if (chosen is BoomBenefits chosenOption)
             {
-                MainFile.Logger.LogMessage(LogLevel.Info, $"The chosen card had a choice of {chosenOption.AltDescription}. Setting this card's choice to that.", 0);
+                //MainFile.Logger.LogMessage(LogLevel.Info, $"The chosen card had a choice of {chosenOption.AltDescription}. Setting this card's choice to that.", 0);
                 choice = chosenOption.AltDescription;
             }
 
@@ -102,7 +102,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             var detonation = await DetonateCmd.Target(choiceContext, cardPlay.Target, this);
 
 
-            MainFile.Logger.LogMessage(LogLevel.Info, $"The current card has a choice of {choice}", 0);
+            //MainFile.Logger.LogMessage(LogLevel.Info, $"The current card has a choice of {choice}", 0);
             switch (choice)
             {
                 case 1:

@@ -25,10 +25,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
     public class BoundSpiritsOfEarth : STS_Komachi_OnozukaCard
     {
         public BoundSpiritsOfEarth()
-            : base(2, CardType.Skill, CardRarity.Rare, TargetType.Self)
+            : base(2, CardType.Skill, CardRarity.Rare, TargetType.AllEnemies)
         {
             // Spirits applied immediately
-            WithPower<VengefulSpiritPower>(nameof(Value1), 9, 3);
+            WithPower<VengefulSpiritPower>(nameof(Value1), 18, 6);
         }
 
         public override int? GetVengefulSpiritStacksApplied(Creature target)
@@ -39,10 +39,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if (CombatState == null) return;
-            IReadOnlyList<Creature> enemies = base.CombatState.HittableEnemies;
+            IReadOnlyList<Creature> enemies = CombatState.HittableEnemies;
             foreach (Creature enemy in enemies)
             {
-                await PowerCmd.Apply<VengefulSpiritPower>(choiceContext, enemy, base.DynamicVars[nameof(Value1)].BaseValue, base.Owner.Creature, this);
+                await PowerCmd.Apply<VengefulSpiritPower>(choiceContext, enemy, DynamicVars[nameof(Value1)].BaseValue, Owner.Creature, this);
                 var vs = enemy.GetPower<VengefulSpiritPower>();
                 if (vs != null)
                 {

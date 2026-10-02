@@ -28,7 +28,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             : base(2, CardType.Power, CardRarity.Rare, TargetType.AnyEnemy)
         {
             // Spirits applied
-            WithPower<VengefulSpiritPower>(nameof(Value1), 4, 3);
+            WithPower<VengefulSpiritPower>(nameof(Value1), 8, 6);
             WithTip(KomachiKeywords.Detonate);
 
             // Percent of spirits refunded

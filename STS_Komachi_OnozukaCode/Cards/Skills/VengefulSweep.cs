@@ -25,10 +25,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
     public class VengefulSweep : STS_Komachi_OnozukaCard
     {
         public VengefulSweep()
-            : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
+            : base(1, CardType.Skill, CardRarity.Common, TargetType.AllEnemies)
         {
             // Spirits applied
-            WithPower<VengefulSpiritPower>(nameof(Value1), 5, 2);
+            WithPower<VengefulSpiritPower>(nameof(Value1), 10, 4);
             // Release cost
             WithVar(nameof(ReleaseCost), 4);
             WithKeyword(KomachiKeywords.Release);

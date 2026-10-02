@@ -27,7 +27,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Potions
         public override TargetType TargetType => TargetType.AnyPlayer;
 
         public override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<GuidedSpiritPower>()];
-        protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<GuidedSpiritPower>(6)];
+        protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<GuidedSpiritPower>(8)];
         protected override async Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
         {
             AssertValidForTargetedPotion(target);

@@ -26,7 +26,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Relics
         public override RelicRarity Rarity => RelicRarity.Rare;
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new PowerVar<VengefulSpiritPower>(2),
+            new PowerVar<VengefulSpiritPower>(4),
             ];
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
             [

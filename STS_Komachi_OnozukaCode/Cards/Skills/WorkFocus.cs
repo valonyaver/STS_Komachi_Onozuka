@@ -40,6 +40,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            if (Owner.PlayerCombatState == null) return;
             List<CardModel> list = [.. Owner.PlayerCombatState.Hand.Cards.Where(c => c != this)];
             List<CardModel> choice;
             if (IsUpgraded)

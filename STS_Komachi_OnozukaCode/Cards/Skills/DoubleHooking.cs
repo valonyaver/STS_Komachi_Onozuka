@@ -24,10 +24,11 @@ using System.Threading.Tasks;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
 {
-      
+
     public class DoubleHooking : STS_Komachi_OnozukaCard
     {
         public override bool CanBeGeneratedInCombat => false;
+
         public DoubleHooking() : base(2, CardType.Skill, CardRarity.Rare, TargetType.Self)
         {
             WithCostUpgradeBy(-1);
@@ -36,47 +37,66 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-
             CardModel? discard = (await CardSelectCmd.FromHandForDiscard(
-                choiceContext, base.Owner, 
-                new CardSelectorPrefs(CardSelectorPrefs.DiscardSelectionPrompt, 1), null, this)).FirstOrDefault();
-            
+                choiceContext,
+                base.Owner,
+                new CardSelectorPrefs(CardSelectorPrefs.DiscardSelectionPrompt, 1),
+                null,
+                this
+            )).FirstOrDefault();
+
             if (discard != null)
             {
                 await CardCmd.Discard(choiceContext, discard);
             }
 
-            var exhaustpile = Owner.PlayerCombatState.ExhaustPile.Cards.Where(c => c is not DoubleHooking).ToList();
+            var combatState = Owner?.PlayerCombatState;
+            if (combatState == null) return;
+
+            var exhaustpile = combatState.ExhaustPile.Cards
+                .Where(c => c is not DoubleHooking)
+                .ToList();
 
             if (exhaustpile.Count <= 0) return;
+
             CardModel? toHand = null;
             CardModel? toDiscard = null;
-            if (exhaustpile.Count == 1) {
+
+            if (exhaustpile.Count == 1)
+            {
                 toHand = exhaustpile[0];
             }
-            else {
+            else
+            {
                 var choice = (await CardSelectCmd.FromCombatPile(
                     choiceContext,
-                    Owner.PlayerCombatState.ExhaustPile,
+                    combatState.ExhaustPile,
                     Owner,
                     new CardSelectorPrefs(SelectionScreenPrompt, 0, 2),
-                    c => c is not DoubleHooking)).ToList();
-                toHand = choice[0];
+                    c => c is not DoubleHooking
+                )).ToList();
+
+                // Only if the player actually selected cards
+                if (choice.Count > 0)
+                {
+                    toHand = choice[0];
+                }
                 if (choice.Count > 1)
                 {
                     toDiscard = choice[1];
                 }
             }
 
+            // Move cards and set cost until played
             if (toHand != null)
             {
-                await CardPileCmd.Add(toHand, PileType.Hand);
-                toHand.EnergyCost.SetUntilPlayed(0);
+                await CardPileCmd.Add(toHand, PileType.Hand, CardPilePosition.Bottom, null, false);
+                toHand.EnergyCost.SetUntilPlayed(0, false);
             }
             if (toDiscard != null)
             {
-                await CardPileCmd.Add(toDiscard, PileType.Discard);
-                toDiscard.EnergyCost.SetUntilPlayed(0);
+                await CardPileCmd.Add(toDiscard, PileType.Discard, CardPilePosition.Bottom, null, false);
+                toDiscard.EnergyCost.SetUntilPlayed(0, false);
             }
         }
     }

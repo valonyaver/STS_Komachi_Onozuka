@@ -25,10 +25,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
     public class GrudgeOfTheDead : STS_Komachi_OnozukaCard
     {
         public GrudgeOfTheDead()
-            : base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+            : base(2, CardType.Power, CardRarity.Uncommon, TargetType.AllEnemies)
         {
             // Spirits applied
-            WithPower<VengefulSpiritPower>(nameof(Value1), 4, 3);
+            WithPower<VengefulSpiritPower>(nameof(Value1), 8, 6);
             WithPower<StrengthPower>(1);
             WithTip(KomachiKeywords.Detonate);
         }

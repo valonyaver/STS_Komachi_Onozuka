@@ -43,7 +43,7 @@
   "STS_KOMACHI_ONOZUKA-ACCOMPANYING_SPY_SPIRIT_POWER.smartDescription": "每当{OwnerName}被[gold]位移[/gold]，玩家{ApplierName}[gold]守护[/gold][blue]{Amount}[/blue]。",
   "STS_KOMACHI_ONOZUKA-ACCOMPANYING_SPY_SPIRIT_POWER.title": "灵探",
 
-   "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POWER.description": "[font_size=18]在给予后的第三回合开始时被移除。移除时[gold]引爆[/gold]，对目标造成等于给予者双倍[gold]怨灵[/gold]层数的攻击伤害（受加成影响）。",
+  "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POWER.description": "[font_size=18]在给予后的第三回合开始时被移除。移除时[gold]引爆[/gold]，对目标造成等于给予者双倍[gold]怨灵[/gold]层数的攻击伤害（受加成影响）。",
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POWER.smartDescription": "{Duration:plural:下回合开始时|[blue]{Duration}[/blue]回合后}，此效果将[gold]引爆[/gold]。\n[gold]引爆[/gold]时，玩家{ApplierName}将对{OwnerName}造成[blue]{VengefulDamage:diff()}[/blue]点攻击伤害。",
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POWER.title": "怨灵",
   

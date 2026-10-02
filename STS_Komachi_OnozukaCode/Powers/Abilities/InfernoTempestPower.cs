@@ -76,7 +76,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
                 await CardPileCmd.Add(shuffled[i], assignments[i]);
             }
 
-            var exhaustBasics = Owner.Player.PlayerCombatState.ExhaustPile.Cards.Where(c => c.Rarity == CardRarity.Basic);
+            var exhaustBasics = Owner.Player.PlayerCombatState?.ExhaustPile.Cards.Where(c => c.Rarity == CardRarity.Basic);
             if (exhaustBasics != null && exhaustBasics.Count() > 0)
             {
                 await CardPileCmd.Add(exhaustBasics, PileType.Draw, CardPilePosition.Random);

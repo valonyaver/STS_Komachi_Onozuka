@@ -55,14 +55,22 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         {
             get
             {
-                // Probably change later to check for secondary enemies
-                if (IsEliteRoom())
-                {
-                    return ReleaseCmd.CanReleaseSpirits(Owner.Creature, Value2);
-                }
-                else return ReleaseCmd.CanReleaseSpirits(Owner.Creature, Value1);
-            }
+                if (CombatState == null) return false;
 
+                if (!IsEliteRoom())
+                {
+                    return ReleaseCmd.CanReleaseSpirits(Owner.Creature, Value1);
+                }
+
+                // In Elite/Boss rooms: secondary enemies (minions) cost Value1.
+                // Glow if one of those exist
+                return CombatState.HittableEnemies.Any(enemy =>
+                    ReleaseCmd.CanReleaseSpirits(
+                        Owner.Creature,
+                        enemy.IsSecondaryEnemy ? Value1 : Value2
+                    )
+                );
+            }
         }
 
 

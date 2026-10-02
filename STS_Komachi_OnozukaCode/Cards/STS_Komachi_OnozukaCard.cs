@@ -31,6 +31,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         protected STS_Komachi_OnozukaCard(int cost, CardType type, CardRarity rarity, TargetType target)
         : base(cost, type, rarity, target)
         {
+
             base.WithTip(new TooltipSource((CardModel card) =>
                 new HoverTip(new LocString("static_hover_tips", "KOMACHI-ARTIST-TITLE"),
                              new LocString("cards", base.Id.Entry + ".artist"), null)));
@@ -221,6 +222,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
 
         //Uses card_portraits/card_name.png as image path. These should be smaller images.
         public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+
+        // There is almost no card art in the normal path, so just use the big portraits instead.
+        //public override string PortraitPath => CustomPortraitPath;
         public override string BetaPortraitPath => $"beta/{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
         
     }

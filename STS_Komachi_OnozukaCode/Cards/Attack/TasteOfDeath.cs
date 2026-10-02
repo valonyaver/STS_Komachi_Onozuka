@@ -28,7 +28,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         public TasteOfDeath()
         : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
         {
-            WithDamage(13, 3);
+            WithDamage(13, 4);
             WithPower<DistancePower>(nameof(Value1), -5);
             WithKeyword(KomachiKeywords.Displace);
         }

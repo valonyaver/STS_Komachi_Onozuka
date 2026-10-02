@@ -28,10 +28,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Potions
         protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(2)];
         protected override async Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
         {
-            for(int i = 0; i < 2; i++)
+            var cs = Owner.Creature.CombatState;
+            if (cs == null) return;
+            for (int i = 0; i < DynamicVars.Cards.IntValue; i++)
             {
-                CardModel lily = Owner.Creature.CombatState.CreateCard<SpiderLily>(Owner);
-                CardPileCmd.AddGeneratedCardToCombat(lily, PileType.Hand, Owner);
+                CardModel lily = cs.CreateCard<SpiderLily>(Owner);
+                await CardPileCmd.AddGeneratedCardToCombat(lily, PileType.Hand, Owner);
             }
         }
     }
