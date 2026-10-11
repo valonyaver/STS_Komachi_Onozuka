@@ -46,5 +46,7 @@
 
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.description": "在每场战斗开始时，获得[blue]{DexterityPower}[/blue]点[gold]敏捷[/gold]。在你的第[blue]3[/blue]回合结束时，失去[blue]{DexterityPower}[/blue]点[gold]敏捷[/gold]，并给予所有敌人[blue]{VulnerablePower}[/blue]层[gold]易伤[/gold]。",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.flavor": "以剩余寿命的一半为代价，你就能获得在看到他人的脸时看到其姓名和剩余寿命的能力。",
-  "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.title": "死神之眼"
+  "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.title": "死神之眼",
+  
+  "SEA_GLASS.STS_KOMACHI_ONOZUKA-KOMACHI_CHARACTER.TITLE": "海玻璃"
 }

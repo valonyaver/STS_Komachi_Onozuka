@@ -31,26 +31,43 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         public SoulboundStrike()
         : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
         {
-            WithDamage(9, 3);
+            WithDamage(7, 2);
+            WithVar(nameof(Value1), 15, 10);
             WithTags(CardTag.Strike);
-            WithTip( new TooltipSource( (c)=>
-                HoverTipFactory.FromCard<DetonateToken>())
-                );
             WithTip(KomachiKeywords.Detonate);
         }
+
+        protected override bool ShouldGlowGoldInternal => CombatState.HittableEnemies.
+            Any(c => c.Powers.OfType<VengefulSpiritPower>()
+            .Where(p => p.Applier == Owner.Creature).FirstOrDefault()?.Amount <= Value1);
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-            await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target)
+            var target = cardPlay.Target;
+
+            async Task Hit() => await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+                .FromCard(this, cardPlay)
+                .Targeting(target)
                 .WithDanmaku(patterns)
                 .WithHitFx("vfx/vfx_attack_slash")
                 .Execute(choiceContext);
 
-            if (CombatState == null) return;
+            await Hit();
 
-            var card = CombatState.CreateCard<DetonateToken>(Owner);
-            await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, Owner);
+            if (CombatState == null || !target.IsAlive) return;
+
+            var det = await DetonateCmd.Target(choiceContext, target, this);
+
+            if (det != null
+                && DetonateCmd.IsDetonationSuccessful(det)
+                && det.DetonatingPower is VengefulSpiritPower
+                && det.OriginalAmount <= Value1)
+            {
+                if (!target.IsAlive) return; // detonation may have killed it
+                await Hit();
+            }
         }
+
         public override List<DanmakuPiece> patterns => [
             new DanmakuPiece
                 {

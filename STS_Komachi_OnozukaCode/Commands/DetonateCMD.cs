@@ -31,7 +31,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
         /// <summary>
         /// Original Amount of the detonating power. Used for calculating the damage.
         /// </summary>
-        public decimal OwnAmount;
+        public decimal OriginalAmount;
         /// <summary>
         /// Actual damage dealt from the detonation. Set in Detonated.
         /// </summary>
@@ -39,13 +39,14 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
 
         /// <summary>
         /// Additional amount of spirits detonated for card effect purposes. E.G. Boom Benefits.
+        /// It is added in from lonely bound spirits.
         /// </summary>
         public decimal BonusAmount;
 
         /// <summary>
         /// Total amount of Spirits detonated. Used for card effects that care about how many spirits were detonated at the same time.
         /// </summary>
-        public decimal TotalCountedAmount => OwnAmount + BonusAmount;
+        public decimal TotalCountedAmount => OriginalAmount + BonusAmount;
     }
 
     /// <summary>
@@ -81,12 +82,18 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
         /// <returns></returns>
         public static async Task<DetonationEventArgs?> Target(PlayerChoiceContext choiceContext, Creature target, CardModel? cardSource = null)
         {
-            VengefulSpiritPower? power = target.GetPower<VengefulSpiritPower>();
-            if (power == null)
+            VengefulSpiritPower? vs = target.GetPower<VengefulSpiritPower>();
+            if (vs == null)
             {
-                return null;
+                LonelyBoundSpiritPower? lbs = target.GetPower<LonelyBoundSpiritPower>();
+
+                if (lbs == null) return null;
+
+
+                return await Detonate(choiceContext, lbs, cardSource);
             }
-            return await Detonate(choiceContext, power, cardSource);
+
+            return await Detonate(choiceContext, vs, cardSource);
         }
 
         /// <summary>
@@ -113,7 +120,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
                 DetonatingPower = power,
                 CardSource = cardSource,
                 Dealer = dealer,
-                OwnAmount = explosionAmount
+                OriginalAmount = explosionAmount
             };
 
             await KomachiHooks.OnDetonating(choiceContext, args);

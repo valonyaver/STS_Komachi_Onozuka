@@ -52,5 +52,7 @@
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.description": "At the start of each combat, gain [blue]{DexterityPower}[/blue] [gold]Dexterity[/gold]. At the end of your third turn, lose [blue]{DexterityPower}[/blue] [gold]Dexterity[/gold] and apply [blue]{VulnerablePower}[/blue] [gold]Vulnerable[/gold] to ALL enemies.",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.flavor": "For half your lifespan, you can see the name and date of death of all the people you encounter.",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.title": "Shinigami Eyes",
-  "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.tlnote": "Death note reference, which Touhou itself likes to reference."
+  "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.tlnote": "Death note reference, which Touhou itself likes to reference.",
+
+  "SEA_GLASS.STS_KOMACHI_ONOZUKA-KOMACHI_CHARACTER.TITLE": "River Glass"
 }

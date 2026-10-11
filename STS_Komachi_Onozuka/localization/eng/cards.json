@@ -235,7 +235,7 @@
   "STS_KOMACHI_ONOZUKA-GRUDGING_STRIKE.tlnote": "Strike Card. I don't even know if Grudging is a real word though.",
 
   
-  "STS_KOMACHI_ONOZUKA-SOULBOUND_STRIKE.description": "Deal {Damage:diff()} damage.\nAdd [gold]Detonate[/gold] into your [gold]Hand[/gold].",
+  "STS_KOMACHI_ONOZUKA-SOULBOUND_STRIKE.description": "Deal {Damage:diff()} damage.\n[gold]Detonate[/gold], then if {Value1:diff()} or less [gold]Vengeful Spirits[/gold] were [gold]Detonated[/gold], attack again.",
   "STS_KOMACHI_ONOZUKA-SOULBOUND_STRIKE.title": "Soulbound Strike",
   "STS_KOMACHI_ONOZUKA-SOULBOUND_STRIKE.artist": "怠惰 フミ",
 

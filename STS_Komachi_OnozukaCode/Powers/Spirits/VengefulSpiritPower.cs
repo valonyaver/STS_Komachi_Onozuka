@@ -101,8 +101,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
         {
             if (PendingStacksPreview == 0) return ModifiedDamage; // unchanged original behavior
             decimal hypotheticalBase = (Amount + PendingStacksPreview);
-            var scratch = new DamageVar("VengefulDamagePreview", 0m, ValueProp.Move);
-            var damage = KomachiHelpers.FindDamageDealt(Applier, DamageTarget, hypotheticalBase, scratch);
+            var damage = KomachiHelpers.FindDamageDealt(Applier, DamageTarget, hypotheticalBase, null);
             return Math.Max(damage, 0);
         }
         public bool ShouldRaiseThirdAmount(CardModel? hoveredCard)

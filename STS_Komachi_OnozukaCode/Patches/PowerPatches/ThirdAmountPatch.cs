@@ -53,8 +53,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.PowerPatches
                 return;
             }
 
-            decimal? damage = ambient.GetThirdAmount();
-            if (damage == null)
+            decimal? amount = ambient.GetThirdAmount();
+            if (amount == null)
             {
                 ThirdAmountFloatingLabelController.Clear(__instance.Model);
                 return;
@@ -63,7 +63,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.PowerPatches
             var amountLabel = __instance.GetNode<MegaLabel>("%AmountLabel");
             bool shouldRaise = ThirdAmountRaiseController.ShouldRaise(__instance.Model);
 
-            ThirdAmountFloatingLabelController.Refresh(__instance, damage.Value, shouldRaise, amountLabel);
+            ThirdAmountFloatingLabelController.Refresh(__instance, Math.Floor(amount.Value), shouldRaise, amountLabel);
         }
 
         [HarmonyPatch(typeof(NPower), "SubscribeToModelEvents")]

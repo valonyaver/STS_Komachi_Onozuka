@@ -114,8 +114,16 @@ Fixed bug where it did not add a manipulate distance.
 5. Moving Defend:
 Block increased from 10 (13) -> 11 (14)
 
-6. Pot of Spirits:
-not a card but who cares
+6. Soulbound Strike:
+Old: 
+Deal 9 (12) damage.
+Add a Detonate to your hand.
+
+New:
+Deal 7 (9) damage.
+Detonate, then if 15 (25) or less Vengeful Spirits were detonated, attack again.
+
+7. Pot of Spirits:
 Guided Spirits gained increased from 6 -> 8.
 
 # bug fixes
@@ -191,6 +199,8 @@ No longer specifies "If you are Poisoned", due to redundancy.
 Now has Flavor Text
 
 7. Other more minor descriptions refined.
+
+8. Seaglass for Ferryman cards now has a name
 
 9/6:
 v0.2.2

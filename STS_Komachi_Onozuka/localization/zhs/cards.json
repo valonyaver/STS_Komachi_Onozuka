@@ -199,7 +199,7 @@
   "STS_KOMACHI_ONOZUKA-GRUDGING_STRIKE.title": "含怨打击",
   "STS_KOMACHI_ONOZUKA-GRUDGING_STRIKE.artist": "北公爵小三",
 
-  "STS_KOMACHI_ONOZUKA-SOULBOUND_STRIKE.description": "造成{Damage:diff()}点伤害。\n将1张[gold]引爆[/gold]加入你的[gold]手牌[/gold]。",
+  "STS_KOMACHI_ONOZUKA-SOULBOUND_STRIKE.description": "造成{Damage:diff()}点伤害。\n[gold]引爆[/gold]，然后若引爆的[gold]怨灵[/gold]层数为{Value1:diff()}或以下，则再次攻击。",
   "STS_KOMACHI_ONOZUKA-SOULBOUND_STRIKE.title": "魂缚打击",
   "STS_KOMACHI_ONOZUKA-SOULBOUND_STRIKE.artist": "怠惰 フミ",
   
